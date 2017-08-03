@@ -2,8 +2,8 @@
 
 Documentation for the Nebula framework
 * [Nebula CSS](https://github.com/rbrtsmith/nebula-css)
-* [Nebula Components](https://github.com/rbrtsmith/nebula-css)
-* [Nebula React](https://github.com/rbrtsmith/nebula-css)
+* [Nebula Components](https://github.com/rbrtsmith/nebula-components)
+* [Nebula React](https://github.com/rbrtsmith/nebula-react)
 
 ## Get started
 Install one of the following.
