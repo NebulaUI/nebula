@@ -1,0 +1,7 @@
+lib
+node_modules
+npm-debug.log
+coverage
+.yarnclean
+.DS_Store
+.idea/
