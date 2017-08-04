@@ -3,6 +3,16 @@ import PropTypes from 'prop-types'
 
 import highlightSource from './utils/highlight'
 
+const buildStart = name =>
+  `import { ${name } } from 'nebula-react'
+
+const My${name} = () => (
+`
+
+const buildEnd = () =>
+`
+)`
+
 class Code extends Component {
   componentDidMount() {
     highlightSource(this.codeEl)
@@ -13,12 +23,12 @@ class Code extends Component {
   }
 
   render() {
-    const { children, language } = this.props
-
+    const { children, componentName, language = 'html' } = this.props
+    const react = `${buildStart(componentName)}${children}${buildEnd()}`
     return (
-      <pre className={`language-${language}`}>
+      <pre className={`language-${language} line-numbers`}>
         <code className={`language-${language}`} ref={(code) => { this.codeEl = code }}>
-          { children }
+          { language === 'jsx' ? react : children }
         </code>
       </pre>
     )
@@ -26,12 +36,9 @@ class Code extends Component {
 }
 
 Code.propTypes = {
+  componentName: PropTypes.string,
+  language: PropTypes.string,
   children: PropTypes.node.isRequired,
-  language: PropTypes.string
-}
-
-Code.defaultProps = {
-  language: 'html'
 }
 
 export default Code

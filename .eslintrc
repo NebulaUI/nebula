@@ -12,6 +12,10 @@
     "class-methods-use-this": 0,
     "no-plusplus": 0,
     "semi": ["error", "never"],
-    "react/require-default-props": "off"
+    "react/require-default-props": "off",
+    "react/jsx-curly-spacing": "off"
+  },
+  "settings": {
+    "import/resolver": "webpack"
   }
 }

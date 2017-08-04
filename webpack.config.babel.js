@@ -36,12 +36,22 @@ const common = {
           },
         }],
       },
+      {
+        test: /\.jpg|png$/,
+        use: [{
+          loader: 'url-loader',
+          options: {
+            limit: 25000,
+          },
+        }],
+      },
     ],
   },
   plugins: [new HtmlWebpackPlugin({
     template: 'src/index.html',
   })],
   resolve: {
+    modules: ['node_modules', 'src'],
     extensions: ['.js', '.jsx'],
   },
 }
