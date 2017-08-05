@@ -39,7 +39,7 @@ describe('getData', () => {
     expect(getData(element)).toEqual({
       name: null,
       text: 'hello from test',
-      children: null
+      children: null,
     })
   })
 
@@ -48,7 +48,7 @@ describe('getData', () => {
     expect(getData(element)).toEqual({
       name: null,
       text: '123',
-      children: null
+      children: null,
     })
   })
 
@@ -57,7 +57,7 @@ describe('getData', () => {
     expect(getData(element)).toEqual({
       name: null,
       text: null,
-      children: null
+      children: null,
     })
   })
 })

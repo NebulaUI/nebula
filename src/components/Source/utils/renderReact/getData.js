@@ -1,4 +1,4 @@
-import { isString, isNumber, isText } from './generic'
+import { isString, isText } from './generic'
 
 const defaultData = {
   name: null,
@@ -6,33 +6,36 @@ const defaultData = {
   children: null,
 }
 
-const extractTextNode = text =>
+const extractTextNode = text => (
   isString(text)
     ? ({
       ...defaultData,
-      text
+      text,
     }) : ({
       ...defaultData,
-      text: text.toString()
+      text: text.toString(),
     })
+)
 
-const extractReactNode = ({ type, props: { children } }) =>
+const extractReactNode = ({ type, props: { children } }) => (
   isString(type)
     ? {
-        ...defaultData,
-        name: type,
-        children,
-      }
-    : {
+      ...defaultData,
+      name: type,
+      children,
+    } : {
       ...defaultData,
       name: (type.name || type.displayName || 'Unknown'),
       children,
     }
+)
 
-const extractNode = node =>
+const extractNode = node => (
   isText(node) ? extractTextNode(node) : extractReactNode(node)
+)
 
-const getData = node =>
+const getData = node => (
   node ? extractNode(node) : defaultData
+)
 
 export default getData
