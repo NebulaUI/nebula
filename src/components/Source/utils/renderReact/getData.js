@@ -1,34 +1,40 @@
-const getData = (element) => {
-  const data = {
-    name: null,
-    text: null,
-    children: null,
-  }
+const isString = x => typeof x === 'string'
+const isNumber = x => typeof x === 'number'
+const isTextNode = x => isString(x) || isNumber(x)
 
-  if (element === null) {
-    return data
-  }
-
-  if (typeof element === 'string') {
-    data.text = element
-    return data
-  }
-
-  if (typeof element === 'number') {
-    data.text = String.toString(element)
-    return data
-  }
-
-  data.children = element.props.children
-  const type = element.type
-
-  if (typeof type === 'string') {
-    data.name = type
-  } else {
-    data.name = type.displayName || type.name || 'Unknown'
-  }
-
-  return data
+const defaultData = {
+  name: null,
+  text: null,
+  children: null,
 }
+
+const extractTextNode = text =>
+  isString(text)
+    ? ({
+      ...defaultData,
+      text
+    }) : ({
+      ...defaultData,
+      text: text.toString()
+    })
+
+const extractReactNode = ({ type, props: { children } }) =>
+  isString(type)
+    ? {
+        ...defaultData,
+        name: type,
+        children,
+      }
+    : {
+      ...defaultData,
+      name: (type.name || type.displayName || 'Unknown'),
+      children,
+    }
+
+const extractNode = node =>
+  isTextNode(node) ? extractTextNode(node) : extractReactNode(node)
+
+const getData = node =>
+  node ? extractNode(node) : defaultData
 
 export default getData
