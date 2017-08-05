@@ -4,6 +4,7 @@ import PropTypes from 'prop-types'
 import highlightSource from './utils/highlight'
 
 const buildStart = name =>
+  // eslint-disable-next-line
   `import { ${name } } from 'nebula-react'
 
 const My${name} = () => (
@@ -26,7 +27,7 @@ class Code extends Component {
     const { children, componentName, language = 'html' } = this.props
     const react = `${buildStart(componentName)}${children}${buildEnd()}`
     return (
-      <pre className={`language-${language} line-numbers`}>
+      <pre className={`language-${language} line-numbers`} style={{ fontSize: '0.8rem' }}>
         <code className={`language-${language}`} ref={(code) => { this.codeEl = code }}>
           { language === 'jsx' ? react : children }
         </code>

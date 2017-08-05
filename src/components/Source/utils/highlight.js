@@ -9,12 +9,10 @@ import 'prismjs/plugins/line-numbers/prism-line-numbers.css'
 
 import './prism-override.css'
 
-const highlightJS = (code) => {
-  return Prism.highlight(code, Prism.languages.javascript)
-}
+const highlightJS = code =>
+  Prism.highlight(code, Prism.languages.javascript)
 
-export default (codeElement) => {
+export default codeElement =>
   Prism.highlightElement(codeElement)
-}
 
 export { highlightJS }

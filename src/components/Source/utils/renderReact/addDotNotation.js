@@ -1,7 +1,8 @@
 const addDotNotation = str =>
-  str.replace(/<\/?([A-Z][a-z]+[A-Z][a-z]+)>/g, (component, group) => {
+  str.replace(/<\/?([A-Z][a-z]+[A-Z][a-z]+)[>|\s]/g, (component, group) => {
     const start = component.startsWith('</') ? '</' : '<'
-    return `${start + group.split(/(?=[A-Z])/).join('.')}>`
+    const end = component.endsWith('>') ? '>' : ' '
+    return `${start + group.split(/(?=[A-Z])/).join('.')}${end}`
   })
 
 export default addDotNotation

@@ -1,3 +1,7 @@
 .token.operator {
     background: inherit;
 }
+
+pre[class*="language-"] {
+  border-radius: 0;
+}

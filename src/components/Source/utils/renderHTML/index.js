@@ -1,6 +1,7 @@
 import pretty from 'pretty'
 import { renderToString } from 'react-dom/server'
-import replaceBase64 from './replaceBase64'
+import replaceBase64 from '../replaceBase64'
+import removeSelfClosingTags from './removeSelfClosingTags'
 
 const filteredAttributes = [
   'data-reactroot',
@@ -10,12 +11,12 @@ const filteredAttributes = [
 
 export default component => pretty(
   filteredAttributes.reduce((html, attr) =>
-      replaceBase64(
+      removeSelfClosingTags(replaceBase64(
         html
           .replace(new RegExp(`${attr}=(["'])(?:(?=(\\\\?))\\2.)*?\\1`, 'g'), '')
           .replace(/\s{1,}>/g, '>'),
         'HTML',
-      ),
+      )),
     renderToString(component),
   ),
 )

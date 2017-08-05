@@ -4,7 +4,8 @@
     "airbnb"
   ],
   "env": {
-    "browser": true
+    "browser": true,
+    "jest": true
   },
   "rules": {
     "no-underscore-dangle": 0,

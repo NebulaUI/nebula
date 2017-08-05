@@ -1,57 +1,57 @@
-const MAX_ARRAY_LENGTH = 3;
-const MAX_OBJECT_KEYS = 3;
+const MAX_ARRAY_LENGTH = 3
+const MAX_OBJECT_KEYS = 3
 
 const renderPropValue = (value) => {
   if (typeof value === 'boolean' && value) {
-    return '';
+    return ''
   }
 
   if (typeof value === 'string') {
-    return `="${value}"`;
+    return `="${value}"`
   }
 
   if (Array.isArray(value)) {
-    let arrayDisplay = `={[${value.slice(0, MAX_ARRAY_LENGTH).join(', ')}`;
-    if (value.length > MAX_ARRAY_LENGTH) arrayDisplay += ', ...';
-    arrayDisplay += ']}';
+    let arrayDisplay = `={[${value.slice(0, MAX_ARRAY_LENGTH).join(', ')}`
+    if (value.length > MAX_ARRAY_LENGTH) arrayDisplay += ', ...'
+    arrayDisplay += ']}'
 
-    return arrayDisplay;
+    return arrayDisplay
   }
 
   if (typeof value === 'function') {
-    return `={${value.name ? `${value.name}()` : 'anonymous()'}}`;
+    return `={${value.name ? `${value.name}()` : 'anonymous()'}}`
   }
 
   if (typeof value === 'object') {
-    let objectDisplay = Object.keys(value).slice(0, MAX_OBJECT_KEYS);
+    let objectDisplay = Object.keys(value).slice(0, MAX_OBJECT_KEYS)
 
     objectDisplay = objectDisplay.reduce(
       (objectString, key, index) => {
-        let propString = `${key}: '${value[key]}'`;
+        let propString = `${key}: '${value[key]}'`
         if (index + 1 < objectDisplay.length) {
-          propString += ', ';
+          propString += ', '
         }
-        return `${objectString}${propString}`;
+        return `${objectString}${propString}`
       },
       '{ ',
-    );
+    )
 
     if (Object.keys(value).length > MAX_OBJECT_KEYS) {
-      objectDisplay += ', ...';
+      objectDisplay += ', ...'
     }
 
-    return `={${objectDisplay} }}`;
+    return `={${objectDisplay} }}`
   }
 
-  return `={${value}}`;
-};
+  return `={${value}}`
+}
 
 const renderProps = (props, defaultProps) => {
   const names = Object.keys(props).filter(
     name =>
     name[0] !== '_' &&
     (!defaultProps || props[name] !== defaultProps[name]),
-  );
+  )
 
   return names.reduce((propString, name) =>
       `${propString} ${name}${renderPropValue(props[name])}`,
@@ -60,4 +60,3 @@ const renderProps = (props, defaultProps) => {
 }
 
 export default renderProps
-
