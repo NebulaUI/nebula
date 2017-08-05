@@ -1,6 +1,4 @@
-const isString = x => typeof x === 'string'
-const isNumber = x => typeof x === 'number'
-const isTextNode = x => isString(x) || isNumber(x)
+import { isString, isNumber, isText } from './generic'
 
 const defaultData = {
   name: null,
@@ -32,7 +30,7 @@ const extractReactNode = ({ type, props: { children } }) =>
     }
 
 const extractNode = node =>
-  isTextNode(node) ? extractTextNode(node) : extractReactNode(node)
+  isText(node) ? extractTextNode(node) : extractReactNode(node)
 
 const getData = node =>
   node ? extractNode(node) : defaultData
