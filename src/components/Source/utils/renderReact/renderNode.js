@@ -22,7 +22,8 @@ const renderNode = (node, depth = 0) => {
 
   // Single-line tag
   if (!children) {
-    return `${nodeString} />`
+    const str = `${nodeString} />`
+    return addDotNotation(replaceBase64(str))
   }
 
   nodeString += '>'
@@ -33,7 +34,6 @@ const renderNode = (node, depth = 0) => {
   })
 
   nodeString += `\r\n</${name}>`
-
   return addDotNotation(replaceBase64(nodeString))
 }
 
