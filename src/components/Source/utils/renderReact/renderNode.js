@@ -4,26 +4,32 @@ import replaceBase64 from '../replaceBase64'
 import addDotNotation from './addDotNotation'
 import renderProps from './renderProps'
 import getData from './getData'
+import { isObject } from './generic'
+
+const getFilteredProps = (node) => {
+  const props = { ...node.props }
+  delete props.children
+  return props
+}
+
+const createInitialNodeString = (node, name) => {
+  const props = getFilteredProps(node)
+  const propsString = props && isObject(props)
+    ? renderProps(props, node.type.defaultProps)
+    : ''
+  return `<${name}${propsString}`
+}
 
 const renderNode = (node, depth = 0) => {
   const { name, text, children } = getData(node)
-
-  // text node
-  if (!name) return text
-
-  let nodeString = `<${name}`
-
-  const nodeProps = { ...node.props }
-  delete nodeProps.children
-
-  if (nodeProps && typeof nodeProps === 'object') {
-    nodeString += renderProps(nodeProps, node.type.defaultProps)
+  if (!name) {
+    return text
   }
 
-  // Single-line tag
+  let nodeString = createInitialNodeString(node, name)
+
   if (!children) {
-    const str = `${nodeString} />`
-    return addDotNotation(replaceBase64(str))
+    return addDotNotation(replaceBase64(`${nodeString} />`))
   }
 
   nodeString += '>'
@@ -33,8 +39,7 @@ const renderNode = (node, depth = 0) => {
     nodeString += renderNode(childElement, depth + 1)
   })
 
-  nodeString += `\r\n</${name}>`
-  return addDotNotation(replaceBase64(nodeString))
+  return addDotNotation(replaceBase64(`${nodeString}\r\n</${name}>`))
 }
 
 export default renderNode
