@@ -12,6 +12,7 @@ describe('filterDefaultProps', () => {
       className: 'o-flag',
       baz: 'remove',
     }
+
     expect(filterDefaultProps(props, defaultProps)).toEqual({
       alt: 'keep-me',
       src: 'keep',

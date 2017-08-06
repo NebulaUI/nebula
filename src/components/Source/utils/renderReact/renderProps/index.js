@@ -17,10 +17,10 @@ const objExceedsLength = x => (
 )
 
 const buildObjectStringValue = (value) => {
-  const reducer = (objectString, key, i, arr) =>
-    `${objectString}${key}: '${value[key]}'${outOfBounds(i, arr)}`
+  const buildStringValue = (string, key, i, arr) =>
+    `${string}${key}: '${value[key]}'${outOfBounds(i, arr)}`
 
-  return extractObjectKeys(value).reduce(reducer, '{ ')
+  return extractObjectKeys(value).reduce(buildStringValue, '{ ')
 }
 
 const extractObjectValues = value =>
