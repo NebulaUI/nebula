@@ -5,10 +5,15 @@ const filter = (props, keys) => keys.reduce((acc, key) => {
   return acc
 }, {})
 
+const notPrivate = k => k[0] !== '_'
+const notDefault = (k, ks, defaultProps) =>
+  (!getKeys(defaultProps) || ks[k] === defaultProps[k])
+
 const filterDefaultProps = (props, defaultProps) => {
-  const filteredKeys = getKeys(props).filter((propKey, i, props) =>
-    (propKey[0] !== '_' && (!getKeys(defaultProps) || props[propKey] === defaultProps[propKey]))
-  )
+  const predicate = (propKey, i, propKeys) =>
+    notPrivate(propKey) && notDefault(propKey, propKeys, defaultProps)
+
+  const filteredKeys = getKeys(props).filter(predicate)
 
   return filter(props, filteredKeys)
 }

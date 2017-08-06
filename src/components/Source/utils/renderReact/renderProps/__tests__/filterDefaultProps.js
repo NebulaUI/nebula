@@ -17,4 +17,12 @@ describe('filterDefaultProps', () => {
       src: 'keep',
     })
   })
+
+  it('filters out private props', () => {
+    const props = {
+      className: 'keep-me',
+      _alt: 'remove-me',
+    }
+    expect(filterDefaultProps(props, {})).toEqual({ className: 'keep-me' })
+  })
 })
