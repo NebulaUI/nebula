@@ -1,4 +1,5 @@
-import { isString, isObject, isArray, isFunction, isDeepTrue } from './generic'
+import { isString, isObject, isArray, isFunction, isDeepTrue, getKeys } from '../generic'
+import filterDefaultProps from './filterDefaultProps'
 
 const MAX_ARRAY_LENGTH = 3
 const MAX_OBJECT_KEYS = 3
@@ -12,7 +13,7 @@ const extractArrayValues = value => (
 const extractObjectKeys = x => Object.keys(x).slice(0, MAX_OBJECT_KEYS)
 const outOfBounds = (x, arr) => (x + 1 < arr.length ? ', ' : '')
 const objExceedsLength = x => (
-  Object.keys(x).length > MAX_OBJECT_KEYS ? ', …' : ''
+  getKeys(x).length > MAX_OBJECT_KEYS ? ', …' : ''
 )
 
 const buildObjectStringValue = (value) => {
@@ -25,7 +26,7 @@ const buildObjectStringValue = (value) => {
 const extractObjectValues = value =>
   `={${buildObjectStringValue(value)}${objExceedsLength(value)} }}`
 
-const renderPropValue = (value) => {
+const buildPropValue = (value) => {
   if (isDeepTrue(value)) {
     return ''
   }
@@ -49,14 +50,14 @@ const renderPropValue = (value) => {
   return `={${value}}`
 }
 
-const renderProps = (props, defaultProps) => {
-  const isDefault = name =>
-    name[0] !== '_' && (!defaultProps || props[name] !== defaultProps[name])
-  const filteredProps = Object.keys(props).filter(isDefault)
-  const buildPropsString = (str, name) =>
-    `${str} ${name}${renderPropValue(props[name])}`
+const buildPropsString = (props) =>  {
+  const buildString = (str, propKey) =>
+    `${str} ${propKey}${buildPropValue(props[propKey])}`
 
-  return filteredProps.reduce(buildPropsString, '')
+  return getKeys(props).reduce(buildString, '')
 }
+
+const renderProps = (props, defaultProps) =>
+  buildPropsString(filterDefaultProps(props, defaultProps))
 
 export default renderProps

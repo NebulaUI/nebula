@@ -5,6 +5,7 @@ const isFunction = x => typeof x === 'function'
 const isArray = x => Array.isArray(x)
 const isDeepTrue = x => x === true
 const isText = x => isString(x) || isNumber(x)
+const getKeys = obj => obj && Object.keys(obj)
 
 export {
   isString,
@@ -14,4 +15,5 @@ export {
   isFunction,
   isDeepTrue,
   isText,
+  getKeys
 }

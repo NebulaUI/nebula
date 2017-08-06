@@ -1,4 +1,4 @@
-import renderProps from '../renderProps'
+import renderProps from '../'
 
 describe('renderProps', () => {
   it('renders props with boolean values', () => {
