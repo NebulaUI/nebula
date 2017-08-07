@@ -1,23 +1,23 @@
 import React from 'react'
-import { SiteWrap, Section } from 'nebula-react'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 
-import Flag from '../Flag/index'
-import Navbar from '../Navbar/index'
+import Routes from './Routes'
+
+import Home from '../Home'
+import Flag from '../Flag'
+import Navbar from '../Navbar'
 
 const App = () => (
-  <div>
-    <Section size="md">
-      <SiteWrap padding>
-        <h1>Nebula React</h1>
-        <Flag />
-      </SiteWrap>
-    </Section>
-    <Section size="md">
-      <SiteWrap padding>
-        <Navbar />
-      </SiteWrap>
-    </Section>
-  </div>
+  <Router>
+    <div>
+      <Routes />
+      <h1>Welcome to Nebula</h1>
+
+      <Route exact path="/" component={Home} />
+      <Route exact path="/objects/flag" component={Flag} />
+      <Route exact path="/components/navbar" component={Navbar} />
+    </div>
+  </Router>
 )
 
 export default App
