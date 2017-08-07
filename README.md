@@ -1,4 +1,4 @@
-# Nebula
+# Nebula ![Travis-ci](https://travis-ci.org/rbrtsmith/nebula.svg?branch=master)
 
 Documentation for the Nebula framework
 * [Nebula CSS](https://github.com/rbrtsmith/nebula-css)
