@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import T from 'prop-types'
-import { Flag, Section } from 'nebula-react'
+import { Flag } from 'nebula-react'
 
 import ComponentExample, { ComponentDescription, ComponentOptions, ComponentRendered } from 'components/ComponentExample'
 import exampleImage from 'assets/img/nebula.jpg'
@@ -41,7 +41,7 @@ const ComponentToRender = ({ flagWrapperProps }) => {
 }
 
 ComponentToRender.propTypes = {
-  flagWrapperProps: T.shape({}),
+  flagWrapperProps: T.shape({})
 }
 
 class FlagExample extends Component {
@@ -50,13 +50,13 @@ class FlagExample extends Component {
 
     this.state = {
       align: false,
-      reverse: false,
+      reverse: false
     }
   }
 
   setAlignment = (e) => {
     this.setState({
-      align: e.target.value !== 'default' ? e.target.value : false,
+      align: e.target.value !== 'default' ? e.target.value : false
     })
   }
 
@@ -75,29 +75,26 @@ class FlagExample extends Component {
       flagWrapperProps.reverse = reverse
     }
     const props = {
-      flagWrapperProps,
+      flagWrapperProps
     }
     return (
       <div>
         <h2>Flag Object</h2>
-
-        <Section size="md">
-          <ComponentExample type="Flag">
-            <ComponentDescription>
-              <Description />
-            </ComponentDescription>
-            <ComponentOptions>
-              <Options
-                optionState={this.state}
-                setAlignment={this.setAlignment}
-                setReverse={this.setReverse}
-              />
-            </ComponentOptions>
-            <ComponentRendered>
-              {ComponentToRender(props)}
-            </ComponentRendered>
-          </ComponentExample>
-        </Section>
+        <ComponentExample type="Flag">
+          <ComponentDescription>
+            <Description />
+          </ComponentDescription>
+          <ComponentOptions>
+            <Options
+              optionState={this.state}
+              setAlignment={this.setAlignment}
+              setReverse={this.setReverse}
+            />
+          </ComponentOptions>
+          <ComponentRendered>
+            {ComponentToRender(props)}
+          </ComponentRendered>
+        </ComponentExample>
       </div>
     )
   }

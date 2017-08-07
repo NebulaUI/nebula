@@ -37,19 +37,19 @@ const ComponentExample = ({ type, children }) => {
 
 ComponentExample.propTypes = {
   type: T.string.isRequired,
-  children: T.node.isRequired,
+  children: T.node.isRequired
 }
 
 ComponentDescription.propTypes = {
-  children: T.node.isRequired,
+  children: T.node.isRequired
 }
 
 ComponentOptions.propTypes = {
-  children: T.node.isRequired,
+  children: T.node.isRequired
 }
 
 ComponentRendered.propTypes = {
-  children: T.node.isRequired,
+  children: T.node.isRequired
 }
 
 export { ComponentDescription, ComponentOptions, ComponentRendered }

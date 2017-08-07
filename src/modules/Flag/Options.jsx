@@ -30,7 +30,7 @@ const Options = ({ setAlignment, setReverse, optionState }) => (
 Options.propTypes = {
   setAlignment: T.func.isRequired,
   setReverse: T.func.isRequired,
-  optionState: T.shape({}).isRequired,
+  optionState: T.shape({}).isRequired
 }
 
 export default Options

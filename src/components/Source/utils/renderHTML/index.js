@@ -6,7 +6,7 @@ import removeSelfClosingTags from './removeSelfClosingTags'
 const filteredAttributes = [
   'data-reactroot',
   'data-reactid',
-  'data-react-checksum',
+  'data-react-checksum'
 ]
 
 export default component => pretty(

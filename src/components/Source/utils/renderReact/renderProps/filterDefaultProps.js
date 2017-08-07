@@ -15,7 +15,7 @@ const notDefault = (k, ks, defaultProps) =>
 const getFilteredKeys = (props, defaultProps) => {
   const predicate = (key, i, keys) =>
     notPrivate(key) && notDefault(key, keys, defaultProps)
-    return getKeys(props).filter(predicate)
+  return getKeys(props).filter(predicate)
 }
 
 const filterDefaultProps = (props, defaultProps) =>

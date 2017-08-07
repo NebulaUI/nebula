@@ -8,7 +8,7 @@ const common = {
   entry: path.resolve(__dirname, './src'),
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js',
+    filename: 'bundle.js'
   },
   module: {
     rules: [
@@ -16,65 +16,65 @@ const common = {
       {
         test: /\.s?css$/,
         use: [{
-          loader: 'style-loader',
+          loader: 'style-loader'
         }, {
-          loader: 'css-loader',
+          loader: 'css-loader'
         }, {
           loader: 'postcss-loader',
           options: {
             plugins: () => [
-              autoprefixer({ browsers: ['last 2 versions', 'ie 9-11'] }),
-            ],
-          },
+              autoprefixer({ browsers: ['last 2 versions', 'ie 9-11'] })
+            ]
+          }
         }, {
           loader: 'sass-loader',
           options: {
             includePaths: [
               path.resolve(__dirname, 'node_modules/nebula-css'),
-              path.resolve(__dirname, 'node_modules/nebula-components'),
-            ],
-          },
-        }],
+              path.resolve(__dirname, 'node_modules/nebula-components')
+            ]
+          }
+        }]
       },
       {
         test: /\.jpg|png$/,
         use: [{
           loader: 'url-loader',
           options: {
-            limit: 25000,
-          },
-        }],
-      },
-    ],
+            limit: 25000
+          }
+        }]
+      }
+    ]
   },
   plugins: [new HtmlWebpackPlugin({
-    template: 'src/index.html',
+    template: 'src/index.html'
   })],
   resolve: {
     modules: ['node_modules', 'src'],
-    extensions: ['.js', '.jsx'],
-  },
+    extensions: ['.js', '.jsx']
+  }
 }
 
 const dev = {
   devServer: {
-    historyApiFallback: true,
+    historyApiFallback: true
   },
-  devtool: 'source-map',
+  devtool: 'source-map'
 }
 
 const prod = {
   plugins: [
     new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify('production'),
-    }),
+      'process.env.NODE_ENV': JSON.stringify('production')
+    })
     // new webpack.optimize.UglifyJsPlugin({
     //   compress: {
     //     warnings: false,
     //   },
     //   sourceMap: false,
     // }),
-  ],
+  ]
 }
 
 const config = (env) => {

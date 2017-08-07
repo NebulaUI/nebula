@@ -50,7 +50,7 @@ const buildPropValue = (value) => {
   return `={${value}}`
 }
 
-const buildPropsString = (props) =>  {
+const buildPropsString = (props) => {
   const buildString = (str, propKey) =>
     `${str} ${propKey}${buildPropValue(props[propKey])}`
 

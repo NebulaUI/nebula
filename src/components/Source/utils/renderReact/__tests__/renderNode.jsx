@@ -26,7 +26,7 @@ describe('renderNode', () => {
   })
 
   it('replaces base64 strings', () => {
-    const node = <img src="data:image/jpeg;base64,/9j/4QAYRXhpZgAASU" />
-    expect(renderNode(node)).toBe('<img src={nebula} />')
+    const node = <img alt="test" src="data:image/jpeg;base64,/9j/4QAYRXhpZgAASU" />
+    expect(renderNode(node)).toBe('<img alt="test" src={nebula} />')
   })
 })

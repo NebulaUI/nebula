@@ -4,24 +4,24 @@ describe('getData', () => {
   it('extracts the name and children of the element if is a React element', () => {
     const element = {
       type: 'div',
-      props: { children: { type: 'test' } },
+      props: { children: { type: 'test' } }
     }
     expect(getData(element)).toMatchObject({
       name: 'div',
-      children: { type: 'test' },
+      children: { type: 'test' }
     })
   })
 
   it('extrats the name if the type is an object', () => {
     const element1 = {
       type: { name: 'span' },
-      props: {},
+      props: {}
     }
     expect(getData(element1)).toMatchObject({ name: 'span' })
 
     const element2 = {
       type: { displayName: 'article' },
-      props: {},
+      props: {}
     }
     expect(getData(element2)).toMatchObject({ name: 'article' })
   })
@@ -29,7 +29,7 @@ describe('getData', () => {
   it('returns "Unknown" if it cannot find a name', () => {
     const element = {
       type: { cannotFind: 'test' },
-      props: {},
+      props: {}
     }
     expect(getData(element)).toMatchObject({ name: 'Unknown' })
   })
@@ -39,7 +39,7 @@ describe('getData', () => {
     expect(getData(element)).toEqual({
       name: null,
       text: 'hello from test',
-      children: null,
+      children: null
     })
   })
 
@@ -48,7 +48,7 @@ describe('getData', () => {
     expect(getData(element)).toEqual({
       name: null,
       text: '123',
-      children: null,
+      children: null
     })
   })
 
@@ -57,7 +57,7 @@ describe('getData', () => {
     expect(getData(element)).toEqual({
       name: null,
       text: null,
-      children: null,
+      children: null
     })
   })
 })

@@ -6,23 +6,23 @@ describe('filterDefaultProps', () => {
       className: 'remove-me',
       src: 'keep',
       alt: 'keep-me',
-      baz: 'remove',
+      baz: 'remove'
     }
     const defaultProps = {
       className: 'o-flag',
-      baz: 'remove',
+      baz: 'remove'
     }
 
     expect(filterDefaultProps(props, defaultProps)).toEqual({
       alt: 'keep-me',
-      src: 'keep',
+      src: 'keep'
     })
   })
 
   it('filters out private props', () => {
     const props = {
       className: 'keep-me',
-      _alt: 'remove-me',
+      _alt: 'remove-me'
     }
     expect(filterDefaultProps(props, {})).toEqual({ className: 'keep-me' })
   })

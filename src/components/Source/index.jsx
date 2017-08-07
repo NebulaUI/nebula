@@ -49,7 +49,7 @@ Source.propTypes = {
   type: T.string.isRequired,
   description: T.node,
   options: T.node,
-  children: T.node.isRequired,
+  children: T.node.isRequired
 }
 
 

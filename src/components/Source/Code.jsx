@@ -27,7 +27,7 @@ class Code extends Component {
     const { children, componentName, language = 'html' } = this.props
     const react = `${buildStart(componentName)}${children}${buildEnd()}`
     return (
-      <pre className={`language-${language} line-numbers`} style={{ fontSize: '0.8rem' }}>
+      <pre className={`language-${language} line-numbers`} style={{ fontSize: '1rem' }}>
         <code className={`language-${language}`} ref={(code) => { this.codeEl = code }}>
           { language === 'jsx' ? react : children }
         </code>
@@ -39,7 +39,7 @@ class Code extends Component {
 Code.propTypes = {
   componentName: PropTypes.string,
   language: PropTypes.string,
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node.isRequired
 }
 
 export default Code

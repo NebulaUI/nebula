@@ -3,17 +3,17 @@ import { isString, isText } from './generic'
 const defaultData = {
   name: null,
   text: null,
-  children: null,
+  children: null
 }
 
 const extractTextNode = text => (
   isString(text)
     ? ({
       ...defaultData,
-      text,
+      text
     }) : ({
       ...defaultData,
-      text: text.toString(),
+      text: text.toString()
     })
 )
 
@@ -22,11 +22,11 @@ const extractReactNode = ({ type, props: { children } }) => (
     ? {
       ...defaultData,
       name: type,
-      children,
+      children
     } : {
       ...defaultData,
       name: (type.name || type.displayName || 'Unknown'),
-      children,
+      children
     }
 )
 
