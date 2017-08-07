@@ -5,3 +5,4 @@ coverage
 .yarnclean
 .DS_Store
 .idea/
+dist
