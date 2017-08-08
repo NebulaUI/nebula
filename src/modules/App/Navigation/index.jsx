@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { Component } from 'react'
 import T from 'prop-types'
 import { NavLink } from 'react-router-dom'
+import { withRouter } from 'react-router'
 import { Navbar } from 'nebula-react'
 
 import routes from './model'
@@ -50,23 +51,31 @@ const renderRoute = route => (
 
 const renderRoutes = rs => rs.map(renderRoute)
 
-const Routes = () => (
-  <Navbar.Wrapper>
-    <Navbar.Inner className="is-sticky">
-      <Navbar.Overlay />
-      <Navbar.Wrap>
-        <Navbar.Toggle.Wrapper>
-          <Navbar.Toggle.Bars />
-        </Navbar.Toggle.Wrapper>
-        <NavLink className="c-navbar__logo" to="/">
-          Nebula
-        </NavLink>
-        <Navbar.Nav>
-          {renderRoutes(routes)}
-        </Navbar.Nav>
-      </Navbar.Wrap>
-    </Navbar.Inner>
-  </Navbar.Wrapper>
-)
+class Routes extends Component {
+  componentDidUpdate(prevProps) {
+    if (this.props.location !== prevProps.location) {
+      this.toggle.props.handleToggle()
+    }
+  }
 
-export default Routes
+  render() {
+    return (
+      <Navbar.Wrapper sticky>
+        <Navbar.Overlay />
+        <Navbar.Inner>
+          <Navbar.Toggle.Wrapper ref={(node) => this.toggle = node}>
+            <Navbar.Toggle.Bars />
+          </Navbar.Toggle.Wrapper>
+          <NavLink className="c-navbar__logo" to="/">
+            Nebula
+          </NavLink>
+          <Navbar.Nav>
+            {renderRoutes(routes)}
+          </Navbar.Nav>
+        </Navbar.Inner>
+      </Navbar.Wrapper>
+    )
+  }
+}
+
+export default withRouter(Routes)
