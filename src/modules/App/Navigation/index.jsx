@@ -1,15 +1,16 @@
 import React, { Component } from 'react'
 import T from 'prop-types'
+import classNames from 'classnames'
 import { NavLink } from 'react-router-dom'
 import { withRouter } from 'react-router'
 import { Navbar } from 'nebula-react'
 
 import routes from './model'
 
-const buildDropdown = ({ to, label, children }) => (
+const buildDropdown = ({ to, label, children, path }) => (
   <Navbar.Dropdown.Wrapper key={to}>
-    <Navbar.Dropdown.Toggle>
-      {label}
+    <Navbar.Dropdown.Toggle className={classNames({ 'is-active': path.includes(to) })}>
+      { label }
     </Navbar.Dropdown.Toggle>
     <Navbar.Dropdown.Content>
       {
@@ -23,6 +24,7 @@ const buildDropdown = ({ to, label, children }) => (
 buildDropdown.propTypes = {
   to: T.string.isRequired,
   label: T.string.isRequired,
+  path: T.string.isRequired,
   children: T.arrayOf(T.shape({})).isRequired
 }
 
@@ -43,13 +45,11 @@ buildItem.propTypes = {
   label: T.string.isRequired
 }
 
-const renderRoute = route => (
+const renderRoutes = (rs, path) => rs.map(route => (
   route.children && route.children.length
-    ? buildDropdown(route)
+    ? buildDropdown({ ...route, path })
     : buildItem(route)
-)
-
-const renderRoutes = rs => rs.map(renderRoute)
+))
 
 class Routes extends Component {
   componentDidUpdate(prevProps) {
@@ -63,19 +63,25 @@ class Routes extends Component {
       <Navbar.Wrapper sticky>
         <Navbar.Overlay />
         <Navbar.Inner>
-          <Navbar.Toggle.Wrapper ref={(node) => this.toggle = node}>
+          <Navbar.Toggle.Wrapper ref={(node) => { this.toggle = node }}>
             <Navbar.Toggle.Bars />
           </Navbar.Toggle.Wrapper>
           <NavLink className="c-navbar__logo" to="/">
             Nebula
           </NavLink>
           <Navbar.Nav>
-            {renderRoutes(routes)}
+            {renderRoutes(routes, this.props.location.pathname)}
           </Navbar.Nav>
         </Navbar.Inner>
       </Navbar.Wrapper>
     )
   }
+}
+
+Routes.propTypes = {
+  location: T.shape({
+    pathname: T.string.isRequired
+  }).isRequired
 }
 
 export default withRouter(Routes)

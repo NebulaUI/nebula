@@ -9,13 +9,11 @@ const App = () => (
   <Router>
     <div>
       <Navigation />
-
-      <Section className="u-hard-bottom">
-        <SiteWrap>
-          <h1>Welcome to Nebula</h1>
-        </SiteWrap>
-      </Section>
-      <Routes />
+      <SiteWrap>
+        <Section>
+          <Routes />
+        </Section>
+      </SiteWrap>
     </div>
   </Router>
 )
