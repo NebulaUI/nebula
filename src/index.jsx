@@ -4,4 +4,6 @@ import { render } from 'react-dom'
 import App from './modules/App/'
 import './scss/main.scss'
 
-render(<App />, document.querySelector('#app'))
+const mountElement = document.getElementById('app')
+
+render(<App />, mountElement)

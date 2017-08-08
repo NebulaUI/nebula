@@ -7,7 +7,7 @@ const ComponentDescription = ({ children }) => <div>{ children }</div>
 const ComponentOptions = ({ children }) => <div>{ children }</div>
 const ComponentRendered = ({ children }) => <div>{ children }</div>
 
-const ComponentExample = ({ type, children, ...rest }) => {
+const ComponentExample = ({ type, children, style, ...rest }) => {
   const getChild = (componentType, { returnNestedChildren = false } = {}) =>
     React.Children.map(children, (child) => {
       if (child.type === componentType) {
@@ -24,7 +24,7 @@ const ComponentExample = ({ type, children, ...rest }) => {
   const props = { component, description, options, type, ...rest }
 
   return (
-    <div>
+    <div style={style}>
       <div className="u-push-bottom-md">
         { component }
       </div>
@@ -37,6 +37,7 @@ const ComponentExample = ({ type, children, ...rest }) => {
 
 ComponentExample.propTypes = {
   type: T.string.isRequired,
+  style: T.shape({}),
   children: T.node.isRequired
 }
 

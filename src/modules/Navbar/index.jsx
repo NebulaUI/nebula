@@ -57,11 +57,18 @@ class NavbarExample extends Component {
   }
 
   render() {
+    const style = {
+      position: 'relative',
+      zIndex: 0,
+      overflow: 'hidden',
+      minHeight: '500px'
+    }
+
     return (
-      <SiteWrap>
+      <SiteWrap padding>
         <Section>
           <h2>Navbar</h2>
-          <ComponentExample type="Navbar">
+          <ComponentExample type="Navbar" style={style}>
             <ComponentDescription>
               <Description />
             </ComponentDescription>
