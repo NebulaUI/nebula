@@ -9,7 +9,7 @@ const App = () => (
   <Router>
     <div>
       <Navigation />
-      <SiteWrap>
+      <SiteWrap padding>
         <Section>
           <Routes />
         </Section>

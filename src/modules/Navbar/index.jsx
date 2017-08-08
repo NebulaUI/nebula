@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { Navbar, SiteWrap, Section } from 'nebula-react'
 
 import ComponentExample, { ComponentDescription, ComponentRendered } from 'components/ComponentExample'
 
@@ -22,19 +21,17 @@ class NavbarExample extends Component {
     }
 
     return (
-      <SiteWrap padding>
-        <Section>
-          <h2>Navbar</h2>
-          <ComponentExample type="Navbar" style={style}>
-            <ComponentDescription>
-              <Description />
-            </ComponentDescription>
-            <ComponentRendered>
-              {ComponentToRender()}
-            </ComponentRendered>
-          </ComponentExample>
-        </Section>
-      </SiteWrap>
+      <div>
+        <h1>Navbar</h1>
+        <ComponentExample type="Navbar" style={style}>
+          <ComponentDescription>
+            <Description />
+          </ComponentDescription>
+          <ComponentRendered>
+            {ComponentToRender()}
+          </ComponentRendered>
+        </ComponentExample>
+      </div>
     )
   }
 }
