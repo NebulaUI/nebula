@@ -8,7 +8,7 @@ const model = [
         label: 'Flag'
       },
       {
-        to: 'objects/bare-list',
+        to: '/objects/bare-list',
         label: 'Bare List'
       }
     ]

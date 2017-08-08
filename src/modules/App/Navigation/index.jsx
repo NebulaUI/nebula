@@ -52,17 +52,19 @@ const renderRoutes = rs => rs.map(renderRoute)
 
 const Routes = () => (
   <Navbar.Wrapper>
-    <Navbar.Overlay />
-    <Navbar.Inner>
-      <Navbar.Toggle.Wrapper>
-        <Navbar.Toggle.Bars />
-      </Navbar.Toggle.Wrapper>
-      <NavLink className="c-navbar__logo" to="/">
-        Nebula
-      </NavLink>
-      <Navbar.Nav>
-        {renderRoutes(routes)}
-      </Navbar.Nav>
+    <Navbar.Inner className="is-sticky">
+      <Navbar.Overlay />
+      <Navbar.Wrap>
+        <Navbar.Toggle.Wrapper>
+          <Navbar.Toggle.Bars />
+        </Navbar.Toggle.Wrapper>
+        <NavLink className="c-navbar__logo" to="/">
+          Nebula
+        </NavLink>
+        <Navbar.Nav>
+          {renderRoutes(routes)}
+        </Navbar.Nav>
+      </Navbar.Wrap>
     </Navbar.Inner>
   </Navbar.Wrapper>
 )
