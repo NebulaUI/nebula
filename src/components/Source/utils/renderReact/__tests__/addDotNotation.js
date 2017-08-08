@@ -17,5 +17,17 @@ describe('addDotNotation', () => {
     it('Adds the Dot when the tag has props', () => {
       expect(addDotNotation('<SiteWrap reverse />')).toBe('<Site.Wrap reverse />')
     })
+
+    it('Adds dot notation when there are multiple capital letters', () => {
+      expect(addDotNotation('<BareListWrapper />')).toBe('<Bare.List.Wrapper />')
+    })
+
+    it('Can take a dictionary with which to override the replacement', () => {
+      const dictionary = {
+        BareListWrapper: 'BareList.Wrapper'
+      }
+      expect(addDotNotation('<BareListWrapper />', dictionary))
+        .toBe('<BareList.Wrapper />')
+    })
   })
 })

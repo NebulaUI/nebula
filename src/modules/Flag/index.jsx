@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import T from 'prop-types'
-import { Flag } from 'nebula-react'
+import { Flag, SiteWrap, Section } from 'nebula-react'
 
 import ComponentExample, { ComponentDescription, ComponentOptions, ComponentRendered } from 'components/ComponentExample'
 import exampleImage from 'assets/img/nebula.jpg'
@@ -78,24 +78,26 @@ class FlagExample extends Component {
       flagWrapperProps
     }
     return (
-      <div>
-        <h2>Flag Object</h2>
-        <ComponentExample type="Flag">
-          <ComponentDescription>
-            <Description />
-          </ComponentDescription>
-          <ComponentOptions>
-            <Options
-              optionState={this.state}
-              setAlignment={this.setAlignment}
-              setReverse={this.setReverse}
-            />
-          </ComponentOptions>
-          <ComponentRendered>
-            {ComponentToRender(props)}
-          </ComponentRendered>
-        </ComponentExample>
-      </div>
+      <Section>
+        <SiteWrap>
+          <h2>Flag Object</h2>
+          <ComponentExample type="Flag">
+            <ComponentDescription>
+              <Description />
+            </ComponentDescription>
+            <ComponentOptions>
+              <Options
+                optionState={this.state}
+                setAlignment={this.setAlignment}
+                setReverse={this.setReverse}
+              />
+            </ComponentOptions>
+            <ComponentRendered>
+              {ComponentToRender(props)}
+            </ComponentRendered>
+          </ComponentExample>
+        </SiteWrap>
+      </Section>
     )
   }
 }

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Navbar } from 'nebula-react'
+import { Navbar, SiteWrap, Section } from 'nebula-react'
 
 import ComponentExample, { ComponentDescription, ComponentOptions, ComponentRendered } from 'components/ComponentExample'
 
@@ -7,7 +7,7 @@ import Description from './Description'
 import Options from './Options'
 
 const ComponentToRender = () => (
-  <Navbar.Wrapper>
+  <Navbar.Wrapper style={{ position: 'relative' }}>
     <Navbar.Overlay />
     <Navbar.Inner>
       <Navbar.Toggle.Wrapper>
@@ -58,20 +58,22 @@ class NavbarExample extends Component {
 
   render() {
     return (
-      <div>
-        <h2>Navbar</h2>
-        <ComponentExample type="Navbar">
-          <ComponentDescription>
-            <Description />
-          </ComponentDescription>
-          <ComponentOptions>
-            <Options />
-          </ComponentOptions>
-          <ComponentRendered>
-            {ComponentToRender()}
-          </ComponentRendered>
-        </ComponentExample>
-      </div>
+      <SiteWrap>
+        <Section>
+          <h2>Navbar</h2>
+          <ComponentExample type="Navbar">
+            <ComponentDescription>
+              <Description />
+            </ComponentDescription>
+            <ComponentOptions>
+              <Options />
+            </ComponentOptions>
+            <ComponentRendered>
+              {ComponentToRender()}
+            </ComponentRendered>
+          </ComponentExample>
+        </Section>
+      </SiteWrap>
     )
   }
 }

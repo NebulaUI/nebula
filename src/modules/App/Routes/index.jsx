@@ -17,10 +17,13 @@ const Routes = () => (
           <NavLink exact className="c-navbar__link" activeClassName="is-active" to="/">Home</NavLink>
         </Navbar.Item>
         <Navbar.Item>
-          <NavLink className="c-navbar__link" activeClassName="is-active" to="/objects/Flag">Flag</NavLink>
+          <NavLink className="c-navbar__link" activeClassName="is-active" to="/objects/bare-list">BareList</NavLink>
         </Navbar.Item>
         <Navbar.Item>
-          <NavLink className="c-navbar__link" activeClassName="is-active" to="/components/Navbar">Navbar</NavLink>
+          <NavLink className="c-navbar__link" activeClassName="is-active" to="/objects/flag">Flag</NavLink>
+        </Navbar.Item>
+        <Navbar.Item>
+          <NavLink className="c-navbar__link" activeClassName="is-active" to="/components/navbar">Navbar</NavLink>
         </Navbar.Item>
       </Navbar.Nav>
     </Navbar.Inner>
