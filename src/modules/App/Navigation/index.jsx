@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import T from 'prop-types'
 import classNames from 'classnames'
-import { NavLink, Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import { withRouter } from 'react-router'
 import { Navbar } from 'nebula-react'
 
@@ -74,9 +74,13 @@ class Routes extends Component {
           </Navbar.Content>
           <Navbar.Content right node="div" keepAtTop>
             <Navbar.Item node="div" resetLineHeight>
-              <Link to="/get-started" className="c-btn c-btn--sm c-btn--alpha">
+              <NavLink
+                activeStyle={{ display: 'none' }}
+                to="/get-started"
+                className="c-btn c-btn--sm c-btn--alpha"
+              >
                 Get started!
-              </Link>
+              </NavLink>
             </Navbar.Item>
           </Navbar.Content>
         </Navbar.Inner>
