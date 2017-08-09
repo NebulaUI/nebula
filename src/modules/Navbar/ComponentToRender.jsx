@@ -40,7 +40,7 @@ const ComponentToRender = () => (
           </Navbar.Link>
         </Navbar.Item>
       </Navbar.Content>
-      <Navbar.Content right node="div">
+      <Navbar.Content right node="div" keepAtTop>
         <Navbar.Item node="div" resetLineHeight>
           <button className="c-btn c-btn--sm c-btn--alpha">
             Call to action
