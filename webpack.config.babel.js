@@ -8,7 +8,7 @@ const common = {
   entry: path.resolve(__dirname, './src'),
   output: {
     path: path.resolve(__dirname, 'dist'),
-    publicPath: '/',
+    publicPath: '/nebula',
     filename: 'bundle.js'
   },
   module: {
@@ -48,9 +48,15 @@ const common = {
       }
     ]
   },
-  plugins: [new HtmlWebpackPlugin({
-    template: 'src/index.html'
-  })],
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: 'src/index.html'
+    }),
+    new HtmlWebpackPlugin({
+      filename: '404.html',
+      template: 'src/404.html'
+    })
+  ],
   resolve: {
     modules: ['node_modules', 'src'],
     extensions: ['.js', '.jsx']
@@ -59,15 +65,14 @@ const common = {
 
 const dev = {
   devServer: {
-    historyApiFallback: true
+    historyApiFallback: {
+      index: '/nebula/index.html'
+    }
   },
   devtool: 'source-map'
 }
 
 const prod = {
-  output: {
-    publicPath: '/nebula'
-  },
   plugins: [
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('production')

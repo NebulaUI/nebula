@@ -66,7 +66,7 @@ class Routes extends Component {
           <Navbar.Toggle.Wrapper ref={(node) => { this.toggle = node }}>
             <Navbar.Toggle.Bars />
           </Navbar.Toggle.Wrapper>
-          <NavLink className="c-navbar__logo" to="/">
+          <NavLink className="c-navbar__logo" to="/nebula">
             Nebula
           </NavLink>
           <Navbar.Content>
@@ -76,7 +76,7 @@ class Routes extends Component {
             <Navbar.Item node="div" resetLineHeight>
               <NavLink
                 activeStyle={{ display: 'none' }}
-                to="/get-started"
+                to="/nebula/get-started"
                 className="c-btn c-btn--sm c-btn--alpha"
               >
                 Get started!

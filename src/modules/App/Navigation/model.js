@@ -1,24 +1,24 @@
 const model = [
   {
-    to: '/objects',
+    to: '/nebula/objects',
     label: 'Objects',
     children: [
       {
-        to: '/objects/flag',
+        to: '/nebula/objects/flag',
         label: 'Flag'
       },
       {
-        to: '/objects/bare-list',
+        to: '/nebula/objects/bare-list',
         label: 'Bare List'
       }
     ]
   },
   {
-    to: '/components',
+    to: '/nebula/components',
     label: 'Components',
     children: [
       {
-        to: '/components/navbar',
+        to: '/nebula/components/navbar',
         label: 'Navbar'
       }
     ]

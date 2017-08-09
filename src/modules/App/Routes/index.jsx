@@ -10,11 +10,11 @@ import NotFound from 'modules/NotFound'
 
 const Routes = () => (
   <Switch>
-    <Route exact path="/" component={Home} />
-    <Route exact path="/get-started" component={GetStarted} />
-    <Route exact path="/objects/flag" component={Flag} />
-    <Route exact path="/objects/bare-list" component={BareList} />
-    <Route exact path="/components/navbar" component={Navbar} />
+    <Route exact path="/nebula/" component={Home} />
+    <Route exact path="/nebula/get-started" component={GetStarted} />
+    <Route exact path="/nebula/objects/flag" component={Flag} />
+    <Route exact path="/nebula/objects/bare-list" component={BareList} />
+    <Route exact path="/nebula/components/navbar" component={Navbar} />
     <Route component={NotFound} />
   </Switch>
 )

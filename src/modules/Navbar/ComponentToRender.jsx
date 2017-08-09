@@ -8,12 +8,12 @@ const ComponentToRender = () => (
       <Navbar.Toggle.Wrapper aria-hidden="true" tabIndex="0">
         <Navbar.Toggle.Bars />
       </Navbar.Toggle.Wrapper>
-      <Navbar.Logo to="/">
+      <Navbar.Logo to="/nebula">
         Nebula
       </Navbar.Logo>
       <Navbar.Content>
         <Navbar.Item>
-          <Navbar.Link to="/Spacetime">
+          <Navbar.Link to="/nebula/spacetime">
             Spacetime
           </Navbar.Link>
         </Navbar.Item>
@@ -23,19 +23,19 @@ const ComponentToRender = () => (
           </Navbar.Dropdown.Toggle>
           <Navbar.Dropdown.Content>
             <Navbar.Item>
-              <Navbar.Link to="/galaxies/milky-way">
+              <Navbar.Link to="/nebula/galaxies/milky-way">
                 Milky Way
               </Navbar.Link>
             </Navbar.Item>
             <Navbar.Item>
-              <Navbar.Link className="is-active" to="/galaxies/andromeda">
+              <Navbar.Link className="is-active" to="/nebula/galaxies/andromeda">
                 Andromeda
               </Navbar.Link>
             </Navbar.Item>
           </Navbar.Dropdown.Content>
         </Navbar.Dropdown.Wrapper>
         <Navbar.Item>
-          <Navbar.Link to="/pulsars">
+          <Navbar.Link to="/nebula/pulsars">
             Pulsars
           </Navbar.Link>
         </Navbar.Item>
