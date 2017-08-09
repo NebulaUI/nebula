@@ -65,6 +65,9 @@ const dev = {
 }
 
 const prod = {
+  output: {
+    publicPath: '/nebula'
+  },
   plugins: [
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('production')
