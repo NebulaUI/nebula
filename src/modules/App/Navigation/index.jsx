@@ -69,9 +69,9 @@ class Routes extends Component {
           <NavLink className="c-navbar__logo" to="/">
             Nebula
           </NavLink>
-          <Navbar.Nav>
+          <Navbar.Content>
             {renderRoutes(routes, this.props.location.pathname)}
-          </Navbar.Nav>
+          </Navbar.Content>
         </Navbar.Inner>
       </Navbar.Wrapper>
     )

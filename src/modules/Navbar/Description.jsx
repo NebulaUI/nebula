@@ -2,7 +2,7 @@ import React from 'react'
 
 const Description = () => (
   <div>
-    This is the navbar…
+    A responsive navbar that can include dropdowns, secondary content that can be positioned.
   </div>
 )
 

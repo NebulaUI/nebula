@@ -11,7 +11,7 @@ const ComponentToRender = () => (
       <Navbar.Logo to="/">
         Nebula
       </Navbar.Logo>
-      <Navbar.Nav>
+      <Navbar.Content>
         <Navbar.Item>
           <Navbar.Link to="/Spacetime">
             Spacetime
@@ -39,7 +39,14 @@ const ComponentToRender = () => (
             Pulsars
           </Navbar.Link>
         </Navbar.Item>
-      </Navbar.Nav>
+      </Navbar.Content>
+      <Navbar.Content right node="div">
+        <Navbar.Item node="div" resetLineHeight>
+          <button className="c-btn c-btn--sm c-btn--alpha">
+            Call to action
+          </button>
+        </Navbar.Item>
+      </Navbar.Content>
     </Navbar.Inner>
   </Navbar.Wrapper>
 )
