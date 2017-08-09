@@ -16,47 +16,47 @@ const Options = ({
       <BareList.Item>
         <input
           type="checkbox"
-          id="navbar.sticky"
+          id="sticky"
           onChange={setSticky}
           checked={optionState.sticky}
         />
-        <label htmlFor="navbar.sticky">Sticky</label>
+        <label htmlFor="sticky">Sticky</label>
       </BareList.Item>
       <BareList.Item>
         <input
           type="checkbox"
-          id="navbar.content1.right"
+          id="content1.right"
           onChange={setContent1Right}
           checked={optionState.content1.right}
         />
-        <label htmlFor="navbar.content1.right">Content1 right</label>
+        <label htmlFor="content1.right">Content1 right</label>
       </BareList.Item>
       <BareList.Item>
         <input
           type="checkbox"
-          id="navbar.content2.right"
+          id="content2.right"
           onChange={setContent2Right}
           checked={optionState.content2.right}
         />
-        <label htmlFor="navbar.content2.right">Content2 Right</label>
+        <label htmlFor="content2.right">Content2 Right</label>
       </BareList.Item>
       <BareList.Item>
         <input
           type="checkbox"
-          id="navbar.content2.KeepAtTop"
+          id="content2.keepAtTop"
           onChange={setContent2KeepAtTop}
           checked={optionState.content2.keepAtTop}
         />
-        <label htmlFor="navbar.content2.KeepAtTop">Content2 KeepAtTop</label>
+        <label htmlFor="content2.keepAtTop">Content2 KeepAtTop</label>
       </BareList.Item>
       <BareList.Item>
         <input
           type="checkbox"
-          id="navbar.content2.ResetLineHeight"
+          id="content2.resetLineHeight"
           onChange={setContent2ResetLineHeight}
           checked={optionState.content2.resetLineHeight}
         />
-        <label htmlFor="navbar.content2.ResetLineHeight">Content2 ResetLineHeight</label>
+        <label htmlFor="content2.resetLineHeight">Content2 ResetLineHeight</label>
       </BareList.Item>
     </BareList.Wrapper>
   </div>

@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 
+import { buildNewState } from 'utils'
+
 import ComponentExample, {
   ComponentDescription,
   ComponentRendered,
@@ -33,47 +35,26 @@ class NavbarExample extends Component {
     }
   }
 
-  setSticky = ({ target: { checked } }) => {
+  setNewState = (id, value) => {
     this.setState({
-      sticky: checked
+      ...buildNewState(this.state, id, value)
     })
   }
 
-  setContent1Right = ({ target: { checked } }) => {
-    this.setState({
-      content1: {
-        ...this.state.content1,
-        right: checked
-      }
-    })
-  }
+  setSticky = ({ target: { id, checked } }) =>
+    this.setNewState(id, checked)
 
-  setContent2Right = ({ target: { checked } }) => {
-    this.setState({
-      content2: {
-        ...this.state.content2,
-        right: checked
-      }
-    })
-  }
+  setContent1Right = ({ target: { id, checked } }) =>
+    this.setNewState(id, checked)
 
-  setContent2KeepAtTop = ({ target: { checked } }) => {
-    this.setState({
-      content2: {
-        ...this.state.content2,
-        keepAtTop: checked
-      }
-    })
-  }
+  setContent2Right = ({ target: { id, checked } }) =>
+    this.setNewState(id, checked)
 
-  setContent2ResetLineHeight = ({ target: { checked } }) => {
-    this.setState({
-      content2: {
-        ...this.state.content2,
-        resetLineHeight: checked
-      }
-    })
-  }
+  setContent2KeepAtTop = ({ target: { id, checked } }) =>
+    this.setNewState(id, checked)
+
+  setContent2ResetLineHeight = ({ target: { id, checked } }) =>
+    this.setNewState(id, checked)
 
   render() {
     return (
