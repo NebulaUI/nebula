@@ -1,6 +1,7 @@
 import React from 'react'
 
 import replaceBase64 from '../replaceBase64'
+import removeNull from './removeNull'
 import addDotNotation from './addDotNotation'
 import renderProps from './renderProps'
 import getData from './getData'
@@ -29,7 +30,7 @@ const renderNode = (node, componentNameOverride, depth = 0) => {
   let nodeString = createInitialNodeString(node, name)
 
   if (!children) {
-    return addDotNotation(replaceBase64(`${nodeString} />`), componentNameOverride)
+    return addDotNotation(removeNull(replaceBase64(`${nodeString} />`), componentNameOverride))
   }
 
   nodeString += '>'
@@ -39,7 +40,7 @@ const renderNode = (node, componentNameOverride, depth = 0) => {
     nodeString += renderNode(childElement, componentNameOverride, depth + 1)
   })
 
-  return addDotNotation(replaceBase64(`${nodeString}\r\n</${name}>`), componentNameOverride)
+  return addDotNotation(removeNull(replaceBase64(`${nodeString}\r\n</${name}>`), componentNameOverride))
 }
 
 export default renderNode

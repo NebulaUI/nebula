@@ -18,27 +18,28 @@ class NavbarExample extends Component {
 
     this.state = {
       sticky: false,
-      content1: {
-        right: false
+      reverseSourceOrder: false,
+      logoIncluded: true,
+      navItems: {
+        included: true,
+        right: false,
+        dropdownAlignment: 'south-east'
       },
-      content2: {
+      secondaryContent: {
+        included: true,
         right: true,
         keepAtTop: true,
-        resetLineHeight: true
+        resetLineHeight: true,
+        componentType: 'button'
       }
     }
   }
 
-  setNewState = (id, value) => {
+  handleOptionChange = (key, value) => {
     this.setState({
-      ...buildNewState(this.state, id, value)
+      ...buildNewState(this.state, key, value)
     })
   }
-
-  handleCheckboxChange = ({ target }) => {
-    this.setNewState(target.getAttribute('data-stateKey'), target.checked)
-  }
-
 
   render() {
     const style = {
@@ -56,10 +57,7 @@ class NavbarExample extends Component {
             <Description />
           </ComponentDescription>
           <ComponentOptions>
-            <Options
-              optionState={this.state}
-              setCheckBoxOption={this.handleCheckboxChange}
-            />
+            <Options optionState={this.state} handleChange={this.handleOptionChange} />
           </ComponentOptions>
           <ComponentRendered>
             {ComponentToRender(this.state)}
