@@ -1,73 +1,46 @@
 import React from 'react'
 import T from 'prop-types'
-
+import shortid from 'shortid'
 import { BareList } from 'nebula-react'
 
+import { getDeepObjectValue } from 'utils'
+
 const Options = ({
-  setSticky,
-  setContent1Right,
-  setContent2Right,
-  setContent2KeepAtTop,
-  setContent2ResetLineHeight,
+  setCheckBoxOption,
   optionState
-}) => (
-  <div>
-    <BareList.Wrapper spacing="md">
+}) => {
+  const Checkbox = ({ id, children }) => {
+    const newId = shortid()
+    const isChecked = getDeepObjectValue(optionState, id)
+    return (
       <BareList.Item>
         <input
           type="checkbox"
-          id="sticky"
-          onChange={setSticky}
-          checked={optionState.sticky}
+          id={newId}
+          onChange={setCheckBoxOption}
+          data-stateKey={id}
+          checked={isChecked}
         />
-        <label htmlFor="sticky">Sticky</label>
+        <label htmlFor={newId}>{ children }</label>
       </BareList.Item>
-      <BareList.Item>
-        <input
-          type="checkbox"
-          id="content1.right"
-          onChange={setContent1Right}
-          checked={optionState.content1.right}
-        />
-        <label htmlFor="content1.right">Content1 right</label>
-      </BareList.Item>
-      <BareList.Item>
-        <input
-          type="checkbox"
-          id="content2.right"
-          onChange={setContent2Right}
-          checked={optionState.content2.right}
-        />
-        <label htmlFor="content2.right">Content2 Right</label>
-      </BareList.Item>
-      <BareList.Item>
-        <input
-          type="checkbox"
-          id="content2.keepAtTop"
-          onChange={setContent2KeepAtTop}
-          checked={optionState.content2.keepAtTop}
-        />
-        <label htmlFor="content2.keepAtTop">Content2 KeepAtTop</label>
-      </BareList.Item>
-      <BareList.Item>
-        <input
-          type="checkbox"
-          id="content2.resetLineHeight"
-          onChange={setContent2ResetLineHeight}
-          checked={optionState.content2.resetLineHeight}
-        />
-        <label htmlFor="content2.resetLineHeight">Content2 ResetLineHeight</label>
-      </BareList.Item>
-    </BareList.Wrapper>
-  </div>
-)
+    )
+  }
+
+  return (
+    <div>
+      <BareList.Wrapper spacing="md">
+        <Checkbox id="sticky">Fix at the top of the viewport</Checkbox>
+        <Checkbox id="content1.right">Align nav items to the right (float right)</Checkbox>
+        <Checkbox id="content2.right">Align secondary content to the right (float right)</Checkbox>
+        <Checkbox id="content2.keepAtTop">Keep secondary content at the top when collapsed (Small viewports)</Checkbox>
+        <Checkbox id="content2.resetLineHeight">Reset the line-height for secondary content.</Checkbox>
+      </BareList.Wrapper>
+    </div>
+  )
+}
 
 Options.propTypes = {
-  setSticky: T.func.isRequired,
-  setContent1Right: T.func.isRequired,
-  setContent2Right: T.func.isRequired,
-  setContent2KeepAtTop: T.func.isRequired,
-  setContent2ResetLineHeight: T.func.isRequired,
+  setCheckBoxOption: T.func.isRequired,
   optionState: T.shape({}).isRequired
 }
 

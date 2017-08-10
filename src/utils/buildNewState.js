@@ -1,6 +1,10 @@
 const splitId = str => str.split('.')
 
 const buildNewState = (state, id, value) => {
+  if (!id) {
+    return
+  }
+
   const newId = splitId(id)
 
   if (newId.length === 1) {

@@ -12,12 +12,6 @@ import Description from './Description'
 import Options from './Options'
 import ComponentToRender from './ComponentToRender'
 
-const style = {
-  position: 'relative',
-  overflow: 'hidden',
-  minHeight: '500px'
-}
-
 class NavbarExample extends Component {
   constructor() {
     super()
@@ -41,22 +35,19 @@ class NavbarExample extends Component {
     })
   }
 
-  setSticky = ({ target: { id, checked } }) =>
-    this.setNewState(id, checked)
+  handleCheckboxChange = ({ target }) => {
+    this.setNewState(target.getAttribute('data-stateKey'), target.checked)
+  }
 
-  setContent1Right = ({ target: { id, checked } }) =>
-    this.setNewState(id, checked)
-
-  setContent2Right = ({ target: { id, checked } }) =>
-    this.setNewState(id, checked)
-
-  setContent2KeepAtTop = ({ target: { id, checked } }) =>
-    this.setNewState(id, checked)
-
-  setContent2ResetLineHeight = ({ target: { id, checked } }) =>
-    this.setNewState(id, checked)
 
   render() {
+    const style = {
+      position: 'relative',
+      overflow: 'hidden',
+      minHeight: '500px',
+      zIndex: this.state.sticky ? 1 : 0
+    }
+
     return (
       <div>
         <h1>Navbar</h1>
@@ -67,11 +58,7 @@ class NavbarExample extends Component {
           <ComponentOptions>
             <Options
               optionState={this.state}
-              setSticky={this.setSticky}
-              setContent1Right={this.setContent1Right}
-              setContent2Right={this.setContent2Right}
-              setContent2KeepAtTop={this.setContent2KeepAtTop}
-              setContent2ResetLineHeight={this.setContent2ResetLineHeight}
+              setCheckBoxOption={this.handleCheckboxChange}
             />
           </ComponentOptions>
           <ComponentRendered>
