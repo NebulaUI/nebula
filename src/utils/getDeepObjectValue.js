@@ -1,6 +1,8 @@
-const splitKeyString = s => Array.isArray(s)
-  ? s
-  : s.split('.')
+const splitKeyString = s => (
+  Array.isArray(s)
+    ? s
+    : s.split('.')
+)
 
 const getCurrentValue = (o, k) => o[k[0]]
 
@@ -8,7 +10,7 @@ const removeFirst = a => a.slice(1)
 
 const getDeepObjectValue = (object, keyString) => {
   if (!keyString || !object) {
-    return
+    return undefined
   }
 
   const str = splitKeyString(keyString)

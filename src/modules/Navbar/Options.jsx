@@ -26,6 +26,11 @@ const Options = ({
     )
   }
 
+  Checkbox.propTypes = {
+    id: T.string.isRequired,
+    children: T.node.isRequired
+  }
+
   return (
     <div>
       <BareList.Wrapper spacing="md">

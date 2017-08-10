@@ -2,7 +2,7 @@ const splitId = str => str.split('.')
 
 const buildNewState = (state, id, value) => {
   if (!id) {
-    return
+    return undefined
   }
 
   const newId = splitId(id)
