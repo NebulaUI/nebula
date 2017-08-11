@@ -1,35 +1,36 @@
-const splitId = s => (
+const split = s => (
   Array.isArray(s)
     ? s
     : s.split('.')
 )
 
+const leafSegment = id => id.length === 1
+const requiredArgs = (st, id) => st && id
 const extractFirstItem = a => a[0]
-
-const removeFirst = a => a.slice(1)
+const getNextId = a => a.slice(1)
+const getNextStateSegment = (st, id) => st[extractFirstItem(id)]
 
 const buildNewState = (state, id, value) => {
-  if (!state || !id) {
+  if (!requiredArgs(state, id)) {
     return undefined
   }
 
-  const newId = splitId(id)
-
-  if (newId.length === 1) {
-    return {
-      ...state,
-      [newId]: value
-    }
-  }
-
-  const nextState = state[extractFirstItem(newId)]
-  const nextId = removeFirst((newId))
+  const newId = split(id)
+  const nextStateSegment = getNextStateSegment(state, newId)
+  const nextId = getNextId(newId)
   const currentKey = extractFirstItem(newId)
 
-  return {
-    ...state,
-    [currentKey]: buildNewState(nextState, nextId, value)
-  }
+  const getNewState = () => ({
+    [newId]: value
+  })
+
+  const buildNextStateSegment = () => ({
+    [currentKey]: buildNewState(nextStateSegment, nextId, value)
+  })
+
+  return leafSegment(newId)
+    ? { ...state, ...getNewState() }
+    : { ...state, ...buildNextStateSegment() }
 }
 
 export default buildNewState
