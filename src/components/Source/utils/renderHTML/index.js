@@ -2,6 +2,7 @@ import pretty from 'pretty'
 import { renderToString } from 'react-dom/server'
 import replaceBase64 from '../replaceBase64'
 import removeSelfClosingTags from './removeSelfClosingTags'
+import stripAttribute from './stripAttribute'
 
 const filteredAttributes = [
   'data-reactroot',
@@ -9,14 +10,11 @@ const filteredAttributes = [
   'data-react-checksum'
 ]
 
-export default component => pretty(
-  filteredAttributes.reduce((html, attr) =>
-      removeSelfClosingTags(replaceBase64(
-        html
-          .replace(new RegExp(`${attr}=(["'])(?:(?=(\\\\?))\\2.)*?\\1`, 'g'), '')
-          .replace(/\s{1,}>/g, '>'),
-        'HTML',
-      )),
-    renderToString(component),
-  ),
-)
+const cleanUp = html => removeSelfClosingTags(replaceBase64(html, 'HTML'))
+
+const cleanComponent = component =>
+  cleanUp(filteredAttributes.reduce(stripAttribute, renderToString(component)))
+
+const renderHTML = component => pretty(cleanComponent(component))
+
+export default renderHTML
