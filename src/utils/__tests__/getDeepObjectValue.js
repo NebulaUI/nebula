@@ -26,7 +26,7 @@ describe('getDeepObjectValue', () => {
     expect(getDeepObjectValue(state, undefined)).toBe(undefined)
   })
 
-  it('returns the value if keyString has a depth of 2', () => {
+  it.only('returns the value if keyString has a depth of 2', () => {
     const state = {
       oneDeep: {
         twoDeep: 'it works'

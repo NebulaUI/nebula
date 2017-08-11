@@ -12,6 +12,7 @@
     "start": "webpack-dev-server --open-page \"nebula\"",
     "lint": "eslint . --ext .js,.jsx",
     "unit": "jest",
+    "unit:watch": "jest --watch",
     "unit:coverage": "jest --coverage",
     "unit:ci": "jest --maxWorkers=4",
     "test": "yarn lint && yarn unit",

@@ -1,4 +1,11 @@
-const splitId = str => str.split('.')
+const splitId = s =>
+  Array.isArray(s)
+    ? s
+    : s.split('.')
+
+const extractFirstItem = a => a[0]
+
+const removeFirst = a => a.slice(1)
 
 const buildNewState = (state, id, value) => {
   if (!id) {
@@ -14,47 +21,14 @@ const buildNewState = (state, id, value) => {
     }
   }
 
-  if (newId.length === 2) {
-    return {
-      ...state,
-      [newId[0]]: {
-        ...state[newId[0]],
-        [newId[1]]: value
-      }
-    }
-  }
+  const nextState = state[extractFirstItem(newId)]
+  const nextId = removeFirst((newId))
+  const currentKey = extractFirstItem(newId)
 
-  if (newId.length === 3) {
-    return {
-      ...state,
-      [newId[0]]: {
-        ...state[newId[0]],
-        [newId[1]]: {
-          ...state[newId[0]][newId[1]],
-          [newId[2]]: value
-        }
-      }
-    }
+  return {
+    ...state,
+    [currentKey]: buildNewState(nextState, nextId, value)
   }
-
-  return state
 }
 
-
 export default buildNewState
-
-/*
-splitProps(id).reduce((acc, curr, i, arr) => {
-  if (i === arr.length - 1) {
-    return {
-      ...acc,
-      ...state[curr],
-      [curr]: value
-    }
-  } else {
-    acc[curr] = buildNewState(state, curr, value)
-    return acc
-  }
-  return acc
-}, {})
-*/
