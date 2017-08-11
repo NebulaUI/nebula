@@ -12,7 +12,7 @@ import Options from './Options'
 import ComponentToRender from './ComponentToRender'
 
 const componentNameOverride = {
-  BrowserRouter: 'Router',
+  BrowserRouter: 'Router'
 }
 
 

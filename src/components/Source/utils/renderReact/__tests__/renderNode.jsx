@@ -19,7 +19,7 @@ describe('renderNode', () => {
   })
 
   it('strips unwanted content from component', () => {
-    const TestComponent = () => {}
+    /* eslint-disable jsx-quotes */
     const node = (
       <div>
         <img src="http://test.com/test.jpg" alt="" />
@@ -27,6 +27,7 @@ describe('renderNode', () => {
         <div component='{TestComponent()}' />
       </div>
     )
+    /* eslint-enable */
     expect(renderNode(node)).not.toContain('null')
     expect(renderNode(node)).not.toContain('http://test.com/test.jpg')
     expect(renderNode(node)).toContain('src={nebula}')

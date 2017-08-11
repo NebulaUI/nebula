@@ -1,5 +1,5 @@
 const removeFunctionCallParens = str =>
-  str.replace(/{[a-zA-Z]+\(\)}/g, (component) =>
+  str.replace(/{[a-zA-Z]+\(\)}/g, component =>
     component.replace(/\(\)/, ''))
 
 

@@ -14,7 +14,7 @@ const ComponentToRender = ({
   secondaryContent
 }) => {
   const dropdownAlignment = navItems.dropdownAlignment === 'south-west'
-  const buildNavLink = (to, children, className) =>
+  const buildNavLink = (to, children, className) => (
     reactRouter ? (
       <Navbar.Link component={NavLink} to={to}>
         { children }
@@ -24,6 +24,7 @@ const ComponentToRender = ({
         { children }
       </Navbar.Link>
     )
+  )
   const NavItems = (
     <Navbar.Content {...removeFalsy({ right: navItems.right })}>
       <Navbar.Item>

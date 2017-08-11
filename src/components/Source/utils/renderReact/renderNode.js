@@ -6,7 +6,6 @@ import removeFunctionCallParens from './removeFunctionCallParens'
 import addDotNotation from './addDotNotation'
 import renderProps from './renderProps'
 import getData from './getData'
-import { isObject } from './generic'
 
 const getFilteredProps = (node) => {
   const props = { ...node.props }

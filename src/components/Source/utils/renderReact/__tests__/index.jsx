@@ -5,7 +5,7 @@ describe('renderReact', () => {
   it('renders the react component to a string using the pretty library', () => {
     const input = <div>test</div>
 
-    expect(renderReact(input)).toBe(`<div>\r\n  test\r\n</div>`)
+    expect(renderReact(input)).toBe('<div>\r\n  test\r\n</div>')
   })
 
   it('adds dot notation to components', () => {
@@ -15,7 +15,7 @@ describe('renderReact', () => {
   })
 
   it('strips unwanted content from component', () => {
-    const TestComponent = () => {}
+    /* eslint-disable jsx-quotes */
     const node = (
       <div>
         <img src="http://test.com/test.jpg" alt="" />
@@ -23,6 +23,7 @@ describe('renderReact', () => {
         <div component='{TestComponent()}' />
       </div>
     )
+    /* eslint-enable */
     expect(renderReact(node)).not.toContain('null')
     expect(renderReact(node)).not.toContain('http://test.com/test.jpg')
     expect(renderReact(node)).toContain('src={nebula}')
@@ -37,6 +38,6 @@ describe('renderReact', () => {
       FlagComponent: 'TestComponent'
     }
     const node = <Flag><FlagComponent /></Flag>
-    expect(renderReact(node, override)).toBe(`<Flag>\r\n  <TestComponent />\r\n</Flag>`)
+    expect(renderReact(node, override)).toBe('<Flag>\r\n  <TestComponent />\r\n</Flag>')
   })
 })
