@@ -9,7 +9,7 @@ const extractFirstItem = a => a[0]
 const removeFirst = a => a.slice(1)
 
 const buildNewState = (state, id, value) => {
-  if (!id) {
+  if (!state || !id) {
     return undefined
   }
 

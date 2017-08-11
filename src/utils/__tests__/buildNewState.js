@@ -16,6 +16,11 @@ describe('buildNewState', () => {
     })
   })
 
+  it('returns undefined if state or id are falsy', () => {
+    expect(buildNewState(undefined))
+    expect(buildNewState('_', undefined))
+  })
+
   it('handles nested state', () => {
     const state = {
       dogs: {
