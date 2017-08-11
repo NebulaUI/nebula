@@ -1,7 +1,8 @@
-const splitId = s =>
+const splitId = s => (
   Array.isArray(s)
     ? s
     : s.split('.')
+)
 
 const extractFirstItem = a => a[0]
 
