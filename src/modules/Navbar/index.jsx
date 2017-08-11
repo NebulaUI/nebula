@@ -20,6 +20,7 @@ class NavbarExample extends Component {
       sticky: false,
       reverseSourceOrder: false,
       logoIncluded: true,
+      reactRouter: false,
       navItems: {
         included: true,
         right: false,
@@ -49,10 +50,15 @@ class NavbarExample extends Component {
       zIndex: this.state.sticky ? 1 : 0
     }
 
+    const extraString = this.state.reactRouter
+      ? `
+import { NavLink } from 'react-router-dom'`
+      : ''
+
     return (
       <div>
         <h1>Navbar</h1>
-        <ComponentExample type="Navbar" style={style}>
+        <ComponentExample extraString={extraString} type="Navbar" style={style}>
           <ComponentDescription>
             <Description />
           </ComponentDescription>

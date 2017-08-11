@@ -30,13 +30,13 @@ buildDropdown.propTypes = {
 
 const buildItem = ({ to, label }) => (
   <Navbar.Item key={to}>
-    <NavLink
-      className="c-navbar__link"
+    <Navbar.Link
+      component={NavLink}
       activeClassName="is-active"
       to={to}
     >
-      { label }
-    </NavLink>
+      {label}
+    </Navbar.Link>
   </Navbar.Item>
 )
 

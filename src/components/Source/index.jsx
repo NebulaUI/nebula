@@ -6,14 +6,14 @@ import Code from './Code'
 import renderHTML from './utils/renderHTML'
 import renderReact from './utils/renderReact'
 
-const Source = ({ type, description, options, children, componentNameOverride }) => (
+const Source = ({ type, extraString, description, options, children, componentNameOverride }) => (
   <div>
     <Tabs.Wrapper>
       <Tabs.TabList>
         { description ? <Tabs.Tab>Description</Tabs.Tab> : null }
         { options ? <Tabs.Tab>Options</Tabs.Tab> : null }
         <Tabs.Tab>HTML code</Tabs.Tab>
-        <Tabs.Tab>React code</Tabs.Tab>
+        <Tabs.Tab>React code (ES6)</Tabs.Tab>
       </Tabs.TabList>
       <Tabs.Panels>
         { description ? <Tabs.Panel>{description}</Tabs.Panel> : null }
@@ -24,7 +24,7 @@ const Source = ({ type, description, options, children, componentNameOverride })
           </Code>
         </Tabs.Panel>
         <Tabs.Panel>
-          <Code componentName={type} language="jsx">
+          <Code componentName={type} extraString={extraString} language="jsx">
             { renderReact(children, componentNameOverride) }
           </Code>
         </Tabs.Panel>
@@ -35,6 +35,7 @@ const Source = ({ type, description, options, children, componentNameOverride })
 
 Source.propTypes = {
   type: T.string.isRequired,
+  extraString: T.string,
   description: T.node,
   options: T.node,
   componentNameOverride: T.shape({}),

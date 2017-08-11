@@ -13,6 +13,42 @@ const Options = ({ handleChange, optionState }) => {
     handleChange(target.getAttribute('data-stateKey'), target.value)
   }
 
+  const GlobalOptions = (
+    <BareList.Item>
+      <h2>Global navbar options</h2>
+      <BareList.Wrapper spacing="md" className="u-flush-bottom">
+        <CheckboxWrapper
+          stateKey="sticky"
+          optionState={optionState}
+          handleChange={handleCheckboxChange}
+        >
+          Fix at the top of the viewport
+        </CheckboxWrapper>
+        <CheckboxWrapper
+          stateKey="reactRouter"
+          optionState={optionState}
+          handleChange={handleCheckboxChange}
+        >
+          React Router (v4) Integration
+        </CheckboxWrapper>
+        <CheckboxWrapper
+          stateKey="logoIncluded"
+          optionState={optionState}
+          handleChange={handleCheckboxChange}
+        >
+          Include logo.
+        </CheckboxWrapper>
+        <CheckboxWrapper
+          stateKey="reverseSourceOrder"
+          optionState={optionState}
+          handleChange={handleCheckboxChange}
+        >
+          Reverse the source order of the Nav Items and Secondary content.
+        </CheckboxWrapper>
+      </BareList.Wrapper>
+    </BareList.Item>
+  )
+
   const NavItems = (
     <BareList.Item>
       <h3>Nav Items</h3>
@@ -28,7 +64,7 @@ const Options = ({ handleChange, optionState }) => {
       </BareList.Wrapper>
       {
         optionState.navItems.included && (
-          <BareList.Wrapper spacing="md">
+          <BareList.Wrapper spacing="md" className="u-flush-bottom">
             <CheckboxWrapper
               stateKey="navItems.right"
               optionState={optionState}
@@ -102,35 +138,13 @@ const Options = ({ handleChange, optionState }) => {
       }
     </BareList.Item>
   )
+
   return (
-    <div>
-      <h2>Global navbar options</h2>
-      <BareList.Wrapper spacing="md">
-        <CheckboxWrapper
-          stateKey="sticky"
-          optionState={optionState}
-          handleChange={handleCheckboxChange}
-        >
-          Fix at the top of the viewport
-        </CheckboxWrapper>
-        <CheckboxWrapper
-          stateKey="logoIncluded"
-          optionState={optionState}
-          handleChange={handleCheckboxChange}
-        >
-          Include logo.
-        </CheckboxWrapper>
-        <CheckboxWrapper
-          stateKey="reverseSourceOrder"
-          optionState={optionState}
-          handleChange={handleCheckboxChange}
-        >
-          Reverse the source order of the Nav Items and Secondary content.
-        </CheckboxWrapper>
-        {NavItems}
-        {SecondaryContent}
-      </BareList.Wrapper>
-    </div>
+    <BareList.Wrapper spacing="md">
+      {GlobalOptions}
+      {NavItems}
+      {SecondaryContent}
+    </BareList.Wrapper>
   )
 }
 

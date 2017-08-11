@@ -13,12 +13,12 @@ const getDeepObjectValue = (object, keyString) => {
     return undefined
   }
 
-  const str = splitKeyString(keyString)
-  const currentValue = getCurrentValue(object, str)
+  const keys = splitKeyString(keyString)
+  const currentValue = getCurrentValue(object, keys)
 
-  return str.length === 1
+  return keys.length === 1
     ? currentValue
-    : getDeepObjectValue(currentValue, removeFirst(str))
+    : getDeepObjectValue(currentValue, removeFirst(keys))
 }
 
 export default getDeepObjectValue
