@@ -24,10 +24,15 @@ describe('addDotNotation', () => {
 
     it('Can take a dictionary with which to override the replacement', () => {
       const dictionary = {
-        BareListWrapper: 'BareList.Wrapper'
+        BareListWrapper: 'BareList.Wrapper',
+        MyComponent: 'TestComponentHello'
       }
       expect(addDotNotation('<BareListWrapper />', dictionary))
         .toBe('<BareList.Wrapper />')
+      expect(addDotNotation('<MyComponent />', dictionary))
+        .toBe('<TestComponentHello />')
+      expect(addDotNotation('<TestComponentHello />', dictionary))
+        .toBe('<TestComponentHello />')
     })
   })
 })

@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-
 import { buildNewState } from 'utils'
 
 import ComponentExample, {
@@ -11,6 +10,11 @@ import ComponentExample, {
 import Description from './Description'
 import Options from './Options'
 import ComponentToRender from './ComponentToRender'
+
+const componentNameOverride = {
+  BrowserRouter: 'Router',
+}
+
 
 class NavbarExample extends Component {
   constructor() {
@@ -52,13 +56,13 @@ class NavbarExample extends Component {
 
     const extraString = this.state.reactRouter
       ? `
-import { NavLink } from 'react-router-dom'`
+import { BrowserRouter as Router, NavLink } from 'react-router-dom'`
       : ''
 
     return (
       <div>
         <h1>Navbar</h1>
-        <ComponentExample extraString={extraString} type="Navbar" style={style}>
+        <ComponentExample extraString={extraString} type="Navbar" componentNameOverride={componentNameOverride} style={style}>
           <ComponentDescription>
             <Description />
           </ComponentDescription>

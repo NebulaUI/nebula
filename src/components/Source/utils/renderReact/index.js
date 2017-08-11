@@ -1,7 +1,7 @@
 import pretty from 'pretty'
 import renderNode from './renderNode'
 
-const renderReact = (...args) =>
-  pretty(renderNode(...args))
+const renderReact = (node, componentNameOverride) =>
+  pretty(renderNode(node, componentNameOverride))
 
 export default renderReact

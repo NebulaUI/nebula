@@ -2,6 +2,7 @@ import React from 'react'
 
 import replaceBase64 from '../replaceBase64'
 import removeNull from './removeNull'
+import removeFunctionCallParens from './removeFunctionCallParens'
 import addDotNotation from './addDotNotation'
 import renderProps from './renderProps'
 import getData from './getData'
@@ -15,11 +16,15 @@ const getFilteredProps = (node) => {
 
 const createInitialNodeString = (node, name) => {
   const props = getFilteredProps(node)
-  const propsString = props && isObject(props)
-    ? renderProps(props, node.type.defaultProps)
-    : ''
+  const propsString = renderProps(props, node.type.defaultProps)
   return `<${name}${propsString}`
 }
+
+const stripUnwantedContent = str =>
+  removeFunctionCallParens(removeNull(replaceBase64(str)))
+
+const cleanNodeString = (str, componentNameOverride) =>
+  addDotNotation(stripUnwantedContent(str), componentNameOverride)
 
 const renderNode = (node, componentNameOverride, depth = 0) => {
   const { name, text, children } = getData(node)
@@ -30,7 +35,7 @@ const renderNode = (node, componentNameOverride, depth = 0) => {
   let nodeString = createInitialNodeString(node, name)
 
   if (!children) {
-    return addDotNotation(removeNull(replaceBase64(`${nodeString} />`)), componentNameOverride)
+    return cleanNodeString(`${nodeString} />`, componentNameOverride)
   }
 
   nodeString += '>'
@@ -39,8 +44,7 @@ const renderNode = (node, componentNameOverride, depth = 0) => {
     nodeString += '\r\n'
     nodeString += renderNode(childElement, componentNameOverride, depth + 1)
   })
-
-  return addDotNotation(removeNull(replaceBase64(`${nodeString}\r\n</${name}>`)), componentNameOverride)
+  return cleanNodeString(`${nodeString}\r\n</${name}>`, componentNameOverride)
 }
 
 export default renderNode

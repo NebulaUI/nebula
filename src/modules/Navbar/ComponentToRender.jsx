@@ -1,24 +1,33 @@
 import React from 'react'
 import T from 'prop-types'
+import { BrowserRouter as Router, NavLink } from 'react-router-dom'
 import { Navbar } from 'nebula-react'
 
 import { removeFalsyProps as removeFalsy } from 'utils'
 
 const ComponentToRender = ({
   sticky,
+  reactRouter,
   reverseSourceOrder,
   logoIncluded,
   navItems,
   secondaryContent
 }) => {
   const dropdownAlignment = navItems.dropdownAlignment === 'south-west'
-
+  const buildNavLink = (to, children, className) =>
+    reactRouter ? (
+      <Navbar.Link component={NavLink} to={to}>
+        { children }
+      </Navbar.Link>
+    ) : (
+      <Navbar.Link to={to} {...removeFalsy({ className })}>
+        { children }
+      </Navbar.Link>
+    )
   const NavItems = (
     <Navbar.Content {...removeFalsy({ right: navItems.right })}>
       <Navbar.Item>
-        <Navbar.Link to="/nebula/spacetime">
-          Spacetime
-        </Navbar.Link>
+        {buildNavLink('/nebula/space-time', 'Space Time')}
       </Navbar.Item>
       <Navbar.Dropdown.Wrapper>
         <Navbar.Dropdown.Toggle className="is-active">
@@ -26,21 +35,15 @@ const ComponentToRender = ({
         </Navbar.Dropdown.Toggle>
         <Navbar.Dropdown.Content {...removeFalsy({ southWest: dropdownAlignment })}>
           <Navbar.Item>
-            <Navbar.Link to="/nebula/galaxies/milky-way">
-              Milky Way
-            </Navbar.Link>
+            {buildNavLink('/nebula/galaxies/milky-way', 'Milky Way')}
           </Navbar.Item>
           <Navbar.Item>
-            <Navbar.Link className="is-active" to="/nebula/galaxies/andromeda">
-              Andromeda
-            </Navbar.Link>
+            {buildNavLink('/nebula/galaxies/andromeda', 'Andromeda', 'is-active')}
           </Navbar.Item>
         </Navbar.Dropdown.Content>
       </Navbar.Dropdown.Wrapper>
       <Navbar.Item>
-        <Navbar.Link to="/nebula/pulsars">
-          Pulsars
-        </Navbar.Link>
+        {buildNavLink('/nebula/pulsars', 'Pulsars')}
       </Navbar.Item>
     </Navbar.Content>
   )
@@ -81,7 +84,7 @@ const ComponentToRender = ({
     </Navbar.Toggle.Wrapper>
   )
 
-  return reverseSourceOrder
+  const NavbarComponent = reverseSourceOrder
     ? (
       <Navbar.Wrapper {...removeFalsy({ sticky })}>
         <Navbar.Overlay aria-hidden="true" tabIndex="0" />
@@ -118,10 +121,19 @@ const ComponentToRender = ({
         </Navbar.Inner>
       </Navbar.Wrapper>
     )
+
+  return reactRouter ? (
+    <Router>
+      {NavbarComponent}
+    </Router>
+  ) : (
+    NavbarComponent
+  )
 }
 
 ComponentToRender.propTypes = {
   sticky: T.bool,
+  reactRouter: T.bool,
   reverseSourceOrder: T.bool,
   logoIncluded: T.bool,
   navItems: T.shape({ right: T.bool }),

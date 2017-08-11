@@ -38,13 +38,17 @@ const Options = ({ handleChange, optionState }) => {
         >
           Include logo.
         </CheckboxWrapper>
-        <CheckboxWrapper
-          stateKey="reverseSourceOrder"
-          optionState={optionState}
-          handleChange={handleCheckboxChange}
-        >
-          Reverse the source order of the Nav Items and Secondary content.
-        </CheckboxWrapper>
+        {
+          optionState.navItems.included && optionState.secondaryContent.included && (
+            <CheckboxWrapper
+              stateKey="reverseSourceOrder"
+              optionState={optionState}
+              handleChange={handleCheckboxChange}
+            >
+              Reverse the source order of the Nav Items and Secondary content.
+            </CheckboxWrapper>
+          )
+        }
       </BareList.Wrapper>
     </BareList.Item>
   )

@@ -18,6 +18,32 @@ describe('renderNode', () => {
     expect(renderNode(node)).toBe('<Flag.Body />')
   })
 
+  it('strips unwanted content from component', () => {
+    const TestComponent = () => {}
+    const node = (
+      <div>
+        <img src="http://test.com/test.jpg" alt="" />
+        <div>null</div>
+        <div component='{TestComponent()}' />
+      </div>
+    )
+    expect(renderNode(node)).not.toContain('null')
+    expect(renderNode(node)).not.toContain('http://test.com/test.jpg')
+    expect(renderNode(node)).toContain('src={nebula}')
+    expect(renderNode(node)).not.toContain('{TestComponent()}')
+    expect(renderNode(node)).toContain('{TestComponent}')
+  })
+
+  it('can optionally override the component name', () => {
+    const Flag = () => <div />
+    const FlagComponent = () => <div />
+    const override = {
+      FlagComponent: 'TestComponent'
+    }
+    const node = <Flag><FlagComponent /></Flag>
+    expect(renderNode(node, override)).toBe('<Flag>\r\n<TestComponent />\r\n</Flag>')
+  })
+
   it('renders children', () => {
     const node = (
       <div>test</div>
