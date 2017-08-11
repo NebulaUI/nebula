@@ -4,7 +4,7 @@ const split = s => (
     : s.split('.')
 )
 
-const leafSegment = id => id.length === 1
+const isLeafSegment = id => id.length === 1
 const requiredArgs = (st, id) => st && id
 const extractFirstItem = a => a[0]
 const getNextId = a => a.slice(1)
@@ -28,7 +28,7 @@ const buildNewState = (state, id, value) => {
     [currentKey]: buildNewState(nextStateSegment, nextId, value)
   })
 
-  return leafSegment(newId)
+  return isLeafSegment(newId)
     ? { ...state, ...getNewState() }
     : { ...state, ...buildNextStateSegment() }
 }

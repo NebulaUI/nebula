@@ -1,7 +1,7 @@
 import React from 'react'
 import T from 'prop-types'
 import shortid from 'shortid'
-import { BareList } from 'nebula-react'
+import { BareList, Form } from 'nebula-react'
 
 import { getDeepObjectValue } from 'utils'
 
@@ -10,14 +10,17 @@ const CheckboxWrapper = ({ stateKey, node, optionState, handleChange, children }
   const isChecked = getDeepObjectValue(optionState, stateKey)
   return (
     <BareList.Item node={node}>
-      <input
-        type="checkbox"
-        id={id}
-        onChange={handleChange}
-        data-stateKey={stateKey}
-        checked={isChecked}
-      />
-      <label htmlFor={id}>{ children }</label>
+      <Form.CheckboxWrapper>
+        <Form.CheckboxInput
+          id={id}
+          onChange={handleChange}
+          data-stateKey={stateKey}
+          checked={isChecked}
+        />
+        <Form.CheckboxLabel htmlFor={id}>
+          { children }
+        </Form.CheckboxLabel>
+      </Form.CheckboxWrapper>
     </BareList.Item>
   )
 }

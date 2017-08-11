@@ -1,7 +1,7 @@
 import React from 'react'
 import T from 'prop-types'
 
-import { BareList } from 'nebula-react'
+import { BareList, Form } from 'nebula-react'
 
 const Options = ({ setAlignment, setReverse, optionState }) => (
   <div>
@@ -15,13 +15,13 @@ const Options = ({ setAlignment, setReverse, optionState }) => (
         </select>
       </BareList.Item>
       <BareList.Item>
-        <input
-          type="checkbox"
+        <Form.Checkbox
           id="flag.reverse"
           onChange={setReverse}
           checked={optionState.reverse}
-        />
-        <label htmlFor="flag.reverse">Reverse</label>
+        >
+          Reverse
+        </Form.Checkbox>
       </BareList.Item>
     </BareList.Wrapper>
   </div>

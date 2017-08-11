@@ -4,21 +4,22 @@ const splitKeyString = s => (
     : s.split('.')
 )
 
+const requiredArgs = (ob, ks) => ob && ks
+const isLeafSegment = ks => ks.length === 1
 const getCurrentValue = (o, k) => o[k[0]]
-
-const removeFirst = a => a.slice(1)
+const removeFirstKey = a => a.slice(1)
 
 const getDeepObjectValue = (object, keyString) => {
-  if (!keyString || !object) {
+  if (!requiredArgs(object, keyString)) {
     return undefined
   }
 
   const keys = splitKeyString(keyString)
   const currentValue = getCurrentValue(object, keys)
 
-  return keys.length === 1
+  return isLeafSegment(keys)
     ? currentValue
-    : getDeepObjectValue(currentValue, removeFirst(keys))
+    : getDeepObjectValue(currentValue, removeFirstKey(keys))
 }
 
 export default getDeepObjectValue
