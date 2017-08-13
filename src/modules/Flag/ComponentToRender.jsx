@@ -4,7 +4,7 @@ import { Flag } from 'nebula-react'
 
 import exampleImage from 'assets/img/nebula.jpg'
 
-const ComponentToRender = ({ flagWrapperProps }) => {
+const ComponentToRender = ({ reverse, align }) => {
   const body = (
     <Flag.Body>
       <p>
@@ -18,17 +18,17 @@ const ComponentToRender = ({ flagWrapperProps }) => {
       <img src={exampleImage} alt="Nebula, an interstellar cloud of dust" />
     </Flag.Component>
   )
-  return flagWrapperProps.reverse
+  return reverse
     ? (
       <div className="c-card">
-        <Flag.Wrapper {...flagWrapperProps}>
+        <Flag.Wrapper align={align}>
           {body}
           {component}
         </Flag.Wrapper>
       </div>
     ) : (
       <div className="c-card">
-        <Flag.Wrapper {...flagWrapperProps}>
+        <Flag.Wrapper align={align}>
           {component}
           {body}
         </Flag.Wrapper>
@@ -37,7 +37,8 @@ const ComponentToRender = ({ flagWrapperProps }) => {
 }
 
 ComponentToRender.propTypes = {
-  flagWrapperProps: T.shape({})
+  reverse: T.bool.isRequired,
+  align: T.string.isRequired
 }
 
 export default ComponentToRender

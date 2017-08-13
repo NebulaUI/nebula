@@ -1,43 +1,126 @@
 import React, { Component } from 'react'
 import { buildNewState } from 'utils'
 
-import ComponentExample, {
-  ComponentDescription,
-  ComponentRendered,
-  ComponentOptions
-} from 'components/ComponentExample'
+import Dumb from 'components/ComponentExample/Dumb'
 
 import Description from './Description'
-import Options from './Options'
 import ComponentToRender from './ComponentToRender'
 
 const componentNameOverride = {
   BrowserRouter: 'Router'
 }
 
+const optionsModel = [{
+  title: 'Global Navbar options',
+  options: [{
+    type: 'checkbox',
+    stateKey: 'sticky',
+    label: 'Fix at the top of the viewport.'
+  }, {
+    type: 'checkbox',
+    stateKey: 'reactRouter',
+    label: 'React Router (v4) Integration.'
+  }, {
+    type: 'checkbox',
+    stateKey: 'logoIncluded',
+    label: 'Include logo.'
+  }, {
+    type: 'checkbox',
+    stateKey: 'reverseSourceOrder',
+    label: 'Reverse the source order of the Nav Items and Secondary content.'
+  }]
+}, {
+  title: 'Nav Items',
+  options: [{
+    type: 'checkbox',
+    stateKey: 'navItems.included',
+    label: 'include.'
+  }, {
+    type: 'checkbox',
+    stateKey: 'navItems.right',
+    label: 'Align nav items to the right (float right).'
+  }, {
+    type: 'select',
+    stateKey: 'navItems.dropdownAlignment',
+    label: 'Dropdown alignment.',
+    options: [{
+      value: 'south-east',
+      label: 'South East'
+    }, {
+      value: 'south-west',
+      label: 'South West'
+    }]
+  }]
+}, {
+  title: 'Secondary Content',
+  options: [{
+    type: 'checkbox',
+    stateKey: 'secondaryContent.included',
+    label: 'include.'
+  }, {
+    type: 'checkbox',
+    stateKey: 'secondaryContent.right',
+    label: 'Align secondary content to the right (float right).'
+  }, {
+    type: 'checkbox',
+    stateKey: 'secondaryContent.keepAtTop',
+    label: 'Keep secondary content at the top when collapsed (Small viewports).'
+  }, {
+    type: 'checkbox',
+    stateKey: 'secondaryContent.resetLineHeight',
+    label: 'Reset the line-height for secondary content.'
+  }, {
+    type: 'select',
+    stateKey: 'secondaryContent.componentType',
+    label: 'Secondary content type.',
+    options: [{
+      value: 'button',
+      label: 'Button'
+    }, {
+      value: 'text',
+      label: 'Plain text'
+    }]
+  }]
+}]
+
+const initialState = {
+  sticky: false,
+  reverseSourceOrder: false,
+  logoIncluded: true,
+  reactRouter: false,
+  navItems: {
+    included: true,
+    right: false,
+    dropdownAlignment: 'south-east'
+  },
+  secondaryContent: {
+    included: true,
+    right: true,
+    keepAtTop: true,
+    resetLineHeight: true,
+    componentType: 'button'
+  }
+}
+
+const buildStyle = ({ sticky }) => ({
+  position: 'relative',
+  overflow: 'hidden',
+  minHeight: '500px',
+  zIndex: sticky ? 1 : 0
+})
+
+const buildExtraString = ({ reactRouter }) => (
+  reactRouter
+    ? `
+  import { BrowserRouter as Router, NavLink } from 'react-router-dom'`
+    : ''
+)
 
 class NavbarExample extends Component {
   constructor() {
     super()
 
-    this.state = {
-      sticky: false,
-      reverseSourceOrder: false,
-      logoIncluded: true,
-      reactRouter: false,
-      navItems: {
-        included: true,
-        right: false,
-        dropdownAlignment: 'south-east'
-      },
-      secondaryContent: {
-        included: true,
-        right: true,
-        keepAtTop: true,
-        resetLineHeight: true,
-        componentType: 'button'
-      }
-    }
+    this.state = initialState
   }
 
   handleOptionChange = (key, value) => {
@@ -47,33 +130,20 @@ class NavbarExample extends Component {
   }
 
   render() {
-    const style = {
-      position: 'relative',
-      overflow: 'hidden',
-      minHeight: '500px',
-      zIndex: this.state.sticky ? 1 : 0
-    }
-
-    const extraString = this.state.reactRouter
-      ? `
-import { BrowserRouter as Router, NavLink } from 'react-router-dom'`
-      : ''
-
+    const { state, handleOptionChange } = this
     return (
-      <div>
-        <h1>Navbar</h1>
-        <ComponentExample extraString={extraString} type="Navbar" componentNameOverride={componentNameOverride} style={style}>
-          <ComponentDescription>
-            <Description />
-          </ComponentDescription>
-          <ComponentOptions>
-            <Options optionState={this.state} handleChange={this.handleOptionChange} />
-          </ComponentOptions>
-          <ComponentRendered>
-            {ComponentToRender(this.state)}
-          </ComponentRendered>
-        </ComponentExample>
-      </div>
+      <Dumb
+        title="Navbar"
+        type="Navbar"
+        state={state}
+        Description={Description}
+        ComponentToRender={ComponentToRender}
+        componentNameOverride={componentNameOverride}
+        buildExtraString={buildExtraString}
+        buildStyle={buildStyle}
+        handleOptionChange={handleOptionChange}
+        optionsModel={optionsModel}
+      />
     )
   }
 }

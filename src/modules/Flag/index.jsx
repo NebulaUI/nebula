@@ -1,67 +1,64 @@
 import React, { Component } from 'react'
+import { buildNewState } from 'utils'
 
-import ComponentExample, {
-  ComponentDescription,
-  ComponentOptions,
-  ComponentRendered
-} from 'components/ComponentExample'
+import Dumb from 'components/ComponentExample/Dumb'
 
 import Description from './Description'
-import Options from './Options'
 import ComponentToRender from './ComponentToRender'
+
+const optionsModel = [{
+  title: 'Flag',
+  options: [{
+    type: 'checkbox',
+    stateKey: 'reverse',
+    label: 'Reverse.'
+  }, {
+    type: 'select',
+    stateKey: 'align',
+    label: 'Select alignment.',
+    options: [{
+      value: 'top',
+      label: 'Top'
+    }, {
+      value: 'center',
+      label: 'Center'
+    }, {
+      value: 'bottom',
+      label: 'Bottom'
+    }]
+  }]
+}]
+
+const initialState = {
+  reverse: false,
+  align: 'center'
+}
 
 class FlagExample extends Component {
   constructor() {
     super()
 
-    this.state = {
-      align: false,
-      reverse: false
-    }
+    this.state = initialState
   }
 
-  setAlignment = (e) => {
+  handleOptionChange = (key, value) => {
     this.setState({
-      align: e.target.value !== 'default' ? e.target.value : false
+      ...buildNewState(this.state, key, value)
     })
   }
 
-  setReverse = (e) => {
-    this.setState({ reverse: e.target.checked })
-  }
-
   render() {
-    const { align, reverse } = this.state
-    const flagWrapperProps = {}
-    if (align) {
-      flagWrapperProps.align = align
-    }
-
-    if (reverse) {
-      flagWrapperProps.reverse = reverse
-    }
-    const props = {
-      flagWrapperProps
-    }
+    const { state, handleOptionChange } = this
     return (
-      <div>
-        <h1>Flag Object</h1>
-        <ComponentExample type="Flag">
-          <ComponentDescription>
-            <Description />
-          </ComponentDescription>
-          <ComponentOptions>
-            <Options
-              optionState={this.state}
-              setAlignment={this.setAlignment}
-              setReverse={this.setReverse}
-            />
-          </ComponentOptions>
-          <ComponentRendered>
-            {ComponentToRender(props)}
-          </ComponentRendered>
-        </ComponentExample>
-      </div>
+      <Dumb
+        title="Flag"
+        type="Flag"
+        state={state}
+        Description={Description}
+        ComponentToRender={ComponentToRender}
+        handleOptionChange={handleOptionChange}
+        optionsModel={optionsModel}
+      />
     )
   }
 }
