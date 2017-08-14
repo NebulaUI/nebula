@@ -14,7 +14,7 @@ beforeEach(() => {
 describe('<CheckboxWrapper/>', () => {
   it('renders <BareList.Item />, <Form.CheckboxWrapper />, <Form.CheckboxInput /> and <Form.CheckboxLabel />', () => {
     const $ = shallow(
-      <CheckboxWrapper stateKey="t" optionState={{}} handleChange={jest.fn()}>
+      <CheckboxWrapper stateKey="t" state={{}} handleChange={jest.fn()}>
         _
       </CheckboxWrapper>
     )
@@ -25,7 +25,7 @@ describe('<CheckboxWrapper/>', () => {
 
   it('renders children inside <Form.CheckboxLabel />', () => {
     const $ = shallow(
-      <CheckboxWrapper stateKey="t" optionState={{}} handleChange={jest.fn()}>
+      <CheckboxWrapper stateKey="t" state={{}} handleChange={jest.fn()}>
         test
       </CheckboxWrapper>
     )
@@ -34,7 +34,7 @@ describe('<CheckboxWrapper/>', () => {
 
   it('takes a node to override <BareList.Item /> node type', () => {
     const $ = shallow(
-      <CheckboxWrapper node="div" stateKey="t" optionState={{}} handleChange={jest.fn()}>
+      <CheckboxWrapper node="div" stateKey="t" state={{}} handleChange={jest.fn()}>
         _
       </CheckboxWrapper>
     )
@@ -43,7 +43,7 @@ describe('<CheckboxWrapper/>', () => {
 
   it('takes a stateKey that is passed as a data-attribute to <Form.CheckboxInput />', () => {
     const $ = shallow(
-      <CheckboxWrapper stateKey="test" optionState={{}} handleChange={jest.fn()}>
+      <CheckboxWrapper stateKey="test" state={{}} handleChange={jest.fn()}>
         _
       </CheckboxWrapper>
     )
@@ -53,7 +53,7 @@ describe('<CheckboxWrapper/>', () => {
   it('handles changes', () => {
     const handleChange = jest.fn()
     const $ = shallow(
-      <CheckboxWrapper stateKey="t" optionState={{}} handleChange={handleChange}>
+      <CheckboxWrapper stateKey="t" state={{}} handleChange={handleChange}>
         _
       </CheckboxWrapper>
     )
@@ -71,14 +71,14 @@ describe('<CheckboxWrapper/>', () => {
       }
     }
     const $ = shallow(
-      <CheckboxWrapper stateKey="testKey1" optionState={state} handleChange={jest.fn()}>
+      <CheckboxWrapper stateKey="testKey1" state={state} handleChange={jest.fn()}>
         _
       </CheckboxWrapper>
     )
     expect($.find(Form.CheckboxInput).prop('checked')).toBe(true)
 
     const $$ = shallow(
-      <CheckboxWrapper stateKey="testKey2.nestedKey" optionState={state} handleChange={jest.fn()}>
+      <CheckboxWrapper stateKey="testKey2.nestedKey" state={state} handleChange={jest.fn()}>
         _
       </CheckboxWrapper>
     )
@@ -87,7 +87,7 @@ describe('<CheckboxWrapper/>', () => {
 
   it('auto generates an ID', () => {
     const $ = shallow(
-      <CheckboxWrapper stateKey="t" optionState={{}} handleChange={jest.fn()}>
+      <CheckboxWrapper stateKey="t" state={{}} handleChange={jest.fn()}>
         _
       </CheckboxWrapper>
     )

@@ -2,9 +2,9 @@ import React from 'react'
 import T from 'prop-types'
 import { BareList } from 'nebula-react'
 
-import Section from './Section'
+import Group from './Group'
 
-const Options = ({ handleChange, optionState, model }) => {
+const Options = ({ handleChange, state, model }) => {
   const handleCheckboxChange = ({ target }) =>
     handleChange(target.getAttribute('data-stateKey'), target.checked)
 
@@ -12,11 +12,11 @@ const Options = ({ handleChange, optionState, model }) => {
     handleChange(target.getAttribute('data-stateKey'), target.value)
   }
 
-  const renderSection = section => (
-    <Section
-      key={section.title}
-      optionState={optionState}
-      section={section}
+  const renderGroup = group => (
+    <Group
+      key={group.title}
+      state={state}
+      group={group}
       handleCheckboxChange={handleCheckboxChange}
       handleSelectboxChange={handleSelectboxChange}
     />
@@ -24,7 +24,7 @@ const Options = ({ handleChange, optionState, model }) => {
 
   return (
     <BareList.Wrapper spacing="md">
-      {model.map(renderSection)}
+      { model.map(renderGroup) }
     </BareList.Wrapper>
   )
 }
@@ -34,7 +34,7 @@ Options.propTypes = {
     title: T.string.isRequired
   })).isRequired,
   handleChange: T.func.isRequired,
-  optionState: T.shape({}).isRequired
+  state: T.shape({}).isRequired
 }
 
 export default Options

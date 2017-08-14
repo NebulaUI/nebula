@@ -14,5 +14,4 @@ const addDotNotation = (str, nameOverride) =>
     return `${start + group.split(/(?=[A-Z])/).join('.')}${end}`
   })
 
-
 export default addDotNotation

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { buildNewState } from 'utils'
 
-import Dumb from 'components/ComponentExample/Dumb'
+import Example from 'components/ComponentExample/Example'
 
 import Description from './Description'
 import ComponentToRender from './ComponentToRender'
@@ -49,15 +49,18 @@ class FlagExample extends Component {
 
   render() {
     const { state, handleOptionChange } = this
+    const options = {
+      state,
+      handleChange: handleOptionChange,
+      model: optionsModel
+    }
     return (
-      <Dumb
+      <Example
         title="Flag"
-        type="Flag"
-        state={state}
+        options={options}
         Description={Description}
-        ComponentToRender={ComponentToRender}
-        handleOptionChange={handleOptionChange}
-        optionsModel={optionsModel}
+        config={{ type: 'Flag' }}
+        ComponentToRender={ComponentToRender(state)}
       />
     )
   }

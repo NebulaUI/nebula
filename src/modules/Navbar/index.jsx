@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { buildNewState } from 'utils'
 
-import Dumb from 'components/ComponentExample/Dumb'
+import Example from 'components/ComponentExample/Example'
 
 import Description from './Description'
 import ComponentToRender from './ComponentToRender'
@@ -111,8 +111,7 @@ const buildStyle = ({ sticky }) => ({
 
 const buildExtraString = ({ reactRouter }) => (
   reactRouter
-    ? `
-  import { BrowserRouter as Router, NavLink } from 'react-router-dom'`
+    ? '\nimport { BrowserRouter as Router, NavLink } from \'react-router-dom\''
     : ''
 )
 
@@ -131,18 +130,24 @@ class NavbarExample extends Component {
 
   render() {
     const { state, handleOptionChange } = this
+    const componentExampleConfig = {
+      type: 'Navbar',
+      componentNameOverride,
+      extraString: buildExtraString(state),
+      style: buildStyle(state)
+    }
+    const options = {
+      state,
+      handleChange: handleOptionChange,
+      model: optionsModel
+    }
     return (
-      <Dumb
+      <Example
         title="Navbar"
-        type="Navbar"
-        state={state}
+        options={options}
         Description={Description}
-        ComponentToRender={ComponentToRender}
-        componentNameOverride={componentNameOverride}
-        buildExtraString={buildExtraString}
-        buildStyle={buildStyle}
-        handleOptionChange={handleOptionChange}
-        optionsModel={optionsModel}
+        ComponentToRender={ComponentToRender(state)}
+        config={componentExampleConfig}
       />
     )
   }

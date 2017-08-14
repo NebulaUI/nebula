@@ -4,14 +4,14 @@ import { BareList } from 'nebula-react'
 
 import { getDeepObjectValue } from 'utils'
 
-const SelectboxWrapper = ({ stateKey, optionState, handleChange, label, children }) => (
+const SelectboxWrapper = ({ stateKey, state, handleChange, label, children }) => (
   <BareList.Item>
     { label }
     <div>
       <select
         data-stateKey={stateKey}
         onChange={handleChange}
-        value={getDeepObjectValue(optionState, stateKey)}
+        value={getDeepObjectValue(state, stateKey)}
       >
         { children }
       </select>
@@ -21,7 +21,7 @@ const SelectboxWrapper = ({ stateKey, optionState, handleChange, label, children
 
 SelectboxWrapper.propTypes = {
   stateKey: T.string.isRequired,
-  optionState: T.shape({}).isRequired,
+  state: T.shape({}).isRequired,
   handleChange: T.func.isRequired,
   children: T.node.isRequired,
   label: T.string.isRequired

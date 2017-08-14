@@ -5,9 +5,9 @@ import { BareList, Form } from 'nebula-react'
 
 import { getDeepObjectValue } from 'utils'
 
-const CheckboxWrapper = ({ stateKey, node, optionState, handleChange, children }) => {
+const CheckboxWrapper = ({ stateKey, label, node, state, handleChange, children }) => {
   const id = shortid()
-  const isChecked = getDeepObjectValue(optionState, stateKey)
+  const isChecked = getDeepObjectValue(state, stateKey)
   return (
     <BareList.Item node={node}>
       <Form.CheckboxWrapper>
@@ -28,7 +28,7 @@ const CheckboxWrapper = ({ stateKey, node, optionState, handleChange, children }
 CheckboxWrapper.propTypes = {
   stateKey: T.string.isRequired,
   node: T.string,
-  optionState: T.shape({}).isRequired,
+  state: T.shape({}).isRequired,
   handleChange: T.func.isRequired,
   children: T.node.isRequired
 }

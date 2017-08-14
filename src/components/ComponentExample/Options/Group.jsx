@@ -4,35 +4,37 @@ import { BareList } from 'nebula-react'
 
 import CheckboxWrapper from './CheckboxWrapper'
 import SelectboxWrapper from './SelectboxWrapper'
-import SelectOption from './SelectOption'
 
-const Section = ({ section, optionState, handleCheckboxChange, handleSelectboxChange }) => {
-  const renderOption = (option) => {
-    if (option.type === 'checkbox') {
+const Group = ({ group, state, handleCheckboxChange, handleSelectboxChange }) => {
+  const renderOption = ({ stateKey, type, label, options }) => {
+    const optionProps = {
+      key: stateKey,
+      stateKey,
+      state,
+      label,
+    }
+    if (type === 'checkbox') {
       return (
         <CheckboxWrapper
-          key={option.stateKey}
-          stateKey={option.stateKey}
-          optionState={optionState}
           handleChange={handleCheckboxChange}
+          {...optionProps}
         >
-          {option.label}
+          { label }
         </CheckboxWrapper>
       )
     }
 
-    if (option.type === 'select') {
+    if (type === 'select') {
       return (
         <SelectboxWrapper
-          key={option.stateKey}
-          label={option.label}
-          stateKey={option.stateKey}
-          optionState={optionState}
           handleChange={handleSelectboxChange}
+          {...optionProps}
         >
-          {option.options.map(
+          {options.map(
             selectOption =>
-              <SelectOption key={selectOption.label} option={selectOption} />
+              <option key={selectOption.label} value={selectOption.value}>
+                { selectOption.label }
+              </option>
           )}
         </SelectboxWrapper>
       )
@@ -43,27 +45,31 @@ const Section = ({ section, optionState, handleCheckboxChange, handleSelectboxCh
 
   return (
     <BareList.Item>
-      <h2>{section.title}</h2>
+      <h2>{ group.title }</h2>
       <BareList.Wrapper spacing="md" className="u-flush-bottom">
-        {section.options.map(renderOption)}
+        { group.options.map(renderOption) }
       </BareList.Wrapper>
     </BareList.Item>
   )
 }
 
-Section.propTypes = {
-  section: T.shape({
+Group.propTypes = {
+  group: T.shape({
     title: T.string.isRequired,
     options: T.arrayOf(
       T.shape({
         stateKey: T.string.isRequired,
-        label: T.string.isRequired
+        label: T.string.isRequired,
+        type: T.string.isRequired,
+        options: T.arrayOf(
+          T.shape({}).isRequired
+        ),
       }).isRequired,
     ).isRequired
   }),
-  optionState: T.shape({}).isRequired,
+  state: T.shape({}).isRequired,
   handleCheckboxChange: T.func.isRequired,
   handleSelectboxChange: T.func.isRequired
 }
 
-export default Section
+export default Group

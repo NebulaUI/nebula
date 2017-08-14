@@ -15,7 +15,7 @@ describe('renderNode', () => {
   it('adds dot notation to components', () => {
     const FlagBody = () => <div />
     const node = <FlagBody />
-    expect(renderNode(node)).toBe('<Flag_old.Body />')
+    expect(renderNode(node)).toBe('<Flag.Body />')
   })
 
   it('strips unwanted content from component', () => {
@@ -42,7 +42,7 @@ describe('renderNode', () => {
       FlagComponent: 'TestComponent'
     }
     const node = <Flag><FlagComponent /></Flag>
-    expect(renderNode(node, override)).toBe('<Flag_old>\r\n<TestComponent />\r\n</Flag_old>')
+    expect(renderNode(node, override)).toBe('<Flag>\r\n<TestComponent />\r\n</Flag>')
   })
 
   it('renders children', () => {
