@@ -4,7 +4,7 @@ import { BareList } from 'nebula-react'
 
 import Group from './Group'
 
-const Options = ({ handleChange, state, model }) => {
+const Options = ({ handleChange, model, ...rest }) => {
   const handleCheckboxChange = ({ target }) =>
     handleChange(target.getAttribute('data-stateKey'), target.checked)
 
@@ -15,10 +15,10 @@ const Options = ({ handleChange, state, model }) => {
   const renderGroup = group => (
     <Group
       key={group.title}
-      state={state}
-      group={group}
       handleCheckboxChange={handleCheckboxChange}
       handleSelectboxChange={handleSelectboxChange}
+      {...group}
+      {...rest}
     />
   )
 
@@ -33,8 +33,7 @@ Options.propTypes = {
   model: T.arrayOf(T.shape({
     title: T.string.isRequired
   })).isRequired,
-  handleChange: T.func.isRequired,
-  state: T.shape({}).isRequired
+  handleChange: T.func.isRequired
 }
 
 export default Options

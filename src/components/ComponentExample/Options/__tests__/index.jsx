@@ -29,7 +29,7 @@ describe('<Options />', () => {
     const props = {
       ...defaultProps,
       state,
-      handleChange: mockHandleChange,
+      handleChange: mockHandleChange
     }
     const $ = shallow(<Options {...props} />)
     expect($.find(Group).prop('state')).toEqual(state)

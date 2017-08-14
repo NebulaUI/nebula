@@ -1,6 +1,6 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import highlight from 'components/Source/utils/highlight'
+import 'components/Source/utils/highlight'
 
 import Example from '../Example'
 import ComponentExample, {
@@ -8,7 +8,6 @@ import ComponentExample, {
   ComponentRendered,
   ComponentOptions
 } from '../'
-import Options from '../Options'
 
 jest.mock('components/Source/utils/highlight', () => {})
 

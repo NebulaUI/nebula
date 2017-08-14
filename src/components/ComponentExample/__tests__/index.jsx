@@ -1,6 +1,6 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import highlight from 'components/Source/utils/highlight'
+import 'components/Source/utils/highlight'
 
 import ComponentExample, {
   ComponentDescription,

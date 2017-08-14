@@ -7,7 +7,7 @@ const ComponentDescription = ({ children }) => <div>{ children }</div>
 const ComponentOptions = ({ children }) => <div>{ children }</div>
 const ComponentRendered = ({ children }) => <div>{ children }</div>
 
-const ComponentExample = ({  config, children, ...rest }) => {
+const ComponentExample = ({ config, children, ...rest }) => {
   const { type, extraString, style, componentNameOverride } = config
   const getChild = (componentType, { returnNestedChildren = false } = {}) =>
     React.Children.map(children, (child) => {
@@ -22,7 +22,15 @@ const ComponentExample = ({  config, children, ...rest }) => {
   const component = getChild(ComponentRendered, { returnNestedChildren: true })
   const description = getChild(ComponentDescription)
   const options = getChild(ComponentOptions)
-  const props = { component, description, options, type, extraString, componentNameOverride, ...rest }
+  const props = {
+    component,
+    description,
+    options,
+    type,
+    extraString,
+    componentNameOverride,
+    ...rest
+  }
 
   return (
     <div style={style}>
@@ -40,7 +48,7 @@ ComponentExample.propTypes = {
   config: T.shape({
     type: T.string.isRequired,
     extraString: T.string,
-    style: T.shape({}),
+    style: T.shape({})
   }).isRequired,
   children: T.node.isRequired
 }
