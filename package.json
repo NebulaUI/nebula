@@ -79,7 +79,8 @@
     ],
     "coveragePathIgnorePatterns": [
       "/node_modules",
-      "<rootDir>/components/Source/utils/highlight.js"
+      "<rootDir>/components/Source/utils/highlight.js",
+      "<rootDir>/modules/App/Navigation/model.js"
     ],
     "moduleNameMapper": {
       "^.+\\.(jpg|jpeg|png|gif|bmp|eot|otf|webp|ttf|woff|woff2|css|scss|ico)$": "<rootDir>/__mocks__/fileMock.js"
