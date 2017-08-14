@@ -1,54 +1,16 @@
 import React, { Component } from 'react'
 import T from 'prop-types'
-import classNames from 'classnames'
 import { NavLink } from 'react-router-dom'
 import { withRouter } from 'react-router'
 import { Navbar } from 'nebula-react'
 
-import routes from './model'
-
-const buildDropdown = ({ to, label, children, path }) => (
-  <Navbar.Dropdown.Wrapper key={to}>
-    <Navbar.Dropdown.Toggle className={classNames({ 'is-active': path.includes(to) })}>
-      { label }
-    </Navbar.Dropdown.Toggle>
-    <Navbar.Dropdown.Content>
-      {
-        // eslint-disable-next-line no-use-before-define
-        renderRoutes(children)
-      }
-    </Navbar.Dropdown.Content>
-  </Navbar.Dropdown.Wrapper>
-)
-
-buildDropdown.propTypes = {
-  to: T.string.isRequired,
-  label: T.string.isRequired,
-  path: T.string.isRequired,
-  children: T.arrayOf(T.shape({})).isRequired
-}
-
-const buildItem = ({ to, label }) => (
-  <Navbar.Item key={to}>
-    <Navbar.Link
-      component={NavLink}
-      activeClassName="is-active"
-      to={to}
-    >
-      {label}
-    </Navbar.Link>
-  </Navbar.Item>
-)
-
-buildItem.propTypes = {
-  to: T.string.isRequired,
-  label: T.string.isRequired
-}
+import Item from './Item'
+import Dropdown from './Dropdown'
 
 const renderRoutes = (rs, path) => rs.map(route => (
-  route.children && route.children.length
-    ? buildDropdown({ ...route, path })
-    : buildItem(route)
+  route.descendants && route.descendants.length
+    ? Dropdown({ path, renderRoutes, ...route })
+    : Item(route)
 ))
 
 class Routes extends Component {
@@ -59,6 +21,7 @@ class Routes extends Component {
   }
 
   render() {
+    const { routes, location: { pathname } } = this.props
     return (
       <Navbar.Wrapper sticky>
         <Navbar.Overlay />
@@ -70,7 +33,7 @@ class Routes extends Component {
             Nebula
           </NavLink>
           <Navbar.Content>
-            {renderRoutes(routes, this.props.location.pathname)}
+            {renderRoutes(routes, pathname)}
           </Navbar.Content>
           <Navbar.Content right node="div" keepAtTop>
             <Navbar.Item node="div" resetLineHeight>
@@ -90,6 +53,9 @@ class Routes extends Component {
 }
 
 Routes.propTypes = {
+  routes: T.arrayOf(T.shape({
+    descendants: T.arrayOf(T.shape({}))
+  })).isRequired,
   location: T.shape({
     pathname: T.string.isRequired
   }).isRequired

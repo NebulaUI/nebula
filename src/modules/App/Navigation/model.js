@@ -2,7 +2,7 @@ const model = [
   {
     to: '/nebula/objects',
     label: 'Objects',
-    children: [
+    descendants: [
       {
         to: '/nebula/objects/flag',
         label: 'Flag'
@@ -16,7 +16,7 @@ const model = [
   {
     to: '/nebula/components',
     label: 'Components',
-    children: [
+    descendants: [
       {
         to: '/nebula/components/navbar',
         label: 'Navbar'
