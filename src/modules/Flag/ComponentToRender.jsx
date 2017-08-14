@@ -2,9 +2,10 @@ import React from 'react'
 import T from 'prop-types'
 import { Flag } from 'nebula-react'
 
+import { removeFalsyProps as removeFalsy } from 'utils'
 import exampleImage from 'assets/img/nebula.jpg'
 
-const ComponentToRender = ({ reverse, align }) => {
+const ComponentToRender = ({ reverse, align, gutter }) => {
   const body = (
     <Flag.Body>
       <p>
@@ -21,14 +22,14 @@ const ComponentToRender = ({ reverse, align }) => {
   return reverse
     ? (
       <div className="c-card">
-        <Flag.Wrapper align={align}>
+        <Flag.Wrapper align={align} {...removeFalsy({ gutter: gutter ? 'md' : false })}>
           {body}
           {component}
         </Flag.Wrapper>
       </div>
     ) : (
       <div className="c-card">
-        <Flag.Wrapper align={align}>
+        <Flag.Wrapper align={align} {...removeFalsy({ gutter: gutter ? 'md' : false })}>
           {component}
           {body}
         </Flag.Wrapper>
@@ -37,6 +38,7 @@ const ComponentToRender = ({ reverse, align }) => {
 }
 
 ComponentToRender.propTypes = {
+  gutter: T.bool.isRequired,
   reverse: T.bool.isRequired,
   align: T.string.isRequired
 }

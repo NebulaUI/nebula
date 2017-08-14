@@ -13,6 +13,10 @@ const optionsModel = [{
     stateKey: 'reverse',
     label: 'Reverse.'
   }, {
+    type: 'checkbox',
+    stateKey: 'gutter',
+    label: 'gutter'
+  }, {
     type: 'select',
     stateKey: 'align',
     label: 'Select alignment.',
@@ -31,7 +35,8 @@ const optionsModel = [{
 
 const initialState = {
   reverse: false,
-  align: 'center'
+  align: 'center',
+  gutter: true
 }
 
 class FlagExample extends Component {
