@@ -1,6 +1,5 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import 'components/Source/utils/highlight'
 
 import Example from '../Example'
 import ComponentExample, {
@@ -8,8 +7,6 @@ import ComponentExample, {
   ComponentRendered,
   ComponentOptions
 } from '../'
-
-jest.mock('components/Source/utils/highlight', () => {})
 
 const ComponentToRender = <div />
 const Description = () => <div />

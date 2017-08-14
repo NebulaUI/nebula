@@ -111,7 +111,7 @@ const buildStyle = ({ sticky }) => ({
 
 const buildExtraString = ({ reactRouter }) => (
   reactRouter
-    ? '\nimport { BrowserRouter as Router, NavLink } from \'react-router-dom\''
+    ? 'import { BrowserRouter as Router, NavLink } from \'react-router-dom\''
     : ''
 )
 

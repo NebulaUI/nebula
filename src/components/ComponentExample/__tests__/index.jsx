@@ -1,6 +1,5 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import 'components/Source/utils/highlight'
 
 import ComponentExample, {
   ComponentDescription,
@@ -9,8 +8,6 @@ import ComponentExample, {
 } from '../'
 
 import Source from '../../Source'
-
-jest.mock('components/Source/utils/highlight', () => {})
 
 describe('<ComponentExample />', () => {
   it('renders <Source /> passing the example component as children', () => {

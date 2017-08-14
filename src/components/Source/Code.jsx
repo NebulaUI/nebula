@@ -6,7 +6,8 @@ import highlightSource from './utils/highlight'
 const buildStart = (name, extraString = '') =>
 // eslint-disable-next-line
 `import React from 'react'
-import { ${name} } from 'nebula-react'${extraString}
+import { ${name} } from 'nebula-react'
+${extraString}
 
 const My${name} = () => (
 `
