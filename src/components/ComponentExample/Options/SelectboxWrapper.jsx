@@ -1,16 +1,17 @@
 import React from 'react'
 import T from 'prop-types'
+import { Form } from 'nebula-react'
 
 import { getDeepObjectValue } from 'utils'
 
 const SelectboxWrapper = ({ stateKey, state, handleChange, children }) => (
-  <select
+  <Form.Select
     name={stateKey}
     onChange={handleChange}
     value={getDeepObjectValue(state, stateKey)}
   >
-    { children }
-  </select>
+    {children}
+  </Form.Select>
 )
 
 SelectboxWrapper.propTypes = {
