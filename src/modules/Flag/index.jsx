@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import { buildNewState } from 'utils'
 
+import { buildNewState } from 'utils'
 import Example from 'components/ComponentExample/Example'
 
 import Description from './Description'
