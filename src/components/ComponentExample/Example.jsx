@@ -21,9 +21,11 @@ const Example = ({
       <ComponentDescription>
         <Description />
       </ComponentDescription>
-      <ComponentOptions>
-        <Options {...options} />
-      </ComponentOptions>
+      { options && (
+        <ComponentOptions>
+          <Options {...options} />
+        </ComponentOptions>
+      )}
       <ComponentRendered>
         { ComponentToRender }
       </ComponentRendered>

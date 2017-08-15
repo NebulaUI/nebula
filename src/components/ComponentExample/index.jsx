@@ -8,10 +8,10 @@ const ComponentOptions = ({ children }) => <div>{ children }</div>
 const ComponentRendered = ({ children }) => <div>{ children }</div>
 
 const ComponentExample = ({ config, children, ...rest }) => {
-  const { type, style } = config
+  const { style } = config
   const getChild = (componentType, { returnNestedChildren = false } = {}) =>
     React.Children.map(children, (child) => {
-      if (child.type === componentType) {
+      if (child && child.type === componentType) {
         return returnNestedChildren
           ? child.props.children
           : child
@@ -44,7 +44,6 @@ const ComponentExample = ({ config, children, ...rest }) => {
 
 ComponentExample.propTypes = {
   config: T.shape({
-    type: T.string.isRequired,
     style: T.shape({})
   }).isRequired,
   children: T.node.isRequired

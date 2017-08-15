@@ -6,7 +6,14 @@ import Code from './Code'
 import renderHTML from './utils/renderHTML'
 import renderReact from './utils/renderReact'
 
-const Source = ({ type, extraString, description, options, children, nebulaImportOverride, componentNameOverride }) => (
+const Source = ({
+  type,
+  extraString,
+  description, options,
+  children,
+  nebulaImportOverride,
+  componentNameOverride
+}) => (
   <div>
     <Tabs.Wrapper>
       <Tabs.TabList>

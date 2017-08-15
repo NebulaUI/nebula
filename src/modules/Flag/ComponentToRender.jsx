@@ -21,14 +21,21 @@ const ComponentToRender = ({ reverse, align, gutter }) => {
   return reverse
     ? (
       <Card>
-        <Flag.Wrapper align={align} {...removeFalsy({ gutter: gutter ? 'md' : false })}>
+        <Flag.Wrapper
+          reverse
+          {...removeFalsy({ align: align === 'center' ? false : align })}
+          {...removeFalsy({ gutter: gutter ? 'md' : false })}
+        >
           {body}
           {component}
         </Flag.Wrapper>
       </Card>
     ) : (
       <Card>
-        <Flag.Wrapper align={align} {...removeFalsy({ gutter: gutter ? 'md' : false })}>
+        <Flag.Wrapper
+          {...removeFalsy({ align: align === 'center' ? false : align })}
+          {...removeFalsy({ gutter: gutter ? 'md' : false })}
+        >
           {component}
           {body}
         </Flag.Wrapper>

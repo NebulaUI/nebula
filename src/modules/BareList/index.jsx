@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import ComponentExample, { ComponentDescription, ComponentRendered } from 'components/ComponentExample'
+
+import Example from 'components/ComponentExample/Example'
 
 import Description from './Description'
 import ComponentToRender from './ComponentToRender'
@@ -9,27 +10,27 @@ const componentNameOverride = {
   BareListItem: 'BareList.Item'
 }
 
-class FlagExample extends Component {
+class BareListExample extends Component {
   constructor() {
     super()
 
-    this.state = {}
+    this.state = {
+
+    }
   }
   render() {
     return (
-      <div>
-        <h1>Bare List</h1>
-        <ComponentExample type="BareList" componentNameOverride={componentNameOverride}>
-          <ComponentDescription>
-            <Description />
-          </ComponentDescription>
-          <ComponentRendered>
-            {ComponentToRender()}
-          </ComponentRendered>
-        </ComponentExample>
-      </div>
+      <Example
+        title="Bare List"
+        Description={Description}
+        config={{
+          type: 'BareList',
+          componentNameOverride
+        }}
+        ComponentToRender={ComponentToRender()}
+      />
     )
   }
 }
 
-export default FlagExample
+export default BareListExample
