@@ -1,14 +1,13 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
+import T from 'prop-types'
 
 import highlightSource from './utils/highlight'
 
-const buildStart = (name, extraString = '') =>
+const buildStart = (name, nebulaImportOverride, extraString = '') =>
 // eslint-disable-next-line
 `import React from 'react'
-import { ${name} } from 'nebula-react'
+import { ${nebulaImportOverride || name} } from 'nebula-react'
 ${extraString}
-
 const My${name} = () => (
 `
 
@@ -29,8 +28,8 @@ class Code extends Component {
   }
 
   render() {
-    const { children, componentName, extraString, language = 'html' } = this.props
-    const react = `${buildStart(componentName, extraString)}${children}${buildEnd(componentName)}`
+    const { children, componentName, nebulaImportOverride, extraString, language = 'html' } = this.props
+    const react = `${buildStart(componentName, nebulaImportOverride, extraString)}${children}${buildEnd(componentName)}`
     return (
       <pre className={`language-${language} line-numbers`} style={{ fontSize: '1rem' }}>
         <code className={`language-${language}`} ref={(code) => { this.codeEl = code }}>
@@ -42,10 +41,11 @@ class Code extends Component {
 }
 
 Code.propTypes = {
-  componentName: PropTypes.string,
-  extraString: PropTypes.string,
-  language: PropTypes.string,
-  children: PropTypes.node.isRequired
+  componentName: T.string,
+  nebulaImportOverride: T.string,
+  extraString: T.string,
+  language: T.string,
+  children: T.node.isRequired
 }
 
 export default Code

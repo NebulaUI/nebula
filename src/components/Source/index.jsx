@@ -6,7 +6,7 @@ import Code from './Code'
 import renderHTML from './utils/renderHTML'
 import renderReact from './utils/renderReact'
 
-const Source = ({ type, extraString, description, options, children, componentNameOverride }) => (
+const Source = ({ type, extraString, description, options, children, nebulaImportOverride, componentNameOverride }) => (
   <div>
     <Tabs.Wrapper>
       <Tabs.TabList>
@@ -24,7 +24,12 @@ const Source = ({ type, extraString, description, options, children, componentNa
           </Code>
         </Tabs.Panel>
         <Tabs.Panel>
-          <Code componentName={type} extraString={extraString} language="jsx">
+          <Code
+            componentName={type}
+            nebulaImportOverride={nebulaImportOverride}
+            extraString={extraString}
+            language="jsx"
+          >
             { renderReact(children, componentNameOverride) }
           </Code>
         </Tabs.Panel>
@@ -38,6 +43,7 @@ Source.propTypes = {
   extraString: T.string,
   description: T.node,
   options: T.node,
+  nebulaImportOverride: T.string,
   componentNameOverride: T.shape({}),
   children: T.node.isRequired
 }

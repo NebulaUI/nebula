@@ -39,7 +39,8 @@ describe('<Code />', () => {
     const props = {
       componentName: 'Flag',
       language: 'jsx',
-      extraString: 'import { baz } from \'foo\''
+      extraString: 'import { baz } from \'foo\'\n',
+      nebulaImportOverride: 'Flag, Foo'
     }
     const TestChild = () => <div>test</div>
     const $ = shallow(<Code {...props}><TestChild /></Code>)
@@ -47,7 +48,7 @@ describe('<Code />', () => {
     expect($.find('code').prop('className')).toBe('language-jsx')
     expect($.find('code').html()).toMatch(
 `import React from &#x27;react&#x27;
-import { Flag } from &#x27;nebula-react&#x27;
+import { Flag, Foo } from &#x27;nebula-react&#x27;
 import { baz } from &#x27;foo&#x27;
 
 const MyFlag = () =&gt; (

@@ -1,6 +1,6 @@
 import React from 'react'
 import T from 'prop-types'
-import { Flag } from 'nebula-react'
+import { Flag, Card } from 'nebula-react'
 
 import { removeFalsyProps as removeFalsy } from 'utils'
 import exampleImage from 'assets/img/nebula.jpg'
@@ -20,19 +20,19 @@ const ComponentToRender = ({ reverse, align, gutter }) => {
   )
   return reverse
     ? (
-      <div className="c-card">
+      <Card>
         <Flag.Wrapper align={align} {...removeFalsy({ gutter: gutter ? 'md' : false })}>
           {body}
           {component}
         </Flag.Wrapper>
-      </div>
+      </Card>
     ) : (
-      <div className="c-card">
+      <Card>
         <Flag.Wrapper align={align} {...removeFalsy({ gutter: gutter ? 'md' : false })}>
           {component}
           {body}
         </Flag.Wrapper>
-      </div>
+      </Card>
     )
 }
 

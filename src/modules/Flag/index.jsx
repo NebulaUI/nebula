@@ -64,7 +64,10 @@ class FlagExample extends Component {
         title="Flag"
         options={options}
         Description={Description}
-        config={{ type: 'Flag' }}
+        config={{
+          type: 'Flag',
+          nebulaImportOverride: 'Flag, Card'
+        }}
         ComponentToRender={ComponentToRender(state)}
       />
     )

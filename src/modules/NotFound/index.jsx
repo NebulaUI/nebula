@@ -1,9 +1,12 @@
 import React from 'react'
+import { Card } from 'nebula-react'
 
 const NotFound = () => (
-  <div className="c-card">
+  <div>
     <h1>404!</h1>
-    <p>We&apos;re sorry but we cannot find what you are looking for…</p>
+    <Card>
+      <p>We&apos;re sorry but we cannot find what you are looking for…</p>
+    </Card>
   </div>
 )
 

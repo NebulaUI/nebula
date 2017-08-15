@@ -40,7 +40,7 @@ const optionsModel = [{
     stateKey: 'navItems.right',
     label: 'Align nav items to the right (float right).'
   }, {
-    type: 'select',
+    type: 'radio',
     stateKey: 'navItems.dropdownAlignment',
     label: 'Dropdown alignment.',
     options: [{
@@ -70,7 +70,7 @@ const optionsModel = [{
     stateKey: 'secondaryContent.resetLineHeight',
     label: 'Reset the line-height for secondary content.'
   }, {
-    type: 'select',
+    type: 'radio',
     stateKey: 'secondaryContent.componentType',
     label: 'Secondary content type.',
     options: [{
@@ -111,7 +111,7 @@ const buildStyle = ({ sticky }) => ({
 
 const buildExtraString = ({ reactRouter }) => (
   reactRouter
-    ? 'import { BrowserRouter as Router, NavLink } from \'react-router-dom\''
+    ? 'import { BrowserRouter as Router, NavLink } from \'react-router-dom\'\n'
     : ''
 )
 

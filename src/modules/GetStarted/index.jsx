@@ -1,11 +1,11 @@
 import React from 'react'
-import { MatrixList } from 'nebula-react'
+import { MatrixList, Card } from 'nebula-react'
 
 
 const GetStarted = () => (
   <div>
     <h1>Get started</h1>
-    <div className="c-card">
+    <Card>
       <p>Please choose which version of Nebula you wish to consume in your project</p>
       <MatrixList.Wrapper spacing="md">
         <MatrixList.Item>
@@ -24,7 +24,7 @@ const GetStarted = () => (
           </button>
         </MatrixList.Item>
       </MatrixList.Wrapper>
-    </div>
+    </Card>
   </div>
 )
 
