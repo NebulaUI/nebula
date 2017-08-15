@@ -4,6 +4,7 @@ import { NavLink } from 'react-router-dom'
 import { withRouter } from 'react-router'
 import { Navbar } from 'nebula-react'
 
+import { basePath } from 'utils/constants'
 import renderRoutes from './renderRoutes'
 import SecondaryContent from './SecondaryContent'
 
@@ -23,7 +24,7 @@ class Navigation extends Component {
           <Navbar.Toggle.Wrapper ref={(node) => { this.toggle = node }}>
             <Navbar.Toggle.Bars />
           </Navbar.Toggle.Wrapper>
-          <NavLink className="c-navbar__logo" to="/nebula">
+          <NavLink className="c-navbar__logo" to={basePath}>
             Nebula
           </NavLink>
           <Navbar.Content>

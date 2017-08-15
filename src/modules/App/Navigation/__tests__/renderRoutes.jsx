@@ -10,8 +10,8 @@ describe('renderRoutes', () => {
       label: 'T',
       to: '/',
       descendants: [{
-        'to': '/T',
-        'label': 'T'
+        to: '/T',
+        label: 'T'
       }]
     }]
     const $ = shallow(

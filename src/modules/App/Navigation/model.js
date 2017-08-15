@@ -1,24 +1,26 @@
+import { basePath } from 'utils/constants'
+
 const model = [
   {
-    to: '/nebula/objects',
+    to: `${basePath}objects`,
     label: 'Objects',
     descendants: [
       {
-        to: '/nebula/objects/flag',
+        to: `${basePath}objects/flag`,
         label: 'Flag'
       },
       {
-        to: '/nebula/objects/bare-list',
+        to: `${basePath}objects/bare-list`,
         label: 'Bare List'
       }
     ]
   },
   {
-    to: '/nebula/components',
+    to: `${basePath}components`,
     label: 'Components',
     descendants: [
       {
-        to: '/nebula/components/navbar',
+        to: `${basePath}components/navbar`,
         label: 'Navbar'
       }
     ]
