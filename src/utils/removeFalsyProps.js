@@ -2,6 +2,10 @@ const propIsObject = (o, k) => o[k] && typeof o[k] === 'object'
 const propIsTruthy = (o, k) => o[k]
 
 const removeFalsyProps = (object) => {
+  if (Array.isArray(object)) {
+    return object
+  }
+
   const buildNewObject = (newObject, key) => {
     if (propIsObject(object, key)) {
       newObject[key] = removeFalsyProps(object[key])

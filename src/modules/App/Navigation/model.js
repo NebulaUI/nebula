@@ -6,12 +6,16 @@ const model = [
     label: 'Objects',
     descendants: [
       {
+        to: `${basePath}objects/bare-list`,
+        label: 'Bare List'
+      },
+      {
         to: `${basePath}objects/flag`,
         label: 'Flag'
       },
       {
-        to: `${basePath}objects/bare-list`,
-        label: 'Bare List'
+        to: `${basePath}objects/grid`,
+        label: 'Grid'
       }
     ]
   },

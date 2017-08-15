@@ -38,4 +38,9 @@ describe('removeFalsyProps', () => {
       test: true
     })
   })
+
+  it('returns the argument if an Array', () => {
+    const arr = [1, 2]
+    expect(removeFalsyProps(arr)).toBe(arr)
+  })
 })

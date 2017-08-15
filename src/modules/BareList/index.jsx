@@ -42,7 +42,7 @@ const initialState = {
     'md@xs': false,
     'md@sm': false,
     'md@md': false,
-    'md@lg': false,
+    'md@lg': false
   }
 }
 
