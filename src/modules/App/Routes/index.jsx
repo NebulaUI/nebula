@@ -7,6 +7,7 @@ import Flag from 'modules/Flag'
 import Navbar from 'modules/Navbar'
 import BareList from 'modules/BareList'
 import Grid from 'modules/Grid'
+import Card from 'modules/Card'
 import GetStarted from 'modules/GetStarted'
 import NotFound from 'modules/NotFound'
 
@@ -18,6 +19,7 @@ const Routes = () => (
     <Route exact path={`${basePath}objects/bare-list`} component={BareList} />
     <Route exact path={`${basePath}objects/grid`} component={Grid} />
     <Route exact path={`${basePath}components/navbar`} component={Navbar} />
+    <Route exact path={`${basePath}components/card`} component={Card} />
     <Route component={NotFound} />
   </Switch>
 )

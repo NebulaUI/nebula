@@ -34,16 +34,16 @@ const ComponentToRender = ({
     {...removeFalsy({ gutter: transformProp(gutter) })}
   >
     <Grid.Item {...removeFalsy({ width: transformProp(item1.sizes) })}>
-      <Card>Grid item 1</Card>
+      <Card>Item 1</Card>
     </Grid.Item>
     <Grid.Item {...removeFalsy({ width: transformProp(item2.sizes) })}>
-      <Card>Grid item 2</Card>
+      <Card>Item 2</Card>
     </Grid.Item>
     <Grid.Item {...removeFalsy({ width: transformProp(item3.sizes) })}>
-      <Card>Grid item 3<br />Multiple<br /> lines</Card>
+      <Card>Item 3<br />Multiple<br /> lines</Card>
     </Grid.Item>
     <Grid.Item {...removeFalsy({ width: transformProp(item4.sizes) })}>
-      <Card>Grid item 4</Card>
+      <Card>Item 4</Card>
     </Grid.Item>
   </Grid.Wrapper>
 )

@@ -26,6 +26,10 @@ const model = [
       {
         to: `${basePath}components/navbar`,
         label: 'Navbar'
+      },
+      {
+        to: `${basePath}components/card`,
+        label: 'Card'
       }
     ]
   }

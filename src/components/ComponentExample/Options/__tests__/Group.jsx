@@ -29,11 +29,6 @@ describe('<Group />', () => {
     expect($.contains('Test title')).toBe(true)
   })
 
-  it('renders <BareList />', () => {
-    const $ = shallow(<Group {...defaultProps} />)
-    expect($.find(BareList.Item).find(BareList.Wrapper)).toHaveLength(1)
-  })
-
   it('renders <Option />', () => {
     const props = {
       ...defaultProps,

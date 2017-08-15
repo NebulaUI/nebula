@@ -19,6 +19,7 @@ const Options = ({ handleChange, model, ...rest }) => {
   const renderGroup = group => (
     <Group
       key={group.title}
+      listType={group.listType}
       handleCheckboxChange={handleCheckboxChange}
       handleSelectboxChange={handleSelectboxChange}
       handleRadioChange={handleRadioChange}

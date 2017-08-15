@@ -8,11 +8,12 @@ const gutterSizes = {
 }
 
 const gutter = {
-  title: 'Gutters',
+  title: 'Gutter (Breakpoints)',
+  listType: 'matrix',
   options: breakpoints.map(bp => ({
     type: 'select',
     stateKey: `gutter.${bp}`,
-    label: `${bp} screen sizes`,
+    label: `${bp}`,
     options: Object.keys(gutterSizes).map(key => ({
       value: bp === 'all' ? key : `${key}@${bp}`,
       label: gutterSizes[key]

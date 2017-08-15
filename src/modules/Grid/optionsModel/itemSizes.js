@@ -1,11 +1,12 @@
 import { sizes, breakpoints, items } from './constants'
 
 const buildItemSizes = item => ({
-  title: `Grid Item ${item} sizes`,
+  title: `Item ${item} sizes (Breakpoints)`,
+  listType: 'matrix',
   options: breakpoints.map(bp => ({
     type: 'select',
     stateKey: `item${item}.sizes.${bp}`,
-    label: `${bp} screen sizes`,
+    label: `${bp}`,
     options: sizes.map(size => ({
       value: bp === 'all' ? size : `${size}@${bp}`,
       label: size || 'None'

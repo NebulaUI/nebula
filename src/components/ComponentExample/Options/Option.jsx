@@ -1,6 +1,6 @@
 import React from 'react'
 import T from 'prop-types'
-import { BareList, MatrixList } from 'nebula-react'
+import { MatrixList } from 'nebula-react'
 
 import CheckboxWrapper from './CheckboxWrapper'
 import SelectboxWrapper from './SelectboxWrapper'
@@ -24,20 +24,18 @@ const Option = ({
   }
   if (type === 'checkbox') {
     return (
-      <BareList.Item node={optionProps.node}>
-        <CheckboxWrapper
-          handleChange={handleCheckboxChange}
-          {...optionProps}
-        >
-          { label }
-        </CheckboxWrapper>
-      </BareList.Item>
+      <CheckboxWrapper
+        handleChange={handleCheckboxChange}
+        {...optionProps}
+      >
+        { label }
+      </CheckboxWrapper>
     )
   }
 
   if (type === 'select') {
     return (
-      <BareList.Item>
+      <div>
         <div>
           { optionProps.label }
         </div>
@@ -51,13 +49,13 @@ const Option = ({
             </option>
           ))}
         </SelectboxWrapper>
-      </BareList.Item>
+      </div>
     )
   }
 
   if (type === 'radio') {
     return (
-      <BareList.Item>
+      <div>
         <strong>{label}</strong>
         <MatrixList.Wrapper spacing="md">
           {options.map(radioOption => (
@@ -72,7 +70,7 @@ const Option = ({
             </MatrixList.Item>
           ))}
         </MatrixList.Wrapper>
-      </BareList.Item>
+      </div>
     )
   }
 

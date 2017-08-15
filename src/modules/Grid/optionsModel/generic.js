@@ -9,7 +9,7 @@ const generic = {
     {
       type: 'checkbox',
       stateKey: 'equalHeight',
-      label: 'Equal height grid items'
+      label: 'Equal height items'
     },
     {
       type: 'checkbox',
