@@ -1,6 +1,5 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import { BareList } from 'nebula-react'
 
 import Option from '../Option'
 import Group from '../Group'
