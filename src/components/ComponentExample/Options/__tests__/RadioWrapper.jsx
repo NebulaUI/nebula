@@ -72,7 +72,7 @@ describe('<RadioWrapper />', () => {
     const props = {
       ...defaultProps,
       value: 'top',
-      state,
+      state
     }
     const $ = shallow(
       <RadioWrapper {...props } stateKey="testKey1">_</RadioWrapper>
