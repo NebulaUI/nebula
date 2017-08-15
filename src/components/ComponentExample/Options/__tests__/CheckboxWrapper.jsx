@@ -1,6 +1,6 @@
 import React from 'react'
 import { shallow } from 'enzyme'
-import { BareList, Form } from 'nebula-react'
+import { Form } from 'nebula-react'
 import shortid from 'shortid'
 
 import CheckboxWrapper from '../CheckboxWrapper'
@@ -11,51 +11,49 @@ beforeEach(() => {
   shortid.mockImplementation(() => 'test-id')
 })
 
+const defaultProps = {
+  stateKey: 'T',
+  state: {},
+  handleChange: jest.fn()
+}
+
 describe('<CheckboxWrapper/>', () => {
   it('renders <BareList.Item />, <Form.CheckboxWrapper />, <Form.CheckboxInput /> and <Form.CheckboxLabel />', () => {
     const $ = shallow(
-      <CheckboxWrapper stateKey="t" state={{}} handleChange={jest.fn()}>
-        _
-      </CheckboxWrapper>
+      <CheckboxWrapper {...defaultProps}>_</CheckboxWrapper>
     )
-    expect($.find(BareList.Item)).toHaveLength(1)
     expect($.find(Form.CheckboxWrapper).childAt(0).type()).toBe(Form.CheckboxInput)
     expect($.find(Form.CheckboxWrapper).childAt(1).type()).toBe(Form.CheckboxLabel)
   })
 
   it('renders children inside <Form.CheckboxLabel />', () => {
     const $ = shallow(
-      <CheckboxWrapper stateKey="t" state={{}} handleChange={jest.fn()}>
+      <CheckboxWrapper {...defaultProps}>
         test
       </CheckboxWrapper>
     )
     expect($.find(Form.CheckboxLabel).contains('test')).toBe(true)
   })
 
-  it('takes a node to override <BareList.Item /> node type', () => {
+  it('takes a stateKey that is passed as a name prop to <Form.CheckboxInput />', () => {
+    const props = {
+      ...defaultProps,
+      stateKey: 'test'
+    }
     const $ = shallow(
-      <CheckboxWrapper node="div" stateKey="t" state={{}} handleChange={jest.fn()}>
-        _
-      </CheckboxWrapper>
+      <CheckboxWrapper {...props}>_</CheckboxWrapper>
     )
-    expect($.find(BareList.Item).prop('node')).toBe('div')
-  })
-
-  it('takes a stateKey that is passed as a data-attribute to <Form.CheckboxInput />', () => {
-    const $ = shallow(
-      <CheckboxWrapper stateKey="test" state={{}} handleChange={jest.fn()}>
-        _
-      </CheckboxWrapper>
-    )
-    expect($.find(Form.CheckboxInput).prop('data-stateKey')).toBe('test')
+    expect($.find(Form.CheckboxInput).prop('name')).toBe('test')
   })
 
   it('handles changes', () => {
     const handleChange = jest.fn()
+    const props = {
+      ...defaultProps,
+      handleChange
+    }
     const $ = shallow(
-      <CheckboxWrapper stateKey="t" state={{}} handleChange={handleChange}>
-        _
-      </CheckboxWrapper>
+      <CheckboxWrapper {...props}>_</CheckboxWrapper>
     )
     expect(handleChange).not.toBeCalled()
 
@@ -70,26 +68,24 @@ describe('<CheckboxWrapper/>', () => {
         nestedKey: false
       }
     }
+    const props = {
+      ...defaultProps,
+      state
+    }
     const $ = shallow(
-      <CheckboxWrapper stateKey="testKey1" state={state} handleChange={jest.fn()}>
-        _
-      </CheckboxWrapper>
+      <CheckboxWrapper {...props} stateKey="testKey1">_</CheckboxWrapper>
     )
     expect($.find(Form.CheckboxInput).prop('checked')).toBe(true)
 
     const $$ = shallow(
-      <CheckboxWrapper stateKey="testKey2.nestedKey" state={state} handleChange={jest.fn()}>
-        _
-      </CheckboxWrapper>
+      <CheckboxWrapper {...props} stateKey="testKey2.nestedKey">_</CheckboxWrapper>
     )
     expect($$.find(Form.CheckboxInput).prop('checked')).toBe(false)
   })
 
   it('auto generates an ID', () => {
     const $ = shallow(
-      <CheckboxWrapper stateKey="t" state={{}} handleChange={jest.fn()}>
-        _
-      </CheckboxWrapper>
+      <CheckboxWrapper {...defaultProps}>_</CheckboxWrapper>
     )
     expect($.find(Form.CheckboxInput).prop('id')).toBe('test-id')
     expect($.find(Form.CheckboxLabel).prop('htmlFor')).toBe('test-id')

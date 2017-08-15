@@ -24,7 +24,7 @@ describe('<Options />', () => {
 
   it('renders <Group /> passing appropriate props', () => {
     const mockHandleChange = jest.fn()
-    const getAttribute = () => 'test-attribute'
+    const name = 'test-name'
     const state = { test: 'it works' }
     const props = {
       ...defaultProps,
@@ -37,18 +37,28 @@ describe('<Options />', () => {
     expect(mockHandleChange).toHaveBeenCalledTimes(0)
     $.find(Group).prop('handleCheckboxChange')({
       target: {
-        getAttribute,
+        name,
         checked: true
       }
     })
-    expect(mockHandleChange).toHaveBeenCalledWith('test-attribute', true)
+    expect(mockHandleChange).toHaveBeenCalledWith('test-name', true)
+
     $.find(Group).prop('handleSelectboxChange')({
       target: {
-        getAttribute,
-        value: 'test-value'
+        name,
+        value: 'test-select-value'
       }
     })
     expect(mockHandleChange).toHaveBeenCalledTimes(2)
-    expect(mockHandleChange).toHaveBeenCalledWith('test-attribute', 'test-value')
+    expect(mockHandleChange).toHaveBeenCalledWith('test-name', 'test-select-value')
+
+    $.find(Group).prop('handleRadioChange')({
+      target: {
+        name,
+        value: 'test-radio-value'
+      }
+    })
+    expect(mockHandleChange).toHaveBeenCalledTimes(3)
+    expect(mockHandleChange).toHaveBeenCalledWith('test-name', 'test-radio-value')
   })
 })

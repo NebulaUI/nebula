@@ -10,7 +10,8 @@ const defaultOption = {
   label: 'T',
   type: 'T',
   handleSelectboxChange: jest.fn(),
-  handleCheckboxChange: jest.fn()
+  handleCheckboxChange: jest.fn(),
+  handleRadioChange: jest.fn()
 }
 
 const defaultProps = {

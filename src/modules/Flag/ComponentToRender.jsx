@@ -8,10 +8,9 @@ import exampleImage from 'assets/img/nebula.jpg'
 const ComponentToRender = ({ reverse, align, gutter }) => {
   const body = (
     <Flag.Body>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-        Corporis cupiditate ex hic magnam
-        maxime nobis nostrum pariatur quibusdam quidem ullam.</p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+      Corporis cupiditate ex hic magnam
+      maxime nobis nostrum pariatur quibusdam quidem ullam.
     </Flag.Body>
   )
   const component = (

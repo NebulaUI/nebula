@@ -17,7 +17,7 @@ const optionsModel = [{
     stateKey: 'gutter',
     label: 'gutter'
   }, {
-    type: 'select',
+    type: 'radio',
     stateKey: 'align',
     label: 'Select alignment.',
     options: [{

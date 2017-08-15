@@ -6,10 +6,14 @@ import Group from './Group'
 
 const Options = ({ handleChange, model, ...rest }) => {
   const handleCheckboxChange = ({ target }) =>
-    handleChange(target.getAttribute('data-stateKey'), target.checked)
+    handleChange(target.name, target.checked)
 
   const handleSelectboxChange = ({ target }) => {
-    handleChange(target.getAttribute('data-stateKey'), target.value)
+    handleChange(target.name, target.value)
+  }
+
+  const handleRadioChange = ({ target }) => {
+    handleChange(target.name, target.value)
   }
 
   const renderGroup = group => (
@@ -17,6 +21,7 @@ const Options = ({ handleChange, model, ...rest }) => {
       key={group.title}
       handleCheckboxChange={handleCheckboxChange}
       handleSelectboxChange={handleSelectboxChange}
+      handleRadioChange={handleRadioChange}
       {...group}
       {...rest}
     />
