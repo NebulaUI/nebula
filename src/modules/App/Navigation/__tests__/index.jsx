@@ -4,6 +4,7 @@ import { NavLink } from 'react-router-dom'
 import { MemoryRouter } from 'react-router'
 import { Navbar } from 'nebula-react'
 
+import { basePath } from 'utils/constants'
 import { Navigation } from '../'
 
 const defaultProps = {
@@ -43,7 +44,7 @@ describe('<Navigation />', () => {
     const getNavLink = $.find(Navbar.Inner).childAt(1)
     expect(getNavLink.type()).toBe(NavLink)
     expect(getNavLink.prop('className')).toBe('c-navbar__logo')
-    expect(getNavLink.prop('to')).toBe('/nebula')
+    expect(getNavLink.prop('to')).toBe(basePath)
   })
 
   it('renders <Navbar.Content> containing the routes', () => {
