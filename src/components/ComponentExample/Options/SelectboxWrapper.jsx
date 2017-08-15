@@ -9,6 +9,8 @@ const SelectboxWrapper = ({ stateKey, state, handleChange, children }) => (
     name={stateKey}
     onChange={handleChange}
     value={getDeepObjectValue(state, stateKey)}
+    style={{ width: 'auto' }}
+    className="c-select--sm"
   >
     {children}
   </Form.Select>

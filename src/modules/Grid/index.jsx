@@ -5,169 +5,7 @@ import Example from 'components/ComponentExample/Example'
 
 import Description from './Description'
 import ComponentToRender from './ComponentToRender'
-
-const gutterModel = {
-  title: 'Gutters',
-  options: [
-    {
-      type: 'radio',
-      stateKey: 'gutter.all',
-      label: 'Gutter across all screen sizes',
-      options: [
-        {
-          value: '',
-          label: 'None'
-        },
-        {
-          value: 'sm',
-          label: 'Small'
-        },
-        {
-          value: 'md',
-          label: 'Medium'
-        },
-        {
-          value: 'lg',
-          label: 'Large'
-        }
-      ]
-    },
-    {
-      type: 'radio',
-      stateKey: 'gutter.xs',
-      label: 'Gutter across screen sizes larger than "xs" breakpoint',
-      options: [
-        {
-          value: '',
-          label: 'None'
-        },
-        {
-          value: 'sm@xs',
-          label: 'Small'
-        },
-        {
-          value: 'md@xs',
-          label: 'Medium'
-        },
-        {
-          value: 'lg@xs',
-          label: 'Large'
-        }
-      ]
-    },
-    {
-      type: 'radio',
-      stateKey: 'gutter.sm',
-      label: 'Gutter across screen sizes larger than "sm" breakpoint',
-      options: [
-        {
-          value: '',
-          label: 'None'
-        },
-        {
-          value: 'sm@sm',
-          label: 'Small'
-        },
-        {
-          value: 'md@sm',
-          label: 'Medium'
-        },
-        {
-          value: 'lg@sm',
-          label: 'Large'
-        }
-      ]
-    },
-    {
-      type: 'radio',
-      stateKey: 'gutter.md',
-      label: 'Gutter across screen sizes larger than "md" breakpoint',
-      options: [
-        {
-          value: '',
-          label: 'None'
-        },
-        {
-          value: 'sm@md',
-          label: 'Small'
-        },
-        {
-          value: 'md@md',
-          label: 'Medium'
-        },
-        {
-          value: 'lg@md',
-          label: 'Large'
-        }
-      ]
-    },
-    {
-      type: 'radio',
-      stateKey: 'gutter.lg',
-      label: 'Gutter across screen sizes larger than "lg" breakpoint',
-      options: [
-        {
-          value: '',
-          label: 'None'
-        },
-        {
-          value: 'sm@lg',
-          label: 'Small'
-        },
-        {
-          value: 'md@lg',
-          label: 'Medium'
-        },
-        {
-          value: 'lg@lg',
-          label: 'Large'
-        }
-      ]
-    }
-  ]
-}
-
-const optionsModel = [{
-  title: 'Grid',
-  options: [
-    {
-      type: 'checkbox',
-      stateKey: 'matrix',
-      label: 'Matrix - vertical gutters mirroring horizontal'
-    },
-    {
-      type: 'checkbox',
-      stateKey: 'equalHeight',
-      label: 'Equal height grid items'
-    },
-    {
-      type: 'checkbox',
-      stateKey: 'reverse',
-      label: 'Reverse horizontal ordering'
-    },
-    {
-      type: 'radio',
-      stateKey: 'align',
-      label: 'Vertical alignment of Grid Items',
-      options: [
-        {
-          value: '',
-          label: 'Top'
-        },
-        {
-          value: 'center',
-          label: 'Center'
-        },
-        {
-          value: 'bottom',
-          label: 'Bottom'
-        }
-      ]
-    }
-  ]
-},
-  gutterModel
-]
+import optionsModel from './optionsModel'
 
 const initialState = {
   matrix: true,
@@ -175,11 +13,27 @@ const initialState = {
   reverse: false,
   align: '',
   gutter: {
-    all: 'md',
-    xs: '',
-    sm: '',
-    md: '',
-    lg: ''
+    all: 'md'
+  },
+  item1: {
+    sizes: {
+      all: '1/2'
+    }
+  },
+  item2: {
+    sizes: {
+      all: '1/2'
+    }
+  },
+  item3: {
+    sizes: {
+      all: '1/3'
+    }
+  },
+  item4: {
+    sizes: {
+      all: '2/3'
+    }
   }
 }
 

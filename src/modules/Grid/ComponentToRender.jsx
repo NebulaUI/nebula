@@ -15,7 +15,17 @@ const transformProp = (obj) => {
     : newArr[0]
 }
 
-const ComponentToRender = ({ matrix, equalHeight, gutter, align, reverse }) => (
+const ComponentToRender = ({
+  matrix,
+  equalHeight,
+  gutter,
+  align,
+  reverse,
+  item1,
+  item2,
+  item3,
+  item4
+}) => (
   <Grid.Wrapper
     {...removeFalsy({ matrix })}
     {...removeFalsy({ reverse })}
@@ -23,16 +33,16 @@ const ComponentToRender = ({ matrix, equalHeight, gutter, align, reverse }) => (
     {...removeFalsy({ align })}
     {...removeFalsy({ gutter: transformProp(gutter) })}
   >
-    <Grid.Item width="1/2">
+    <Grid.Item {...removeFalsy({ width: transformProp(item1.sizes) })}>
       <Card>Grid item 1</Card>
     </Grid.Item>
-    <Grid.Item width="1/2">
+    <Grid.Item {...removeFalsy({ width: transformProp(item2.sizes) })}>
       <Card>Grid item 2</Card>
     </Grid.Item>
-    <Grid.Item width="1/2">
+    <Grid.Item {...removeFalsy({ width: transformProp(item3.sizes) })}>
       <Card>Grid item 3<br />Multiple<br /> lines</Card>
     </Grid.Item>
-    <Grid.Item width="1/2">
+    <Grid.Item {...removeFalsy({ width: transformProp(item4.sizes) })}>
       <Card>Grid item 4</Card>
     </Grid.Item>
   </Grid.Wrapper>
@@ -43,7 +53,11 @@ ComponentToRender.propTypes = {
   equalHeight: T.bool,
   gutter: T.shape({}),
   reverse: T.bool,
-  align: T.string
+  align: T.string,
+  item1: T.shape({}),
+  item2: T.shape({}),
+  item3: T.shape({}),
+  item4: T.shape({})
 }
 
 export default ComponentToRender
