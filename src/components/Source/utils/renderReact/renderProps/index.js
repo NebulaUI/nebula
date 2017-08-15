@@ -1,13 +1,16 @@
 import { isString, isObject, isArray, isFunction, isDeepTrue, getKeys } from '../generic'
 import filterDefaultProps from './filterDefaultProps'
 
-const MAX_ARRAY_LENGTH = 3
-const MAX_OBJECT_KEYS = 3
+const MAX_ARRAY_LENGTH = 4
+const MAX_OBJECT_KEYS = 4
 
-const join = x => `={[${x.slice(0, MAX_ARRAY_LENGTH).join(', ')}`
+const join = x => (
+  x.slice(0, MAX_ARRAY_LENGTH).map(y => `'${y}'`).join(', ')
+)
+
 const arrExceedsLength = x => (x.length > MAX_ARRAY_LENGTH ? ', …' : '')
 const extractArrayValues = value => (
-  `${join(value)}${arrExceedsLength(value)}]}`
+  `={[${join(value)}${arrExceedsLength(value)}]}`
 )
 
 const extractObjectKeys = x => Object.keys(x).slice(0, MAX_OBJECT_KEYS)

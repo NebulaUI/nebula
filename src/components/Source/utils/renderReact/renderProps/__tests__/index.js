@@ -13,12 +13,12 @@ describe('renderProps', () => {
 
   it('renders props with array values', () => {
     const props = { className: ['test', 'foo'] }
-    expect(renderProps(props)).toBe(' className={[test, foo]}')
+    expect(renderProps(props)).toBe(' className={[\'test\', \'foo\']}')
   })
 
-  it('truncates array prop values with lengths longer than three', () => {
-    const props = { className: ['1', '2', '3', '4'] }
-    expect(renderProps(props)).toBe(' className={[1, 2, 3, …]}')
+  it('truncates array prop values with lengths longer than four', () => {
+    const props = { className: ['1', '2', '3', '4', '5'] }
+    expect(renderProps(props)).toBe(' className={[\'1\', \'2\', \'3\', \'4\', …]}')
   })
 
   it('renders props with object values', () => {
@@ -31,16 +31,17 @@ describe('renderProps', () => {
     expect(renderProps(props)).toBe(' className={{ test: \'true\', foo: \'baz\' }}')
   })
 
-  it('truncates object prop values with more than three keys', () => {
+  it('truncates object prop values with more than four keys', () => {
     const props = {
       className: {
         1: 'a',
         2: 'b',
         3: 'c',
-        4: 'd'
+        4: 'd',
+        5: 'e'
       }
     }
-    expect(renderProps(props)).toBe(' className={{ 1: \'a\', 2: \'b\', 3: \'c\', … }}')
+    expect(renderProps(props)).toBe(' className={{ 1: \'a\', 2: \'b\', 3: \'c\', 4: \'d\', … }}')
   })
 
   it('renders prop values that are named functions', () => {
