@@ -26,7 +26,7 @@ const ComponentToRender = (props) => {
     cardInItems
   } = props
 
-  const renderItem = (content, item) =>
+  const renderItem = (content, item) => (
     cardInItems ? (
       <Grid.Item
         key={item}
@@ -42,6 +42,7 @@ const ComponentToRender = (props) => {
         { content }
       </Grid.Item>
     )
+  )
 
   return (
     <Grid.Wrapper
@@ -52,11 +53,11 @@ const ComponentToRender = (props) => {
       {...removeFalsy({ gutter: transformProp(gutter) })}
     >
       {
-        items.map(item =>
+        items.map(item => (
           item === 3
             ? renderItem(`Item ${item}, Lorem, ipsum dolor sit amit Nebula React!`, item)
             : renderItem(`Item ${item}`, item)
-        )
+        ))
       }
     </Grid.Wrapper>
   )
