@@ -14,16 +14,8 @@ const model = [
         label: 'Section'
       },
       {
-        to: `${basePath}objects/bare-list`,
-        label: 'Bare List'
-      },
-      {
-        to: `${basePath}objects/inline-list`,
-        label: 'Inline List'
-      },
-      {
-        to: `${basePath}objects/matrix-list`,
-        label: 'Matrix List'
+        to: `${basePath}objects/lists`,
+        label: 'Lists'
       },
       {
         to: `${basePath}objects/flag`,
