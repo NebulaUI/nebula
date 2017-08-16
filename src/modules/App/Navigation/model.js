@@ -14,6 +14,10 @@ const model = [
         label: 'Inline List'
       },
       {
+        to: `${basePath}objects/matrix-list`,
+        label: 'Matrix List'
+      },
+      {
         to: `${basePath}objects/flag`,
         label: 'Flag'
       },

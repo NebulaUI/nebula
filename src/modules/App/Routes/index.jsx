@@ -7,6 +7,7 @@ import Flag from 'modules/Flag'
 import Navbar from 'modules/Navbar'
 import BareList from 'modules/BareList'
 import InlineList from 'modules/InlineList'
+import MatrixList from 'modules/MatrixList'
 import Grid from 'modules/Grid'
 import Card from 'modules/Card'
 import GetStarted from 'modules/GetStarted'
@@ -19,6 +20,7 @@ const Routes = () => (
     <Route exact path={`${basePath}objects/flag`} component={Flag} />
     <Route exact path={`${basePath}objects/bare-list`} component={BareList} />
     <Route exact path={`${basePath}objects/inline-list`} component={InlineList} />
+    <Route exact path={`${basePath}objects/matrix-list`} component={MatrixList} />
     <Route exact path={`${basePath}objects/grid`} component={Grid} />
     <Route exact path={`${basePath}components/navbar`} component={Navbar} />
     <Route exact path={`${basePath}components/card`} component={Card} />
