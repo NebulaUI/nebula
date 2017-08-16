@@ -5,7 +5,7 @@ import Example from 'components/ComponentExample/Example'
 import description from './description.md'
 import ComponentToRender from './ComponentToRender'
 
-class BareListExample extends Component {
+class CardExample extends Component {
   constructor() {
     super()
 
@@ -26,4 +26,4 @@ class BareListExample extends Component {
   }
 }
 
-export default BareListExample
+export default CardExample

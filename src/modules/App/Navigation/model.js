@@ -32,12 +32,16 @@ const model = [
     label: 'Components',
     descendants: [
       {
+        to: `${basePath}components/card`,
+        label: 'Card'
+      },
+      {
         to: `${basePath}components/navbar`,
         label: 'Navbar'
       },
       {
-        to: `${basePath}components/card`,
-        label: 'Card'
+        to: `${basePath}components/tabs`,
+        label: 'Tabs'
       }
     ]
   }

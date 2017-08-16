@@ -10,6 +10,7 @@ import Grid from 'modules/Grid'
 import Card from 'modules/Card'
 import SiteWrap from 'modules/SiteWrap'
 import Section from 'modules/Section'
+import Tabs from 'modules/Tabs'
 import GetStarted from 'modules/GetStarted'
 import NotFound from 'modules/NotFound'
 
@@ -24,6 +25,7 @@ const Routes = () => (
     <Route exact path={`${basePath}objects/section`} component={Section} />
     <Route exact path={`${basePath}components/navbar`} component={Navbar} />
     <Route exact path={`${basePath}components/card`} component={Card} />
+    <Route exact path={`${basePath}components/tabs`} component={Tabs} />
     <Route component={NotFound} />
   </Switch>
 )
