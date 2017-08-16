@@ -37,7 +37,7 @@ const Option = ({
     return (
       <div>
         <div>
-          { optionProps.label }
+          <strong>{ optionProps.label }</strong>
         </div>
         <SelectboxWrapper
           handleChange={handleSelectboxChange}
@@ -56,19 +56,19 @@ const Option = ({
   if (type === 'radio') {
     return (
       <div>
-        <strong>{label}</strong>
+        <strong>{ label }</strong>
         <MatrixList.Wrapper spacing="md">
-          {options.map(radioOption => (
+          { options.map(radioOption => (
             <MatrixList.Item node={radioOption.node} key={radioOption.value}>
               <RadioWrapper
                 handleChange={handleRadioChange}
                 value={radioOption.value}
                 {...optionProps}
               >
-                {radioOption.label}
+                { radioOption.label }
               </RadioWrapper>
             </MatrixList.Item>
-          ))}
+          )) }
         </MatrixList.Wrapper>
       </div>
     )

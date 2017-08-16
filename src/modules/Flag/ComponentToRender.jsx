@@ -20,7 +20,7 @@ const ComponentToRender = ({
       case 'input':
         return (
           <Flag.Body>
-            <Form.TextInput placeholder="Nebula…"/>
+            <Form.TextInput placeholder="Nebula…" />
           </Flag.Body>
         )
       default :
@@ -57,7 +57,7 @@ const ComponentToRender = ({
     }
   }
 
-  const buildFlag = () =>
+  const buildFlag = () => (
     reverse ? (
       <Flag.Wrapper
         reverse
@@ -78,6 +78,7 @@ const ComponentToRender = ({
         {buildBody()}
       </Flag.Wrapper>
     )
+  )
 
   return wrapInCard
     ? (
