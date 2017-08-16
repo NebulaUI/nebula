@@ -8,8 +8,8 @@ import ComponentToRender from './ComponentToRender'
 import optionsModel from './options'
 
 const componentNameOverride = {
-  BareListWrapper: 'BareList.Wrapper',
-  BareListItem: 'BareList.Item'
+  InlineListWrapper: 'InlineList.Wrapper',
+  InlineListItem: 'InlineList.Item'
 }
 
 const initialState = {
@@ -20,7 +20,7 @@ const initialState = {
   }
 }
 
-class BareListExample extends Component {
+class InlineListExample extends Component {
   constructor() {
     super()
 
@@ -42,12 +42,12 @@ class BareListExample extends Component {
     }
     return (
       <Example
-        title="Bare List"
+        title="Inline List"
         options={options}
         description={description}
         config={{
-          type: 'BareList',
-          nebulaImportOverride: `BareList${state.wrapInCard ? ', Card' : ''}`,
+          type: 'InlineList',
+          nebulaImportOverride: `InlineList${state.wrapInCard ? ', Card' : ''}`,
           componentNameOverride
         }}
         ComponentToRender={ComponentToRender(state)}
@@ -56,4 +56,4 @@ class BareListExample extends Component {
   }
 }
 
-export default BareListExample
+export default InlineListExample

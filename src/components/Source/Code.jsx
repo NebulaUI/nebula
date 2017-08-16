@@ -8,14 +8,14 @@ const buildStart = (name, nebulaImportOverride, extraString = '') =>
 `import React from 'react'
 import { ${nebulaImportOverride || name} } from 'nebula-react'
 ${extraString}
-const My${name} = () => (
+const Example${name} = () => (
 `
 
 const buildEnd = name =>
 `
 )
 
-export default My${name}
+export default Example${name}
 `
 
 class Code extends Component {

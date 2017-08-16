@@ -10,6 +10,10 @@ const model = [
         label: 'Bare List'
       },
       {
+        to: `${basePath}objects/inline-list`,
+        label: 'Inline List'
+      },
+      {
         to: `${basePath}objects/flag`,
         label: 'Flag'
       },

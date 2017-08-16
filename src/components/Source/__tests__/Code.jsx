@@ -51,11 +51,11 @@ describe('<Code />', () => {
 import { Flag, Foo } from &#x27;nebula-react&#x27;
 import { baz } from &#x27;foo&#x27;
 
-const MyFlag = () =&gt; (
+const ExampleFlag = () =&gt; (
 [object Object]
 )
 
-export default MyFlag`
+export default ExampleFlag`
     )
   })
 })

@@ -1,6 +1,6 @@
 import React from 'react'
 import T from 'prop-types'
-import { BareList, Card } from 'nebula-react'
+import { InlineList, Card } from 'nebula-react'
 
 import { removeFalsyProps as removeFalsy } from 'utils'
 
@@ -27,17 +27,17 @@ const ComponentToRender = ({ spacing, wrapInCard, qtyItems }) => {
 
   const buildItems = () =>
     buildItemsArray().map(item => (
-      <BareList.Item key={item}>
+      <InlineList.Item key={item}>
         Item {item + 1}
-      </BareList.Item>
+      </InlineList.Item>
     ))
 
   const buildList = () => (
-    <BareList.Wrapper
+    <InlineList.Wrapper
       {...removeFalsy({ spacing: transformProp(spacing) })}
     >
       {buildItems()}
-    </BareList.Wrapper>
+    </InlineList.Wrapper>
   )
   return wrapInCard ? (
     <Card>

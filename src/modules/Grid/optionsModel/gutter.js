@@ -13,7 +13,7 @@ const gutter = {
   options: breakpoints.map(bp => ({
     type: 'select',
     stateKey: `gutter.${bp}`,
-    label: `${bp}`,
+    label: bp,
     options: Object.keys(gutterSizes).map(key => ({
       value: bp === 'all' ? key : `${key}@${bp}`,
       label: gutterSizes[key]
