@@ -10,6 +10,7 @@ import InlineList from 'modules/InlineList'
 import MatrixList from 'modules/MatrixList'
 import Grid from 'modules/Grid'
 import Card from 'modules/Card'
+import SiteWrap from 'modules/SiteWrap'
 import GetStarted from 'modules/GetStarted'
 import NotFound from 'modules/NotFound'
 
@@ -22,6 +23,7 @@ const Routes = () => (
     <Route exact path={`${basePath}objects/inline-list`} component={InlineList} />
     <Route exact path={`${basePath}objects/matrix-list`} component={MatrixList} />
     <Route exact path={`${basePath}objects/grid`} component={Grid} />
+    <Route exact path={`${basePath}objects/site-wrap`} component={SiteWrap} />
     <Route exact path={`${basePath}components/navbar`} component={Navbar} />
     <Route exact path={`${basePath}components/card`} component={Card} />
     <Route component={NotFound} />

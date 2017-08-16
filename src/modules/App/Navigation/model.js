@@ -6,6 +6,10 @@ const model = [
     label: 'Objects',
     descendants: [
       {
+        to: `${basePath}objects/site-wrap`,
+        label: 'Site Wrap'
+      },
+      {
         to: `${basePath}objects/bare-list`,
         label: 'Bare List'
       },
