@@ -11,7 +11,7 @@ const App = () => (
     <div>
       <Nav routes={routesModel} />
       <SiteWrap padding>
-        <Section>
+        <Section size="md">
           <Routes />
         </Section>
       </SiteWrap>

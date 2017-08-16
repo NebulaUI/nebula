@@ -5,27 +5,14 @@ import { buildNewState } from 'utils'
 
 import description from './description.md'
 import ComponentToRender from './ComponentToRender'
-
-
-const componentNameOverride = {
-  SiteWrap: 'SiteWrap'
-}
-
-
-const optionsModel = [{
-  title: 'Section',
-  options: [
-    {
-      type: 'checkbox',
-      stateKey: 'nestCard',
-      label: 'Wrap Section inside of a Card component'
-    }
-  ]
-}]
+import optionsModel from './options'
 
 const initialState = {
   padding: false,
-  nestCard: true
+  nestCard: true,
+  sizes: {
+    all: 'md'
+  }
 }
 
 class SiteWrapExample extends Component {
@@ -55,7 +42,6 @@ class SiteWrapExample extends Component {
         options={options}
         config={{
           type: 'Section',
-          componentNameOverride,
           nebulaImportOverride: `Section${state.nestCard ? ', Card' : ''}`
         }}
         ComponentToRender={ComponentToRender(state)}

@@ -6,8 +6,6 @@ import Home from 'modules/Home'
 import Flag from 'modules/Flag'
 import Navbar from 'modules/Navbar'
 import Lists from 'modules/Lists'
-import InlineList from 'modules/InlineList'
-import MatrixList from 'modules/MatrixList'
 import Grid from 'modules/Grid'
 import Card from 'modules/Card'
 import SiteWrap from 'modules/SiteWrap'
@@ -21,8 +19,6 @@ const Routes = () => (
     <Route exact path={`${basePath}get-started`} component={GetStarted} />
     <Route exact path={`${basePath}objects/flag`} component={Flag} />
     <Route exact path={`${basePath}objects/lists`} component={Lists} />
-    <Route exact path={`${basePath}objects/inline-list`} component={InlineList} />
-    <Route exact path={`${basePath}objects/matrix-list`} component={MatrixList} />
     <Route exact path={`${basePath}objects/grid`} component={Grid} />
     <Route exact path={`${basePath}objects/site-wrap`} component={SiteWrap} />
     <Route exact path={`${basePath}objects/section`} component={Section} />
