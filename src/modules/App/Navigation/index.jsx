@@ -11,7 +11,7 @@ import SecondaryContent from './SecondaryContent'
 class Navigation extends Component {
   componentDidUpdate(prevProps) {
     if (this.props.location.pathname !== prevProps.location.pathname) {
-      this.toggle.props.handleToggle()
+      this.close.props.close()
     }
   }
 
@@ -19,9 +19,9 @@ class Navigation extends Component {
     const { routes, location: { pathname } } = this.props
     return (
       <Navbar.Wrapper sticky>
-        <Navbar.Overlay />
+        <Navbar.Overlay ref={(node) => { this.close = node }} />
         <Navbar.Inner>
-          <Navbar.Toggle.Wrapper ref={(node) => { this.toggle = node }}>
+          <Navbar.Toggle.Wrapper>
             <Navbar.Toggle.Bars />
           </Navbar.Toggle.Wrapper>
           <NavLink className="c-navbar__logo" to={basePath}>
