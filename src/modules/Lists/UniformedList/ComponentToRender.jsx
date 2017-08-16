@@ -37,7 +37,7 @@ const ComponentToRender = ({ breakpoint, wrapInCard, qtyItems }) => {
 ComponentToRender.propTypes = {
   wrapInCard: T.bool.isRequired,
   qtyItems: T.number.isRequired,
-  breakpoint: T.string.isRequired,
+  breakpoint: T.string.isRequired
 }
 
 export default ComponentToRender
