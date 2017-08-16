@@ -4,6 +4,7 @@ import { Section } from 'nebula-react'
 import BareList from './BareList'
 import InlineList from './InlineList'
 import MatrixList from './MatrixList'
+import UniformedList from './UniformedList'
 
 const Lists = () => (
   <div>
@@ -16,6 +17,9 @@ const Lists = () => (
     </Section>
     <Section size="md">
       <MatrixList />
+    </Section>
+    <Section size="md">
+      <UniformedList />
     </Section>
   </div>
 )
