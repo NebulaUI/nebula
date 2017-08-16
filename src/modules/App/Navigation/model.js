@@ -10,6 +10,10 @@ const model = [
         label: 'Site Wrap'
       },
       {
+        to: `${basePath}objects/section`,
+        label: 'Section'
+      },
+      {
         to: `${basePath}objects/bare-list`,
         label: 'Bare List'
       },

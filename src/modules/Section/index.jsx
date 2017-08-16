@@ -13,17 +13,12 @@ const componentNameOverride = {
 
 
 const optionsModel = [{
-  title: 'Site Wrap',
+  title: 'Section',
   options: [
     {
       type: 'checkbox',
-      stateKey: 'padding',
-      label: 'Padding (Adds left and right padding)'
-    },
-    {
-      type: 'checkbox',
       stateKey: 'nestCard',
-      label: 'Nest a Card component inside of Site Wrap'
+      label: 'Wrap Section inside of a Card component'
     }
   ]
 }]
@@ -55,13 +50,13 @@ class SiteWrapExample extends Component {
     }
     return (
       <Example
-        title="Site Wrap"
+        title="Section"
         description={description}
         options={options}
         config={{
-          type: 'SiteWrap',
+          type: 'Section',
           componentNameOverride,
-          nebulaImportOverride: `SiteWrap${state.nestCard ? ', Card' : ''}`
+          nebulaImportOverride: `Section${state.nestCard ? ', Card' : ''}`
         }}
         ComponentToRender={ComponentToRender(state)}
       />
