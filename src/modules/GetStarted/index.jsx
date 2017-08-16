@@ -20,13 +20,13 @@ const GetStarted = () => (
       </Tabs.TabList>
       <Tabs.PanelList>
         <Tabs.Panel>
-          Panel 1 Lorem ipsum
+          <code>yarn add nebula-css</code>
         </Tabs.Panel>
         <Tabs.Panel>
-          Panel 2 Lorem ipsum
+          <code>yarn add nebula-components</code>
         </Tabs.Panel>
         <Tabs.Panel>
-          Panel 3 Lorem ipsum
+          <code>yarn add nebula-react</code>
         </Tabs.Panel>
       </Tabs.PanelList>
     </Tabs.Wrapper>

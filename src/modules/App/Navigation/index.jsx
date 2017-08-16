@@ -33,6 +33,16 @@ class Navigation extends Component {
           <Navbar.Content right node="div" keepAtTop>
             { SecondaryContent }
           </Navbar.Content>
+          <Navbar.Content right node="div">
+            <Navbar.Item node="div" resetLineHeight>
+              <a
+                href="https://github.com/rbrtsmith/nebula"
+                className="c-btn c-btn--sm c-btn--beta"
+              >
+                GH Repo
+              </a>
+            </Navbar.Item>
+          </Navbar.Content>
         </Navbar.Inner>
       </Navbar.Wrapper>
     )

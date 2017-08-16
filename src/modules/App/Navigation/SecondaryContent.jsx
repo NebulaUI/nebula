@@ -9,7 +9,7 @@ const SecondayContent = (
     <NavLink
       activeStyle={{ display: 'none' }}
       to={`${basePath}get-started`}
-      className="c-btn c-btn--sm c-btn--alpha"
+      className="c-btn c-btn--sm c-btn--alpha u-push-left-md"
     >
       Get started!
     </NavLink>
