@@ -22,7 +22,7 @@ const Source = ({
         <Tabs.Tab>HTML code</Tabs.Tab>
         <Tabs.Tab>React code (ES6)</Tabs.Tab>
       </Tabs.TabList>
-      <Tabs.Panels>
+      <Tabs.PanelList>
         { description ? <Tabs.Panel>{description}</Tabs.Panel> : null }
         { options ? <Tabs.Panel>{options}</Tabs.Panel> : null }
         <Tabs.Panel>
@@ -40,7 +40,7 @@ const Source = ({
             { renderReact(children, componentNameOverride) }
           </Code>
         </Tabs.Panel>
-      </Tabs.Panels>
+      </Tabs.PanelList>
     </Tabs.Wrapper>
   </div>
 )

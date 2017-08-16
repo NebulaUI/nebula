@@ -77,7 +77,7 @@ describe('<Navigation />', () => {
     expect(getContent.prop('node')).toBe('div')
   })
 
-  it('when the location changes the navbar Closes (mobile)', () => {
+  it.skip('when the location changes the navbar Closes (mobile)', () => {
     const CompWrappedWithMemoryRouter = props => (
       <MemoryRouter>
         <Navigation {...props} />

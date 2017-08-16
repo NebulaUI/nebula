@@ -13,6 +13,11 @@ const initialState = {
   initialActiveIndex: 1
 }
 
+const componentNameOverride = {
+  TabsTabList: 'Tabs.TabList',
+  TabsPanelList: 'Tabs.PanelList'
+}
+
 class TabsExample extends Component {
   constructor() {
     super()
@@ -39,7 +44,8 @@ class TabsExample extends Component {
         description={description}
         options={options}
         config={{
-          type: 'Tabs'
+          type: 'Tabs',
+          componentNameOverride
         }}
         ComponentToRender={ComponentToRender(state)}
       />
