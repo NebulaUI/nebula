@@ -3,7 +3,7 @@ import T from 'prop-types'
 import { Grid, Card } from 'nebula-react'
 
 import { removeFalsyProps as removeFalsy } from 'utils'
-import { items } from './optionsModel/constants'
+import { items } from './options/constants'
 
 const transformProp = (obj) => {
   const newArr = Object.values(obj).reduce((arr, val) => (
@@ -22,8 +22,27 @@ const ComponentToRender = (props) => {
     equalHeight,
     gutter,
     align,
-    reverse
+    reverse,
+    cardInItems
   } = props
+
+  const renderItem = (content, item) =>
+    cardInItems ? (
+      <Grid.Item
+        key={item}
+        {...removeFalsy({ width: transformProp(props[`item${item}`].sizes) })}
+      >
+        <Card>{ content }</Card>
+      </Grid.Item>
+    ) : (
+      <Grid.Item
+        key={item}
+        {...removeFalsy({ width: transformProp(props[`item${item}`].sizes) })}
+      >
+        { content }
+      </Grid.Item>
+    )
+
   return (
     <Grid.Wrapper
       {...removeFalsy({ matrix })}
@@ -33,20 +52,11 @@ const ComponentToRender = (props) => {
       {...removeFalsy({ gutter: transformProp(gutter) })}
     >
       {
-        items.map(item => (
-          <Grid.Item
-            key={item}
-            {...removeFalsy({ width: transformProp(props[`item${item}`].sizes) })}
-          >
-            {
-              item === 3 ? (
-                <Card>Item {item}<br />Multiline</Card>
-              ) : (
-                <Card>Item {item}</Card>
-              )
-            }
-          </Grid.Item>
-        ))
+        items.map(item =>
+          item === 3
+            ? renderItem(`Item ${item}, Lorem, ipsum dolor sit amit Nebula React!`, item)
+            : renderItem(`Item ${item}`, item)
+        )
       }
     </Grid.Wrapper>
   )
@@ -57,7 +67,8 @@ ComponentToRender.propTypes = {
   equalHeight: T.bool,
   gutter: T.shape({}),
   reverse: T.bool,
-  align: T.string
+  align: T.string,
+  cardInItems: T.bool
 }
 
 export default ComponentToRender

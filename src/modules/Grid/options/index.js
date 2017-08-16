@@ -2,10 +2,10 @@ import generic from './generic'
 import gutter from './gutter'
 import itemSizes from './itemSizes'
 
-const optionsModel = [
+const options = [
   generic,
   gutter,
   ...itemSizes()
 ]
 
-export default optionsModel
+export default options

@@ -17,6 +17,11 @@ const generic = {
       label: 'Reverse horizontal ordering'
     },
     {
+      type: 'checkbox',
+      stateKey: 'cardInItems',
+      label: 'Nest Card Component inside of Grid Items'
+    },
+    {
       type: 'radio',
       stateKey: 'align',
       label: 'Vertical alignment of Grid Items',

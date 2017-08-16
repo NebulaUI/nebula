@@ -5,13 +5,14 @@ import Example from 'components/ComponentExample/Example'
 
 import description from './description.md'
 import ComponentToRender from './ComponentToRender'
-import optionsModel from './optionsModel'
+import optionsModel from './options'
 
 const initialState = {
   matrix: true,
   equalHeight: false,
   reverse: false,
   align: '',
+  cardInItems: true,
   gutter: {
     all: 'md'
   },
@@ -64,7 +65,7 @@ class BareListExample extends Component {
         description={description}
         config={{
           type: 'Grid',
-          nebulaImportOverride: 'Grid, Card'
+          nebulaImportOverride: `Grid${state.cardInItems ? ', Card' : ''}`
         }}
         ComponentToRender={ComponentToRender(state)}
       />
