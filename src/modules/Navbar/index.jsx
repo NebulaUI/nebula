@@ -3,7 +3,7 @@ import { buildNewState } from 'utils'
 
 import Example from 'components/ComponentExample/Example'
 
-import Description from './Description'
+import description from './description.md'
 import ComponentToRender from './ComponentToRender'
 
 const componentNameOverride = {
@@ -145,7 +145,7 @@ class NavbarExample extends Component {
       <Example
         title="Navbar"
         options={options}
-        Description={Description}
+        description={description}
         ComponentToRender={ComponentToRender(state)}
         config={componentExampleConfig}
       />

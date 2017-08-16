@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import { buildNewState } from 'utils'
 import Example from 'components/ComponentExample/Example'
 
-import Description from './Description'
+import description from './description.md'
 import ComponentToRender from './ComponentToRender'
 import optionsModel from './optionsModel'
 
@@ -61,7 +61,7 @@ class BareListExample extends Component {
       <Example
         title="Grid"
         options={options}
-        Description={Description}
+        description={description}
         config={{
           type: 'Grid',
           nebulaImportOverride: 'Grid, Card'

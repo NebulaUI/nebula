@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import { buildNewState } from 'utils'
 import Example from 'components/ComponentExample/Example'
 
-import Description from './Description'
+import description from './description.md'
 import ComponentToRender from './ComponentToRender'
 
 const componentNameOverride = {
@@ -70,7 +70,7 @@ class BareListExample extends Component {
       <Example
         title="Bare List"
         options={options}
-        Description={Description}
+        description={description}
         config={{
           type: 'BareList',
           nebulaImportOverride: 'BareList, Card',

@@ -1,6 +1,7 @@
 import React from 'react'
 import T from 'prop-types'
 
+import MarkdownContainer from 'components/MarkdownContainer'
 import ComponentExample, {
   ComponentDescription,
   ComponentRendered,
@@ -11,7 +12,7 @@ import Options from './Options'
 const Example = ({
   title,
   ComponentToRender,
-  Description,
+  description,
   options,
   config
 }) => (
@@ -19,7 +20,7 @@ const Example = ({
     <h1>{ title }</h1>
     <ComponentExample config={config} >
       <ComponentDescription>
-        <Description />
+        <MarkdownContainer source={description} />
       </ComponentDescription>
       { options && (
         <ComponentOptions>
@@ -36,7 +37,7 @@ const Example = ({
 Example.propTypes = {
   title: T.string.isRequired,
   ComponentToRender: T.shape({}).isRequired,
-  Description: T.func.isRequired,
+  description: T.string.isRequired,
   options: T.shape({}),
   config: T.shape({})
 }

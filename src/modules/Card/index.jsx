@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 import Example from 'components/ComponentExample/Example'
 
-import Description from './Description'
+import description from './description.md'
 import ComponentToRender from './ComponentToRender'
 
 class BareListExample extends Component {
@@ -16,7 +16,7 @@ class BareListExample extends Component {
     return (
       <Example
         title="Card"
-        Description={Description}
+        description={description}
         config={{
           type: 'Card'
         }}

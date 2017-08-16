@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import { buildNewState } from 'utils'
 import Example from 'components/ComponentExample/Example'
 
-import Description from './Description'
+import description from './description.md'
 import ComponentToRender from './ComponentToRender'
 
 const optionsModel = [{
@@ -63,7 +63,7 @@ class FlagExample extends Component {
       <Example
         title="Flag"
         options={options}
-        Description={Description}
+        description={description}
         config={{
           type: 'Flag',
           nebulaImportOverride: 'Flag, Card'

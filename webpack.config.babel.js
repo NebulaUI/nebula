@@ -45,6 +45,16 @@ const common = {
             limit: 25000
           }
         }]
+      },
+      {
+        test: /\.md$/,
+        use: [
+          {
+            loader: 'html-loader'
+          }, {
+            loader: 'markdown-loader'
+          }
+        ]
       }
     ]
   },
