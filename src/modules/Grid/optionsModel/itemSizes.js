@@ -1,4 +1,5 @@
-import { sizes, breakpoints, items } from './constants'
+import { breakpoints } from 'utils/constants'
+import { sizes, items } from './constants'
 
 const buildItemSizes = item => ({
   title: `Item ${item} sizes (Breakpoints)`,

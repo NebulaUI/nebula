@@ -5,38 +5,17 @@ import Example from 'components/ComponentExample/Example'
 
 import description from './description.md'
 import ComponentToRender from './ComponentToRender'
-
-const optionsModel = [{
-  title: 'Flag',
-  options: [{
-    type: 'checkbox',
-    stateKey: 'reverse',
-    label: 'Reverse.'
-  }, {
-    type: 'checkbox',
-    stateKey: 'gutter',
-    label: 'gutter'
-  }, {
-    type: 'radio',
-    stateKey: 'align',
-    label: 'Select alignment.',
-    options: [{
-      value: 'top',
-      label: 'Top'
-    }, {
-      value: 'center',
-      label: 'Center'
-    }, {
-      value: 'bottom',
-      label: 'Bottom'
-    }]
-  }]
-}]
+import optionsModel from './optionsModel'
 
 const initialState = {
   reverse: false,
   align: 'center',
-  gutter: true
+  gutter: true,
+  breakpoint: 'xs',
+  nowrap: true,
+  componentContentType: 'image',
+  bodyContentType: 'text',
+  wrapInCard: true
 }
 
 class FlagExample extends Component {
@@ -66,7 +45,7 @@ class FlagExample extends Component {
         description={description}
         config={{
           type: 'Flag',
-          nebulaImportOverride: 'Flag, Card'
+          nebulaImportOverride: `Flag${state.wrapInCard ? ', Card' : ''}`
         }}
         ComponentToRender={ComponentToRender(state)}
       />

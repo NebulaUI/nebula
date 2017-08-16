@@ -15,7 +15,7 @@ const Source = ({
   componentNameOverride
 }) => (
   <div>
-    <Tabs.Wrapper>
+    <Tabs.Wrapper style={{ backfaceVisibility: 'hidden' }}>
       <Tabs.TabList>
         { description ? <Tabs.Tab>Description</Tabs.Tab> : null }
         { options ? <Tabs.Tab>Options</Tabs.Tab> : null }

@@ -12,8 +12,8 @@ const Group = ({ title, listType, options, ...rest }) => {
         <MatrixList.Wrapper spacing="md" className="u-flush-bottom">
           { options.map(option =>
             (
-              <MatrixList.Item>
-                <Option listType={listType} key={option.stateKey} {...option} {...rest} />
+              <MatrixList.Item key={option.stateKey}>
+                <Option listType={listType} {...option} {...rest} />
               </MatrixList.Item>
             )
           ) }

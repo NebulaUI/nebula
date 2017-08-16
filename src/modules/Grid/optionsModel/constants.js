@@ -25,18 +25,9 @@ const sizes = [
   '11/12'
 ]
 
-const breakpoints = [
-  'all',
-  'xs',
-  'sm',
-  'md',
-  'lg'
-]
-
 const items = [1, 2, 3, 4]
 
 export {
   sizes,
-  breakpoints,
   items
 }

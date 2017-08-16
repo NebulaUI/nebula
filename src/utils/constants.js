@@ -1,6 +1,14 @@
 const basePath = '/nebula/'
 
-/* eslint-disable import/prefer-default-export */
+const breakpoints = [
+  'all',
+  'xs',
+  'sm',
+  'md',
+  'lg'
+]
+
 export {
-  basePath
+  basePath,
+  breakpoints
 }
