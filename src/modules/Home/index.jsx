@@ -4,19 +4,21 @@ import { Card, Section } from 'nebula-react'
 
 import { basePath } from 'utils/constants'
 import layers from 'assets/img/layers.png'
+import MarkdownContainer from 'components/MarkdownContainer'
 
 import CoreConcepts from '../CoreConcepts'
+import aboveLayers from './aboveLayers.md'
+import belowLayers from './belowLayers.md'
 
 const Home = () => (
   <div>
     <h1><span role="img" aria-label="star" style={{ color: 'transparent', textShadow: '0 0 0 #242424' }}>💫</span> Welcome to Nebula!</h1>
     <Card>
-      <p>Nebula is a multi-tiered ITCSS and BEM based UI toolkit.</p>
-      <p>It consists of three layers building upon one another as the diagram below illustrates.</p>
+      <MarkdownContainer source={aboveLayers} />
       <p>
         <img src={layers} alt="Nebula Layers" style={{ width: '500px' }} />
       </p>
-      <p>As a consumer of Nebula you get to choose which layer(s) your project includes.</p>
+      <MarkdownContainer source={belowLayers} />
       <Link to={`${basePath}get-started`} className="c-btn c-btn--md c-btn--alpha">
         <span role="img" aria-label="star" style={{ color: 'transparent', textShadow: '0 0 0 white', marginRight: '0.5rem' }}>💫</span>Get started!
       </Link>

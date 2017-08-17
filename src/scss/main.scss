@@ -5,3 +5,28 @@
 @import 'objects';
 @import 'components';
 @import 'utilities';
+
+code {
+  padding: 0 4px;
+  background-color: #f7f7f9;
+  border: 1px solid #e1e1e8;
+  color: #cf3261;
+  border-radius: 2px;
+}
+
+pre > code {
+  border: none;
+}
+
+.c-markdown pre[class*="language-"] {
+  margin-bottom: 1rem;
+}
+
+.c-markdown {
+  h1,
+  h2,
+  h3,
+  h4 {
+    margin-top: 2rem;
+  }
+}

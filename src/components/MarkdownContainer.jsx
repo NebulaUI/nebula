@@ -1,10 +1,19 @@
-import React from 'react'
+import React, { Component } from 'react'
 import T from 'prop-types'
 import ReactMarkdown from 'react-markdown'
 
-const MarkdownContainer = ({ source }) => (
-  <ReactMarkdown className="c-markdown" source={source} />
-)
+import Prism from 'prismjs'
+
+class MarkdownContainer extends Component {
+  componentDidMount() {
+    Prism.highlightAll()
+  }
+
+  render() {
+    const { source } = this.props
+    return <ReactMarkdown className="c-markdown" source={source} />
+  }
+}
 
 MarkdownContainer.propTypes = {
   source: T.string.isRequired
