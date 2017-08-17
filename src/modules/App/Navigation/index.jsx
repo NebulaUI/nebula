@@ -2,11 +2,13 @@ import React, { Component } from 'react'
 import T from 'prop-types'
 import { NavLink } from 'react-router-dom'
 import { withRouter } from 'react-router'
-import { Navbar } from 'nebula-react'
+import { Navbar, Icon } from 'nebula-react'
 
 import { basePath } from 'utils/constants'
 import renderRoutes from './renderRoutes'
 import SecondaryContent from './SecondaryContent'
+
+import githubIcon from 'assets/icons/github.svg'
 
 class Navigation extends Component {
   componentDidUpdate(prevProps) {
@@ -39,7 +41,8 @@ class Navigation extends Component {
                 href="https://github.com/rbrtsmith/nebula"
                 className="c-btn c-btn--sm c-btn--beta"
               >
-                GH Repo
+                <Icon icon={githubIcon} verticalAlign="sub" width="22px" height="22px" />
+                <span style={{ marginLeft: '0.5rem' }}>Repo</span>
               </a>
             </Navbar.Item>
           </Navbar.Content>

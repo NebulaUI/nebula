@@ -55,7 +55,13 @@ const common = {
             loader: 'markdown-loader'
           }
         ]
-      }
+      },
+      {
+        test: /\.svg$/,
+        use: [{
+          loader: 'svg-sprite-loader',
+        }],
+      },
     ]
   },
   plugins: [

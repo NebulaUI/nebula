@@ -11,7 +11,7 @@ const SecondayContent = (
       to={`${basePath}get-started`}
       className="c-btn c-btn--sm c-btn--alpha u-push-left-md"
     >
-      Get started!
+      <span style={{ color: 'transparent', textShadow: '0 0 0 white', marginRight: '0.5rem' }}>💫</span>Get started!
     </NavLink>
   </Navbar.Item>
 )
