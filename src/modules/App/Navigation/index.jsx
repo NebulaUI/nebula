@@ -4,11 +4,12 @@ import { NavLink } from 'react-router-dom'
 import { withRouter } from 'react-router'
 import { Navbar, Icon } from 'nebula-react'
 
+import githubIcon from 'assets/icons/github.svg'
+
 import { basePath } from 'utils/constants'
 import renderRoutes from './renderRoutes'
 import SecondaryContent from './SecondaryContent'
 
-import githubIcon from 'assets/icons/github.svg'
 
 class Navigation extends Component {
   componentDidUpdate(prevProps) {

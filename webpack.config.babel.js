@@ -59,9 +59,9 @@ const common = {
       {
         test: /\.svg$/,
         use: [{
-          loader: 'svg-sprite-loader',
-        }],
-      },
+          loader: 'svg-sprite-loader'
+        }]
+      }
     ]
   },
   plugins: [

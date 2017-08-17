@@ -87,7 +87,8 @@
       "<rootDir>/modules/App/Navigation/model.js"
     ],
     "moduleNameMapper": {
-      "^.+\\.(jpg|jpeg|png|gif|bmp|eot|otf|webp|ttf|woff|woff2|css|scss|ico)$": "<rootDir>/__mocks__/fileMock.js"
+      "^.+\\.(jpg|jpeg|png|gif|bmp|eot|otf|webp|ttf|woff|woff2|css|scss|ico)$": "<rootDir>/__mocks__/fileMock.js",
+      "^.+\\.(svg)$": "<rootDir>/__mocks__/svgMock.js"
     }
   }
 }
