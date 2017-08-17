@@ -2,6 +2,10 @@ import { basePath } from 'utils/constants'
 
 const model = [
   {
+    to: `${basePath}core-concepts`,
+    label: 'Core concepts'
+  },
+  {
     to: `${basePath}objects`,
     label: 'Objects',
     descendants: [

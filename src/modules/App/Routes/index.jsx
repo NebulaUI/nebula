@@ -12,12 +12,14 @@ import SiteWrap from 'modules/SiteWrap'
 import Section from 'modules/Section'
 import Tabs from 'modules/Tabs'
 import GetStarted from 'modules/GetStarted'
+import CoreConcepts from 'modules/CoreConcepts'
 import NotFound from 'modules/NotFound'
 
 const Routes = () => (
   <Switch>
     <Route exact path={`${basePath}`} component={Home} />
     <Route exact path={`${basePath}get-started`} component={GetStarted} />
+    <Route exact path={`${basePath}core-concepts`} component={CoreConcepts} />
     <Route exact path={`${basePath}objects/flag`} component={Flag} />
     <Route exact path={`${basePath}objects/lists`} component={Lists} />
     <Route exact path={`${basePath}objects/grid`} component={Grid} />

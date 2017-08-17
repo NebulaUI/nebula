@@ -1,6 +1,7 @@
 import React from 'react'
-import { Tabs } from 'nebula-react'
+import { Tabs, Section } from 'nebula-react'
 
+import CoreConcepts from '../CoreConcepts'
 
 const GetStarted = () => (
   <div>
@@ -30,6 +31,11 @@ const GetStarted = () => (
         </Tabs.Panel>
       </Tabs.PanelList>
     </Tabs.Wrapper>
+    <Section size="md">
+      <CoreConcepts>
+        <h2>Core Concepts</h2>
+      </CoreConcepts>
+    </Section>
   </div>
 )
 
