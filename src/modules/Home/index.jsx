@@ -19,7 +19,6 @@ const Home = () => (
       <p>As a consumer of Nebula you get to choose which layer(s) your project includes.</p>
       <Link to={`${basePath}get-started`} className="c-btn c-btn--md c-btn--alpha">
         <span role="img" aria-label="star" style={{ color: 'transparent', textShadow: '0 0 0 white', marginRight: '0.5rem' }}>💫</span>Get started!
-        <span role="img" aria-label="star" style={{ color: 'transparent', textShadow: '0 0 0 white', marginRight: '0.5rem' }}>💫</span>Get started!
       </Link>
     </Card>
     <Section size="md">

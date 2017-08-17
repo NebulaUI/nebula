@@ -1,13 +1,16 @@
 import React from 'react'
 import T from 'prop-types'
-import { Navbar } from 'nebula-react'
+import { Navbar, Icon } from 'nebula-react'
 import classNames from 'classnames'
 
-const Dropdown = ({ renderRoutes, to, label, descendants, path }) => (
+const Dropdown = ({ renderRoutes, to, icon, label, descendants, path }) => (
   <Navbar.Dropdown.Wrapper key={to}>
     <Navbar.Dropdown.Toggle
       className={classNames({ 'is-active': path.includes(to) })}
     >
+      { icon && (
+        <Icon left icon={icon} />
+      )}
       { label }
     </Navbar.Dropdown.Toggle>
     <Navbar.Dropdown.Content>
@@ -21,7 +24,8 @@ Dropdown.propTypes = {
   to: T.string.isRequired,
   label: T.string.isRequired,
   path: T.string.isRequired,
-  descendants: T.arrayOf(T.shape({})).isRequired
+  descendants: T.arrayOf(T.shape({})).isRequired,
+  icon: T.node
 }
 
 export default Dropdown
