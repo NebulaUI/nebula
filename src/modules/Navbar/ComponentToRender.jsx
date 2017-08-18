@@ -1,15 +1,17 @@
 import React from 'react'
 import T from 'prop-types'
 import { BrowserRouter as Router, NavLink } from 'react-router-dom'
-import { Navbar } from 'nebula-react'
+import { Navbar, Icon } from 'nebula-react'
 
 import { removeFalsyProps as removeFalsy } from 'utils'
+import logoImg from 'assets/img/checkdmedia.png'
+import lightbulb from 'assets/icons/lightbulb.svg'
 
 const ComponentToRender = ({
   sticky,
   reactRouter,
   reverseSourceOrder,
-  logoIncluded,
+  logo,
   navItems,
   secondaryContent
 }) => {
@@ -25,6 +27,15 @@ const ComponentToRender = ({
       </Navbar.Link>
     )
   )
+
+  const buildItemWithIcon = () => (
+    navItems.icon ? (
+      <div>Pulsars<Icon verticalAlign="sub" width="24px" height="24px" right icon={lightbulb} /></div>
+    ) : (
+      'Pulsars'
+    )
+  )
+
   const NavItems = (
     <Navbar.Content {...removeFalsy({ right: navItems.right })}>
       <Navbar.Item>
@@ -44,7 +55,7 @@ const ComponentToRender = ({
         </Navbar.Dropdown.Content>
       </Navbar.Dropdown.Wrapper>
       <Navbar.Item>
-        {buildNavLink('/nebula/pulsars', 'Pulsars')}
+        {buildNavLink('/nebula/pulsars', buildItemWithIcon())}
       </Navbar.Item>
     </Navbar.Content>
   )
@@ -73,10 +84,16 @@ const ComponentToRender = ({
     </Navbar.Content>
   )
 
-  const Logo = (
-    <Navbar.Logo to="/nebula">
-      Logo Text
-    </Navbar.Logo>
+  const buildLogo = () => (
+    logo.componentType === 'text' ? (
+      <Navbar.Logo to="/nebula">
+        Logo Text
+      </Navbar.Logo>
+    ) : (
+      <Navbar.Logo to="/nebula" width="150px">
+        <img src={logoImg} alt="Checkd Media logo" />
+      </Navbar.Logo>
+    )
   )
 
   const Toggle = (
@@ -98,7 +115,7 @@ const ComponentToRender = ({
             ) &&
             Toggle
           }
-          {logoIncluded && Logo}
+          {logo.included && buildLogo()}
           {secondaryContent.included && SecondaryContent(secondaryContent)}
           {navItems.included && NavItems}
         </Navbar.Inner>
@@ -116,7 +133,7 @@ const ComponentToRender = ({
             ) &&
             Toggle
           }
-          {logoIncluded && Logo}
+          {logo.included && buildLogo()}
           {navItems.included && NavItems}
           {secondaryContent.included && SecondaryContent(secondaryContent)}
         </Navbar.Inner>
@@ -136,7 +153,9 @@ ComponentToRender.propTypes = {
   sticky: T.bool,
   reactRouter: T.bool,
   reverseSourceOrder: T.bool,
-  logoIncluded: T.bool,
+  logo: T.shape({
+    included: T.bool.isRequired
+  }),
   navItems: T.shape({ right: T.bool }),
   secondaryContent: T.shape({
     right: T.bool,

@@ -3,6 +3,7 @@ import React from 'react'
 import replaceBase64 from '../replaceBase64'
 import removeNull from './removeNull'
 import removeFunctionCallParens from './removeFunctionCallParens'
+import removeIconData from './removeIconData'
 import addDotNotation from './addDotNotation'
 import renderProps from './renderProps'
 import getData from './getData'
@@ -20,7 +21,7 @@ const createInitialNodeString = (node, name) => {
 }
 
 const stripUnwantedContent = str =>
-  removeFunctionCallParens(removeNull(replaceBase64(str)))
+  removeIconData(removeFunctionCallParens(removeNull(replaceBase64(str))))
 
 const cleanNodeString = (str, componentNameOverride) =>
   addDotNotation(stripUnwantedContent(str), componentNameOverride)

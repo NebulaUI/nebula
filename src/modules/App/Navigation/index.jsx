@@ -42,8 +42,7 @@ class Navigation extends Component {
                 href="https://github.com/rbrtsmith/nebula"
                 className="c-btn c-btn--sm c-btn--beta"
               >
-                <Icon icon={githubIcon} left verticalAlign="sub" width="22px" height="22px" />
-                <span>Repo</span>
+                <Icon icon={githubIcon} verticalAlign="sub" width="22px" height="22px" />
               </a>
             </Navbar.Item>
           </Navbar.Content>
