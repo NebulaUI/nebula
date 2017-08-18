@@ -1,7 +1,9 @@
 import React from 'react'
 import { Tabs, Section } from 'nebula-react'
 
+import MarkdownContainer from 'components/MarkdownContainer'
 import CoreConcepts from '../CoreConcepts'
+import nebulaCSS from './nebula-css.md'
 
 const GetStarted = () => (
   <div>
@@ -21,7 +23,7 @@ const GetStarted = () => (
       </Tabs.TabList>
       <Tabs.PanelList>
         <Tabs.Panel>
-          <code>yarn add nebula-css</code>
+          <MarkdownContainer source={nebulaCSS} />
         </Tabs.Panel>
         <Tabs.Panel>
           <code>yarn add nebula-components</code>
