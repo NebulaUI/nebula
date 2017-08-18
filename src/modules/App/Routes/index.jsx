@@ -11,6 +11,7 @@ import Card from 'modules/Card'
 import SiteWrap from 'modules/SiteWrap'
 import Section from 'modules/Section'
 import Tabs from 'modules/Tabs'
+import Foldable from 'modules/Foldable'
 import GetStarted from 'modules/GetStarted'
 import CoreConcepts from 'modules/CoreConcepts'
 import NotFound from 'modules/NotFound'
@@ -28,6 +29,7 @@ const Routes = () => (
     <Route exact path={`${basePath}components/navbar`} component={Navbar} />
     <Route exact path={`${basePath}components/card`} component={Card} />
     <Route exact path={`${basePath}components/tabs`} component={Tabs} />
+    <Route exact path={`${basePath}components/foldable`} component={Foldable} />
     <Route component={NotFound} />
   </Switch>
 )

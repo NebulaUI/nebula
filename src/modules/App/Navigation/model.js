@@ -46,6 +46,10 @@ const model = [
         label: 'Card'
       },
       {
+        to: `${basePath}components/foldable`,
+        label: 'Foldable'
+      },
+      {
         to: `${basePath}components/navbar`,
         label: 'Navbar'
       },

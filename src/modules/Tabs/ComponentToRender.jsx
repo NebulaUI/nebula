@@ -23,14 +23,14 @@ const ComponentToRender = ({ qtyTabs, initialActiveIndex }) => {
     </Tabs.TabList>
   )
 
-  const buildPanelList = () => (
-    <Tabs.PanelList>
+  const buildPanels = () => (
+    <Tabs.Panels>
       {
         buildTabsArray().map(tab => (
           <Tabs.Panel key={tab}>Panel { tab + 1 } Lorem ipsum</Tabs.Panel>
         ))
       }
-    </Tabs.PanelList>
+    </Tabs.Panels>
   )
 
   return (
@@ -38,7 +38,7 @@ const ComponentToRender = ({ qtyTabs, initialActiveIndex }) => {
       {...removeFalsy({ initialActiveIndex: parseInt(initialActiveIndex, 10) })}
     >
       {buildTabs()}
-      {buildPanelList()}
+      {buildPanels()}
     </Tabs.Wrapper>
   )
 }

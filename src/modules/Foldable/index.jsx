@@ -5,18 +5,19 @@ import Example from 'components/ComponentExample/Example'
 
 import description from './description.md'
 import ComponentToRender from './ComponentToRender'
+
 import optionsModel from './options'
 
 const initialState = {
-  qtyTabs: 3,
-  initialActiveIndex: 1
+  qtyFoldableComponents: 1,
+  headerPadding: true,
+  bordered: false,
+  cardInBody: true,
+  cardWrapping: false,
+  breakpoint: 'all'
 }
 
-const componentNameOverride = {
-  TabsTabList: 'Tabs.TabList'
-}
-
-class TabsExample extends Component {
+class FoldableExample extends Component {
   constructor() {
     super()
 
@@ -38,12 +39,12 @@ class TabsExample extends Component {
     }
     return (
       <Example
-        title="Tabs"
+        title="Foldable"
         description={description}
         options={options}
         config={{
-          type: 'Tabs',
-          componentNameOverride
+          type: 'Foldable',
+          nebulaImportOverride: `Foldable${state.cardInBody || state.cardWrapping ? ', Card' : ''}`
         }}
         ComponentToRender={ComponentToRender(state)}
       />
@@ -51,4 +52,4 @@ class TabsExample extends Component {
   }
 }
 
-export default TabsExample
+export default FoldableExample
