@@ -4235,27 +4235,23 @@ ncname@1.0.x:
   dependencies:
     xml-char-classes "^1.0.0"
 
-nebula-components@^0.1.0:
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/nebula-components/-/nebula-components-0.1.0.tgz#b06463589db549810e5cbbca908db6337854ea04"
+nebula-components@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/nebula-components/-/nebula-components-0.1.1.tgz#00f5a7bc92628ac6d50a5293a3462ac0be7aa71f"
   dependencies:
-    nebula-css "^2.5.0"
+    nebula-css "^2.6.2"
 
-nebula-css@^2.5.0:
-  version "2.6.0"
-  resolved "https://registry.yarnpkg.com/nebula-css/-/nebula-css-2.6.0.tgz#8dbde3c8c8a1a038bd134ffa6beba03bec814e19"
+nebula-css@^2.6.2:
+  version "2.6.2"
+  resolved "https://registry.yarnpkg.com/nebula-css/-/nebula-css-2.6.2.tgz#bf9a1270dadc27bb0e3cc1809280f0d7995b2c68"
 
-nebula-css@^2.6.1:
-  version "2.6.1"
-  resolved "https://registry.yarnpkg.com/nebula-css/-/nebula-css-2.6.1.tgz#6aca7dd3e895ed5edd4fa875f4eab635f25ca3e7"
-
-nebula-react@^0.1.1:
-  version "0.1.2"
-  resolved "https://registry.yarnpkg.com/nebula-react/-/nebula-react-0.1.2.tgz#471147e3778aa9d3e6a09e7b75fc74ceb1c60a61"
+nebula-react@^0.1.3:
+  version "0.1.3"
+  resolved "https://registry.yarnpkg.com/nebula-react/-/nebula-react-0.1.3.tgz#9c8b8f8f5295b521c8c1288a4a2e886fbb1e60ef"
   dependencies:
     babel-plugin-transform-object-rest-spread "^6.23.0"
-    nebula-components "^0.1.0"
-    nebula-css "^2.6.1"
+    nebula-components "^0.1.1"
+    nebula-css "^2.6.2"
 
 negotiator@0.6.1:
   version "0.6.1"
