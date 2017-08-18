@@ -13,7 +13,7 @@ describe('<Source />', () => {
     const $ = shallow(<Source {...defaultProps}><div /></Source>)
     expect($.find(Tabs.Wrapper)).toHaveLength(1)
     expect($.find(Tabs.Wrapper).childAt(0).type()).toBe(Tabs.TabList)
-    expect($.find(Tabs.Wrapper).childAt(1).type()).toBe(Tabs.PanelList)
+    expect($.find(Tabs.Wrapper).childAt(1).type()).toBe(Tabs.Panels)
   })
 
   it('renders HTML and React code Tabs by default', () => {
@@ -34,7 +34,7 @@ describe('<Source />', () => {
     const $$ = shallow(<Source {...props}><div /></Source>)
     expect($$.find(Tabs.TabList).contains('Description')).toBe(true)
     expect($$.find(Tabs.Panel)).toHaveLength(3)
-    expect($$.find(Tabs.PanelList).childAt(0).contains('test-description')).toBe(true)
+    expect($$.find(Tabs.Panels).childAt(0).contains('test-description')).toBe(true)
   })
 
   it('renders am options Tab and TabPanel conditionally', () => {
@@ -49,16 +49,16 @@ describe('<Source />', () => {
     const $$ = shallow(<Source {...props}><div /></Source>)
     expect($$.find(Tabs.TabList).contains('Options')).toBe(true)
     expect($$.find(Tabs.Panel)).toHaveLength(3)
-    expect($$.find(Tabs.PanelList).childAt(0).contains('test-options')).toBe(true)
+    expect($$.find(Tabs.Panels).childAt(0).contains('test-options')).toBe(true)
   })
 
   it('renders HTML code', () => {
     const $ = shallow(<Source {...defaultProps}><div /></Source>)
-    expect($.find(Tabs.PanelList).childAt(0).contains('<div></div>')).toBe(true)
+    expect($.find(Tabs.Panels).childAt(0).contains('<div></div>')).toBe(true)
   })
 
   it('renders React code', () => {
     const $ = shallow(<Source {...defaultProps}><div /></Source>)
-    expect($.find(Tabs.PanelList).childAt(1).contains('<div />')).toBe(true)
+    expect($.find(Tabs.Panels).childAt(1).contains('<div />')).toBe(true)
   })
 })

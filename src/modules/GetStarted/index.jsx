@@ -21,7 +21,7 @@ const GetStarted = () => (
           Nebula React
         </Tabs.Tab>
       </Tabs.TabList>
-      <Tabs.PanelList>
+      <Tabs.Panels>
         <Tabs.Panel>
           <MarkdownContainer source={nebulaCSS} />
         </Tabs.Panel>
@@ -31,7 +31,7 @@ const GetStarted = () => (
         <Tabs.Panel>
           <code>yarn add nebula-react</code>
         </Tabs.Panel>
-      </Tabs.PanelList>
+      </Tabs.Panels>
     </Tabs.Wrapper>
     <Section size="md">
       <CoreConcepts>

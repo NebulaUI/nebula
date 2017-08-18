@@ -9,12 +9,12 @@ import ComponentExample, {
 } from '../'
 
 const ComponentToRender = <div />
-const Description = () => <div />
+const description = 'T'
 
 const defaultProps = {
   title: 'T',
   ComponentToRender,
-  Description,
+  description,
   options: {
     model: [],
     handleChange: jest.fn(),
