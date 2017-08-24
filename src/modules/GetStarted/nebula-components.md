@@ -1,4 +1,4 @@
-`yarn add nebula-css`
+`yarn add nebula-components`
 
 ## Setup ITCSS structure
 
@@ -35,13 +35,12 @@ And populate `main.scss` with the following imports:
 The blank files imported above should be populated in order to imports its specific ITCSS layer from Luna:
 ```scss
 /* _settings.scss */
-@import '/node_modules/nebula-css/nebula-css/settings';
+@import '/node_modules/nebula-components/nebula-components/settings';
 ```
 
-Complete for all remaining files except `_components.scss` within the `scss/` directory.
+Complete for all remaining files within the `scss/` directory.
 
 **Note:**
-* Nebula CSS does not ship with a `components` layer so attempting to import it will result in an error.
 * If you're using [node-sass](https://github.com/sass/node-sass) as your Sass compiler (recommended) you can use [IncludePaths](https://github.com/sass/node-sass#includepaths) to tidy up your nebula Sass imports.
 An example Sass loader (Webpack) config could be
 
@@ -49,18 +48,21 @@ An example Sass loader (Webpack) config could be
 {
   loader: 'sass-loader',
   options: {
-    includePaths: [path.resolve(__dirname, 'node_modules/nebula-css')]
+    includePaths: [
+      path.resolve(__dirname, 'node_modules/nebula-css'),
+      path.resolve(__dirname, 'node_modules/nebula-components')
+    ]
   }
 }
 ```
 
 An equivalent example with NPM scripts would be
 ```json
-"sass": "node-sass --include-path ./node_modules/nebula-css/ -o dist src/scss/main.scss"
+"sass": "node-sass --include-path ./node_modules/nebula-css/ --include-path ./node_modules/nebula-components/ -o dist src/scss/main.scss"
 ```
 
 Then the above import would look like
 ```scss
 /* _settings.scss */
-@import 'nebula-css/settings';
+@import 'nebula-components/settings';
 ```
