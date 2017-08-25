@@ -1,8 +1,6 @@
-`yarn add nebula-css`
-
 ## Setup ITCSS structure
 
-Paste the following into your terminal:
+`cd` into your source directroy and paste the following into your terminal:
 ```bash
 mkdir scss &&
 cd scss &&
@@ -16,29 +14,27 @@ cd scss &&
   echo "@import 'utilities';"
   echo ""
 } > main.scss &&
-touch _settings.scss _tools.scss _resets.scss _base.scss _objects.scss _components.scss _utilities.scss
+{
+  echo "@import '/node_modules/nebula-css/nebula-css/settings';"
+} > _settings.scss &&
+{
+  echo "@import '/node_modules/nebula-css/nebula-css/tools';"
+} > _tools.scss &&
+{
+  echo "@import '/node_modules/nebula-css/nebula-css/resets';"
+} > _resets.scss &&
+{
+  echo "@import '/node_modules/nebula-css/nebula-css/base';"
+} > _base.scss &&
+{
+  echo "@import '/node_modules/nebula-css/nebula-css/objects';"
+} > _objects.scss &&
+{
+  echo "@import '/node_modules/nebula-css/nebula-css/utilities';"
+} > _utilities.scss &&
+touch _components.scss
 cd ..
 ```
-
-And populate `main.scss` with the following imports:
-```scss
-/* main.scss */
-@import 'settings';
-@import 'tools';
-@import 'resets';
-@import 'base';
-@import 'objects';
-@import 'components';
-@import 'utilities';
-```
-
-The blank files imported above should be populated in order to imports its specific ITCSS layer from Luna:
-```scss
-/* _settings.scss */
-@import '/node_modules/nebula-css/nebula-css/settings';
-```
-
-Complete for all remaining files except `_components.scss` within the `scss/` directory.
 
 **Note:**
 * Nebula CSS does not ship with a `components` layer so attempting to import it will result in an error.
