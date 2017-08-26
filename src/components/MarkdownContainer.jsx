@@ -9,6 +9,10 @@ class MarkdownContainer extends Component {
     Prism.highlightAll()
   }
 
+  componentDidUpdate() {
+    Prism.highlightAll()
+  }
+
   render() {
     const { source } = this.props
     return <ReactMarkdown className="c-markdown" source={source} />

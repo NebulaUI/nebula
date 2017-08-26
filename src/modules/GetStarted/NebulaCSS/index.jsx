@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import MarkdownContainer from 'components/MarkdownContainer'
 import { Form, MatrixList, BareList } from 'nebula-react'
 
-import foo from './nebula-css.md'
+import createSassFiles from './create-sass-files.md'
+import createSassFilesIncludePaths from './create-sass-files-include-paths.md'
 
 class NebulaCSS extends Component {
   constructor() {
@@ -10,7 +11,8 @@ class NebulaCSS extends Component {
 
     this.state = {
       dependencyManager: 'yarn',
-      includePaths: false
+      includePaths: true,
+      buildTool: 'npmScripts'
     }
   }
 
@@ -20,17 +22,20 @@ class NebulaCSS extends Component {
     })
   }
 
-  handleCheckboxChange = ({ target }) => {
-    console.log(target)
+  handleCheckboxChange = ({ target: { name, checked } }) => {
+    this.setState({
+      [name]: checked
+    })
   }
 
   render() {
-    const { dependencyManager, includePaths } = this.state
+    const { dependencyManager, buildTool, includePaths } = this.state
     return (
       <div>
+        <h2>Select your...</h2>
         <BareList.Wrapper spacing="md" className="u-flush-bottom">
           <BareList.Item>
-            Dependency manager ?
+            Dependency manager
             <MatrixList.Wrapper spacing="md">
               <MatrixList.Item>
                 <Form.Radio id="yarn" value="yarn" name="dependencyManager" checked={dependencyManager === 'yarn'} onChange={this.handleRadioChange}>Yarn</Form.Radio>
@@ -41,7 +46,21 @@ class NebulaCSS extends Component {
             </MatrixList.Wrapper>
           </BareList.Item>
           <BareList.Item>
-            Node Sass IncludePaths ?
+            Build tool
+            <MatrixList.Wrapper spacing="md">
+              <MatrixList.Item>
+                <Form.Radio id="npmScripts" value="npmScripts" name="buildTool" checked={buildTool === 'npmScripts'} onChange={this.handleRadioChange}>NPM Scripts</Form.Radio>
+              </MatrixList.Item>
+              <MatrixList.Item>
+                <Form.Radio id="webpack" value="webpack" name="buildTool" checked={buildTool === 'webpack'} onChange={this.handleRadioChange}>Webpack</Form.Radio>
+              </MatrixList.Item>
+              <MatrixList.Item>
+                <Form.Radio id="gulp" value="gulp" name="buildTool" checked={buildTool === 'gulp'} onChange={this.handleRadioChange}>Gulp</Form.Radio>
+              </MatrixList.Item>
+            </MatrixList.Wrapper>
+          </BareList.Item>
+          <BareList.Item>
+            Node Sass <a href="https://github.com/sass/node-sass#includepaths">IncludePaths</a> (recommended)
             <MatrixList.Wrapper spacing="md">
               <MatrixList.Item>
                 <Form.Checkbox id="includePaths" name="includePaths" checked={includePaths} onChange={this.handleCheckboxChange}>IncludePaths</Form.Checkbox>
@@ -49,14 +68,18 @@ class NebulaCSS extends Component {
             </MatrixList.Wrapper>
           </BareList.Item>
         </BareList.Wrapper>
-        <code>
+        <hr />
+        <p><code>
           {
             dependencyManager === 'yarn'
               ? 'yarn add nebula-css'
               : 'npm install --save nebula-css'
           }
-        </code>
-        <MarkdownContainer source={foo} />
+        </code></p>
+        <h2>Setup ITCSS structure</h2>
+        <p><code>cd</code> into your source directory and paste the
+          following into your terminal.</p>
+        <MarkdownContainer source={includePaths ? createSassFilesIncludePaths : createSassFiles} />
       </div>
     )
   }
