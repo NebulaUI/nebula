@@ -4,6 +4,12 @@ import { Form, MatrixList, BareList } from 'nebula-react'
 
 import createSassFiles from './create-sass-files.md'
 import createSassFilesIncludePaths from './create-sass-files-include-paths.md'
+import npmScripts from './npm-scripts.md'
+import npmScriptsIncludePaths from './npm-scripts-include-paths.md'
+import gulp from './gulp.md'
+import gulpIncludePaths from './gulp-include-paths.md'
+import webpack from './webpack.md'
+import webpackIncludePaths from './webpack-include-paths.md'
 
 class NebulaCSS extends Component {
   constructor() {
@@ -30,6 +36,17 @@ class NebulaCSS extends Component {
 
   render() {
     const { dependencyManager, buildTool, includePaths } = this.state
+    const createBuildToolExample = () => {
+      switch (buildTool) {
+        case 'npmScripts':
+          return <MarkdownContainer source={includePaths ? npmScriptsIncludePaths : npmScripts} />
+        case 'gulp':
+          return <MarkdownContainer source={includePaths ? gulpIncludePaths : gulp} />
+        case 'webpack':
+          return <MarkdownContainer source={includePaths ? webpackIncludePaths : webpack} />
+        default: return null
+      }
+    }
     return (
       <div>
         <h2>Select your...</h2>
@@ -80,6 +97,9 @@ class NebulaCSS extends Component {
         <p><code>cd</code> into your source directory and paste the
           following into your terminal.</p>
         <MarkdownContainer source={includePaths ? createSassFilesIncludePaths : createSassFiles} />
+        <p>The following example should be modified to match your
+          <code>src/</code> and <code>dist/</code> directories.</p>
+        {createBuildToolExample()}
       </div>
     )
   }
