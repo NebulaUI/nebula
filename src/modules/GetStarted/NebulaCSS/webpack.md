@@ -9,7 +9,7 @@
     loader: 'postcss-loader',
     options: {
       plugins: () => [
-        autoprefixer({ browsers: ['last 2 versions', 'ie 9-11'] })
+        autoprefixer()
       ]
     }
   }, {

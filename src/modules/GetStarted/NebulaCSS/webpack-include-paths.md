@@ -1,3 +1,5 @@
+Next add the required loaders to your webpack config.  They will need to be installed via your dependency manager.
+
 ```javascript
 {
   test: /\.s?css$/,
@@ -8,9 +10,7 @@
   }, {
     loader: 'postcss-loader',
     options: {
-      plugins: () => [
-        autoprefixer({ browsers: ['last 2 versions', 'ie 9-11'] })
-      ]
+      plugins: () => [autoprefixer()]
     }
   }, {
     loader: 'sass-loader',
@@ -22,4 +22,11 @@
     }
   }]
 }
+```
+
+You will then want to import your styles at the root of your JavaScript application.
+
+```javascript
+// src/index.js
+import './scss/main.scss'
 ```

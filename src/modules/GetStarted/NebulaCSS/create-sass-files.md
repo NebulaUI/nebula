@@ -32,3 +32,18 @@ cd scss &&
 touch _components.scss
 cd ..
 ```
+
+That will create the following folder structure
+
+```bash
+scss/
+|
+├──main.scss
+├──_settings.scss
+├──_tools.scss
+├──_resets.scss
+├──_base.scss
+├──_objects.scss
+├──_components.scss
+├──_utilities.scss
+```

@@ -6,7 +6,7 @@
 @import 'components';
 @import 'utilities';
 
-code {
+code:not([class*='language-']) {
   padding: 0 4px;
   background-color: #f7f7f9;
   border: 1px solid #e1e1e8;

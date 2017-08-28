@@ -6,8 +6,6 @@ import createSassFiles from './create-sass-files.md'
 import createSassFilesIncludePaths from './create-sass-files-include-paths.md'
 import npmScripts from './npm-scripts.md'
 import npmScriptsIncludePaths from './npm-scripts-include-paths.md'
-import gulp from './gulp.md'
-import gulpIncludePaths from './gulp-include-paths.md'
 import webpack from './webpack.md'
 import webpackIncludePaths from './webpack-include-paths.md'
 
@@ -40,8 +38,6 @@ class NebulaCSS extends Component {
       switch (buildTool) {
         case 'npmScripts':
           return <MarkdownContainer source={includePaths ? npmScriptsIncludePaths : npmScripts} />
-        case 'gulp':
-          return <MarkdownContainer source={includePaths ? gulpIncludePaths : gulp} />
         case 'webpack':
           return <MarkdownContainer source={includePaths ? webpackIncludePaths : webpack} />
         default: return null
@@ -71,9 +67,6 @@ class NebulaCSS extends Component {
               <MatrixList.Item>
                 <Form.Radio id="webpack" value="webpack" name="buildTool" checked={buildTool === 'webpack'} onChange={this.handleRadioChange}>Webpack</Form.Radio>
               </MatrixList.Item>
-              <MatrixList.Item>
-                <Form.Radio id="gulp" value="gulp" name="buildTool" checked={buildTool === 'gulp'} onChange={this.handleRadioChange}>Gulp</Form.Radio>
-              </MatrixList.Item>
             </MatrixList.Wrapper>
           </BareList.Item>
           <BareList.Item>
@@ -97,8 +90,6 @@ class NebulaCSS extends Component {
         <p><code>cd</code> into your source directory and paste the
           following into your terminal.</p>
         <MarkdownContainer source={includePaths ? createSassFilesIncludePaths : createSassFiles} />
-        <p>The following example should be modified to match your
-          <code>src/</code> and <code>dist/</code> directories.</p>
         {createBuildToolExample()}
       </div>
     )

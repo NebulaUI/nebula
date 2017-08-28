@@ -193,23 +193,3 @@ There's no reason why we cannot combine the above e.g.
 ```html
 <div class="ln-u-1/2@sm"></div>
 ```
-
-## Dependencies
-
-Nebula is provided as Sass files, for maximum reuse and adaptability. You'll need some way to compile the Sass to CSS to display in a browser. We'd recommend to use a [Libsass](http://sass-lang.com/libsass) based tool, which will likely be available for your build tool of choice (for example, [Webpack Sass Loader](https://github.com/jtangelder/sass-loader) or [Gulp Sass](https://github.com/dlmanning/gulp-sass).
-
-You don't need to know Sass to consume Nebula, but a familiarity will help you use and extend the basic styles.
-
-This README assumes you have a `node` and `yarn` installed, however the Nebula should be compatible with other module systems.
-
-You will need to use [Autoprefixer](https://github.com/postcss/autoprefixer) to insert the necessary vendor prefixes depending on the browsers you intend to support.  This can be ran directly via NPM scripts or alternatively you can run this in your build-tool of choice.
-
-
-### A word on CSS minification
-Some CSS minifiers alter the source order of your CSS and merge media queries.  This will cause the grid to break as it's width, push and pull classes are dependant upon source order. It's also generally a bad idea to be reordering our CSS as it is source order dependant.
-As such we should ideally be writing our CSS in [specificity order](http://csswizardry.com/2014/10/the-specificity-graph/).
-
-The recommended minifier is [clean css](https://github.com/jakubpawlowicz/clean-css) and it should be ran with the flag `--skip-advanced` to avoid this reordering and merging.
-If you are using Gulp and the plugin [gulp-minify-css](https://www.npmjs.com/package/gulp-minify-css) which is essentially a wrapper for clean-css then you will need to pipe the following: `.pipe(minifyCSS({'advanced': false}))`.
-
-Having more media queries in your CSS will make almost zero difference after everything is Gzipped, it deals with repetition extremely well.
