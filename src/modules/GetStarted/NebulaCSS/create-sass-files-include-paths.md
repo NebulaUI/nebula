@@ -33,7 +33,7 @@ touch _components.scss
 cd ..
 ```
 
-That will create the following folder structure
+You should have the following folder structure with the appropriate imports populating the files.
 
 ```bash
 scss/

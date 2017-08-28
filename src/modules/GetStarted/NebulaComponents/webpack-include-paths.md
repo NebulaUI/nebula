@@ -17,7 +17,10 @@ The example below should be adjusted to suit your project needs.
   }, {
     loader: 'sass-loader',
     options: {
-      includePaths: [path.resolve(__dirname, 'node_modules/nebula-css')]
+      includePaths: [
+        path.resolve(__dirname, 'node_modules/nebula-css'),
+        path.resolve(__dirname, 'node_modules/nebula-components')
+      ]
     }
   }]
 }

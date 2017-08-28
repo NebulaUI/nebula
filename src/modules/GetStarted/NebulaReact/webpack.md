@@ -2,7 +2,11 @@ Next add the required loaders to your webpack config.  They will need to be inst
 
 The example below should be adjusted to suit your project needs.
 
+**Note** Nebula React ships with transpiled code so does not have a dependency on [Babel](https://babeljs.io/), however if you are using JSX in your
+React components you will then require Babel with the appropriate presets.
+
 ```javascript
+{ test: /\.jsx?$/, use: 'babel-loader' },
 {
   test: /\.s?css$/,
   use: [{
@@ -12,13 +16,12 @@ The example below should be adjusted to suit your project needs.
   }, {
     loader: 'postcss-loader',
     options: {
-      plugins: () => [autoprefixer()]
+      plugins: () => [
+        autoprefixer()
+      ]
     }
   }, {
-    loader: 'sass-loader',
-    options: {
-      includePaths: [path.resolve(__dirname, 'node_modules/nebula-css')]
-    }
+    loader: 'sass-loader'
   }]
 }
 ```

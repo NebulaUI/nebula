@@ -12,24 +12,26 @@ cd scss &&
   echo ""
 } > main.scss &&
 {
-  echo "@import '/node_modules/nebula-css/nebula-css/settings';"
+  echo "@import '/node_modules/nebula-components/nebula-components/settings';"
 } > _settings.scss &&
 {
-  echo "@import '/node_modules/nebula-css/nebula-css/tools';"
+  echo "@import '/node_modules/nebula-components/nebula-components/tools';"
 } > _tools.scss &&
 {
-  echo "@import '/node_modules/nebula-css/nebula-css/resets';"
+  echo "@import '/node_modules/nebula-components/nebula-components/resets';"
 } > _resets.scss &&
 {
-  echo "@import '/node_modules/nebula-css/nebula-css/base';"
+  echo "@import '/node_modules/nebula-components/nebula-components/base';"
 } > _base.scss &&
 {
-  echo "@import '/node_modules/nebula-css/nebula-css/objects';"
+  echo "@import '/node_modules/nebula-components/nebula-components/objects';"
 } > _objects.scss &&
 {
-  echo "@import '/node_modules/nebula-css/nebula-css/utilities';"
-} > _utilities.scss &&
-touch _components.scss
+  echo "@import '/node_modules/nebula-components/nebula-components/components';"
+} > _components.scss &&
+{
+  echo "@import '/node_modules/nebula-components/nebula-components/utilities';"
+} > _utilities.scss
 cd ..
 ```
 

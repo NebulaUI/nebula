@@ -4,7 +4,7 @@ The following example should be modified to match your `src/` and `dist/` direct
 
 ```json
 "scripts": {
-  "sass": "node-sass -o dist src/scss/main.scss"
+  "sass": "node-sass --include-path ./node_modules/nebula-css/ --include-path ./node_modules/nebula-components/ -o dist src/scss/main.scss"
 }
 ```
 
@@ -16,8 +16,9 @@ Your NPM scripts may then look like the following
 
 ```json
 "scripts": {
-  "sass": "node-sass -o dist src/scss/main.scss",
+  "sass": "node-sass --include-path ./node_modules/nebula-css/ --include-path ./node_modules/nebula-components/ -o dist src/scss/main.scss",
   "autoprefixer": "postcss -u autoprefixer -r dist/main.css",
   "build:styles": "npm run sass && npm run autoprefixer"
 }
 ```
+

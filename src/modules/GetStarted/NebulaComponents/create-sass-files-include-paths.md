@@ -12,24 +12,26 @@ cd scss &&
   echo ""
 } > main.scss &&
 {
-  echo "@import '/node_modules/nebula-css/nebula-css/settings';"
+  echo "@import 'nebula-components/settings';"
 } > _settings.scss &&
 {
-  echo "@import '/node_modules/nebula-css/nebula-css/tools';"
+  echo "@import 'nebula-components/tools';"
 } > _tools.scss &&
 {
-  echo "@import '/node_modules/nebula-css/nebula-css/resets';"
+  echo "@import 'nebula-components/resets';"
 } > _resets.scss &&
 {
-  echo "@import '/node_modules/nebula-css/nebula-css/base';"
+  echo "@import 'nebula-components/base';"
 } > _base.scss &&
 {
-  echo "@import '/node_modules/nebula-css/nebula-css/objects';"
+  echo "@import 'nebula-components/objects';"
 } > _objects.scss &&
 {
-  echo "@import '/node_modules/nebula-css/nebula-css/utilities';"
-} > _utilities.scss &&
-touch _components.scss
+  echo "@import 'nebula-components/components';"
+} > _components.scss &&
+{
+  echo "@import 'nebula-components/utilities';"
+} > _utilities.scss
 cd ..
 ```
 

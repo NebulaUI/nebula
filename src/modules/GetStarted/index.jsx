@@ -3,10 +3,10 @@ import { Tabs, Section } from 'nebula-react'
 import { Link } from 'react-router-dom'
 
 import { basePath } from 'utils/constants'
-import MarkdownContainer from 'components/MarkdownContainer'
 import CoreConcepts from '../CoreConcepts'
 import NebulaCSS from './NebulaCSS/'
-import nebulaComponents from './nebula-components.md'
+import NebulaComponents from './NebulaComponents'
+import NebulaReact from './NebulaReact'
 
 const GetStarted = () => (
   <div>
@@ -30,10 +30,10 @@ const GetStarted = () => (
           <NebulaCSS />
         </Tabs.Panel>
         <Tabs.Panel>
-          <MarkdownContainer source={nebulaComponents} />
+          <NebulaComponents />
         </Tabs.Panel>
         <Tabs.Panel>
-          <code>yarn add nebula-react</code>
+          <NebulaReact />
         </Tabs.Panel>
       </Tabs.Panels>
     </Tabs.Wrapper>
