@@ -50,6 +50,10 @@ const model = [
         label: 'Foldable'
       },
       {
+        to: `${basePath}components/form`,
+        label: 'Form'
+      },
+      {
         to: `${basePath}components/navbar`,
         label: 'Navbar'
       },

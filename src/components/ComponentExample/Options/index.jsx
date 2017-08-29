@@ -17,7 +17,7 @@ const Options = ({ handleChange, model, ...rest }) => {
   }
 
   const renderGroup = (group, i, groups) => (
-    <BareList.Item>
+    <BareList.Item key={group.title}>
       <Group
         key={group.title}
         listType={group.listType}

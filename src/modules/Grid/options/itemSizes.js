@@ -2,7 +2,7 @@ import { breakpoints } from 'utils/constants'
 import { sizes, items } from './constants'
 
 const buildItemSizes = item => ({
-  title: `Item ${item} sizes (Breakpoints)`,
+  title: `Example item ${item} sizes (Breakpoints)`,
   foldable: true,
   foldableOpenOnMount: false,
   listType: 'matrix',
