@@ -8,19 +8,19 @@ const ComponentToRender = ({ disabled }) => {
 
   return (
     <div>
-      <Form.Checkbox
-        name="dark-matter"
+      <Form.Radio
         defaultChecked
+        name="speed"
         {...removeFalsy({ disabled })}
       >
-        Dark Matter
-      </Form.Checkbox>
-      <Form.Checkbox
-        name="black-hole"
+        Light speed
+      </Form.Radio>
+      <Form.Radio
+        name="speed"
         {...removeFalsy({ disabled })}
       >
-        Black Hole
-      </Form.Checkbox>
+        Super Sonic
+      </Form.Radio>
     </div>
   )
 }

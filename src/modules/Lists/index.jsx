@@ -9,7 +9,7 @@ import UniformedList from './UniformedList'
 const Lists = () => (
   <div>
     <h1>Lists</h1>
-    <Foldable.Wrapper openOnMount bordered>
+    <Foldable.Wrapper bordered>
       <Foldable.Header padding>
         <h2>Bare List</h2>
       </Foldable.Header>

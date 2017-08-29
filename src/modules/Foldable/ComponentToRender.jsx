@@ -36,7 +36,7 @@ const ComponentToRender = ({
       key={i}
     >
       <Foldable.Header {...removeFalsy({ padding: headerPadding })}>
-        <h3>Toggle Me</h3>
+        <h3 aria-label="Click to expand">Foldable content title</h3>
       </Foldable.Header>
       <Foldable.Body>
         { buildBodyContent() }
