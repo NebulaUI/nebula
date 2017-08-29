@@ -1,5 +1,7 @@
 const options = [{
   title: 'Global Navbar options',
+  foldable: true,
+  foldableOpenOnMount: true,
   options: [{
     type: 'checkbox',
     stateKey: 'sticky',
@@ -15,6 +17,8 @@ const options = [{
   }]
 }, {
   title: 'Logo',
+  foldable: true,
+  foldableOpenOnMount: false,
   options: [{
     type: 'checkbox',
     stateKey: 'logo.included',
@@ -33,6 +37,8 @@ const options = [{
   }]
 }, {
   title: 'Nav Items',
+  foldable: true,
+  foldableOpenOnMount: false,
   options: [{
     type: 'checkbox',
     stateKey: 'navItems.included',
@@ -59,6 +65,8 @@ const options = [{
   }]
 }, {
   title: 'Secondary Content',
+  foldable: true,
+  foldableOpenOnMount: false,
   options: [{
     type: 'checkbox',
     stateKey: 'secondaryContent.included',

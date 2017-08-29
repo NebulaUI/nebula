@@ -9,6 +9,8 @@ const gutterSizes = {
 
 const gutter = {
   title: 'Gutter (Breakpoints)',
+  foldable: true,
+  foldableOpenOnMount: false,
   listType: 'matrix',
   options: breakpoints.map(bp => ({
     type: 'select',

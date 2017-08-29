@@ -1,5 +1,7 @@
 const generic = {
   title: 'Grid',
+  foldable: true,
+  foldableOpenOnMount: true,
   options: [
     {
       type: 'checkbox',

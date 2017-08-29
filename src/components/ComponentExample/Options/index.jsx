@@ -16,16 +16,23 @@ const Options = ({ handleChange, model, ...rest }) => {
     handleChange(target.name, target.value)
   }
 
-  const renderGroup = group => (
-    <Group
-      key={group.title}
-      listType={group.listType}
-      handleCheckboxChange={handleCheckboxChange}
-      handleSelectboxChange={handleSelectboxChange}
-      handleRadioChange={handleRadioChange}
-      {...group}
-      {...rest}
-    />
+  const renderGroup = (group, i, groups) => (
+    <BareList.Item>
+      <Group
+        key={group.title}
+        listType={group.listType}
+        foldable={group.foldable}
+        foldableOpenOnMount={group.foldableOpenOnMount}
+        handleCheckboxChange={handleCheckboxChange}
+        handleSelectboxChange={handleSelectboxChange}
+        handleRadioChange={handleRadioChange}
+        {...group}
+        {...rest}
+      />
+      {
+        groups.length - 1 !== i && group.foldable && <hr className="u-flush-bottom" />
+      }
+    </BareList.Item>
   )
 
   return (
@@ -37,7 +44,9 @@ const Options = ({ handleChange, model, ...rest }) => {
 
 Options.propTypes = {
   model: T.arrayOf(T.shape({
-    title: T.string.isRequired
+    title: T.string.isRequired,
+    foldable: T.bool,
+    foldableOpenOnMount: T.bool
   })).isRequired,
   handleChange: T.func.isRequired
 }
