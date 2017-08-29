@@ -15,6 +15,11 @@ const options = [{
   options: [
     {
       type: 'checkbox',
+      stateKey: 'openOnMount',
+      label: 'Open on mount.'
+    },
+    {
+      type: 'checkbox',
       stateKey: 'headerPadding',
       label: 'Padding around Header.'
     },

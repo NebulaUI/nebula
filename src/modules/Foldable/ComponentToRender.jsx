@@ -5,6 +5,7 @@ import { Foldable, Card } from 'nebula-react'
 import { removeFalsyProps as removeFalsy } from 'utils'
 
 const ComponentToRender = ({
+  openOnMount,
   qtyFoldableComponents,
   headerPadding,
   bordered,
@@ -29,6 +30,7 @@ const ComponentToRender = ({
     <Foldable.Wrapper
       {...removeFalsy({
         bordered,
+        openOnMount,
         breakpoint: breakpoint === 'all' ? false : breakpoint
       })}
       key={i}
@@ -59,6 +61,7 @@ const ComponentToRender = ({
 }
 
 ComponentToRender.propTypes = {
+  openOnMount: T.bool.isRequired,
   qtyFoldableComponents: T.number.isRequired,
   headerPadding: T.bool.isRequired,
   bordered: T.bool.isRequired,

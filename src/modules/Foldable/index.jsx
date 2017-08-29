@@ -14,7 +14,8 @@ const initialState = {
   bordered: false,
   cardInBody: true,
   cardWrapping: false,
-  breakpoint: 'all'
+  breakpoint: 'all',
+  openOnMount: true
 }
 
 class FoldableExample extends Component {
