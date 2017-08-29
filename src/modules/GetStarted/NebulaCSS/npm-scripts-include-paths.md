@@ -1,5 +1,3 @@
-Next add Sass compilation to your NPM scripts.
-
 The following example should be modified to match your `src/` and `dist/` directories.
 
 ```json
@@ -9,10 +7,10 @@ The following example should be modified to match your `src/` and `dist/` direct
 ```
 
 You will also likely want to use Autoprefixer to add in any necessary vendor prefixes e.g.
-We recommend that you configure Autoprefixer with [browserslist](https://www.npmjs.com/package/browserslist)
+We recommend that you configure Autoprefixer with [browserslist](https://www.npmjs.com/package/browserslist).
 
 
-Your NPM scripts may then look like the following
+Your NPM scripts may then look like.
 
 ```json
 "scripts": {

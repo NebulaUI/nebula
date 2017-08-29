@@ -18,16 +18,26 @@ pre > code {
   border: none;
 }
 
+hr {
+  border: 0;
+  height: 1px;
+  background-color: $nb-color-grey-light;
+}
+
 .c-markdown pre[class*="language-"] {
   margin-bottom: 1rem;
   font-size: 0.9rem;
 }
 
-.c-markdown {
+.c-article {
   h1,
   h2,
   h3,
   h4 {
-    margin-top: 2rem;
+    margin-top: $nb-spacing-unit-double;
   }
+}
+
+.c-article > *:first-child {
+  margin-top: 0;
 }

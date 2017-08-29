@@ -28,7 +28,7 @@ React components you will then require Babel with the appropriate presets.
 You will also likely want to use Autoprefixer as demonstrated above to add in any necessary vendor prefixes.
 We recommend that you configure Autoprefixer with [browserslist](https://www.npmjs.com/package/browserslist)
 
-Finally import your styles at the root of your JavaScript application.
+<h2>4. Import styles</h2>
 
 ```javascript
 // src/index.js

@@ -7,14 +7,14 @@ import MarkdownContainer from 'components/MarkdownContainer'
 import source from './source.md'
 
 const CoreConcepts = ({ children }) => (
-  <div>
+  <article className="c-article">
     {
       children || <h1>Core Concepts</h1>
     }
     <Card>
       <MarkdownContainer source={source} />
     </Card>
-  </div>
+  </article>
 )
 
 CoreConcepts.propTypes = {
