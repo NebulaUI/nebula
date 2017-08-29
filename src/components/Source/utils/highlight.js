@@ -3,6 +3,7 @@ import Prism from 'prismjs'
 import 'prismjs/components/prism-jsx'
 import 'prismjs/components/prism-scss'
 import 'prismjs/components/prism-bash'
+import 'prismjs/components/prism-json'
 import 'prismjs/themes/prism.css'
 import 'prismjs/themes/prism-okaidia.css'
 

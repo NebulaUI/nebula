@@ -42,7 +42,18 @@ class NebulaCSS extends Component {
           return (
             <div>
               <h2>3. Configure NPM Scripts</h2>
+              <p><a href="https://docs.npmjs.com/misc/scripts">NPM scripts</a> allow you to run packages from the CLI.</p>
+              <p>Add Node sass as a dependency.</p>
+              <p><code>{dependencyManager === 'yarn' ? 'yarn add -D node-sass' : 'npm install --save-dev node-sass'}</code></p>
               <MarkdownContainer source={includePaths ? npmScriptsIncludePaths : npmScripts} />
+              <p>You'll also need to install the additional dependencies.</p>
+              <p><code>
+                {
+                  dependencyManager === 'yarn'
+                    ? 'yarn add -D postcss-cli autoprefixer'
+                    : 'npm install --save-dev postcss-cli autoprefixer'
+                }
+              </code></p>
             </div>
           )
         case 'webpack':

@@ -6,7 +6,7 @@ The following example should be modified to match your `src/` and `dist/` direct
 }
 ```
 
-You will also likely want to use Autoprefixer to add in any necessary vendor prefixes e.g.
+You will also likely want to use [Autoprefixer](https://github.com/postcss/autoprefixer) to add in any necessary vendor prefixes e.g.
 We recommend that you configure Autoprefixer with [browserslist](https://www.npmjs.com/package/browserslist).
 
 

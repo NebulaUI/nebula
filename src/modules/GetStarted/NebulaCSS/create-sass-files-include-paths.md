@@ -47,3 +47,11 @@ scss/
 ├──_components.scss
 ├──_utilities.scss
 ```
+
+`_settings.scss` should contain
+
+```scss
+@import 'nebula-css/settings';
+```
+
+All the other `.scss` files should contain their corresponding import(s).
