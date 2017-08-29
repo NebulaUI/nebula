@@ -40,7 +40,7 @@ class UniformedListExample extends Component {
     }
     return (
       <Example
-        title="Uniformed List"
+        title=""
         options={options}
         description={description}
         config={{

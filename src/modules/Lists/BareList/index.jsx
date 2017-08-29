@@ -42,7 +42,7 @@ class BareListExample extends Component {
     }
     return (
       <Example
-        title="Bare List"
+        title=""
         options={options}
         description={description}
         config={{

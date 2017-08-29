@@ -42,7 +42,7 @@ class MatrixListExample extends Component {
     }
     return (
       <Example
-        title="Matrix List"
+        title=""
         options={options}
         description={description}
         config={{

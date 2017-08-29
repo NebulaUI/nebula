@@ -42,7 +42,7 @@ class InlineListExample extends Component {
     }
     return (
       <Example
-        title="Inline List"
+        title=""
         options={options}
         description={description}
         config={{
