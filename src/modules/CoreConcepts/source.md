@@ -118,13 +118,13 @@ breakpoint found in the [$nb-breakpoints](https://github.com/rbrtsmith/nebula-cs
 
 ```scss
 .u-hiddenk@md {
-	// Err!
+  // Err!
 }
 .u-hidden\@md {
-	// Yay! (Screen sizes > 'md' breakpoint)
-	@include nb-respond-to('md') {
-	  display: none;
-	}
+  // Yay! (Screen sizes > 'md' breakpoint)
+  @include nb-respond-to('md') {
+    display: none;
+  }
 }
 .u-hidden\@max-sm {
   // Viewports < 'sm' breakpoint
@@ -167,11 +167,11 @@ them.
 
 ```scss
 .u-1/2 {
-	// Err!
+  // Err!
 }
 .u-1\/2 {
-	// Yay!
-	width: 50%;
+  // Yay!
+  width: 50%;
 }
 ```
 
@@ -185,9 +185,9 @@ There's no reason why we cannot combine the above e.g.
 
 ```scss
 .u-1\/2\@sm {
-	@include respond-to('sm') {
-		width: 50%;
-	}
+  @include respond-to('sm') {
+    width: 50%;
+  }
 }
 ```
 
