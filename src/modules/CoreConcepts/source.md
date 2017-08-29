@@ -89,7 +89,7 @@ the architecture of the CSS/Sass from the HTML / Classnames.
 [Further reading](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/)
 
 
-<section class="o-section-md u-hard-top">
+<section>
 ## BEMIT
 
 BEMIT is an ITCSS extension of BEM that makes selectors more transparent and further
@@ -109,32 +109,33 @@ for JavaScript hooks - ensuring that classname follows the single responsibility
 ### Responsive Suffixes
 
 Used to denote what viewport-width breakpoint this class will be applied to.
-`ln-u-hidden@md` means this class should only applied on viewports larger than the `screen-md`
-breakpoint found in the [$ln-breakpoints](#responsive-breakpoints) setting.  Also note that these should also contain a call to the [respond-to](#respond-to) mixin.
+
+The class `u-hidden@md` means this class will only be applied on viewports larger than the `md`
+breakpoint found in the [$nb-breakpoints](https://github.com/rbrtsmith/nebula-css/blob/master/nebula-css/_settings.scss#L10) variable.  Also note that these should also contain a call to the [nb-respond-to](https://github.com/rbrtsmith/nebula-css/blob/master/nebula-css/tools/_respond-to.scss) mixin.
 [More on responsive suffixes](http://csswizardry.com/2015/08/bemit-taking-the-bem-naming-convention-a-step-further/#responsive-suffixes)
 
 **Note** The `@` symbol has to be escaped when writing Sass/CSS.
 
 ```scss
-.ln-u-hiddenk@md {
+.u-hiddenk@md {
 	// Err!
 }
-.ln-u-hidden\@md {
+.u-hidden\@md {
 	// Yay! (Screen sizes > 'md' breakpoint)
-	@include respond-to('md') {
+	@include nb-respond-to('md') {
 	  display: none;
 	}
 }
-.ln-u-hidden\@max-sm {
+.u-hidden\@max-sm {
   // Viewports < 'sm' breakpoint
-  @include respond-to('max-sm') {
+  @include nb-respond-to('max-sm') {
     display: none;
   }
 }
 ```
 
 ```html
-<div class="ln-u-hidden@max-sm">...</div>
+<div class="u-hidden@max-sm">...</div>
 ```
 
 ### Math operators
@@ -142,40 +143,40 @@ breakpoint found in the [$ln-breakpoints](#responsive-breakpoints) setting.  Als
 There's a high probability that we require fractions or multiples of a
 spacing unit on a particular chunk of UI.
 For example you could create a utility class such as
-`ln-u-push-bottom*2` will result in a margin bottom that is double the spacing
+`nb-u-push-bottom*2` will result in a margin bottom that is double the spacing
 unit.
 
 ```scss
-.ln-u-push-bottom*2 {
+.u-push-bottom*2 {
   //Err!
 }
-.ln-u-push-bottom\*2 {
+.u-push-bottom\*2 {
   // Yay!
-  margin-bottom: ($ln-spacing-unit * 2);
+  margin-bottom: $nb-spacing-unit-double;
 }
 ```
 
 ```html
-<div class="ln-u-push-bottom*2">...</div>
+<div class="u-push-bottom*2">...</div>
 ```
 
 Math operators are already used in width classes used in the grid system to denote the fractions:
-`ln-u-1/2` will give a width of 50%.
+The class `u-1/2` will give a width of 50%.
 If you're writing CSS/Sass that is using these operations you *must* escape
 them.
 
 ```scss
-.ln-u-1/2 {
+.u-1/2 {
 	// Err!
 }
-.ln-u-1\/2 {
+.u-1\/2 {
 	// Yay!
 	width: 50%;
 }
 ```
 
 ```html
-<div class="ln-u-1/2">...</div>
+<div class="u-1/2">...</div>
 ```
 
 ### Composing BEMIT classes
@@ -183,7 +184,7 @@ them.
 There's no reason why we cannot combine the above e.g.
 
 ```scss
-.ln-u-1\/2\@sm {
+.u-1\/2\@sm {
 	@include respond-to('sm') {
 		width: 50%;
 	}
@@ -191,5 +192,7 @@ There's no reason why we cannot combine the above e.g.
 ```
 
 ```html
-<div class="ln-u-1/2@sm"></div>
+<div class="u-1/2@sm"></div>
 ```
+
+This is how the grid system provided by Nebula works.
