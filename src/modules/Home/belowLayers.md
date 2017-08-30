@@ -2,7 +2,7 @@ As a consumer of Nebula you get to choose which layer(s) your project includes:
 
 ### [Nebula CSS](https://github.com/rbrtsmith/nebula-css)
 A very low level CSS/Sass architecture using ITCSS and BEM, includes all of the Object examples on this site.
-It ships without any cosmetic styling leaving it upto you to configure your own typograpgy, colours and so on.
+It ships without any cosmetic styling leaving it upto you to configure your own typography, colours and so on.
 
 ### [Nebula Components](https://github.com/rbrtsmith/nebula-components)
 Building upon Nebula CSS this is a collection of components that are cosmetically themed,
