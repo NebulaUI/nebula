@@ -1,29 +1,33 @@
-import React, { Component } from 'react'
+import React from 'react'
+import { Section, Foldable } from 'nebula-react'
 
-import Example from 'components/ComponentExample/Example'
+import Card from './Card'
+import StatusCard from './StatusCard'
 
-import description from './description.md'
-import ComponentToRender from './ComponentToRender'
+const Form = () => (
+  <div>
+    <h1>Form</h1>
+    <Foldable.Wrapper bordered>
+      <Foldable.Header padding>
+        <h2>Card</h2>
+      </Foldable.Header>
+      <Foldable.Body>
+        <Section size="md" node="div" className="u-hard-top">
+          <Card />
+        </Section>
+      </Foldable.Body>
+    </Foldable.Wrapper>
+    <Foldable.Wrapper bordered>
+      <Foldable.Header padding>
+        <h2>Status Card</h2>
+      </Foldable.Header>
+      <Foldable.Body>
+        <Section size="md" node="div" className="u-hard-top">
+          <StatusCard />
+        </Section>
+      </Foldable.Body>
+    </Foldable.Wrapper>
+  </div>
+)
 
-class CardExample extends Component {
-  constructor() {
-    super()
-
-    this.state = {}
-  }
-
-  render() {
-    return (
-      <Example
-        title="Card"
-        description={description}
-        config={{
-          type: 'Card'
-        }}
-        ComponentToRender={ComponentToRender()}
-      />
-    )
-  }
-}
-
-export default CardExample
+export default Form
