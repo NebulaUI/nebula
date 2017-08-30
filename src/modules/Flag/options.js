@@ -1,7 +1,7 @@
 import { breakpoints } from 'utils/constants'
 
-const optionsModel = [{
-  title: 'Flag',
+const options = [{
+  title: '',
   options: [
     {
       type: 'checkbox',
@@ -88,4 +88,4 @@ const optionsModel = [{
   ]
 }]
 
-export default optionsModel
+export default options

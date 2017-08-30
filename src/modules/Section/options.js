@@ -7,7 +7,7 @@ const sizes = {
 }
 
 const options = [{
-  title: 'Section',
+  title: '',
   options: [
     {
       type: 'checkbox',

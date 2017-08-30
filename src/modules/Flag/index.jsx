@@ -5,7 +5,7 @@ import Example from 'components/ComponentExample/Example'
 
 import description from './description.md'
 import ComponentToRender from './ComponentToRender'
-import optionsModel from './optionsModel'
+import optionsModel from './options'
 
 const initialState = {
   reverse: false,

@@ -13,7 +13,7 @@ const componentNameOverride = {
 
 
 const optionsModel = [{
-  title: 'Site Wrap',
+  title: '',
   options: [
     {
       type: 'checkbox',

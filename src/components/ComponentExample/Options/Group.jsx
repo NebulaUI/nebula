@@ -9,13 +9,13 @@ const Group = ({ title, listType, options, foldable, foldableOpenOnMount, ...res
     if (listType === 'matrix') {
       return (
         <MatrixList.Wrapper spacing="md" className="u-flush-bottom">
-          {options.map(option =>
+          { options.map(option =>
             (
               <MatrixList.Item key={option.stateKey}>
                 <Option listType={listType} {...option} {...rest} />
               </MatrixList.Item>
             )
-          )}
+          ) }
         </MatrixList.Wrapper>
       )
     }
@@ -35,18 +35,18 @@ const Group = ({ title, listType, options, foldable, foldableOpenOnMount, ...res
   const buildFoldableGroup = () => (
     <Foldable.Wrapper openOnMount={foldableOpenOnMount}>
       <Foldable.Header padding>
-        <h2>{ title }</h2>
+        { title && <h2>{ title }</h2> }
       </Foldable.Header>
       <Foldable.Body>
-        {buildGroupList()}
+        { buildGroupList() }
       </Foldable.Body>
     </Foldable.Wrapper>
   )
 
   const buildGroup = () => (
     <div>
-      <h2>{title}</h2>
-      {buildGroupList()}
+      { title && <h2>{ title }</h2> }
+      { buildGroupList() }
     </div>
   )
 

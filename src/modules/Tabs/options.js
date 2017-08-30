@@ -10,12 +10,12 @@ const buildTabs = (list = [], curr = 0) => {
 }
 
 const options = [{
-  title: 'Tabs',
+  title: '',
   options: [
     {
       type: 'select',
       stateKey: 'qtyTabs',
-      label: 'Quantity of tabs',
+      label: 'Quantity',
       options: buildTabs().map(item => ({
         value: item,
         label: item

@@ -16,7 +16,7 @@ const buildLisItems = (list = [], curr = 0) => {
 }
 
 const options = [{
-  title: 'Matrix List',
+  title: '',
   options: [
     {
       type: 'checkbox',

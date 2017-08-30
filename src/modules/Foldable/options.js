@@ -11,7 +11,7 @@ const buildFoldableComponents = (list = [], curr = 1) => {
 }
 
 const options = [{
-  title: 'Foldable',
+  title: '',
   options: [
     {
       type: 'checkbox',

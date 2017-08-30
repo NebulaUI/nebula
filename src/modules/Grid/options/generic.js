@@ -1,5 +1,5 @@
 const generic = {
-  title: 'Grid',
+  title: 'Generic',
   foldable: true,
   foldableOpenOnMount: true,
   options: [

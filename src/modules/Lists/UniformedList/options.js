@@ -11,7 +11,7 @@ const buildLisItems = (list = [], curr = 0) => {
 }
 
 const options = [{
-  title: 'Bare List',
+  title: '',
   options: [
     {
       type: 'checkbox',

@@ -1,5 +1,5 @@
 const options = [{
-  title: 'Global Navbar options',
+  title: 'Generic',
   foldable: true,
   foldableOpenOnMount: true,
   options: [{
