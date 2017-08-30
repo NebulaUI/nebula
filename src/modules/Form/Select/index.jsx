@@ -8,14 +8,14 @@ import ComponentToRender from './ComponentToRender'
 import optionsModel from './options'
 
 const componentNameOverride = {
-  Radio: 'Form.Radio'
+  Select: 'Form.Select'
 }
 
 const initialState = {
   disabled: false
 }
 
-class RadioExample extends Component {
+class TextInputExample extends Component {
   constructor() {
     super()
 
@@ -50,4 +50,4 @@ class RadioExample extends Component {
   }
 }
 
-export default RadioExample
+export default TextInputExample

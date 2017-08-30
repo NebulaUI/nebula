@@ -5,6 +5,7 @@ import TextInput from './TextInput'
 import Textarea from './Textarea'
 import Checkbox from './Checkbox'
 import Radio from './Radio'
+import Select from './Select'
 
 const Form = () => (
   <div>
@@ -26,6 +27,16 @@ const Form = () => (
       <Foldable.Body>
         <Section size="md" node="div" className="u-hard-top">
           <Textarea />
+        </Section>
+      </Foldable.Body>
+    </Foldable.Wrapper>
+    <Foldable.Wrapper bordered>
+      <Foldable.Header padding>
+        <h2>Select</h2>
+      </Foldable.Header>
+      <Foldable.Body>
+        <Section size="md" node="div" className="u-hard-top">
+          <Select />
         </Section>
       </Foldable.Body>
     </Foldable.Wrapper>

@@ -8,7 +8,8 @@ import ComponentToRender from './ComponentToRender'
 import optionsModel from './options'
 
 const componentNameOverride = {
-  Checkbox: 'Form.TextInput'
+  TextInput: 'Form.TextInput',
+  Label: 'Form.Label'
 }
 
 const initialState = {

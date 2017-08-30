@@ -6,12 +6,16 @@ import { removeFalsyProps as removeFalsy } from 'utils'
 
 const ComponentToRender = ({ disabled }) => (
   <div>
-    <Form.Label htmlFor="comments">Comments:</Form.Label>
-    <Form.Textarea
-      id="comments"
-      placeholder="I'd like to suggest..."
+    <Form.Label htmlFor="country">Select Country</Form.Label>
+    <Form.Select
+      id="country"
       {...removeFalsy({ disabled })}
-    />
+      onChange={() => {}}
+    >
+      <option value="Germany">Germany</option>
+      <option value="United Kingdom">United Kingdom</option>
+      <option value="France">France</option>
+    </Form.Select>
   </div>
 )
 
