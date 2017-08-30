@@ -62,6 +62,10 @@ const model = [
         label: 'Form'
       },
       {
+        to: `${basePath}components/icon`,
+        label: 'Icon'
+      },
+      {
         to: `${basePath}components/navbar`,
         label: 'Navbar'
       },

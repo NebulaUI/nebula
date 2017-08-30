@@ -7,10 +7,12 @@ import description from './description.md'
 import ComponentToRender from './ComponentToRender'
 import optionsModel from './options'
 
-const componentNameOverride = {}
+const componentNameOverride = {
+  Checkbox: 'Form.Checkbox'
+}
 
 const initialState = {
-  status: 'success'
+  text: 'left'
 }
 
 class CheckboxExample extends Component {
@@ -35,12 +37,13 @@ class CheckboxExample extends Component {
     }
     return (
       <Example
-        title=""
+        title="Icon"
         options={options}
         description={description}
         config={{
-          type: 'Form',
-          componentNameOverride
+          type: 'Icon',
+          componentNameOverride,
+          extraString: 'import github from \'path-to-github-icon.svg\'\n'
         }}
         ComponentToRender={ComponentToRender(state)}
       />
