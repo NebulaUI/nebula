@@ -1,22 +1,23 @@
-
 const MAX_LIST_ITEMS = 10
 
-const buildTabs = (list = [], curr = 0) => {
-  if (curr === MAX_LIST_ITEMS) {
+const buildList = (maxItems, list = [], curr = 0) => {
+  if (curr === parseInt(maxItems, 10)) {
     return list
   }
+
   list.push(curr)
-  return buildTabs(list, curr + 1)
+
+  return buildList(maxItems, list, curr + 1)
 }
 
-const options = [{
+const options = qtyTabs => ([{
   title: '',
   options: [
     {
       type: 'select',
       stateKey: 'qtyTabs',
       label: 'Quantity',
-      options: buildTabs().map(item => ({
+      options: buildList(MAX_LIST_ITEMS).map(item => ({
         value: item,
         label: item
       }))
@@ -25,22 +26,12 @@ const options = [{
       type: 'select',
       stateKey: 'initialActiveIndex',
       label: 'Initial active index',
-      options: [
-        {
-          value: 0,
-          label: 0
-        },
-        {
-          value: 1,
-          label: 1
-        },
-        {
-          value: 2,
-          label: 2
-        }
-      ]
+      options: buildList(qtyTabs).map(item => ({
+        value: item,
+        label: item
+      }))
     }
   ]
-}]
+}])
 
 export default options

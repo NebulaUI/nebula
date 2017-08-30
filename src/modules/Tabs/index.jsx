@@ -34,7 +34,7 @@ class TabsExample extends Component {
     const options = {
       state,
       handleChange: handleOptionChange,
-      model: optionsModel
+      model: optionsModel(this.state.qtyTabs)
     }
     return (
       <Example
