@@ -10,11 +10,10 @@ const ComponentToRender = ({ disabled }) => (
     <Form.Select
       id="country"
       {...removeFalsy({ disabled })}
-      onChange={() => {}}
     >
       <option value="Germany">Germany</option>
       <option value="United Kingdom">United Kingdom</option>
-      <option value="France">France</option>
+      <option disabled value="France">France</option>
     </Form.Select>
   </div>
 )

@@ -1,1 +1,1 @@
-* Styled Textarea.
+* Styled Select box.
