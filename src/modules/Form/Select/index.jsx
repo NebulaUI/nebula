@@ -12,7 +12,8 @@ const componentNameOverride = {
 }
 
 const initialState = {
-  disabled: false
+  disabled: false,
+  small: false
 }
 
 class TextInputExample extends Component {

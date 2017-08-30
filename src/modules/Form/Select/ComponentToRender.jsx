@@ -4,12 +4,13 @@ import { Form } from 'nebula-react'
 
 import { removeFalsyProps as removeFalsy } from 'utils'
 
-const ComponentToRender = ({ disabled }) => (
+const ComponentToRender = ({ disabled, small }) => (
   <div>
     <Form.Label htmlFor="country">Select Country</Form.Label>
     <Form.Select
       id="country"
       {...removeFalsy({ disabled })}
+      {...removeFalsy({ small })}
     >
       <option value="Germany">Germany</option>
       <option value="United Kingdom">United Kingdom</option>
@@ -19,7 +20,8 @@ const ComponentToRender = ({ disabled }) => (
 )
 
 ComponentToRender.propTypes = {
-  disabled: T.bool.isRequired
+  disabled: T.bool.isRequired,
+  small: T.bool.isRequired
 }
 
 export default ComponentToRender

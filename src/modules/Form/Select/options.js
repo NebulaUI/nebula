@@ -3,6 +3,11 @@ const options = [{
   options: [
     {
       type: 'checkbox',
+      stateKey: 'small',
+      label: 'Small'
+    },
+    {
+      type: 'checkbox',
       stateKey: 'disabled',
       label: 'Disabled'
     }
