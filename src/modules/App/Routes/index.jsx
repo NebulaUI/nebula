@@ -14,6 +14,7 @@ import Tabs from 'modules/Tabs'
 import Foldable from 'modules/Foldable'
 import Form from 'modules/Form'
 import Button from 'modules/Button'
+import Flyout from 'modules/Flyout'
 
 import GetStarted from 'modules/GetStarted'
 import CoreConcepts from 'modules/CoreConcepts'
@@ -35,6 +36,7 @@ const Routes = () => (
     <Route exact path={`${basePath}components/foldable`} component={Foldable} />
     <Route exact path={`${basePath}components/form`} component={Form} />
     <Route exact path={`${basePath}components/button`} component={Button} />
+    <Route exact path={`${basePath}components/flyout`} component={Flyout} />
     <Route component={NotFound} />
   </Switch>
 )

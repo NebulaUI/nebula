@@ -15,24 +15,24 @@ const model = [
     icon: bricks,
     descendants: [
       {
-        to: `${basePath}objects/site-wrap`,
-        label: 'Site Wrap'
-      },
-      {
-        to: `${basePath}objects/section`,
-        label: 'Section'
-      },
-      {
-        to: `${basePath}objects/lists`,
-        label: 'Lists'
-      },
-      {
         to: `${basePath}objects/flag`,
         label: 'Flag'
       },
       {
         to: `${basePath}objects/grid`,
         label: 'Grid'
+      },
+      {
+        to: `${basePath}objects/lists`,
+        label: 'Lists'
+      },
+      {
+        to: `${basePath}objects/section`,
+        label: 'Section'
+      },
+      {
+        to: `${basePath}objects/site-wrap`,
+        label: 'Site Wrap'
       }
     ]
   },
@@ -48,6 +48,10 @@ const model = [
       {
         to: `${basePath}components/card`,
         label: 'Card'
+      },
+      {
+        to: `${basePath}components/flyout`,
+        label: 'Flyout'
       },
       {
         to: `${basePath}components/foldable`,
