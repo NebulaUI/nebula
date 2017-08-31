@@ -1,2 +1,2 @@
-* A Card component showing a coloured bar to the left indicating a status.
+* Renders an SVG with some optional text to the left/right
 

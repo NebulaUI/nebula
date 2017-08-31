@@ -30,7 +30,9 @@ const ComponentToRender = ({
 
   const buildItemWithIcon = () => (
     navItems.icon ? (
-      <div>Pulsars<Icon verticalAlign="sub" width="24px" height="24px" right icon={lightbulb} /></div>
+      <Icon verticalAlign="middle" width="24px" height="24px" iconRight icon={lightbulb}>
+        Pulsars
+      </Icon>
     ) : (
       'Pulsars'
     )

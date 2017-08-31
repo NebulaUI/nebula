@@ -12,20 +12,20 @@ const ComponentToRender = ({ direction, closeButtonInContent, buttonForOpen }) =
           : 'Open Flyout'
       }
     </Flyout.Toggle>
-      <Flyout.Content direction={direction}>
-        <Card>
-          <p>Lorem ipsum dolor sit amet</p>
-          {
-            closeButtonInContent && (
-              <Flyout.Toggle>
-                <Button node="span" theme="alpha" size="sm">
-                  Close
-                </Button>
-              </Flyout.Toggle>
-            )
-          }
-        </Card>
-      </Flyout.Content>
+    <Flyout.Content direction={direction}>
+      <Card>
+        <p>Lorem ipsum dolor sit amet</p>
+        {
+          closeButtonInContent && (
+            <Flyout.Toggle>
+              <Button node="span" theme="alpha" size="sm">
+                Close
+              </Button>
+            </Flyout.Toggle>
+          )
+        }
+      </Card>
+    </Flyout.Content>
   </Flyout.Wrapper>
 )
 
