@@ -9,9 +9,11 @@ const Dropdown = ({ renderRoutes, to, icon, label, descendants, path }) => (
       className={classNames({ 'is-active': path.includes(to) })}
     >
       { icon && (
-        <Icon left icon={icon} />
+        <Icon iconLeft verticalAlign="middle" icon={icon}>
+          { label }
+        </Icon>
       )}
-      { label }
+      { !icon && label }
     </Navbar.Dropdown.Toggle>
     <Navbar.Dropdown.Content>
       { renderRoutes(descendants) }

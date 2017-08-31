@@ -7,18 +7,16 @@ import { removeFalsyProps as removeFalsy } from 'utils'
 
 
 const ComponentToRender = ({ text }) => (
-  <div>
-    { text === 'left' && 'Github' }
-    <Icon
-      icon={githubIcon}
-      {...removeFalsy({ right: text === 'left' })}
-      {...removeFalsy({ left: text === 'right' })}
-      verticalAlign="sub"
-      width="22px"
-      height="22px"
-    />
-    { text === 'right' && 'Github' }
-  </div>
+  <Icon
+    icon={githubIcon}
+    {...removeFalsy({ iconRight: text === 'left' })}
+    {...removeFalsy({ iconLeft: text === 'right' })}
+    verticalAlign="middle"
+    width="40px"
+    height="40px"
+  >
+    Github
+  </Icon>
 )
 
 ComponentToRender.propTypes = {

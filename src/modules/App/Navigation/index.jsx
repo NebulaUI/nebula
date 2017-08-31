@@ -30,22 +30,24 @@ class Navigation extends Component {
           <NavLink className="c-navbar__logo" to={basePath}>
             Nebula
           </NavLink>
-          <Navbar.Content>
-            {renderRoutes(routes, pathname)}
-          </Navbar.Content>
-          <Navbar.Content right node="div" keepAtTop>
-            { SecondaryContent }
-          </Navbar.Content>
-          <Navbar.Content right node="div">
-            <Navbar.Item node="div" resetLineHeight>
-              <a
-                href="https://github.com/rbrtsmith/nebula"
-                className="c-btn c-btn--sm c-btn--beta"
-              >
-                <Icon icon={githubIcon} verticalAlign="sub" width="22px" height="22px" />
-              </a>
-            </Navbar.Item>
-          </Navbar.Content>
+          <Navbar.ContentWrapper>
+            <Navbar.Content>
+              {renderRoutes(routes, pathname)}
+            </Navbar.Content>
+            <Navbar.Content right node="div" keepAtTop>
+              { SecondaryContent }
+            </Navbar.Content>
+            <Navbar.Content right node="div">
+              <Navbar.Item node="div" resetLineHeight>
+                <a
+                  href="https://github.com/rbrtsmith/nebula"
+                  className="c-btn c-btn--sm c-btn--beta"
+                >
+                  <Icon icon={githubIcon} verticalAlign="sub" width="22px" height="22px" />
+                </a>
+              </Navbar.Item>
+            </Navbar.Content>
+          </Navbar.ContentWrapper>
         </Navbar.Inner>
       </Navbar.Wrapper>
     )

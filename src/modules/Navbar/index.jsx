@@ -8,7 +8,8 @@ import ComponentToRender from './ComponentToRender'
 import optionsModel from './options'
 
 const componentNameOverride = {
-  BrowserRouter: 'Router'
+  BrowserRouter: 'Router',
+  NavbarContentWrapper: 'Navbar.ContentWrapper'
 }
 
 

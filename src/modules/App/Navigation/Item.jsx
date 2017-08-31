@@ -10,10 +10,14 @@ const Item = ({ to, label, icon }) => (
       activeClassName="is-active"
       to={to}
     >
-      { icon && (
-        <Icon verticalAlign="sub" width="24px" height="24px" left icon={icon} />
-      )}
-      { label }
+      { icon
+        ? (
+          <Icon width="24px" height="24px" verticalAlign="middle" iconLeft icon={icon}>
+            { label }
+          </Icon>
+        )
+        : label
+      }
     </Navbar.Link>
   </Navbar.Item>
 )
