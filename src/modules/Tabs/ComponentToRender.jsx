@@ -2,9 +2,8 @@ import React from 'react'
 import T from 'prop-types'
 import { Tabs } from 'nebula-react'
 
-import { removeFalsyProps as removeFalsy } from 'utils'
 
-const ComponentToRender = ({ qtyTabs, initialActiveIndex }) => {
+const ComponentToRender = ({ qtyTabs }) => {
   const buildTabsArray = (list = [], curr = 0) => {
     if (curr === parseInt(qtyTabs, 10)) {
       return list
@@ -24,19 +23,13 @@ const ComponentToRender = ({ qtyTabs, initialActiveIndex }) => {
   )
 
   const buildPanels = () => (
-    <Tabs.Panels>
-      {
-        buildTabsArray().map(tab => (
-          <Tabs.Panel key={tab}>Panel { tab + 1 } Lorem ipsum</Tabs.Panel>
-        ))
-      }
-    </Tabs.Panels>
+    buildTabsArray().map(tab => (
+      <Tabs.Panel key={tab}>Panel { tab + 1 } Lorem ipsum</Tabs.Panel>
+    ))
   )
 
   return (
-    <Tabs.Wrapper
-      {...removeFalsy({ initialActiveIndex: parseInt(initialActiveIndex, 10) })}
-    >
+    <Tabs.Wrapper>
       {buildTabs()}
       {buildPanels()}
     </Tabs.Wrapper>
@@ -44,8 +37,7 @@ const ComponentToRender = ({ qtyTabs, initialActiveIndex }) => {
 }
 
 ComponentToRender.propTypes = {
-  qtyTabs: T.number.isRequired,
-  initialActiveIndex: T.number.isRequired
+  qtyTabs: T.number.isRequired
 }
 
 export default ComponentToRender

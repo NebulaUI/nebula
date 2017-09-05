@@ -8,8 +8,7 @@ import ComponentToRender from './ComponentToRender'
 import optionsModel from './options'
 
 const initialState = {
-  qtyTabs: 3,
-  initialActiveIndex: 1
+  qtyTabs: 3
 }
 
 const componentNameOverride = {

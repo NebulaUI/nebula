@@ -15,32 +15,30 @@ const Source = ({
   componentNameOverride
 }) => (
   <div>
-    <Tabs.Wrapper style={{ backfaceVisibility: 'hidden' }}>
+    <Tabs.Wrapper>
       <Tabs.TabList>
-        { description ? <Tabs.Tab>Description</Tabs.Tab> : null }
-        { options ? <Tabs.Tab>Options</Tabs.Tab> : null }
-        <Tabs.Tab>HTML code</Tabs.Tab>
-        <Tabs.Tab>React code (ES6)</Tabs.Tab>
+        { description ? <Tabs.Tab target="description">Description</Tabs.Tab> : null }
+        { options ? <Tabs.Tab target="options">Options</Tabs.Tab> : null }
+        <Tabs.Tab target="html">HTML code</Tabs.Tab>
+        <Tabs.Tab target="react">React code (ES6)</Tabs.Tab>
       </Tabs.TabList>
-      <Tabs.Panels>
-        { description ? <Tabs.Panel>{description}</Tabs.Panel> : null }
-        { options ? <Tabs.Panel>{options}</Tabs.Panel> : null }
-        <Tabs.Panel>
-          <Code>
-            { renderHTML(children) }
-          </Code>
-        </Tabs.Panel>
-        <Tabs.Panel>
-          <Code
-            componentName={type}
-            nebulaImportOverride={nebulaImportOverride}
-            extraString={extraString}
-            language="jsx"
-          >
-            { renderReact(children, componentNameOverride) }
-          </Code>
-        </Tabs.Panel>
-      </Tabs.Panels>
+      { description ? <Tabs.Panel id="description">{description}</Tabs.Panel> : null }
+      { options ? <Tabs.Panel id="options">{options}</Tabs.Panel> : null }
+      <Tabs.Panel id="html">
+        <Code>
+          { renderHTML(children) }
+        </Code>
+      </Tabs.Panel>
+      <Tabs.Panel id="react">
+        <Code
+          componentName={type}
+          nebulaImportOverride={nebulaImportOverride}
+          extraString={extraString}
+          language="jsx"
+        >
+          { renderReact(children, componentNameOverride) }
+        </Code>
+      </Tabs.Panel>
     </Tabs.Wrapper>
   </div>
 )

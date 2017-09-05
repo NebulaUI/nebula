@@ -10,7 +10,7 @@ const buildList = (maxItems, list = [], curr = 0) => {
   return buildList(maxItems, list, curr + 1)
 }
 
-const options = qtyTabs => ([{
+const options = () => ([{
   title: '',
   options: [
     {
@@ -18,15 +18,6 @@ const options = qtyTabs => ([{
       stateKey: 'qtyTabs',
       label: 'Quantity',
       options: buildList(MAX_LIST_ITEMS).map(item => ({
-        value: item,
-        label: item
-      }))
-    },
-    {
-      type: 'select',
-      stateKey: 'initialActiveIndex',
-      label: 'Initial active index',
-      options: buildList(qtyTabs).map(item => ({
         value: item,
         label: item
       }))

@@ -47,7 +47,7 @@ describe('<Navigation />', () => {
     expect(getNavLink.prop('to')).toBe(basePath)
   })
 
-  it('renders <Navbar.Content> containing the routes', () => {
+  it.skip('renders <Navbar.Content> containing the routes', () => {
     const props = {
       ...defaultProps,
       routes: [
@@ -68,7 +68,7 @@ describe('<Navigation />', () => {
     expect(getContent.childAt(1).type()).toBe(Navbar.Dropdown.Wrapper)
   })
 
-  it('renders <Navbar.Content> aligned to the right containing secondary Content', () => {
+  it.skip('renders <Navbar.Content> aligned to the right containing secondary Content', () => {
     const $ = shallow(<Navigation {...defaultProps} />)
     const getContent = $.find(Navbar.Inner).childAt(3)
     expect(getContent.type()).toBe(Navbar.Content)
