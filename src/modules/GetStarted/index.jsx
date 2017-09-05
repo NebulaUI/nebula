@@ -15,27 +15,25 @@ const GetStarted = () => (
     <p>Please choose which version of Nebula you wish to consume in your project.</p>
     <Tabs.Wrapper>
       <Tabs.TabList>
-        <Tabs.Tab>
+        <Tabs.Tab target="css">
           Nebula CSS
         </Tabs.Tab>
-        <Tabs.Tab>
+        <Tabs.Tab target="components">
           Nebula Components
         </Tabs.Tab>
-        <Tabs.Tab>
+        <Tabs.Tab target="react">
           Nebula React
         </Tabs.Tab>
       </Tabs.TabList>
-      <Tabs.Panels>
-        <Tabs.Panel>
-          <NebulaCSS />
-        </Tabs.Panel>
-        <Tabs.Panel>
-          <NebulaComponents />
-        </Tabs.Panel>
-        <Tabs.Panel>
-          <NebulaReact />
-        </Tabs.Panel>
-      </Tabs.Panels>
+      <Tabs.Panel id="css">
+        <NebulaCSS />
+      </Tabs.Panel>
+      <Tabs.Panel id="components">
+        <NebulaComponents />
+      </Tabs.Panel>
+      <Tabs.Panel id="react">
+        <NebulaReact />
+      </Tabs.Panel>
     </Tabs.Wrapper>
     <Section size="md">
       <CoreConcepts>
