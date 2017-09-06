@@ -10,11 +10,13 @@ import Code from './Code'
 import renderHTML from './utils/renderHTML'
 import renderReact from './utils/renderReact'
 
+const ACTIVE_ID_KEY = 'ActiveTabId'
+
 const handleTabChange = (type, tabId, history) => {
   const { search } = history.location
   const query = parseQuery(search)
 
-  const key = `${type}ActiveTabId`
+  const key = `${type}${ACTIVE_ID_KEY}`
   query[key] = tabId
 
   history.push({
@@ -25,8 +27,8 @@ const handleTabChange = (type, tabId, history) => {
 const getDefaultActiveTabId = (type, { location: { search } }) => {
   const query = parseQuery(search)
 
-  if (query[`${type}ActiveTabId`]) {
-    return query[`${type}ActiveTabId`]
+  if (query[`${type}${ACTIVE_ID_KEY}`]) {
+    return query[`${type}${ACTIVE_ID_KEY}`]
   }
 
   return 'description'
