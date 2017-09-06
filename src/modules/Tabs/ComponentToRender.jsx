@@ -9,7 +9,7 @@ const ComponentToRender = ({ controlled, activeId }, handleTabChange) => (
   <Tabs.Wrapper
     {...removeFalsy({ activeId: controlled ? activeId : false })}
     {...removeFalsy({ defaultActiveId: controlled ? false : 'panel-2' })}
-    {...removeFalsy({ onChange: controlled ? handleTabChange : false })}
+    {...removeFalsy({ onTabChange: controlled ? handleTabChange : false })}
   >
     <Tabs.TabList>
       <Tabs.Tab target="panel-1">Tab 1</Tabs.Tab>

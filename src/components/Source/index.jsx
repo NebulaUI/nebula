@@ -8,9 +8,9 @@ import Code from './Code'
 import renderHTML from './utils/renderHTML'
 import renderReact from './utils/renderReact'
 
-const parseQuery = q => q.startsWith('?')
+const parseQuery = q => (q.startsWith('?')
   ? parseQs(q.slice(1))
-  : parseQs(q)
+  : parseQs(q))
 
 const handleTabChange = (type, tabId, history) => {
   const { search } = history.location
@@ -47,7 +47,7 @@ const Source = ({
   <div>
     <Tabs.Wrapper
       activeId={getDefaultActiveTabId(type, history)}
-      onChange={id => handleTabChange(type, id, history)}
+      onTabChange={id => handleTabChange(type, id, history)}
     >
       <Tabs.TabList>
         { description ? <Tabs.Tab target="description">Description</Tabs.Tab> : null }
