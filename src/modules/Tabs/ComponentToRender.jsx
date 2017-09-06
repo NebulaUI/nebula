@@ -3,41 +3,21 @@ import T from 'prop-types'
 import { Tabs } from 'nebula-react'
 
 
-const ComponentToRender = ({ qtyTabs }) => {
-  const buildTabsArray = (list = [], curr = 0) => {
-    if (curr === parseInt(qtyTabs, 10)) {
-      return list
-    }
-    list.push(curr)
-    return buildTabsArray(list, curr + 1)
-  }
-
-  const buildTabs = () => (
-    <Tabs.TabList>
-      {
-        buildTabsArray().map(tab => (
-          <Tabs.Tab key={tab}>Tab { tab + 1 }</Tabs.Tab>
-        ))
-      }
-    </Tabs.TabList>
-  )
-
-  const buildPanels = () => (
-    buildTabsArray().map(tab => (
-      <Tabs.Panel key={tab}>Panel { tab + 1 } Lorem ipsum</Tabs.Panel>
-    ))
-  )
-
+const ComponentToRender = ({ }) => {
   return (
-    <Tabs.Wrapper>
-      {buildTabs()}
-      {buildPanels()}
+    <Tabs.Wrapper defaultActiveId="panel-2">
+      <Tabs.TabList>
+        <Tabs.Tab target="panel-1">Tab 1</Tabs.Tab>
+        <Tabs.Tab target="panel-2">Tab 2</Tabs.Tab>
+        <Tabs.Tab target="panel-3">Tab 3</Tabs.Tab>
+      </Tabs.TabList>
+      <Tabs.Panel id="panel-1">Panel 1 Content</Tabs.Panel>
+      <Tabs.Panel id="panel-2">Panel 2 Content</Tabs.Panel>
+      <Tabs.Panel id="panel-3">Panel 3 Content</Tabs.Panel>
     </Tabs.Wrapper>
   )
 }
 
-ComponentToRender.propTypes = {
-  qtyTabs: T.number.isRequired
-}
+ComponentToRender.propTypes = {}
 
 export default ComponentToRender
