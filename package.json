@@ -25,6 +25,7 @@
     "pretty": "^2.0.0",
     "prismjs": "^1.6.0",
     "prop-types": "^15.5.10",
+    "qs": "^6.5.0",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-markdown": "^2.5.0",
