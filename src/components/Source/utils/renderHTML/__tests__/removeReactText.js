@@ -6,4 +6,10 @@ describe('removeReactText', () => {
     const result = '<div class="c-card">\nGrid item 3\n<br />\nMultiple\n<br />\n lines\n</div>'
     expect(removeReactText(str)).toBe(result)
   })
+
+  it('removes React empty comments from a string', () => {
+    const str = '<div class="c-card"><!-- react-empty: 8 --></div>'
+    const result = '<div class="c-card">\n</div>'
+    expect(removeReactText(str)).toBe(result)
+  })
 })
