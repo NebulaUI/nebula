@@ -2,22 +2,29 @@ import React from 'react'
 import T from 'prop-types'
 import { Tabs } from 'nebula-react'
 
+import { removeFalsyProps as removeFalsy } from 'utils'
 
-const ComponentToRender = ({ }) => {
-  return (
-    <Tabs.Wrapper defaultActiveId="panel-2">
-      <Tabs.TabList>
-        <Tabs.Tab target="panel-1">Tab 1</Tabs.Tab>
-        <Tabs.Tab target="panel-2">Tab 2</Tabs.Tab>
-        <Tabs.Tab target="panel-3">Tab 3</Tabs.Tab>
-      </Tabs.TabList>
-      <Tabs.Panel id="panel-1">Panel 1 Content</Tabs.Panel>
-      <Tabs.Panel id="panel-2">Panel 2 Content</Tabs.Panel>
-      <Tabs.Panel id="panel-3">Panel 3 Content</Tabs.Panel>
-    </Tabs.Wrapper>
-  )
+
+const ComponentToRender = ({ controlled, activeId }, handleTabChange) => (
+  <Tabs.Wrapper
+    {...removeFalsy({ activeId: controlled ? activeId : false })}
+    {...removeFalsy({ defaultActiveId: controlled ? false : 'panel-2' })}
+    {...removeFalsy({ onChange: controlled ? handleTabChange : false })}
+  >
+    <Tabs.TabList>
+      <Tabs.Tab target="panel-1">Tab 1</Tabs.Tab>
+      <Tabs.Tab target="panel-2">Tab 2</Tabs.Tab>
+      <Tabs.Tab target="panel-3">Tab 3</Tabs.Tab>
+    </Tabs.TabList>
+    <Tabs.Panel id="panel-1">Panel 1 Content</Tabs.Panel>
+    <Tabs.Panel id="panel-2">Panel 2 Content</Tabs.Panel>
+    <Tabs.Panel id="panel-3">Panel 3 Content</Tabs.Panel>
+  </Tabs.Wrapper>
+)
+
+ComponentToRender.propTypes = {
+  controlled: T.bool.isRequired,
+  activeId: T.string
 }
-
-ComponentToRender.propTypes = {}
 
 export default ComponentToRender
