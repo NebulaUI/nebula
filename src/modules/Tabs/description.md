@@ -12,7 +12,7 @@ This makes the Tabs a [controlled component](https://facebook.github.io/react/do
 rather than that state being heled internally allowing for integration with tools such as Redux.  
 `defaultActiveId` prop has no effect when using `activeId`.
 * `onTabChange :Function`  
-A callback function that gets called whenever the active tab changes.  It get's called with a single argument `id` corresponding to the `id` of the tab being selected.  
+A callback function that gets called whenever the active tab changes.  It gets called with a single argument `id` corresponding to the `id` of the tab being selected.
 Can be used in conjunction with `activeId` to manage the state of the tabs externally, or to update a query string amongst other things.
 * `node :String`  
 Allows the rendered HTML node to be overridden from the default `<div>`

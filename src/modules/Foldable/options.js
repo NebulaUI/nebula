@@ -15,8 +15,8 @@ const options = [{
   options: [
     {
       type: 'checkbox',
-      stateKey: 'openOnMount',
-      label: 'Open on mount.'
+      stateKey: 'controlled',
+      label: 'Externally controlled.'
     },
     {
       type: 'checkbox',

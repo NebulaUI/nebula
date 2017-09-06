@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Button } from 'nebula-react'
 
 import { buildNewState } from 'utils'
 import Example from 'components/ComponentExample/Example'
@@ -15,7 +16,8 @@ const initialState = {
   cardInBody: true,
   cardWrapping: false,
   breakpoint: 'all',
-  openOnMount: true
+  expanded: 'collapsed',
+  controlled: false
 }
 
 class FoldableExample extends Component {
@@ -31,6 +33,9 @@ class FoldableExample extends Component {
     })
   }
 
+  handleFoldableToggle = () =>
+    this.setState({ expanded: this.state.expanded === 'expanded' ? 'collapsed' : 'expanded' })
+
   render() {
     const { state, handleOptionChange } = this
     const options = {
@@ -39,16 +44,28 @@ class FoldableExample extends Component {
       model: optionsModel
     }
     return (
-      <Example
-        title="Foldable"
-        description={description}
-        options={options}
-        config={{
-          type: 'Foldable',
-          nebulaImportOverride: `Foldable${state.cardInBody || state.cardWrapping ? ', Card' : ''}`
-        }}
-        ComponentToRender={ComponentToRender(state)}
-      />
+      <div>
+        {
+          this.state.controlled &&
+            <Button
+              size="sm"
+              theme="alpha"
+              onClick={this.handleFoldableToggle}
+            >
+              Click to toggle foldable
+            </Button>
+        }
+        <Example
+          title="Foldable"
+          description={description}
+          options={options}
+          config={{
+            type: 'Foldable',
+            nebulaImportOverride: `Foldable${state.cardInBody || state.cardWrapping ? ', Card' : ''}`
+          }}
+          ComponentToRender={ComponentToRender(state, this.handleFoldableToggle)}
+        />
+      </div>
     )
   }
 }
