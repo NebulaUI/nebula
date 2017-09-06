@@ -2,25 +2,33 @@ import React from 'react'
 import { withRouter } from 'react-router'
 import T from 'prop-types'
 import { Tabs } from 'nebula-react'
-import { parse as parseQs } from 'qs'
+import { parse as parseQs, stringify as stringifyQs } from 'qs'
 
 import Code from './Code'
 import renderHTML from './utils/renderHTML'
 import renderReact from './utils/renderReact'
 
-const handleTabChange = (tabId, history) => {
+const parseQuery = q => q.startsWith('?')
+  ? parseQs(q.slice(1))
+  : parseQs(q)
+
+const handleTabChange = (type, tabId, history) => {
+  const { search } = history.location
+  const query = parseQuery(search)
+
+  const key = `${type}ActiveTabId`
+  query[key] = tabId
+
   history.push({
-    search: `activeTabId=${tabId}`
+    search: stringifyQs(query)
   })
 }
 
-const getDefaultActiveTabId = ({ location: { search } }) => {
-  const query = search.startsWith('?')
-    ? parseQs(search.slice(1))
-    : parseQs(search)
+const getDefaultActiveTabId = (type, { location: { search } }) => {
+  const query = parseQuery(search)
 
-  if (query.activeTabId) {
-    return query.activeTabId
+  if (query[`${type}ActiveTabId`]) {
+    return query[`${type}ActiveTabId`]
   }
 
   return 'description'
@@ -29,7 +37,8 @@ const getDefaultActiveTabId = ({ location: { search } }) => {
 const Source = ({
   type,
   extraString,
-  description, options,
+  description,
+  options,
   children,
   nebulaImportOverride,
   componentNameOverride,
@@ -37,8 +46,8 @@ const Source = ({
 }) => (
   <div>
     <Tabs.Wrapper
-      activeId={getDefaultActiveTabId(history)}
-      onChange={id => handleTabChange(id, history)}
+      activeId={getDefaultActiveTabId(type, history)}
+      onChange={id => handleTabChange(type, id, history)}
     >
       <Tabs.TabList>
         { description ? <Tabs.Tab target="description">Description</Tabs.Tab> : null }

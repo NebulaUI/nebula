@@ -5,7 +5,7 @@ import { withRouter } from 'react-router'
 
 class ScrollToTop extends Component {
   componentDidUpdate(prevProps) {
-    if (this.props.location !== prevProps.location) {
+    if (this.props.location.pathname !== prevProps.location.pathname) {
       window.scrollTo(0, 0)
     }
   }
@@ -16,7 +16,9 @@ class ScrollToTop extends Component {
 }
 
 ScrollToTop.propTypes = {
-  location: T.shape({}),
+  location: T.shape({
+    pathname: T.string
+  }),
   children: T.node.isRequired
 }
 
