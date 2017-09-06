@@ -19,9 +19,9 @@ const componentNameOverride = {
 const buildExtraString = state => (state.controlled ?
 `
 /*
-  The state of controlled tabs is handled externally by the consumer via 'onChange()'
-  passing the external state into 'activeId'.
-  This works in the same manner as React controlled form components.
+  The state of controlled tabs is handled externally by the consumer and 
+  passed in via 'activeId'.
+  You can listen to change events using 'onTabChange callback prop'
 */ 
 `
 : '')

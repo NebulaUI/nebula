@@ -2,15 +2,13 @@ import React from 'react'
 import { withRouter } from 'react-router'
 import T from 'prop-types'
 import { Tabs } from 'nebula-react'
-import { parse as parseQs, stringify as stringifyQs } from 'qs'
+import { stringify as stringifyQs } from 'qs'
+
+import { parseQuery } from 'utils'
 
 import Code from './Code'
 import renderHTML from './utils/renderHTML'
 import renderReact from './utils/renderReact'
-
-const parseQuery = q => (q.startsWith('?')
-  ? parseQs(q.slice(1))
-  : parseQs(q))
 
 const handleTabChange = (type, tabId, history) => {
   const { search } = history.location
