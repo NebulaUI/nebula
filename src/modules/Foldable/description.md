@@ -5,13 +5,27 @@
 
 ### React Props
 #### `<Foldable.Wrapper />`
-* `defaultExpanded :String [optional]` values: `oneOf(['expanded', 'collapsed'])`
-  Determines the initial expanded/collapsed state.
-* `expanded :String [optional]` values: `oneOf(['expanded', 'collapsed'])`
-This makes foldable a [controlled component](https://facebook.github.io/react/docs/forms.html#controlled-components)
+* `defaultExpanded :oneOf['expanded', 'collapsed'] [optional]`  
+Determines the initial expanded/collapsed state.
+* `expanded :oneOf['expanded', 'collapsed'] [optional]`  
+Makes foldable a [controlled component](https://facebook.github.io/react/docs/forms.html#controlled-components)
 meaning the value of this prop rather than the component's internal state control it's expanded/collapsed state.
-* `onFoldableChange :Function [optional]`
-A callback function that gets called whenever the foldable component changes.  It gets called with a single argument `['expanded' | 'collapsed']`.
-It's paired with `expanded` to allow external control.
-* `breakpoint :String [optional]`
-values: `oneOf(['max-lg', 'max-md', 'max-sm', 'max-xs'])`
+* `onFoldableChange :Function [optional]`  
+A callback function that gets called when the foldable component is about to expand / collapse. it's current state is passed.
+* `breakpoint :oneOf['max-lg', 'max-md', 'max-sm', 'max-xs'] [optional]`  
+Determines what CSS breakpoint it turns from static content to foldable.
+* `bordered :bool [optional]`  
+Adds border styling.
+* `id :String [optional]`  
+used to handle `aria-controls` and `id` properties for the content.  If not defined a random id is generated.
+* `node :String [optional]`  
+Allows the rendered HTML node to be overridden from the default `<div>`.
+
+#### `<Foldable.Header />`
+* `node :String [optional]`  
+Allows the rendered HTML node to be overridden from the default `<div>`.
+
+#### `<Foldable.Body />`
+* `node :String [optional]`  
+Allows the rendered HTML node to be overridden from the default `<div>`.
+

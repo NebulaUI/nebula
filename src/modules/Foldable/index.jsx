@@ -10,15 +10,25 @@ import ComponentToRender from './ComponentToRender'
 import optionsModel from './options'
 
 const initialState = {
-  qtyFoldableComponents: 1,
   headerPadding: true,
   bordered: false,
   cardInBody: true,
   cardWrapping: false,
   breakpoint: 'all',
-  expanded: 'collapsed',
+  expanded: 'expanded',
   controlled: false
 }
+
+const buildExtraString = state => (state.controlled ?
+`
+/*
+  The state of controlled foldable is handled externally by the consumer and 
+  passed in via the 'expanded' prop.
+  This prop also determines whether or not this is a conrolled component.
+  You can listen to change events using 'onFoldableChange'.
+*/ 
+`
+: '')
 
 class FoldableExample extends Component {
   constructor() {
@@ -61,7 +71,8 @@ class FoldableExample extends Component {
           options={options}
           config={{
             type: 'Foldable',
-            nebulaImportOverride: `Foldable${state.cardInBody || state.cardWrapping ? ', Card' : ''}`
+            nebulaImportOverride: `Foldable${state.cardInBody || state.cardWrapping ? ', Card' : ''}`,
+            extraString: buildExtraString(state)
           }}
           ComponentToRender={ComponentToRender(state, this.handleFoldableToggle)}
         />

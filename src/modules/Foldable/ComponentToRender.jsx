@@ -5,7 +5,6 @@ import { Foldable, Card } from 'nebula-react'
 import { removeFalsyProps as removeFalsy } from 'utils'
 
 const ComponentToRender = ({
-  qtyFoldableComponents,
   headerPadding,
   bordered,
   cardInBody,
@@ -14,20 +13,12 @@ const ComponentToRender = ({
   expanded,
   controlled
 }, handleFoldableToggle) => {
-  const buildFoldableComponentsArray = (list = [], curr = 0) => {
-    if (curr === parseInt(qtyFoldableComponents, 10)) {
-      return list
-    }
-    list.push(curr)
-    return buildFoldableComponentsArray(list, curr + 1)
-  }
-
   const buildBodyContent = () => (
     cardInBody ? (
       <Card>Lorem ipsum dolor sit amit</Card>
     ) : 'Lorem ipsum dolor sit amit'
   )
-  const buildFoldable = i => (
+  const buildFoldable = () => (
     <Foldable.Wrapper
       {...removeFalsy({
         bordered,
@@ -36,7 +27,6 @@ const ComponentToRender = ({
         expanded: controlled ? expanded : false,
         breakpoint: breakpoint === 'all' ? false : breakpoint
       })}
-      key={i}
     >
       <Foldable.Header {...removeFalsy({ padding: headerPadding })}>
         <h3 aria-label="Click to expand">Foldable content title</h3>
@@ -49,22 +39,16 @@ const ComponentToRender = ({
 
   const buildFoldableWrapper = () => {
     if (cardWrapping) {
-      return <Card>{ buildFoldableComponentsArray().map(buildFoldable) }</Card>
+      return <Card>{ buildFoldable() }</Card>
     }
 
-    return qtyFoldableComponents > 1
-      ? (
-        <div>
-          { buildFoldableComponentsArray().map(buildFoldable) }
-        </div>
-      ) : buildFoldableComponentsArray().map(buildFoldable)[0]
+    return buildFoldable()
   }
 
   return buildFoldableWrapper()
 }
 
 ComponentToRender.propTypes = {
-  qtyFoldableComponents: T.number.isRequired,
   headerPadding: T.bool.isRequired,
   bordered: T.bool.isRequired,
   cardInBody: T.bool.isRequired,
