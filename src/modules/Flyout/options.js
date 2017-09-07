@@ -16,11 +16,6 @@ const options = [{
       type: 'checkbox',
       stateKey: 'closeButtonInContent',
       label: 'Close button in content'
-    },
-    {
-      type: 'checkbox',
-      stateKey: 'buttonForOpen',
-      label: 'Render Button Component in open button'
     }
   ]
 }]

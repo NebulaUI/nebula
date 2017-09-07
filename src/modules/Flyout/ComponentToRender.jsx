@@ -6,11 +6,7 @@ import { Flyout, Card, Button } from 'nebula-react'
 const ComponentToRender = ({ direction, closeButtonInContent, buttonForOpen }) => (
   <Flyout.Wrapper defaultOpen>
     <Flyout.Toggle>
-      {
-        buttonForOpen
-          ? <Button node="span" theme="alpha" size="sm">Open Flyout</Button>
-          : 'Open Flyout'
-      }
+      <Button theme="alpha" size="sm">Open Flyout</Button>
     </Flyout.Toggle>
     <Flyout.Content direction={direction}>
       <Card>
@@ -18,7 +14,7 @@ const ComponentToRender = ({ direction, closeButtonInContent, buttonForOpen }) =
         {
           closeButtonInContent && (
             <Flyout.Toggle>
-              <Button node="span" theme="alpha" size="sm">
+              <Button theme="alpha" size="sm">
                 Close
               </Button>
             </Flyout.Toggle>
