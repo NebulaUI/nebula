@@ -23,12 +23,12 @@ Allows the rendered HTML node to be overridden from the default `<div>`.
 
 #### `<Tabs.Tab />`
 * `target :String [required]`  
-Should match the `id` prop of the corresponding `<Tabs.Panel />`
+Should match the `id` prop of the corresponding `<Tabs.Panel />`.
 * `node :String [optional]`  
-Allows the rendered HTML node to be overridden from the default `<div>`
+Allows the rendered HTML node to be overridden from the default `<div>`.
 
 #### `<Tabs.Panel />`
 * `id :String [required]`
 Should match the `id` prop of the corresponding `<Tabs.Tab />`
 * `node :String [optional]`  
-Allows the rendered HTML node to be overridden from the default `<div>`
+Allows the rendered HTML node to be overridden from the default `<div>`.
