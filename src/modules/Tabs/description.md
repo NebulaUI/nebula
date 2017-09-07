@@ -5,30 +5,30 @@
 
 ### React Props
 #### `<Tabs.Wrapper />`
-* `defaultActiveId :String`  
+* `defaultActiveId :String [optional]`  
 The default active tab - It should match the `id` prop for the corresponding `<Tabs.Panel />` Setting this prop still alllows the tabs state to be controlled internally.
-* `activeId :String`  
+* `activeId :String [optional]`  
 This makes the Tabs a [controlled component](https://facebook.github.io/react/docs/forms.html#controlled-components) meaning that this props controls which tab is active.
 rather than that state being heled internally allowing for integration with tools such as Redux.  
 `defaultActiveId` prop has no effect when using `activeId`.
-* `onTabChange :Function`  
+* `onTabChange :Function [optional]`  
 A callback function that gets called whenever the active tab changes.  It gets called with a single argument `id` corresponding to the `id` of the tab being selected.
 Can be used in conjunction with `activeId` to manage the state of the tabs externally, or to update a query string amongst other things.
-* `node :String`  
-Allows the rendered HTML node to be overridden from the default `<div>`
+* `node :String [optional]`  
+Allows the rendered HTML node to be overridden from the default `<div>`.
 
 #### `<Tabs.TabList />`
-* `node :String`  
-Allows the rendered HTML node to be overridden from the default `<div>`
+* `node :String [optional]`  
+Allows the rendered HTML node to be overridden from the default `<div>`.
 
 #### `<Tabs.Tab />`
-* `target :String (required)`  
+* `target :String [required]`  
 Should match the `id` prop of the corresponding `<Tabs.Panel />`
-* `node :String`  
+* `node :String [optional]`  
 Allows the rendered HTML node to be overridden from the default `<div>`
 
 #### `<Tabs.Panel />`
-* `id :String (required)`
+* `id :String [required]`
 Should match the `id` prop of the corresponding `<Tabs.Tab />`
-* `node :String`  
+* `node :String [optional]`  
 Allows the rendered HTML node to be overridden from the default `<div>`
