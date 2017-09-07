@@ -2,9 +2,14 @@ import React from 'react'
 import T from 'prop-types'
 import { Flyout, Card, Button } from 'nebula-react'
 
+import { removeFalsyProps as removeFalsy } from 'utils'
 
-const ComponentToRender = ({ direction, closeButtonInContent, buttonForOpen }) => (
-  <Flyout.Wrapper defaultOpen>
+
+const ComponentToRender = ({ direction, closeButtonInContent, controlled, isOpen }) => (
+  <Flyout.Wrapper
+    {...removeFalsy({ isOpen: controlled ? isOpen : false })}
+    handleFlyoutChange={() => console.log('change')}
+  >
     <Flyout.Toggle>
       <Button theme="alpha" size="sm">Open Flyout</Button>
     </Flyout.Toggle>
@@ -28,7 +33,7 @@ const ComponentToRender = ({ direction, closeButtonInContent, buttonForOpen }) =
 ComponentToRender.propTypes = {
   direction: T.string.isRequired,
   closeButtonInContent: T.bool,
-  buttonForOpen: T.bool
+  isOpen: T.bool
 }
 
 export default ComponentToRender

@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Button } from 'nebula-react'
 
 import { buildNewState } from 'utils'
 import Example from 'components/ComponentExample/Example'
@@ -11,7 +12,9 @@ const componentNameOverride = {}
 
 const initialState = {
   direction: 'se',
-  closeButtonInContent: true
+  closeButtonInContent: true,
+  controlled: false,
+  isOpen: 'open'
 }
 
 class RadioExample extends Component {
@@ -27,6 +30,12 @@ class RadioExample extends Component {
     })
   }
 
+  handleFlyoutToggle = () => {
+    this.setState({
+      isOpen: this.state.isOpen === 'open' ? 'closed' : 'open'
+    })
+  }
+
   render() {
     const { state, handleOptionChange } = this
     const options = {
@@ -35,17 +44,29 @@ class RadioExample extends Component {
       model: optionsModel
     }
     return (
-      <Example
-        title="Flyout"
-        options={options}
-        description={description}
-        config={{
-          type: 'Flyout',
-          componentNameOverride,
-          nebulaImportOverride: `Flyout, Card${state.closeButtonInContent || state.buttonForOpen ? ', Button' : ''}`
-        }}
-        ComponentToRender={ComponentToRender(state)}
-      />
+      <div>
+        {
+          this.state.controlled &&
+          <Button
+            size="sm"
+            theme="alpha"
+            onClick={this.handleFlyoutToggle}
+          >
+              Click to toggle
+          </Button>
+        }
+        <Example
+          title="Flyout"
+          options={options}
+          description={description}
+          config={{
+            type: 'Flyout',
+            componentNameOverride,
+            nebulaImportOverride: `Flyout, Card${state.closeButtonInContent || state.buttonForOpen ? ', Button' : ''}`
+          }}
+          ComponentToRender={ComponentToRender(state)}
+        />
+      </div>
     )
   }
 }

@@ -14,6 +14,11 @@ const options = [{
     },
     {
       type: 'checkbox',
+      stateKey: 'controlled',
+      label: 'Control flyout externally'
+    },
+    {
+      type: 'checkbox',
       stateKey: 'closeButtonInContent',
       label: 'Close button in content'
     }
