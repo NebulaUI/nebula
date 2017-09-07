@@ -4,7 +4,7 @@ import { Flyout, Card, Button } from 'nebula-react'
 
 
 const ComponentToRender = ({ direction, closeButtonInContent, buttonForOpen }) => (
-  <Flyout.Wrapper openOnMount>
+  <Flyout.Wrapper defaultOpen>
     <Flyout.Toggle>
       {
         buttonForOpen

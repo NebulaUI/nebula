@@ -12,7 +12,7 @@ const componentNameOverride = {}
 const initialState = {
   direction: 'se',
   closeButtonInContent: true,
-  buttonForOpen: false
+  buttonForOpen: true
 }
 
 class RadioExample extends Component {
