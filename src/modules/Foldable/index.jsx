@@ -24,7 +24,7 @@ const buildExtraString = state => (state.controlled ?
 /*
   The state of controlled foldable is handled externally by the consumer and 
   passed in via the 'expanded' prop.
-  This prop also determines whether or not this is a conrolled component.
+  This prop also determines whether or not this is a controlled component.
   You can listen to change events using 'onFoldableChange'.
 */ 
 `
