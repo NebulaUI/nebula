@@ -7,3 +7,4 @@ coverage
 .idea/
 dist
 yarn-error.log
+.vscode
