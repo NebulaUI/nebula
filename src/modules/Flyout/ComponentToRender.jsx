@@ -2,23 +2,34 @@ import React from 'react'
 import T from 'prop-types'
 import { Flyout, Card, Button } from 'nebula-react'
 
+import { removeFalsyProps as removeFalsy } from 'utils'
 
-const ComponentToRender = ({ direction, closeButtonInContent, buttonForOpen }) => (
-  <Flyout.Wrapper openOnMount>
+
+const ComponentToRender = ({
+  direction,
+  closeButtonInContent,
+  controlled,
+  clickOutsideToClose,
+  isOpen,
+  handleFlyoutToggle
+}) => (
+  <Flyout.Wrapper
+    direction={direction}
+    {...removeFalsy({ isOpen: controlled ? isOpen : false })}
+    {...removeFalsy({ clickOutsideToClose: controlled ? false : clickOutsideToClose })}
+    {...removeFalsy({ defaultOpen: controlled ? false : 'open' })}
+    {...removeFalsy({ onFlyoutChange: controlled ? handleFlyoutToggle : false })}
+  >
     <Flyout.Toggle>
-      {
-        buttonForOpen
-          ? <Button node="span" theme="alpha" size="sm">Open Flyout</Button>
-          : 'Open Flyout'
-      }
+      <Button theme="alpha" size="sm">Toggle Flyout</Button>
     </Flyout.Toggle>
-    <Flyout.Content direction={direction}>
+    <Flyout.Content>
       <Card>
         <p>Lorem ipsum dolor sit amet</p>
         {
           closeButtonInContent && (
             <Flyout.Toggle>
-              <Button node="span" theme="alpha" size="sm">
+              <Button theme="alpha" size="sm">
                 Close
               </Button>
             </Flyout.Toggle>
@@ -31,8 +42,11 @@ const ComponentToRender = ({ direction, closeButtonInContent, buttonForOpen }) =
 
 ComponentToRender.propTypes = {
   direction: T.string.isRequired,
-  closeButtonInContent: T.bool,
-  buttonForOpen: T.bool
+  closeButtonInContent: T.bool.isRequired,
+  controlled: T.bool.isRequired,
+  clickOutsideToClose: T.bool.isRequired,
+  isOpen: T.bool.isRequired,
+  handleFlyoutToggle: T.func.isRequired
 }
 
 export default ComponentToRender

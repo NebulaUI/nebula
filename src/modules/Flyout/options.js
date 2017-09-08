@@ -14,13 +14,18 @@ const options = [{
     },
     {
       type: 'checkbox',
-      stateKey: 'closeButtonInContent',
-      label: 'Close button in content'
+      stateKey: 'controlled',
+      label: 'Control flyout externally (for demo purposes setting this option hides "click outside to close" option).'
     },
     {
       type: 'checkbox',
-      stateKey: 'buttonForOpen',
-      label: 'Render Button Component in open button'
+      stateKey: 'clickOutsideToClose',
+      label: 'Click outside to close'
+    },
+    {
+      type: 'checkbox',
+      stateKey: 'closeButtonInContent',
+      label: 'Close button in content'
     }
   ]
 }]
