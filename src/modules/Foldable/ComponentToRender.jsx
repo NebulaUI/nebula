@@ -10,7 +10,7 @@ const ComponentToRender = ({
   cardInBody,
   cardWrapping,
   breakpoint,
-  expanded,
+  open,
   controlled
 }, handleFoldableToggle) => {
   const buildBodyContent = () => (
@@ -22,9 +22,9 @@ const ComponentToRender = ({
     <Foldable.Wrapper
       {...removeFalsy({
         bordered,
-        defaultExpanded: controlled ? false : 'expanded',
+        defaultOpen: controlled ? false : 'open',
         onFoldableChange: controlled ? handleFoldableToggle : false,
-        expanded: controlled ? expanded : false,
+        open: controlled ? open : false,
         breakpoint: breakpoint === 'all' ? false : breakpoint
       })}
     >

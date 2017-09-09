@@ -1,55 +1,33 @@
-import React, { Component } from 'react'
+import React from 'react'
+import { Section, Foldable } from 'nebula-react'
 
-import { buildNewState } from 'utils'
-import Example from 'components/ComponentExample/Example'
+import Button from './Button'
+import ButtonDropdown from './ButtonDropdown'
 
-import description from './description.md'
-import ComponentToRender from './ComponentToRender'
-import optionsModel from './options'
+const Lists = () => (
+  <div>
+    <h1>Buttons</h1>
+    <Foldable.Wrapper bordered>
+      <Foldable.Header padding>
+        <h2>Button</h2>
+      </Foldable.Header>
+      <Foldable.Body>
+        <Section size="md" node="div" className="u-hard-top">
+          <Button />
+        </Section>
+      </Foldable.Body>
+    </Foldable.Wrapper>
+    <Foldable.Wrapper bordered>
+      <Foldable.Header padding>
+        <h2>Button Dropdown</h2>
+      </Foldable.Header>
+      <Foldable.Body>
+        <Section size="md" node="div" className="u-hard-top">
+          <ButtonDropdown />
+        </Section>
+      </Foldable.Body>
+    </Foldable.Wrapper>
+  </div>
+)
 
-const componentNameOverride = {}
-
-const initialState = {
-  disabled: false,
-  size: 'md',
-  theme: 'alpha',
-  type: 'button',
-  fullWidth: false
-}
-
-class RadioExample extends Component {
-  constructor() {
-    super()
-
-    this.state = initialState
-  }
-
-  handleOptionChange = (key, value) => {
-    this.setState({
-      ...buildNewState(this.state, key, value)
-    })
-  }
-
-  render() {
-    const { state, handleOptionChange } = this
-    const options = {
-      state,
-      handleChange: handleOptionChange,
-      model: optionsModel
-    }
-    return (
-      <Example
-        title="Button"
-        options={options}
-        description={description}
-        config={{
-          type: 'Button',
-          componentNameOverride
-        }}
-        ComponentToRender={ComponentToRender(state)}
-      />
-    )
-  }
-}
-
-export default RadioExample
+export default Lists
