@@ -29,12 +29,6 @@ const ComponentToRender = ({ disabled, size, theme, fullWidth, type, reactRouter
     : renderButton()
 }
 
-/*
-<Navbar.Link component={NavLink} to="/nebula/space-time">
-              Space Time
-            </Navbar.Link>
- */
-
 ComponentToRender.propTypes = {
   disabled: T.bool.isRequired,
   size: T.string.isRequired,

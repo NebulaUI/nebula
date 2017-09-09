@@ -7,17 +7,26 @@ import description from './description.md'
 import ComponentToRender from './ComponentToRender'
 import optionsModel from './options'
 
-const componentNameOverride = {}
+const componentNameOverride = {
+  BrowserRouter: 'Router'
+}
 
 const initialState = {
   disabled: false,
   size: 'md',
-  theme: 'beta',
+  theme: 'alpha',
   type: 'button',
+  reactRouter: false,
   fullWidth: false
 }
 
-class ButtonDropdownExample extends Component {
+const buildExtraString = ({ reactRouter }) => (
+  reactRouter
+    ? 'import { BrowserRouter as Router, Link } from \'react-router-dom\'\n'
+    : ''
+)
+
+class ButtonExample extends Component {
   constructor() {
     super()
 
@@ -44,7 +53,8 @@ class ButtonDropdownExample extends Component {
         description={description}
         config={{
           type: 'Button',
-          componentNameOverride
+          componentNameOverride,
+          extraString: buildExtraString(state)
         }}
         ComponentToRender={ComponentToRender(state)}
       />
@@ -52,4 +62,4 @@ class ButtonDropdownExample extends Component {
   }
 }
 
-export default ButtonDropdownExample
+export default ButtonExample

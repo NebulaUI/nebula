@@ -3,7 +3,9 @@
 
 ### React props
 
-#### `<Button />`
+#### `<ButtonDropdown.Wrapper>`
+
+#### `<Button /> [Required Component]`
 * `size :oneOf['sm', 'md', 'lg'] [optional]`
 * `theme :oneOf['alpha', 'beta'] [optional]'`
 * `fullWidth :Bool [optional]`

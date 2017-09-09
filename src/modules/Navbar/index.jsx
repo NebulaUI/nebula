@@ -40,7 +40,7 @@ const buildStyle = ({ sticky }) => ({
   position: 'relative',
   overflow: 'hidden',
   minHeight: '500px',
-  zIndex: sticky ? 1 : 0
+  zIndex: sticky ? 3 : 0
 })
 
 const buildExtraString = ({ reactRouter, navItems }) => {
