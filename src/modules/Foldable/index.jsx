@@ -16,6 +16,7 @@ const initialState = {
   cardWrapping: false,
   breakpoint: 'all',
   open: 'open',
+  disabled: false,
   controlled: false
 }
 

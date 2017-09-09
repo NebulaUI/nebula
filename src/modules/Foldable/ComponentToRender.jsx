@@ -11,6 +11,7 @@ const ComponentToRender = ({
   cardWrapping,
   breakpoint,
   open,
+  disabled,
   controlled
 }, handleFoldableToggle) => {
   const buildBodyContent = () => (
@@ -20,6 +21,7 @@ const ComponentToRender = ({
   )
   const buildFoldable = () => (
     <Foldable.Wrapper
+      {...removeFalsy({ disabled })}
       {...removeFalsy({
         bordered,
         defaultOpen: controlled ? false : 'open',
@@ -55,7 +57,8 @@ ComponentToRender.propTypes = {
   cardWrapping: T.bool.isRequired,
   breakpoint: T.string.isRequired,
   expanded: T.string.isRequired,
-  controlled: T.bool.isRequired
+  controlled: T.bool.isRequired,
+  disabled: T.bool.isRequired
 }
 
 export default ComponentToRender

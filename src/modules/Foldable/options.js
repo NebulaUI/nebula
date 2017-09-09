@@ -20,6 +20,11 @@ const options = [{
     },
     {
       type: 'checkbox',
+      stateKey: 'disabled',
+      label: 'Disabled.'
+    },
+    {
+      type: 'checkbox',
       stateKey: 'cardInBody',
       label: 'Nest Card component inside foldable body.'
     },
