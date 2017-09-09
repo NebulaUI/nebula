@@ -13,7 +13,7 @@ import Section from 'modules/Section'
 import Tabs from 'modules/Tabs'
 import Foldable from 'modules/Foldable'
 import Form from 'modules/Form'
-import Button from 'modules/Button'
+import Buttons from 'modules/Buttons'
 import Flyout from 'modules/Flyout'
 import Icon from 'modules/Icon'
 
@@ -36,7 +36,7 @@ const Routes = () => (
     <Route exact path={`${basePath}components/tabs`} component={Tabs} />
     <Route exact path={`${basePath}components/foldable`} component={Foldable} />
     <Route exact path={`${basePath}components/form`} component={Form} />
-    <Route exact path={`${basePath}components/button`} component={Button} />
+    <Route exact path={`${basePath}components/buttons`} component={Buttons} />
     <Route exact path={`${basePath}components/flyout`} component={Flyout} />
     <Route exact path={`${basePath}components/icon`} component={Icon} />
     <Route component={NotFound} />

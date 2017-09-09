@@ -15,6 +15,11 @@ const options = [{
       }))
     },
     {
+      type: 'checkbox',
+      stateKey: 'reactRouter',
+      label: 'React Router (v4) Integration.'
+    },
+    {
       type: 'select',
       stateKey: 'theme',
       label: 'Theme',

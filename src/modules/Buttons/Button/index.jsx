@@ -7,17 +7,26 @@ import description from './description.md'
 import ComponentToRender from './ComponentToRender'
 import optionsModel from './options'
 
-const componentNameOverride = {}
+const componentNameOverride = {
+  BrowserRouter: 'Router'
+}
 
 const initialState = {
   disabled: false,
   size: 'md',
   theme: 'alpha',
   type: 'button',
+  reactRouter: false,
   fullWidth: false
 }
 
-class RadioExample extends Component {
+const buildExtraString = ({ reactRouter }) => (
+  reactRouter
+    ? 'import { BrowserRouter as Router, Link } from \'react-router-dom\'\n'
+    : ''
+)
+
+class ButtonExample extends Component {
   constructor() {
     super()
 
@@ -39,12 +48,13 @@ class RadioExample extends Component {
     }
     return (
       <Example
-        title="Button"
+        title=""
         options={options}
         description={description}
         config={{
           type: 'Button',
-          componentNameOverride
+          componentNameOverride,
+          extraString: buildExtraString(state)
         }}
         ComponentToRender={ComponentToRender(state)}
       />
@@ -52,4 +62,4 @@ class RadioExample extends Component {
   }
 }
 
-export default RadioExample
+export default ButtonExample

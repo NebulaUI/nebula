@@ -42,8 +42,8 @@ const model = [
     icon: home,
     descendants: [
       {
-        to: `${basePath}components/button`,
-        label: 'Button'
+        to: `${basePath}components/buttons`,
+        label: 'Buttons'
       },
       {
         to: `${basePath}components/card`,
