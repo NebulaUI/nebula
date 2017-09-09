@@ -1,7 +1,6 @@
 const sizes = ['sm', 'md', 'lg']
 const themes = ['alpha', 'beta']
 const directions = ['left', 'right']
-const types = ['submit', 'reset', 'link', 'button']
 
 const options = [{
   title: '',
