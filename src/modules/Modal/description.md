@@ -1,13 +1,13 @@
 * Fully Ariia accessible Modal Dialog
-* Keyboard friendly
+* Keyboard friendly, focus locked to modal while active, returns to opening element when closed.
 * Mobile friendly (Can scroll within modal for larger amounts of content).
-* Controlled component whereby the state of it being open / closed is controlelled by the consumer.
+* Controlled component whereby the state of it being open / closed is controlled by the consumer.
 
 ### React Props
 
 #### `<Modal.Wrapper />`
 * `closeModal :Function [required]`  
-Callback funcion that fires when the modal is attempting to close,
+Callback function that fires when the modal is attempting to close,
 used as a hook by the consumer to update the open/close state
 * `ariaLabel :String [required]`  
 A string to ensure correct `aria-label` is applied
