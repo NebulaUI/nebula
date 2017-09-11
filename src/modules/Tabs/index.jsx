@@ -9,7 +9,7 @@ import optionsModel from './options'
 
 const initialState = {
   controlled: false,
-  disabledTab: false,
+  disabledTab: true,
   activeId: 'panel-1'
 }
 
@@ -40,7 +40,7 @@ class TabsExample extends Component {
     })
   }
 
-  handleTabChange = activeId => this.setState({ activeId })
+  handleTabChange = activeId =>this.setState({ activeId })
 
   render() {
     const { state, handleOptionChange } = this
@@ -53,7 +53,7 @@ class TabsExample extends Component {
       <div>
         {
           this.state.controlled && (
-            <Button size="sm" theme="alpha" onClick={() => this.handleTabChange('panel-3')}>Set to Tab 3</Button>
+            <Button size="sm" theme="alpha" onClick={() => this.handleTabChange('panel-5')}>Set to Tab 5</Button>
           )
         }
         <Example
