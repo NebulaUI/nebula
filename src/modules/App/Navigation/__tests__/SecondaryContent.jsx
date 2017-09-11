@@ -10,7 +10,7 @@ describe('<SecondaryContent />', () => {
   it('renders <Navbar.Item />', () => {
     const $ = shallow(<div>{ SecondaryContent }</div>)
     expect($.find(Navbar.Item).prop('resetLineHeight')).toBe(true)
-    expect($.find(Navbar.Item).prop('node')).toBe('div')
+    expect($.find(Navbar.Item).prop('tag')).toBe('div')
   })
 
   it('renders <NavLink />', () => {

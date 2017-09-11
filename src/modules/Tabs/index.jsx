@@ -40,7 +40,7 @@ class TabsExample extends Component {
     })
   }
 
-  handleTabChange = activeId =>this.setState({ activeId })
+  handleTabChange = activeId => this.setState({ activeId })
 
   render() {
     const { state, handleOptionChange } = this
