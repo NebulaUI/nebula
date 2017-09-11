@@ -16,6 +16,7 @@ const initialState = {
   cardWrapping: false,
   breakpoint: 'all',
   open: 'open',
+  disabled: false,
   controlled: false
 }
 
@@ -23,7 +24,7 @@ const buildExtraString = state => (state.controlled ?
 `
 /*
   The state of controlled foldable is handled externally by the consumer and 
-  passed in via the 'isOpen' prop.
+  passed in via the 'open' prop.
   This prop also determines whether or not this is a controlled component.
   You can listen to change events using 'onFoldableChange'.
 */ 

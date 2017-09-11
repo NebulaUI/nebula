@@ -7,9 +7,9 @@
 #### `<Foldable.Wrapper />`
 * `defaultExpanded :oneOf['expanded', 'collapsed'] [optional]`  
 Determines the initial expanded/collapsed state.
-* `expanded :oneOf['expanded', 'collapsed'] [optional]`  
+* `open :oneOf['open', 'open'] [optional]`  
 Makes foldable a [controlled component](https://facebook.github.io/react/docs/forms.html#controlled-components)
-meaning the value of this prop rather than the component's internal state control it's expanded/collapsed state.
+meaning the value of this prop rather than the component's internal state control it's open/closed state.
 * `onFoldableChange :Function [optional]`  
 A callback function that gets called when the foldable component is about to expand / collapse. it's current state is passed.
 * `breakpoint :oneOf['max-lg', 'max-md', 'max-sm', 'max-xs'] [optional]`  

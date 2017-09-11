@@ -15,7 +15,8 @@ const initialState = {
   closeButtonInContent: true,
   controlled: false,
   clickOutsideToClose: true,
-  isOpen: 'closed'
+  isOpen: 'closed',
+  disabled: false
 }
 
 const buildExtraString = state => (state.controlled ?

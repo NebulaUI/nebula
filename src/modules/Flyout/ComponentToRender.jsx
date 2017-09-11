@@ -11,13 +11,15 @@ const ComponentToRender = ({
   controlled,
   clickOutsideToClose,
   isOpen,
-  handleFlyoutToggle
+  handleFlyoutToggle,
+  disabled
 }) => (
   <Flyout.Wrapper
     direction={direction}
     {...removeFalsy({ isOpen: controlled ? isOpen : false })}
     {...removeFalsy({ clickOutsideToClose: controlled ? false : clickOutsideToClose })}
     {...removeFalsy({ defaultOpen: controlled ? false : 'open' })}
+    {...removeFalsy({ disabled })}
     {...removeFalsy({ onFlyoutChange: controlled ? handleFlyoutToggle : false })}
   >
     <Flyout.Toggle>
@@ -46,6 +48,7 @@ ComponentToRender.propTypes = {
   controlled: T.bool.isRequired,
   clickOutsideToClose: T.bool.isRequired,
   isOpen: T.bool.isRequired,
+  disabled: T.bool.isRequired,
   handleFlyoutToggle: T.func.isRequired
 }
 

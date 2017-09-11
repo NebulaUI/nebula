@@ -9,6 +9,7 @@ import optionsModel from './options'
 
 const initialState = {
   controlled: false,
+  disabledTab: false,
   activeId: 'panel-1'
 }
 
