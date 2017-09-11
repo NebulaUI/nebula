@@ -42,6 +42,7 @@ const Source = ({
   children,
   nebulaImportOverride,
   componentNameOverride,
+  codeOverride,
   history
 }) => (
   <div>
@@ -59,7 +60,7 @@ const Source = ({
       { options ? <Tabs.Panel id="options">{options}</Tabs.Panel> : null }
       <Tabs.Panel id="html">
         <Code>
-          { renderHTML(children) }
+          { renderHTML(codeOverride || children) }
         </Code>
       </Tabs.Panel>
       <Tabs.Panel id="react">
@@ -69,7 +70,7 @@ const Source = ({
           extraString={extraString}
           language="jsx"
         >
-          { renderReact(children, componentNameOverride) }
+          { renderReact(codeOverride || children, componentNameOverride) }
         </Code>
       </Tabs.Panel>
     </Tabs.Wrapper>
@@ -84,6 +85,7 @@ Source.propTypes = {
   options: T.node,
   nebulaImportOverride: T.string,
   componentNameOverride: T.shape({}),
+  codeOverride: T.node,
   children: T.node.isRequired
 }
 

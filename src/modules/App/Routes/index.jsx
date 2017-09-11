@@ -16,6 +16,7 @@ import Form from 'modules/Form'
 import Button from 'modules/Button'
 import Flyout from 'modules/Flyout'
 import Icon from 'modules/Icon'
+import Modal from 'modules/Modal'
 
 import GetStarted from 'modules/GetStarted'
 import CoreConcepts from 'modules/CoreConcepts'
@@ -39,6 +40,7 @@ const Routes = () => (
     <Route exact path={`${basePath}components/button`} component={Button} />
     <Route exact path={`${basePath}components/flyout`} component={Flyout} />
     <Route exact path={`${basePath}components/icon`} component={Icon} />
+    <Route exact path={`${basePath}components/Modal`} component={Modal} />
     <Route component={NotFound} />
   </Switch>
 )

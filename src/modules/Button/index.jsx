@@ -17,7 +17,7 @@ const initialState = {
   fullWidth: false
 }
 
-class RadioExample extends Component {
+class ModalExample extends Component {
   constructor() {
     super()
 
@@ -52,4 +52,4 @@ class RadioExample extends Component {
   }
 }
 
-export default RadioExample
+export default ModalExample

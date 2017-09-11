@@ -70,6 +70,10 @@ const model = [
         label: 'Navbar'
       },
       {
+        to: `${basePath}components/modal`,
+        label: 'Modal dialog'
+      },
+      {
         to: `${basePath}components/tabs`,
         label: 'Tabs'
       }
