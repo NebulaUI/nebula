@@ -1,4 +1,4 @@
-* Fully Ariia accessible Modal Dialog
+* Built with accessibility in mind using relevant aria attributes.
 * Keyboard friendly, focus locked to modal while active, returns to opening element when closed.
 * Mobile friendly (Can scroll within modal for larger amounts of content).
 * Controlled component whereby the state of it being open / closed is controlled by the consumer.
