@@ -5,7 +5,7 @@ import { Navbar } from 'nebula-react'
 import { basePath } from 'utils/constants'
 
 const SecondayContent = (
-  <Navbar.Item node="div" resetLineHeight>
+  <Navbar.Item tag="div" resetLineHeight>
     <NavLink
       activeStyle={{ display: 'none' }}
       to={`${basePath}get-started`}

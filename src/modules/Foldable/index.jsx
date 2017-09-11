@@ -15,7 +15,7 @@ const initialState = {
   cardInBody: true,
   cardWrapping: false,
   breakpoint: 'all',
-  expanded: 'expanded',
+  open: 'open',
   controlled: false
 }
 
@@ -23,7 +23,7 @@ const buildExtraString = state => (state.controlled ?
 `
 /*
   The state of controlled foldable is handled externally by the consumer and 
-  passed in via the 'expanded' prop.
+  passed in via the 'isOpen' prop.
   This prop also determines whether or not this is a controlled component.
   You can listen to change events using 'onFoldableChange'.
 */ 
@@ -44,7 +44,7 @@ class FoldableExample extends Component {
   }
 
   handleFoldableToggle = () =>
-    this.setState({ expanded: this.state.expanded === 'expanded' ? 'collapsed' : 'expanded' })
+    this.setState({ open: this.state.open === 'open' ? 'closed' : 'open' })
 
   render() {
     const { state, handleOptionChange } = this

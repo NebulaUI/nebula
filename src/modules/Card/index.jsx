@@ -12,7 +12,7 @@ const Form = () => (
         <h2>Card</h2>
       </Foldable.Header>
       <Foldable.Body>
-        <Section size="md" node="div" className="u-hard-top">
+        <Section size="md" tag="div" className="u-hard-top">
           <Card />
         </Section>
       </Foldable.Body>
@@ -22,7 +22,7 @@ const Form = () => (
         <h2>Status Card</h2>
       </Foldable.Header>
       <Foldable.Body>
-        <Section size="md" node="div" className="u-hard-top">
+        <Section size="md" tag="div" className="u-hard-top">
           <StatusCard />
         </Section>
       </Foldable.Body>

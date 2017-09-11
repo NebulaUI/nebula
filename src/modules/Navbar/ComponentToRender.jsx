@@ -80,7 +80,7 @@ const ComponentToRender = ({
   // eslint-disable-next-line react/prop-types
   const SecondaryContent = ({ right, keepAtTop, resetLineHeight, componentType }) => (
     <Navbar.Content {...removeFalsy({ right, keepAtTop })}>
-      <Navbar.Item node="div" {...removeFalsy({ resetLineHeight })}>
+      <Navbar.Item tag="div" {...removeFalsy({ resetLineHeight })}>
         { SecondaryContentComponent(componentType) }
       </Navbar.Item>
     </Navbar.Content>

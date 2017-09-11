@@ -19,13 +19,13 @@ A callback function that gets called when the Flyout component is about to open 
 * `clickOutsideToClose :bool [optional]`
 Setting this prop will ensure that the flyout closes when
 a click event outside occurs.
-* `node :String [optional]`  
-Allows the rendered HTML node to be overridden from the default `<div>`.
+* `tag :String [optional]`  
+Allows the rendered HTML tag to be overridden from the default `<div>`.
 
 #### `<Flyout.Toggle>`
 * Doesn't expect any props as it just decorates it's direct child with the ability to close the flyout.
 It only expects a single child element not an array and ideally that should be a button to ensure it is accessible.
 
 #### `<Flyout.Content />`
-* `node :String [optional]`  
-Allows the rendered HTML node to be overridden from the default `<div>`.
+* `tag :String [optional]`  
+Allows the rendered HTML tag to be overridden from the default `<div>`.

@@ -14,7 +14,7 @@ const Lists = () => (
         <h2>Bare List</h2>
       </Foldable.Header>
       <Foldable.Body>
-        <Section size="md" node="div" className="u-hard-top">
+        <Section size="md" tag="div" className="u-hard-top">
           <BareList />
         </Section>
       </Foldable.Body>
@@ -24,7 +24,7 @@ const Lists = () => (
         <h2>Inline List</h2>
       </Foldable.Header>
       <Foldable.Body>
-        <Section size="md" node="div" className="u-hard-top">
+        <Section size="md" tag="div" className="u-hard-top">
           <InlineList />
         </Section>
       </Foldable.Body>
@@ -34,7 +34,7 @@ const Lists = () => (
         <h2>Matrix List</h2>
       </Foldable.Header>
       <Foldable.Body>
-        <Section size="md" node="div" className="u-hard-top">
+        <Section size="md" tag="div" className="u-hard-top">
           <MatrixList />
         </Section>
       </Foldable.Body>
@@ -44,7 +44,7 @@ const Lists = () => (
         <h2>Uniformed List</h2>
       </Foldable.Header>
       <Foldable.Body>
-        <Section size="md" node="div" className="u-hard-top">
+        <Section size="md" tag="div" className="u-hard-top">
           <UniformedList />
         </Section>
       </Foldable.Body>

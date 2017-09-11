@@ -34,11 +34,11 @@ class Navigation extends Component {
             <Navbar.Content>
               {renderRoutes(routes, pathname)}
             </Navbar.Content>
-            <Navbar.Content right node="div" keepAtTop>
+            <Navbar.Content right tag="div" keepAtTop>
               { SecondaryContent }
             </Navbar.Content>
-            <Navbar.Content right node="div">
-              <Navbar.Item node="div" resetLineHeight>
+            <Navbar.Content right tag="div">
+              <Navbar.Item tag="div" resetLineHeight>
                 <a
                   href="https://github.com/rbrtsmith/nebula"
                   className="c-btn c-btn--sm c-btn--beta"

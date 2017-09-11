@@ -33,7 +33,7 @@ const Group = ({ title, listType, options, foldable, foldableOpenOnMount, ...res
   }
 
   const buildFoldableGroup = () => (
-    <Foldable.Wrapper openOnMount={foldableOpenOnMount}>
+    <Foldable.Wrapper defaultOpen={foldableOpenOnMount ? 'open' : 'closed'}>
       <Foldable.Header padding>
         { title && <h2>{ title }</h2> }
       </Foldable.Header>

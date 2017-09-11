@@ -14,21 +14,21 @@ rather than that state being heled internally allowing for integration with tool
 * `onTabChange :Function [optional]`  
 A callback function that gets called whenever the active tab changes.  It gets called with a single argument `id` corresponding to the `id` of the tab being selected.
 Can be used in conjunction with `activeId` to manage the state of the tabs externally, or to update a query string amongst other things.
-* `node :String [optional]`  
-Allows the rendered HTML node to be overridden from the default `<div>`.
+* `tag :String [optional]`  
+Allows the rendered HTML tag to be overridden from the default `<div>`.
 
 #### `<Tabs.TabList />`
-* `node :String [optional]`  
-Allows the rendered HTML node to be overridden from the default `<div>`.
+* `tag :String [optional]`  
+Allows the rendered HTML tag to be overridden from the default `<div>`.
 
 #### `<Tabs.Tab />`
 * `target :String [required]`  
 Should match the `id` prop of the corresponding `<Tabs.Panel />`.
-* `node :String [optional]`  
-Allows the rendered HTML node to be overridden from the default `<div>`.
+* `tag :String [optional]`  
+Allows the rendered HTML tag to be overridden from the default `<div>`.
 
 #### `<Tabs.Panel />`
 * `id :String [required]`
 Should match the `id` prop of the corresponding `<Tabs.Tab />`
-* `node :String [optional]`  
-Allows the rendered HTML node to be overridden from the default `<div>`.
+* `tag :String [optional]`  
+Allows the rendered HTML tag to be overridden from the default `<div>`.

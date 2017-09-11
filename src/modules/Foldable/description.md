@@ -18,14 +18,14 @@ Determines what CSS breakpoint it turns from static content to foldable.
 Adds border styling.
 * `id :String [optional]`  
 used to handle `aria-controls` and `id` properties for the content.  If not defined a random id is generated.
-* `node :String [optional]`  
-Allows the rendered HTML node to be overridden from the default `<div>`.
+* `tag :String [optional]`  
+Allows the rendered HTML tag to be overridden from the default `<div>`.
 
 #### `<Foldable.Header />`
-* `node :String [optional]`  
-Allows the rendered HTML node to be overridden from the default `<div>`.
+* `tag :String [optional]`  
+Allows the rendered HTML tag to be overridden from the default `<div>`.
 
 #### `<Foldable.Body />`
-* `node :String [optional]`  
-Allows the rendered HTML node to be overridden from the default `<div>`.
+* `tag :String [optional]`  
+Allows the rendered HTML tag to be overridden from the default `<div>`.
 

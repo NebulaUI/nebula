@@ -59,7 +59,7 @@ const Option = ({
         <strong>{ label }</strong>
         <MatrixList.Wrapper spacing="md">
           { options.map(radioOption => (
-            <MatrixList.Item node={radioOption.node} key={radioOption.value}>
+            <MatrixList.Item tag={radioOption.node} key={radioOption.value}>
               <RadioWrapper
                 handleChange={handleRadioChange}
                 value={radioOption.value}
