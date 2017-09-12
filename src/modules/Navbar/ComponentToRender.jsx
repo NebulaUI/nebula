@@ -43,7 +43,7 @@ const ComponentToRender = ({
       <Navbar.Item>
         { buildNavLink('/nebula/space-time', 'Space Time') }
       </Navbar.Item>
-      <Navbar.Dropdown.Wrapper>
+      <Navbar.Dropdown.Wrapper clickOutsideToClose>
         <Navbar.Dropdown.Toggle className="is-active">
           Galaxies
         </Navbar.Dropdown.Toggle>

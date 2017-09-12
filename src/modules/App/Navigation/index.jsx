@@ -14,15 +14,18 @@ import SecondaryContent from './SecondaryContent'
 class Navigation extends Component {
   componentDidUpdate(prevProps) {
     if (this.props.location.pathname !== prevProps.location.pathname) {
-      this.close.props.close()
+      this.node.close()
     }
   }
 
   render() {
     const { routes, location: { pathname } } = this.props
     return (
-      <Navbar.Wrapper sticky>
-        <Navbar.Overlay ref={(node) => { this.close = node }} />
+      <Navbar.Wrapper
+        ref={(n) => { this.node = n }}
+        sticky
+      >
+        <Navbar.Overlay />
         <Navbar.Inner>
           <Navbar.Toggle.Wrapper>
             <Navbar.Toggle.Bars />

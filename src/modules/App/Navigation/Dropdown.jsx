@@ -4,7 +4,7 @@ import { Navbar, Icon } from 'nebula-react'
 import classNames from 'classnames'
 
 const Dropdown = ({ renderRoutes, to, icon, label, descendants, path }) => (
-  <Navbar.Dropdown.Wrapper key={to}>
+  <Navbar.Dropdown.Wrapper clickOutsideToClose key={to}>
     <Navbar.Dropdown.Toggle
       className={classNames({ 'is-active': path.includes(to) })}
     >
