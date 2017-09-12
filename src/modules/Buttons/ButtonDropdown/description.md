@@ -20,11 +20,16 @@ Set the button to full width of the containing element.
 Disables the dropdown and the button.
 * `tag :String [optional]`  
 Allows the rendered HTML tag to be overridden from the default `<div>`.
+
 #### `<Button /> [Required Component]`
-* `size :oneOf['sm', 'md', 'lg'] [optional]`
-* `theme :oneOf['alpha', 'beta'] [optional]'`
-* `fullWidth :Bool [optional]`
-* `to :String [optional]`
-* `type :oneOf['submit', 'reset', 'menu', 'link'] [optional]`
-* `component :oneOfType[:Function, :node] [optional]`
-* `node :String [optional]`
+
+#### `<ButtonDropdown.Toggle>`
+* `tag :String [optional]`  
+Allows the rendered HTML tag to be overridden from the default `<button>`.
+
+#### `<ButtonDropdown.Content>`
+* `tag :String [optional]`  
+Allows the rendered HTML tag to be overridden from the default `<div>`.
+
+#### `<ButtonDropdown.Close />`
+* Just renders a single child that when clicked closes the dropdown.
