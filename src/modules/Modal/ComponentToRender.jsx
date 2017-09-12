@@ -21,7 +21,7 @@ const ComponentToRender = ({
       {...removeFalsy({ width: width === 'default' ? false : parseInt(width, 10) })}
       {...removeFalsy({ timeout: timeout ? 2000 : '' })}
     >
-      <Modal.Overlay {...removeFalsy({ clickOutsideDeactivates })} />
+      <Modal.Overlay {...removeFalsy({ clickToClose: clickOutsideDeactivates })} />
       <Modal.Body>
         <Modal.Content>
           <Modal.Close>
