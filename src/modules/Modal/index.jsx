@@ -15,7 +15,11 @@ const componentNameOverride = {
 
 const initialState = {
   timeout: false,
-  isOpen: false
+  clickOutsideDeactivates: true,
+  closeButtonInContent: false,
+  isOpen: false,
+  alignTop: false,
+  width: 'default'
 }
 
 const extraString =
