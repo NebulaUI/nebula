@@ -52,8 +52,8 @@ const Source = ({
       onTabChange={id => handleTabChange(type, id, history, tabsId)}
     >
       <Tabs.TabList>
-        { description ? <Tabs.Tab target="description">Description</Tabs.Tab> : null }
-        { options ? <Tabs.Tab target="options">Options</Tabs.Tab> : null }
+        <Tabs.Tab disabled={!description} target="description">Description</Tabs.Tab>
+        <Tabs.Tab disabled={!options} target="options">Options</Tabs.Tab>
         <Tabs.Tab target="html">HTML code</Tabs.Tab>
         <Tabs.Tab target="react">React code (ES6)</Tabs.Tab>
       </Tabs.TabList>
