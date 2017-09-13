@@ -4,23 +4,19 @@ import { Form } from 'nebula-react'
 
 import { removeFalsyProps as removeFalsy } from 'utils'
 
-const ComponentToRender = ({ disabled, small, type }) => (
-  <div>
-    <Form.Label htmlFor="name">Name:</Form.Label>
-    <Form.TextInput
-      id="name"
-      placeholder="John Smith"
-      {...removeFalsy({ type: type === 'text' ? false : type })}
-      {...removeFalsy({ disabled })}
-      {...removeFalsy({ small })}
-    />
-  </div>
+const ComponentToRender = ({ disabled, small }) => (
+  <Form.Search
+    submitPosition="right"
+    required
+    label="Search form"
+    {...removeFalsy({ disabled })}
+    {...removeFalsy({ small })}
+  />
 )
 
 ComponentToRender.propTypes = {
   disabled: T.bool.isRequired,
-  small: T.bool,
-  type: T.string
+  small: T.bool
 }
 
 export default ComponentToRender
