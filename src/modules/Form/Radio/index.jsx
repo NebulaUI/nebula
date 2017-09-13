@@ -42,7 +42,8 @@ class RadioExample extends Component {
         description={description}
         config={{
           type: 'Form',
-          componentNameOverride
+          componentNameOverride,
+          tabsId: 'radio'
         }}
         ComponentToRender={ComponentToRender(state)}
       />

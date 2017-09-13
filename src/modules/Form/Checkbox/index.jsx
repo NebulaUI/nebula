@@ -42,7 +42,8 @@ class CheckboxExample extends Component {
         description={description}
         config={{
           type: 'Form',
-          componentNameOverride
+          componentNameOverride,
+          tabsId: 'checkbox'
         }}
         ComponentToRender={ComponentToRender(state)}
       />

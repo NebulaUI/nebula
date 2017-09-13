@@ -6,7 +6,7 @@ import StatusCard from './StatusCard'
 
 const Form = () => (
   <div>
-    <h1>Form</h1>
+    <h1>Cards</h1>
     <Foldable.Wrapper bordered>
       <Foldable.Header padding>
         <h2>Card</h2>

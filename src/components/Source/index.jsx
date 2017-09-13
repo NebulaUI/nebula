@@ -12,11 +12,11 @@ import renderReact from './utils/renderReact'
 
 const ACTIVE_ID_KEY = 'ActiveTabId'
 
-const handleTabChange = (type, tabId, history) => {
+const handleTabChange = (type, tabId, history, tabsId) => {
   const { search } = history.location
   const query = parseQuery(search)
 
-  const key = `${type}${ACTIVE_ID_KEY}`
+  const key = `${tabsId || type}${ACTIVE_ID_KEY}`
   query[key] = tabId
 
   history.push({
@@ -24,11 +24,11 @@ const handleTabChange = (type, tabId, history) => {
   })
 }
 
-const getDefaultActiveTabId = (type, { location: { search } }) => {
+const getDefaultActiveTabId = (type, { location: { search } }, tabsId) => {
   const query = parseQuery(search)
 
-  if (query[`${type}${ACTIVE_ID_KEY}`]) {
-    return query[`${type}${ACTIVE_ID_KEY}`]
+  if (query[`${tabsId || type}${ACTIVE_ID_KEY}`]) {
+    return query[`${tabsId || type}${ACTIVE_ID_KEY}`]
   }
 
   return 'description'
@@ -43,12 +43,13 @@ const Source = ({
   nebulaImportOverride,
   componentNameOverride,
   codeOverride,
+  tabsId,
   history
 }) => (
   <div>
     <Tabs.Wrapper
-      activeId={getDefaultActiveTabId(type, history)}
-      onTabChange={id => handleTabChange(type, id, history)}
+      activeId={getDefaultActiveTabId(type, history, tabsId)}
+      onTabChange={id => handleTabChange(type, id, history, tabsId)}
     >
       <Tabs.TabList>
         { description ? <Tabs.Tab target="description">Description</Tabs.Tab> : null }
@@ -86,6 +87,7 @@ Source.propTypes = {
   nebulaImportOverride: T.string,
   componentNameOverride: T.shape({}),
   codeOverride: T.node,
+  tabsId: T.string,
   children: T.node.isRequired
 }
 
