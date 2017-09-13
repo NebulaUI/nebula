@@ -7,13 +7,15 @@ import description from './description.md'
 import ComponentToRender from './ComponentToRender'
 import optionsModel from './options'
 
-const componentNameOverride = {}
+const componentNameOverride = {
+  StatusCard: 'StatusCard'
+}
 
 const initialState = {
   status: 'success'
 }
 
-class CheckboxExample extends Component {
+class StatusCardExample extends Component {
   constructor() {
     super()
 
@@ -39,7 +41,7 @@ class CheckboxExample extends Component {
         options={options}
         description={description}
         config={{
-          type: 'Form',
+          type: 'StatusCard',
           componentNameOverride
         }}
         ComponentToRender={ComponentToRender(state)}
@@ -48,4 +50,4 @@ class CheckboxExample extends Component {
   }
 }
 
-export default CheckboxExample
+export default StatusCardExample

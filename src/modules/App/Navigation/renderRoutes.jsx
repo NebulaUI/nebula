@@ -1,9 +1,10 @@
+import React from 'react'
 import Item from './Item'
 import Dropdown from './Dropdown'
 
 const renderRoutes = (rs, path) => rs.map(route => (
   route.descendants && route.descendants.length
-    ? Dropdown({ path, renderRoutes, ...route })
+    ? <Dropdown key={route.to} {...{ path, renderRoutes, ...route } } />
     : Item(route)
 ))
 
