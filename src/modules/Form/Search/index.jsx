@@ -8,15 +8,17 @@ import ComponentToRender from './ComponentToRender'
 import optionsModel from './options'
 
 const componentNameOverride = {
-  Select: 'Form.Select'
+  TextInput: 'Form.TextInput',
+  Label: 'Form.Label'
 }
 
 const initialState = {
   disabled: false,
-  small: false
+  small: false,
+  type: 'text'
 }
 
-class TextInputExample extends Component {
+class SearchExample extends Component {
   constructor() {
     super()
 
@@ -44,7 +46,7 @@ class TextInputExample extends Component {
         config={{
           type: 'Form',
           componentNameOverride,
-          tabsId: 'select'
+          tabsId: 'search'
         }}
         ComponentToRender={ComponentToRender(state)}
       />
@@ -52,4 +54,4 @@ class TextInputExample extends Component {
   }
 }
 
-export default TextInputExample
+export default SearchExample

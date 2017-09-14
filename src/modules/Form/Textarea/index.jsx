@@ -43,7 +43,8 @@ class TextInputExample extends Component {
         description={description}
         config={{
           type: 'Form',
-          componentNameOverride
+          componentNameOverride,
+          tabsId: 'textarea'
         }}
         ComponentToRender={ComponentToRender(state)}
       />
