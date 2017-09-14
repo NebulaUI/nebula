@@ -73,7 +73,7 @@ class NavbarExample extends Component {
       componentNameOverride,
       extraString: buildExtraString(state),
       style: buildStyle(state),
-      nebulaImportOverride: `Navbar${state.navItems.icon ? ', Icon' : ''}`
+      nebulaImportOverride: `Navbar${state.secondaryContent.componentType === 'button' ? ', Button' : ''}${state.navItems.icon ? ', Icon' : ''}`
     }
     const options = {
       state,

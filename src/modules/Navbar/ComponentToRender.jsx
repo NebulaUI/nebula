@@ -1,7 +1,7 @@
 import React from 'react'
 import T from 'prop-types'
 import { BrowserRouter as Router, NavLink } from 'react-router-dom'
-import { Navbar, Icon } from 'nebula-react'
+import { Navbar, Icon, Button } from 'nebula-react'
 
 import { removeFalsyProps as removeFalsy } from 'utils'
 import logoImg from 'assets/img/checkdmedia.png'
@@ -66,9 +66,9 @@ const ComponentToRender = ({
     switch (type) {
       case 'button':
         return (
-          <button className="c-btn c-btn--sm c-btn--alpha">
+          <Button size="sm" theme="alpha">
             Call to action
-          </button>
+          </Button>
         )
       default:
         return (
@@ -99,7 +99,7 @@ const ComponentToRender = ({
   )
 
   const Toggle = (
-    <Navbar.Toggle.Wrapper aria-hidden="true" tabIndex="0">
+    <Navbar.Toggle.Wrapper>
       <Navbar.Toggle.Bars />
     </Navbar.Toggle.Wrapper>
   )
@@ -107,8 +107,8 @@ const ComponentToRender = ({
   const NavbarComponent = reverseSourceOrder
     ? (
       <Navbar.Wrapper {...removeFalsy({ sticky })}>
-        <Navbar.Overlay aria-hidden="true" tabIndex="0" />
-        <Navbar.Inner role="navigation">
+        <Navbar.Overlay />
+        <Navbar.Inner>
           {
             (
               navItems.included || (
@@ -127,8 +127,8 @@ const ComponentToRender = ({
       )
     : (
       <Navbar.Wrapper {...removeFalsy({ sticky })}>
-        <Navbar.Overlay aria-hidden="true" tabIndex="0" />
-        <Navbar.Inner role="navigation">
+        <Navbar.Overlay />
+        <Navbar.Inner>
           {
             (
               navItems.included || (
