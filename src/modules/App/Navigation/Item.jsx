@@ -12,7 +12,7 @@ const Item = ({ to, label, icon }) => (
     >
       { icon
         ? (
-          <Icon width="24px" height="24px" verticalAlign="middle" iconLeft icon={icon}>
+          <Icon width="24px" height="24px" verticalAlign="middle" iconPosition="left" icon={icon}>
             { label }
           </Icon>
         )

@@ -15,7 +15,7 @@ import Foldable from 'modules/Foldable'
 import Form from 'modules/Form'
 import Buttons from 'modules/Buttons'
 import Flyout from 'modules/Flyout'
-import Icon from 'modules/Icon'
+import Icons from 'modules/Icons'
 import Modal from 'modules/Modal'
 
 import GetStarted from 'modules/GetStarted'
@@ -39,7 +39,7 @@ const Routes = () => (
     <Route exact path={`${basePath}components/form`} component={Form} />
     <Route exact path={`${basePath}components/buttons`} component={Buttons} />
     <Route exact path={`${basePath}components/flyout`} component={Flyout} />
-    <Route exact path={`${basePath}components/icon`} component={Icon} />
+    <Route exact path={`${basePath}components/icons`} component={Icons} />
     <Route exact path={`${basePath}components/Modal`} component={Modal} />
     <Route component={NotFound} />
   </Switch>

@@ -1,5 +1,3 @@
-const types = ['text', 'password', 'email', 'number', 'search', 'url']
-
 const options = [{
   title: '',
   options: [
@@ -14,13 +12,23 @@ const options = [{
       label: 'Small'
     },
     {
+      type: 'checkbox',
+      stateKey: 'individualComponents',
+      label: 'Use individual Components'
+    },
+    {
       type: 'select',
-      stateKey: 'type',
-      label: 'Type',
-      options: types.map(type => ({
-        value: type,
-        label: type
-      }))
+      stateKey: 'submitPosition',
+      label: 'Submit position.',
+      options: [
+        {
+          value: 'left',
+          label: 'Left'
+        }, {
+          value: 'right',
+          label: 'Right'
+        }
+      ]
     }
   ]
 }]

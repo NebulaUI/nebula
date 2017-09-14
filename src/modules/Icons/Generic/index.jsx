@@ -8,21 +8,17 @@ import ComponentToRender from './ComponentToRender'
 import optionsModel from './options'
 
 const componentNameOverride = {
-  Search: 'Form.Search',
-  SearchWrapper: 'Form.SearchWrapper',
-  SearchSubmit: 'Form.SearchSubmit',
-  SearchInput: 'Form.SearchInput',
-  Label: 'Form.Label'
+  Checkbox: 'Form.Checkbox'
 }
 
 const initialState = {
-  disabled: false,
-  small: false,
-  individualComponents: false,
-  submitPosition: 'right'
+  text: 'left',
+  fill: 'none',
+  size: '50px',
+  verticalAlign: 'middle'
 }
 
-class SearchExample extends Component {
+class IconExample extends Component {
   constructor() {
     super()
 
@@ -48,9 +44,9 @@ class SearchExample extends Component {
         options={options}
         description={description}
         config={{
-          type: 'Form',
+          type: 'Icon',
           componentNameOverride,
-          tabsId: 'search'
+          extraString: 'import github from \'path-to-github-icon.svg\'\n'
         }}
         ComponentToRender={ComponentToRender(state)}
       />
@@ -58,4 +54,4 @@ class SearchExample extends Component {
   }
 }
 
-export default SearchExample
+export default IconExample
