@@ -13,6 +13,11 @@ const options = [{
     },
     {
       type: 'checkbox',
+      stateKey: 'label',
+      label: 'Show Label'
+    },
+    {
+      type: 'checkbox',
       stateKey: 'individualComponents',
       label: 'Use individual Components'
     },

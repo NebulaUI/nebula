@@ -19,7 +19,8 @@ const initialState = {
   disabled: false,
   small: false,
   individualComponents: false,
-  submitPosition: 'right'
+  submitPosition: 'right',
+  label: true
 }
 
 class SearchExample extends Component {
