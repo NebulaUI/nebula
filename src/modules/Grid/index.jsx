@@ -38,7 +38,7 @@ const initialState = {
   }
 }
 
-class BareListExample extends Component {
+class GridExample extends Component {
   constructor() {
     super()
 
@@ -73,4 +73,4 @@ class BareListExample extends Component {
   }
 }
 
-export default BareListExample
+export default GridExample
