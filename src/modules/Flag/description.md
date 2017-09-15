@@ -9,3 +9,28 @@ can be composed with the grid in many interesting and useful ways.  It is also v
 
 It is not recommended that you augment the Flag elements with additional styling, instead we encourage you to nest other
 elements inside and style them. As you can see in this example we have nested the content within.
+
+### React Props
+
+#### `<Flag.Wrapper />`
+* `reverse :bool [optional]`  
+Reverses the gutter on the Flag.  The source order of `<Flag.Body />` and `<Flag.Component />` should also be reversed.
+* `breakpoint :oneOf['xs', 'sm', 'md', 'lg'] [optional]`  
+Viewports smaller than the defined breakpoints will cause the flag to stack vertically.
+* `align :oneOf['top', 'bottom'] [optional]`  
+Vertical alignment  of `<Flag.Body />` and `<Flag.Component />`.  By default it is aligned to the center.
+* `gutter :oneOf['md'] [optional]`  
+The gutter between `<Flag.Body />` and `<Flag.Component />`.
+* `tag :String [optional]`  
+Allows the rendered HTML tag to be overridden from the default `<div>`.
+
+#### `<Flag.Body />`
+* `tag :String [optional]`  
+Allows the rendered HTML tag to be overridden from the default `<div>`.
+
+#### `<Flag.Component />`
+* `nowrap :bool [optional]`  
+Prevents text wrapping. Due to the nature of the flag, words will wrap unless this prop is set.
+* `tag :String [optional]`  
+Allows the rendered HTML tag to be overridden from the default `<div>`.
+
