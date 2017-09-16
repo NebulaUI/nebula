@@ -1,7 +1,7 @@
 import React from 'react'
 import { Route, Switch } from 'react-router-dom'
 
-import { basePath } from 'utils/constants'
+import { BASE_PATH } from 'utils/constants'
 import Home from 'modules/Home'
 import Flag from 'modules/Flag'
 import Navbar from 'modules/Navbar'
@@ -24,23 +24,23 @@ import NotFound from 'modules/NotFound'
 
 const Routes = () => (
   <Switch>
-    <Route exact path={`${basePath}`} component={Home} />
-    <Route exact path={`${basePath}get-started`} component={GetStarted} />
-    <Route exact path={`${basePath}core-concepts`} component={CoreConcepts} />
-    <Route exact path={`${basePath}objects/flag`} component={Flag} />
-    <Route exact path={`${basePath}objects/lists`} component={Lists} />
-    <Route exact path={`${basePath}objects/grid`} component={Grid} />
-    <Route exact path={`${basePath}objects/site-wrap`} component={SiteWrap} />
-    <Route exact path={`${basePath}objects/section`} component={Section} />
-    <Route exact path={`${basePath}components/navbar`} component={Navbar} />
-    <Route exact path={`${basePath}components/card`} component={Card} />
-    <Route exact path={`${basePath}components/tabs`} component={Tabs} />
-    <Route exact path={`${basePath}components/foldable`} component={Foldable} />
-    <Route exact path={`${basePath}components/form`} component={Form} />
-    <Route exact path={`${basePath}components/buttons`} component={Buttons} />
-    <Route exact path={`${basePath}components/flyout`} component={Flyout} />
-    <Route exact path={`${basePath}components/icons`} component={Icons} />
-    <Route exact path={`${basePath}components/Modal`} component={Modal} />
+    <Route exact path={`${BASE_PATH}`} component={Home} />
+    <Route exact path={`${BASE_PATH}get-started`} component={GetStarted} />
+    <Route exact path={`${BASE_PATH}core-concepts`} component={CoreConcepts} />
+    <Route exact path={`${BASE_PATH}objects/flag`} component={Flag} />
+    <Route exact path={`${BASE_PATH}objects/lists`} component={Lists} />
+    <Route exact path={`${BASE_PATH}objects/grid`} component={Grid} />
+    <Route exact path={`${BASE_PATH}objects/site-wrap`} component={SiteWrap} />
+    <Route exact path={`${BASE_PATH}objects/section`} component={Section} />
+    <Route exact path={`${BASE_PATH}components/navbar`} component={Navbar} />
+    <Route exact path={`${BASE_PATH}components/card`} component={Card} />
+    <Route exact path={`${BASE_PATH}components/tabs`} component={Tabs} />
+    <Route exact path={`${BASE_PATH}components/foldable`} component={Foldable} />
+    <Route exact path={`${BASE_PATH}components/form`} component={Form} />
+    <Route exact path={`${BASE_PATH}components/buttons`} component={Buttons} />
+    <Route exact path={`${BASE_PATH}components/flyout`} component={Flyout} />
+    <Route exact path={`${BASE_PATH}components/icons`} component={Icons} />
+    <Route exact path={`${BASE_PATH}components/Modal`} component={Modal} />
     <Route component={NotFound} />
   </Switch>
 )

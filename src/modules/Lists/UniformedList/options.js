@@ -1,4 +1,4 @@
-import { breakpoints } from 'utils/constants'
+import { BREAKPOINTS } from 'utils/constants'
 
 const MAX_LIST_ITEMS = 30
 
@@ -31,7 +31,7 @@ const options = [{
       type: 'select',
       stateKey: 'breakpoint',
       label: 'Breakpoint',
-      options: breakpoints.map(bp => ({
+      options: BREAKPOINTS.map(bp => ({
         value: bp,
         label: bp
       }))

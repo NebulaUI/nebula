@@ -1,4 +1,4 @@
-import { breakpoints } from 'utils/constants'
+import { BREAKPOINTS } from 'utils/constants'
 import { sizes, items } from './constants'
 
 const buildItemSizes = item => ({
@@ -6,7 +6,7 @@ const buildItemSizes = item => ({
   foldable: true,
   foldableOpenOnMount: false,
   listType: 'matrix',
-  options: breakpoints.map(bp => ({
+  options: BREAKPOINTS.map(bp => ({
     type: 'select',
     stateKey: `item${item}.sizes.${bp}`,
     label: `${bp}`,

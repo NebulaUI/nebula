@@ -3,8 +3,8 @@ import T from 'prop-types'
 import { NavLink } from 'react-router-dom'
 import { Navbar, Icon } from 'nebula-react'
 
-const Item = ({ to, label, icon }) => (
-  <Navbar.Item key={to}>
+const Item = ({ to, label, icon }) => {
+  return (<Navbar.Item key={to}>
     <Navbar.Link
       component={NavLink}
       activeClassName="is-active"
@@ -19,8 +19,9 @@ const Item = ({ to, label, icon }) => (
         : label
       }
     </Navbar.Link>
-  </Navbar.Item>
-)
+  </Navbar.Item>)
+}
+
 
 Item.propTypes = {
   to: T.string.isRequired,

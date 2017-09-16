@@ -1,4 +1,4 @@
-import { breakpoints } from 'utils/constants'
+import { BREAKPOINTS } from 'utils/constants'
 
 const spacingSizes = {
   '': 'None',
@@ -37,7 +37,7 @@ const options = [{
 {
   title: 'Spacing (Breakpoints)',
   listType: 'matrix',
-  options: breakpoints.map(bp => ({
+  options: BREAKPOINTS.map(bp => ({
     type: 'select',
     stateKey: `spacing.${bp}`,
     label: bp,

@@ -1,6 +1,6 @@
-const basePath = '/nebula/'
+const BASE_PATH = '/nebula/'
 
-const breakpoints = [
+const BREAKPOINTS = [
   'all',
   'xs',
   'sm',
@@ -9,6 +9,6 @@ const breakpoints = [
 ]
 
 export {
-  basePath,
-  breakpoints
+  BREAKPOINTS,
+  BASE_PATH
 }

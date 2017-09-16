@@ -1,80 +1,80 @@
-import { basePath } from 'utils/constants'
+import { BASE_PATH } from 'utils/constants'
 import bricks from 'assets/icons/bricks.svg'
 import home from 'assets/icons/home.svg'
 import lightbulb from 'assets/icons/lightbulb.svg'
 
 const model = [
   {
-    to: `${basePath}core-concepts`,
+    to: `${BASE_PATH}core-concepts`,
     label: 'Core concepts',
     icon: lightbulb
   },
   {
-    to: `${basePath}objects`,
+    to: `${BASE_PATH}objects`,
     label: 'Objects',
     icon: bricks,
     descendants: [
       {
-        to: `${basePath}objects/flag`,
+        to: `${BASE_PATH}objects/flag`,
         label: 'Flag'
       },
       {
-        to: `${basePath}objects/grid`,
+        to: `${BASE_PATH}objects/grid`,
         label: 'Grid'
       },
       {
-        to: `${basePath}objects/lists`,
+        to: `${BASE_PATH}objects/lists`,
         label: 'Lists'
       },
       {
-        to: `${basePath}objects/section`,
+        to: `${BASE_PATH}objects/section`,
         label: 'Section'
       },
       {
-        to: `${basePath}objects/site-wrap`,
+        to: `${BASE_PATH}objects/site-wrap`,
         label: 'Site Wrap'
       }
     ]
   },
   {
-    to: `${basePath}components`,
+    to: `${BASE_PATH}components`,
     label: 'Components',
     icon: home,
     descendants: [
       {
-        to: `${basePath}components/buttons`,
+        to: `${BASE_PATH}components/buttons`,
         label: 'Buttons'
       },
       {
-        to: `${basePath}components/card`,
+        to: `${BASE_PATH}components/card`,
         label: 'Card'
       },
       {
-        to: `${basePath}components/flyout`,
+        to: `${BASE_PATH}components/flyout`,
         label: 'Flyout'
       },
       {
-        to: `${basePath}components/foldable`,
+        to: `${BASE_PATH}components/foldable`,
         label: 'Foldable'
       },
       {
-        to: `${basePath}components/form`,
+        to: `${BASE_PATH}components/form`,
         label: 'Form'
       },
       {
-        to: `${basePath}components/icons`,
+        to: `${BASE_PATH}components/icons`,
         label: 'Icons'
       },
       {
-        to: `${basePath}components/navbar`,
+        to: `${BASE_PATH}components/navbar`,
         label: 'Navbar'
       },
       {
-        to: `${basePath}components/modal`,
+        to: `${BASE_PATH}components/modal`,
         label: 'Modal dialog'
       },
       {
-        to: `${basePath}components/tabs`,
+        to: `${BASE_PATH}components/tabs`,
         label: 'Tabs'
       }
     ]

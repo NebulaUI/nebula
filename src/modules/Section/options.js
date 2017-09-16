@@ -1,4 +1,4 @@
-import { breakpoints } from 'utils/constants'
+import { BREAKPOINTS } from 'utils/constants'
 
 const sizes = {
   '': 'None',
@@ -19,7 +19,7 @@ const options = [{
 {
   title: 'Size (Breakpoints)',
   listType: 'matrix',
-  options: breakpoints.map(bp => ({
+  options: BREAKPOINTS.map(bp => ({
     type: 'select',
     stateKey: `sizes.${bp}`,
     label: bp,

@@ -1,4 +1,4 @@
-import { breakpoints } from 'utils/constants'
+import { BREAKPOINTS } from 'utils/constants'
 
 const gutterSizes = {
   '': 'None',
@@ -12,7 +12,7 @@ const gutter = {
   foldable: true,
   foldableOpenOnMount: false,
   listType: 'matrix',
-  options: breakpoints.map(bp => ({
+  options: BREAKPOINTS.map(bp => ({
     type: 'select',
     stateKey: `gutter.${bp}`,
     label: bp,

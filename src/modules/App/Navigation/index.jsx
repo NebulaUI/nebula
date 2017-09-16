@@ -6,7 +6,7 @@ import { Navbar, Icon } from 'nebula-react'
 
 import githubIcon from 'assets/icons/github.svg'
 
-import { basePath } from 'utils/constants'
+import { BASE_PATH } from 'utils/constants'
 import renderRoutes from './renderRoutes'
 import SecondaryContent from './SecondaryContent'
 
@@ -30,7 +30,7 @@ class Navigation extends Component {
           <Navbar.Toggle.Wrapper>
             <Navbar.Toggle.Bars />
           </Navbar.Toggle.Wrapper>
-          <NavLink className="c-navbar__logo" to={basePath}>
+          <NavLink className="c-navbar__logo" to={BASE_PATH}>
             Nebula
           </NavLink>
           <Navbar.ContentWrapper>
