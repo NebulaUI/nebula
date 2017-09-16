@@ -1,9 +1,12 @@
+import { constants as nebulaConstants } from 'nebula-react'
 import { BREAKPOINTS } from 'utils/constants'
 
 const sizes = {
   '': 'None',
-  sm: 'Small',
-  md: 'Medium'
+  ...nebulaConstants.SECTION_SIZES.reduce((acc, size) => {
+    acc[size] = size
+    return acc
+  }, {})
 }
 
 const options = [{

@@ -5,11 +5,13 @@ import { Card, Section } from 'nebula-react'
 import { removeFalsyProps as removeFalsy } from 'utils'
 
 const transformProp = (obj) => {
-  const newArr = Object.keys(obj).reduce((arr, key) => (
-    obj[key]
-      ? [...arr, obj[key]]
+  const newArr = Object.keys(obj).reduce((arr, key) => {
+    const value = obj[key]
+
+    return value && !value.startsWith('@')
+      ? [...arr, value]
       : arr
-  ), [])
+  }, [])
 
   return newArr.length > 1
     ? newArr

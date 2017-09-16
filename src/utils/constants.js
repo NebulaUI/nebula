@@ -1,11 +1,10 @@
+import { constants as nebulaConstants } from 'nebula-react'
+
 const BASE_PATH = '/nebula/'
 
 const BREAKPOINTS = [
   'all',
-  'xs',
-  'sm',
-  'md',
-  'lg'
+  ...nebulaConstants.BREAKPOINTS
 ]
 
 export {

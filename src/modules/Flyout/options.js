@@ -1,7 +1,7 @@
 import { Flyout } from 'nebula-react'
 
 const { DIRECTIONS } = Flyout.constants
-const widths = ['None', '200px', '500px',]
+const widths = ['None', '200px', '500px']
 
 const options = [{
   title: '',
