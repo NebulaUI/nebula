@@ -16,7 +16,8 @@
     "semi": ["error", "never"],
     "react/require-default-props": "off",
     "react/jsx-curly-spacing": "off",
-    "react/no-unescaped-entities": "off"
+    "react/no-unescaped-entities": "off",
+    "import/prefer-default-export": "off"
   },
   "settings": {
     "import/resolver": "webpack"

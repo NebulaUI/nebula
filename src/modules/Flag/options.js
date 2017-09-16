@@ -1,4 +1,4 @@
-import { BREAKPOINTS } from 'constants/index'
+import { BREAKPOINTS, FLAG_ALIGNMENT } from 'constants/index'
 
 const options = [{
   title: '',
@@ -27,20 +27,10 @@ const options = [{
       type: 'radio',
       stateKey: 'align',
       label: 'Select alignment.',
-      options: [
-        {
-          value: 'top',
-          label: 'Top'
-        },
-        {
-          value: 'center',
-          label: 'Center'
-        },
-        {
-          value: 'bottom',
-          label: 'Bottom'
-        }
-      ]
+      options: FLAG_ALIGNMENT.map(v => ({
+        value: v,
+        label: v === 'default' ? 'Default (Center)' : `${v.slice(0, 1).toUpperCase()}${v.slice(1)}`
+      }))
     },
     {
       type: 'select',

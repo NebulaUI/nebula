@@ -9,7 +9,7 @@ import optionsModel from './options'
 
 const initialState = {
   reverse: false,
-  align: 'center',
+  align: 'default',
   gutter: true,
   breakpoint: 'xs',
   nowrap: true,

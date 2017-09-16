@@ -61,7 +61,7 @@ const ComponentToRender = ({
     reverse ? (
       <Flag.Wrapper
         reverse
-        {...removeFalsy({ align: align === 'center' ? false : align })}
+        {...removeFalsy({ align: align === 'default' ? false : align })}
         {...removeFalsy({ gutter: gutter ? 'md' : false })}
         {...removeFalsy({ breakpoint: breakpoint === 'all' ? false : breakpoint })}
       >
@@ -70,7 +70,7 @@ const ComponentToRender = ({
       </Flag.Wrapper>
     ) : (
       <Flag.Wrapper
-        {...removeFalsy({ align: align === 'center' ? false : align })}
+        {...removeFalsy({ align: align === 'default' ? false : align })}
         {...removeFalsy({ gutter: gutter ? 'md' : false })}
         {...removeFalsy({ breakpoint: breakpoint === 'all' ? false : breakpoint })}
       >
