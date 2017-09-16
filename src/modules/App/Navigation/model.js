@@ -1,4 +1,4 @@
-import { BASE_PATH } from 'utils/constants'
+import { BASE_PATH } from 'constants/index'
 import bricks from 'assets/icons/bricks.svg'
 import home from 'assets/icons/home.svg'
 import lightbulb from 'assets/icons/lightbulb.svg'

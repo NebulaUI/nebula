@@ -1,4 +1,4 @@
-import { BREAKPOINTS } from 'utils/constants'
+import { BREAKPOINTS } from 'constants/index'
 import { sizes, items } from './constants'
 
 const buildItemSizes = item => ({

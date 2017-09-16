@@ -1,7 +1,7 @@
 import React from 'react'
 import { Route, Switch } from 'react-router-dom'
 
-import { BASE_PATH } from 'utils/constants'
+import { BASE_PATH } from 'constants/index'
 import Home from 'modules/Home'
 import Flag from 'modules/Flag'
 import Navbar from 'modules/Navbar'

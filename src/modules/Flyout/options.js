@@ -1,6 +1,5 @@
-import { Flyout } from 'nebula-react'
+import { FLYOUT_DIRECTIONS } from 'constants/index'
 
-const { DIRECTIONS } = Flyout.constants
 const widths = ['None', '200px', '500px']
 
 const options = [{
@@ -10,7 +9,7 @@ const options = [{
       type: 'select',
       stateKey: 'direction',
       label: 'Direction',
-      options: DIRECTIONS.map(s => ({
+      options: FLYOUT_DIRECTIONS.map(s => ({
         value: s,
         label: s
       }))

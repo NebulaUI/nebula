@@ -1,5 +1,5 @@
 import { constants as nebulaConstants } from 'nebula-react'
-import { BREAKPOINTS } from 'utils/constants'
+import { BREAKPOINTS } from 'constants/index'
 
 const sizes = {
   '': 'None',

@@ -7,7 +7,7 @@ import { stringify as stringifyQs } from 'qs'
 
 
 import { parseQuery } from 'utils'
-import { basePath } from 'utils/constants'
+import { BASE_PATH } from 'constants'
 
 import CoreConcepts from '../CoreConcepts'
 import NebulaCSS from './NebulaCSS/'
@@ -40,7 +40,7 @@ const getDefaultActiveTabId = ({ location: { search } }) => {
 const GetStarted = ({ history }) => (
   <div>
     <h1>Get started</h1>
-    <p>It is recommended that you read the <Link to={`${basePath}core-concepts`}>Core Concepts</Link>
+    <p>It is recommended that you read the <Link to={`${BASE_PATH}core-concepts`}>Core Concepts</Link>
       to get the most out of this framework.</p>
     <p>Please choose which version of Nebula you wish to consume in your project.</p>
     <Tabs.Wrapper

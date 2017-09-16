@@ -7,7 +7,12 @@ const BREAKPOINTS = [
   ...nebulaConstants.BREAKPOINTS
 ]
 
+const FLYOUT_DIRECTIONS = [
+  ...nebulaConstants.FLYOUT_DIRECTIONS
+]
+
 export {
   BREAKPOINTS,
-  BASE_PATH
+  BASE_PATH,
+  FLYOUT_DIRECTIONS
 }

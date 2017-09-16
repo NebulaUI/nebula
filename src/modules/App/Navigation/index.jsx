@@ -6,7 +6,7 @@ import { Navbar, Icon } from 'nebula-react'
 
 import githubIcon from 'assets/icons/github.svg'
 
-import { BASE_PATH } from 'utils/constants'
+import { BASE_PATH } from 'constants/index'
 import renderRoutes from './renderRoutes'
 import SecondaryContent from './SecondaryContent'
 

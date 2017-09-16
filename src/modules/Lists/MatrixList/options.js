@@ -1,4 +1,4 @@
-import { BREAKPOINTS } from 'utils/constants'
+import { BREAKPOINTS } from 'constants/index'
 
 const spacingSizes = {
   '': 'None',

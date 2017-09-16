@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { Card, Section } from 'nebula-react'
 
-import { basePath } from 'utils/constants'
+import { BASE_PATH } from 'constants/index'
 import layers from 'assets/img/layers.png'
 import MarkdownContainer from 'components/MarkdownContainer'
 
@@ -19,7 +19,7 @@ const Home = () => (
         <img src={layers} alt="Nebula Layers" style={{ width: '500px' }} />
       </p>
       <MarkdownContainer source={belowLayers} />
-      <Link to={`${basePath}get-started`} className="c-btn c-btn--md c-btn--alpha">
+      <Link to={`${BASE_PATH}get-started`} className="c-btn c-btn--md c-btn--alpha">
         <span role="img" aria-label="star" style={{ color: 'transparent', textShadow: '0 0 0 white', marginRight: '0.5rem' }}>💫</span>Get started!
       </Link>
     </Card>
