@@ -15,7 +15,6 @@ const ComponentToRender = ({
   disabled
 }) => (
   <Flyout.Wrapper
-    direction={direction}
     {...removeFalsy({ isOpen: controlled ? isOpen : false })}
     {...removeFalsy({ clickOutsideToClose: controlled ? false : clickOutsideToClose })}
     {...removeFalsy({ defaultOpen: controlled ? false : 'open' })}
@@ -25,7 +24,10 @@ const ComponentToRender = ({
     <Flyout.Toggle>
       <Button theme="alpha" size="sm">Toggle Flyout</Button>
     </Flyout.Toggle>
-    <Flyout.Content>
+    <Flyout.Content
+      width="500"
+      direction={direction}
+    >
       <Card>
         <p>Lorem ipsum dolor sit amet</p>
         {

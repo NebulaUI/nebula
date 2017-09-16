@@ -5,9 +5,6 @@
 ### React props
 
 #### `<Flyout.Wrapper>`
-* `direction :oneOf['nw', 'ne', 'sw', 'se'] [required]`  
-Sets the direction of `<Flyout.Content />` relative to
-`<Flyout.Wrapper>`.
 * `defaultOpen :oneOf['open', 'closed'] [optional]`  
 Determines the initial open / closed state.
 * `isOpen :oneOf['open', 'closed'] [optional]`  
@@ -27,5 +24,10 @@ Allows the rendered HTML tag to be overridden from the default `<div>`.
 It only expects a single child element not an array and ideally that should be a button to ensure it is accessible.
 
 #### `<Flyout.Content />`
+* `direction :oneOf['nw', 'ne', 'sw', 'se'] [required]`  
+Sets the direction of `<Flyout.Content />` relative to
+`<Flyout.Wrapper>`.
+* `width :oneOfType['string', 'number'] [optional]`  
+Set the width of `<Flyout.Content />`.  By default it has a max width to prevent the flyout being wider than the viewport.
 * `tag :String [optional]`  
 Allows the rendered HTML tag to be overridden from the default `<div>`.
