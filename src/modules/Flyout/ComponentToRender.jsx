@@ -12,7 +12,8 @@ const ComponentToRender = ({
   clickOutsideToClose,
   isOpen,
   handleFlyoutToggle,
-  disabled
+  disabled,
+  width
 }) => (
   <Flyout.Wrapper
     {...removeFalsy({ isOpen: controlled ? isOpen : false })}
@@ -25,7 +26,7 @@ const ComponentToRender = ({
       <Button theme="alpha" size="sm">Toggle Flyout</Button>
     </Flyout.Toggle>
     <Flyout.Content
-      width="500"
+      {...removeFalsy({ width: width === 'None' ? false : width })}
       direction={direction}
     >
       <Card>
@@ -51,7 +52,8 @@ ComponentToRender.propTypes = {
   clickOutsideToClose: T.bool.isRequired,
   isOpen: T.bool.isRequired,
   disabled: T.bool.isRequired,
-  handleFlyoutToggle: T.func.isRequired
+  handleFlyoutToggle: T.func.isRequired,
+  width: T.string.isRequied
 }
 
 export default ComponentToRender

@@ -16,7 +16,8 @@ const initialState = {
   controlled: false,
   clickOutsideToClose: true,
   isOpen: 'closed',
-  disabled: false
+  disabled: false,
+  width: 'None'
 }
 
 const buildExtraString = state => (state.controlled ?

@@ -1,4 +1,7 @@
-const directions = ['nw', 'ne', 'sw', 'se']
+import { Flyout } from 'nebula-react'
+
+const { DIRECTIONS } = Flyout.constants
+const widths = ['None', '200px', '500px',]
 
 const options = [{
   title: '',
@@ -7,7 +10,7 @@ const options = [{
       type: 'select',
       stateKey: 'direction',
       label: 'Direction',
-      options: directions.map(s => ({
+      options: DIRECTIONS.map(s => ({
         value: s,
         label: s
       }))
@@ -15,12 +18,21 @@ const options = [{
     {
       type: 'checkbox',
       stateKey: 'controlled',
-      label: 'Control flyout externally (for demo purposes setting this option hides "click outside to close" option).'
+      label: 'Control flyout externally (for demo purposes setting this option hides and disables "click outside to close" option).'
     },
     {
       type: 'checkbox',
       stateKey: 'clickOutsideToClose',
       label: 'Click outside to close.'
+    },
+    {
+      type: 'radio',
+      stateKey: 'width',
+      label: 'Width',
+      options: widths.map(s => ({
+        value: s,
+        label: s
+      }))
     },
     {
       type: 'checkbox',
