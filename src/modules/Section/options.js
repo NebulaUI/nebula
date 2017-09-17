@@ -1,12 +1,11 @@
-import { constants as nebulaConstants } from 'nebula-react'
-import { BREAKPOINTS } from 'constants/index'
+import { BREAKPOINTS, SECTION_SIZES } from 'constants/index'
 
-const sizes = {
-  '': 'None',
-  ...nebulaConstants.SECTION_SIZES.reduce((acc, size) => {
-    acc[size] = size
-    return acc
-  }, {})
+const buildSize = (space, bp) => {
+  if (space === 'None') {
+    return ''
+  }
+
+  return bp === 'all' ? space : `${space}@${bp}`
 }
 
 const options = [{
@@ -26,9 +25,9 @@ const options = [{
     type: 'select',
     stateKey: `sizes.${bp}`,
     label: bp,
-    options: Object.keys(sizes).map(key => ({
-      value: bp === 'all' ? key : `${key}@${bp}`,
-      label: sizes[key]
+    options: SECTION_SIZES.map(s => ({
+      value: buildSize(s, bp),
+      label: s
     }))
   }))
 }]
