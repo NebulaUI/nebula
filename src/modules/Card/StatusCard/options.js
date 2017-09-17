@@ -1,9 +1,4 @@
-const statuses = [
-  'success',
-  'info',
-  'warning',
-  'error'
-]
+import { STATUSES } from 'constants/index'
 
 const options = [{
   title: '',
@@ -12,7 +7,7 @@ const options = [{
       type: 'select',
       stateKey: 'status',
       label: 'Status',
-      options: statuses.map(s => ({
+      options: STATUSES.map(s => ({
         value: s,
         label: s
       }))
