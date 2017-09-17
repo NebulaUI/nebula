@@ -1,6 +1,7 @@
 import { BASE_PATH, BREAKPOINTS } from './globals'
 import { FLAG_GUTTERS } from './Flag'
 import { GRID_GUTTERS, GRID_FRACTIONS } from './Grid'
+import { LIST_SPACING } from './Lists'
 import { FLYOUT_DIRECTIONS } from './Flyout'
 
 export {
@@ -9,5 +10,6 @@ export {
   FLYOUT_DIRECTIONS,
   FLAG_GUTTERS,
   GRID_GUTTERS,
-  GRID_FRACTIONS
+  GRID_FRACTIONS,
+  LIST_SPACING
 }

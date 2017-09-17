@@ -1,19 +1,5 @@
-import { BREAKPOINTS } from 'constants/index'
-
-const spacingSizes = {
-  '': 'None',
-  md: 'Medium'
-}
-
-const MAX_LIST_ITEMS = 30
-
-const buildLisItems = (list = [], curr = 0) => {
-  if (curr === MAX_LIST_ITEMS) {
-    return list
-  }
-  list.push(curr)
-  return buildLisItems(list, curr + 1)
-}
+import { BREAKPOINTS, LIST_SPACING } from 'constants/index'
+import { buildListItems, buildSpace } from '../utils'
 
 const options = [{
   title: '',
@@ -27,7 +13,7 @@ const options = [{
       type: 'select',
       stateKey: 'qtyItems',
       label: 'Quantity of list items',
-      options: buildLisItems().map(item => ({
+      options: buildListItems().map(item => ({
         value: item,
         label: item
       }))
@@ -41,9 +27,9 @@ const options = [{
     type: 'select',
     stateKey: `spacing.${bp}`,
     label: bp,
-    options: Object.keys(spacingSizes).map(key => ({
-      value: bp === 'all' ? key : `${key}@${bp}`,
-      label: spacingSizes[key]
+    options: LIST_SPACING.map(s => ({
+      value: buildSpace(s, bp),
+      label: s
     }))
   }))
 }]

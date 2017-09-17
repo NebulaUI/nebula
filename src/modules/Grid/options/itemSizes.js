@@ -1,10 +1,13 @@
 import { BREAKPOINTS, GRID_FRACTIONS } from 'constants/index'
 import { items } from './constants'
 
-const fractions = [
-  '',
-  ...GRID_FRACTIONS
-]
+const buildValue = (v, bp) => {
+  if (v === 'None') {
+    return ''
+  }
+
+  return bp === 'all' ? v : `${v}@${bp}`
+}
 
 const buildItemSizes = item => ({
   title: `Example item ${item} sizes (Breakpoints)`,
@@ -15,8 +18,8 @@ const buildItemSizes = item => ({
     type: 'select',
     stateKey: `item${item}.sizes.${bp}`,
     label: `${bp}`,
-    options: fractions.map(fraction => ({
-      value: bp === 'all' ? fraction : `${fraction}@${bp}`,
+    options: GRID_FRACTIONS.map(fraction => ({
+      value: buildValue(fraction, bp),
       label: fraction || 'None'
     }))
   }))
