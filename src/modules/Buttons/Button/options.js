@@ -1,5 +1,5 @@
-const sizes = ['sm', 'md', 'lg']
-const themes = ['alpha', 'beta']
+import { BUTTON_SIZES, BUTTON_THEMES } from 'constants/index'
+
 const types = ['submit', 'reset', 'link', 'button']
 
 const options = [{
@@ -9,7 +9,7 @@ const options = [{
       type: 'select',
       stateKey: 'size',
       label: 'Size',
-      options: sizes.map(s => ({
+      options: BUTTON_SIZES.map(s => ({
         value: s,
         label: s
       }))
@@ -23,7 +23,7 @@ const options = [{
       type: 'select',
       stateKey: 'theme',
       label: 'Theme',
-      options: themes.map(t => ({
+      options: BUTTON_THEMES.map(t => ({
         value: t,
         label: t
       }))
