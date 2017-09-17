@@ -14,7 +14,7 @@ const initialState = {
   bordered: false,
   cardInBody: true,
   cardWrapping: false,
-  breakpoint: 'all',
+  breakpoint: '',
   open: 'open',
   disabled: false,
   controlled: false

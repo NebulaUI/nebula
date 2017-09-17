@@ -1,4 +1,4 @@
-import { BREAKPOINTS } from 'constants/index'
+import { MAX_BREAKPOINTS } from 'constants/index'
 
 const options = [{
   title: '',
@@ -37,9 +37,9 @@ const options = [{
       type: 'select',
       stateKey: 'breakpoint',
       label: 'Breakpoint',
-      options: BREAKPOINTS.map(bp => ({
-        value: bp === 'all' ? bp : `max-${bp}`,
-        label: bp === 'all' ? bp : `max ${bp}`
+      options: MAX_BREAKPOINTS.map(bp => ({
+        value: bp === 'all' ? '' : bp,
+        label: bp === 'all' ? 'None' : bp
       }))
     }
   ]

@@ -27,7 +27,7 @@ const ComponentToRender = ({
         defaultOpen: controlled ? false : 'open',
         onFoldableChange: controlled ? handleFoldableToggle : false,
         open: controlled ? open : false,
-        breakpoint: breakpoint === 'all' ? false : breakpoint
+        breakpoint
       })}
     >
       <Foldable.Header {...removeFalsy({ padding: headerPadding })}>
