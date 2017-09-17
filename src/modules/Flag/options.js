@@ -1,4 +1,5 @@
 import { BREAKPOINTS, FLAG_ALIGNMENT } from 'constants/index'
+import { upperCaseFirst } from '../../utils'
 
 const options = [{
   title: '',
@@ -29,7 +30,7 @@ const options = [{
       label: 'Select alignment.',
       options: FLAG_ALIGNMENT.map(v => ({
         value: v,
-        label: v === 'default' ? 'Default (Center)' : `${v.slice(0, 1).toUpperCase()}${v.slice(1)}`
+        label: v === 'default' ? 'Default (Center)' : upperCaseFirst(v)
       }))
     },
     {
