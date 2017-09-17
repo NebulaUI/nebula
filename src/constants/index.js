@@ -1,5 +1,6 @@
 import { BASE_PATH, BREAKPOINTS } from './globals'
-import { FLAG_GUTTERS, FLAG_ALIGNMENT } from './Flag'
+import { FLAG_GUTTERS } from './Flag'
+import { GRID_GUTTERS, GRID_FRACTIONS } from './Grid'
 import { FLYOUT_DIRECTIONS } from './Flyout'
 
 export {
@@ -7,5 +8,6 @@ export {
   BASE_PATH,
   FLYOUT_DIRECTIONS,
   FLAG_GUTTERS,
-  FLAG_ALIGNMENT
+  GRID_GUTTERS,
+  GRID_FRACTIONS
 }

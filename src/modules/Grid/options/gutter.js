@@ -1,10 +1,16 @@
-import { BREAKPOINTS } from 'constants/index'
+import { BREAKPOINTS, GRID_GUTTERS } from 'constants/index'
 
-const gutterSizes = {
-  '': 'None',
-  sm: 'Small',
-  md: 'Medium',
-  lg: 'Large'
+const gutterSizes = [
+  'None',
+  ...GRID_GUTTERS
+]
+
+const buildValue = (v, bp) => {
+  if (v === 'None') {
+    return ''
+  }
+
+  return bp === 'all' ? v : `${v}@${bp}`
 }
 
 const gutter = {
@@ -16,9 +22,9 @@ const gutter = {
     type: 'select',
     stateKey: `gutter.${bp}`,
     label: bp,
-    options: Object.keys(gutterSizes).map(key => ({
-      value: bp === 'all' ? key : `${key}@${bp}`,
-      label: gutterSizes[key]
+    options: gutterSizes.map(v => ({
+      value: buildValue(v, bp),
+      label: v
     }))
   }))
 }

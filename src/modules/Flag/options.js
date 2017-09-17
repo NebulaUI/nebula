@@ -1,5 +1,7 @@
-import { BREAKPOINTS, FLAG_ALIGNMENT } from 'constants/index'
+import { BREAKPOINTS } from 'constants/index'
 import { upperCaseFirst } from '../../utils'
+
+const FLAG_ALIGNMENT = ['default', 'top', 'bottom']
 
 const options = [{
   title: '',
