@@ -18,6 +18,8 @@ Can be used in conjunction with `activeId` to manage the state of the tabs exter
 Allows the rendered HTML tag to be overridden from the default `<div>`.
 
 #### `<Tabs.TabList />`
+* `spreadItems :bool [optional]`  
+Spreads out the tabs so they take up an even amount of space.
 * `tag :String [optional]`  
 Allows the rendered HTML tag to be overridden from the default `<div>`.
 

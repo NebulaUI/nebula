@@ -5,6 +5,7 @@ import BareList from './BareList'
 import InlineList from './InlineList'
 import MatrixList from './MatrixList'
 import UniformedList from './UniformedList'
+import UIList from './UIList'
 
 const Lists = () => (
   <div>
@@ -39,13 +40,23 @@ const Lists = () => (
         </Section>
       </Foldable.Body>
     </Foldable.Wrapper>
-    <Foldable.Wrapper>
+    <Foldable.Wrapper bordered>
       <Foldable.Header padding>
         <h2>Uniformed List</h2>
       </Foldable.Header>
       <Foldable.Body>
         <Section size="md" tag="div" className="u-hard-top">
           <UniformedList />
+        </Section>
+      </Foldable.Body>
+    </Foldable.Wrapper>
+    <Foldable.Wrapper>
+      <Foldable.Header padding>
+        <h2>UI List</h2>
+      </Foldable.Header>
+      <Foldable.Body>
+        <Section size="md" tag="div" className="u-hard-top">
+          <UIList />
         </Section>
       </Foldable.Body>
     </Foldable.Wrapper>

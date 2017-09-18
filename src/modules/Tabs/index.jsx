@@ -10,7 +10,8 @@ import optionsModel from './options'
 const initialState = {
   controlled: false,
   disabledTab: true,
-  activeId: 'panel-1'
+  activeId: 'panel-1',
+  spreadItems: false
 }
 
 const componentNameOverride = {
