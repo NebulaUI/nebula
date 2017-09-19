@@ -41,3 +41,37 @@ hr {
 .c-article > *:first-child {
   margin-top: 0;
 }
+
+.c-sidebar {
+  background-color: $nb-color-white;
+  overflow: auto;
+  border-right: 1px solid $nb-color-base-border;
+
+  @include nb-respond-to('sm') {
+    height: calc(100vh - #{$nb-navbar-height-collapsed});
+  }
+
+  @include nb-respond-to('nav') {
+    height: calc(100vh - #{$nb-navbar-height});
+  }
+}
+
+.c-api-main-content {
+  @include nb-respond-to('sm') {
+    height: calc(100vh - #{$nb-navbar-height-collapsed});
+    overflow: auto;
+  }
+
+  @include nb-respond-to('nav') {
+    height: calc(100vh - #{$nb-navbar-height});
+  }
+
+  @include nb-respond-to('max-sm') {
+    padding-left: $nb-spacing-unit;
+  }
+}
+
+.c-api-main-content__inner {
+  max-width: 1200px;
+  padding-right: 1rem;
+}

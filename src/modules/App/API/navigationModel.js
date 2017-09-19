@@ -3,7 +3,7 @@ import { BASE_PATH } from 'constants/index'
 
 const model = [
   {
-    to: `${BASE_PATH}api/objects`,
+    to: null,
     label: 'Objects',
     descendants: [
       {
@@ -29,7 +29,7 @@ const model = [
     ]
   },
   {
-    to: `${BASE_PATH}api/components`,
+    to: null,
     label: 'Components',
     descendants: [
       {

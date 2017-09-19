@@ -17,7 +17,7 @@ class Dropdown extends Component {
           className={classNames({ 'is-active': path.includes(to) })}
         >
           { icon && (
-            <Icon iconPosition="left" verticalAlign="middle" icon={icon}>
+            <Icon iconPosition="left" verticalAlign="middle" icon={icon} style={{ maxHeight: '100%' }}>
               { label }
             </Icon>
           )}

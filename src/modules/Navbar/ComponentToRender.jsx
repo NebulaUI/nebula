@@ -30,7 +30,7 @@ const ComponentToRender = ({
 
   const buildItemWithIcon = () => (
     navItems.icon ? (
-      <Icon verticalAlign="middle" width="24px" height="24px" iconRight icon={lightbulb}>
+      <Icon verticalAlign="middle" width="24px" height="24px" iconPosition="right" icon={lightbulb}>
         Pulsars
       </Icon>
     ) : (
@@ -41,7 +41,7 @@ const ComponentToRender = ({
   const NavItems = (
     <Navbar.Content {...removeFalsy({ right: navItems.right })}>
       <Navbar.Item>
-        { buildNavLink('/nebula/space-time', 'Space Time') }
+        { buildNavLink('/nebula/planets', 'Planets') }
       </Navbar.Item>
       <Navbar.Dropdown.Wrapper clickOutsideToClose>
         <Navbar.Dropdown.Toggle className="is-active">
@@ -67,7 +67,7 @@ const ComponentToRender = ({
       case 'button':
         return (
           <Button size="sm" theme="alpha">
-            Call to action
+            CTA
           </Button>
         )
       default:
