@@ -4,7 +4,7 @@
 
 #### `<Form.TextInput />`
 * `id :String [optional]`  
-* `small :Bool [optional]`  
+* `small :bool [optional]`  
 Renders small version.
 * `type :oneOf['text', 'password', 'email', 'number', 'search', 'url'] [optional]`  
 Default of `text` will be rendered.
