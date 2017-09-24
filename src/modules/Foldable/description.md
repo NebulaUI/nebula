@@ -5,7 +5,7 @@
 
 ### React Props
 #### `<Foldable.Wrapper />`
-* `defaultExpanded :oneOf['expanded', 'collapsed'] [optional]`  
+* `defaultOpen :oneOf['open', 'closed'] [optional]`  
 Determines the initial expanded/collapsed state.
 * `open :oneOf['open', 'open'] [optional]`  
 Makes foldable a [controlled component](https://facebook.github.io/react/docs/forms.html#controlled-components)

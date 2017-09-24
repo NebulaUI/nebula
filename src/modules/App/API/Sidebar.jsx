@@ -2,14 +2,22 @@ import React, { Component } from 'react'
 import T from 'prop-types'
 import { NavLink } from 'react-router-dom'
 import { withRouter } from 'react-router'
-import { BareList, Section, Foldable, LinkList } from 'nebula-react'
+import { Section, Foldable, LinkList } from 'nebula-react'
 
 import navigationModel from './navigationModel'
 
-const buildNavItems = (items) => (
-  <Foldable.Wrapper key={items.label} bordered>
+const buildNavItems = (items, index, collection, pathname) => (
+  <Foldable.Wrapper
+    key={items.label}
+    defaultOpen={pathname.includes(items.label.toLowerCase()) ? 'open' : 'closed'}
+    bordered
+    style={{
+      borderTopWidth: index === 0 ? 0 : '1px',
+      borderBottomWidth: index === collection.length - 1 ? 0 : '1px'
+    }}
+  >
     <Foldable.Header padding>
-      <h4 aria-label="Click to expand">
+      <h4 aria-label="Click to expand" style={{ paddingLeft: '0.5rem', paddingRight: '0.5rem' }}>
         { items.label }
       </h4>
     </Foldable.Header>
@@ -17,7 +25,7 @@ const buildNavItems = (items) => (
       <LinkList.Wrapper spacing="md">
         {
           items.descendants.map(item => (
-            <LinkList.Link component={NavLink} to={item.to}>
+            <LinkList.Link key={item.label} component={NavLink} to={item.to}>
               { item.label }
             </LinkList.Link>
         ))
@@ -53,12 +61,14 @@ class Sidebar extends Component {
           <div>
             <Foldable.Wrapper open={this.state.open} onFoldableChange={this.handleChange} breakpoint="max-sm">
               <Foldable.Header padding>
-                <h2 aria-label="Click to expand" className="u-hidden@sm u-soft-left-md u-soft-right-md">
+                <h2 aria-label="Click to expand" style={{ paddingLeft: '0.5rem', paddingRight: '0.5rem' }}>
                   API
                 </h2>
               </Foldable.Header>
               <Foldable.Body>
-                { navigationModel.map(buildNavItems)}
+                { navigationModel.map((item, index, collection) =>
+                  buildNavItems(item, index, collection, this.props.location.pathname)
+                )}
               </Foldable.Body>
             </Foldable.Wrapper>
           </div>
