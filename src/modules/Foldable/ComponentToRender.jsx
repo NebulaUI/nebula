@@ -25,7 +25,7 @@ const ComponentToRender = ({
       {...removeFalsy({
         bordered,
         defaultOpen: controlled ? false : 'open',
-        onFoldableChange: controlled ? handleFoldableToggle : false,
+        onChange: controlled ? handleFoldableToggle : false,
         open: controlled ? open : false,
         breakpoint
       })}

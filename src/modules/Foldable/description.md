@@ -10,7 +10,7 @@ Determines the initial expanded/collapsed state.
 * `open :oneOf['open', 'open'] [optional]`  
 Makes foldable a [controlled component](https://facebook.github.io/react/docs/forms.html#controlled-components)
 meaning the value of this prop rather than the component's internal state control it's open/closed state.
-* `onFoldableChange :Function [optional]`  
+* `onChange :Function [optional]`  
 A callback function that gets called when the foldable component is about to expand / collapse. it's current state is passed.
 * `breakpoint :oneOf['max-lg', 'max-md', 'max-sm', 'max-xs'] [optional]`  
 Determines what CSS breakpoint it turns from static content to foldable.

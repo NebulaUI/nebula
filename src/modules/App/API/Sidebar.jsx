@@ -59,7 +59,7 @@ class Sidebar extends Component {
       <nav className="c-sidebar">
         <Section tag="div" size="md@sm">
           <div>
-            <Foldable.Wrapper open={this.state.open} onFoldableChange={this.handleChange} breakpoint="max-sm">
+            <Foldable.Wrapper open={this.state.open} onChange={this.handleChange} breakpoint="max-sm">
               <Foldable.Header padding>
                 <h2 aria-label="Click to expand" style={{ paddingLeft: '0.5rem', paddingRight: '0.5rem' }}>
                   API
