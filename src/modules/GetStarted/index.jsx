@@ -46,7 +46,7 @@ const GetStarted = ({ history }) => (
       <p>Please choose which version of Nebula you wish to consume in your project.</p>
       <Tabs.Wrapper
         activeId={getDefaultActiveTabId(history)}
-        onTabChange={id => handleTabChange(id, history)}
+        onChange={id => handleTabChange(id, history)}
       >
         <Tabs.TabList>
           <Tabs.Tab target="css">

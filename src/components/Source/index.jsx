@@ -49,7 +49,7 @@ const Source = ({
   <div>
     <Tabs.Wrapper
       activeId={getDefaultActiveTabId(type, history, tabsId)}
-      onTabChange={id => handleTabChange(type, id, history, tabsId)}
+      onChange={id => handleTabChange(type, id, history, tabsId)}
     >
       <Tabs.TabList>
         <Tabs.Tab disabled={!description} target="description">Description</Tabs.Tab>
