@@ -43,6 +43,11 @@ const ComponentToRender = ({
             <li className="o-bare-list__item">Option 1</li>
             <li className="o-bare-list__item">Option 2</li>
             <li className="o-bare-list__item">Option 3</li>
+            <p>Lorem ipsum dolor sit amit</p>
+            <li className="o-bare-list__item">Option 1</li>
+            <li className="o-bare-list__item">Option 2</li>
+            <li className="o-bare-list__item">Option 3</li>
+            <p>Lorem ipsum dolor sit amit</p>
           </ul>
           <ButtonDropdown.Close>
             <Button size="sm" theme="beta">close</Button>
