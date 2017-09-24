@@ -24,7 +24,7 @@ const ComponentToRender = ({
       {...removeFalsy({ disabled })}
       {...removeFalsy({ clickOutsideToClose: controlled ? false : clickOutsideToClose })}
       {...removeFalsy({ isOpen: controlled ? isOpen : false })}
-      {...removeFalsy({ onButtonDropdownChange: controlled ? handleButtonDropdownChange : false })}
+      {...removeFalsy({ onChange: controlled ? handleButtonDropdownChange : false })}
     >
       <Button
         {...removeFalsy({ disabled })}

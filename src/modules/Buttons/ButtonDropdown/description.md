@@ -10,7 +10,7 @@ The location of the toggle relative to the button.
 Determine if the button is open on initial mount.
 * `isOpen :oneOf['open', 'closed'] [optional]`  
 Makes this a controlled component whereby the consumer controls the open/close state rather than it being internally controlled.
-* `onButtonDropdownChange [optional]`  
+* `onChange [optional]`  
 Callback functions that fires when the dropdown opens / closes.  Can be used to control the `isOpen` prop.
 * `clickOutsideToClose [optional]`  
 Closes the dropdown when a click event occurs outside of the component.

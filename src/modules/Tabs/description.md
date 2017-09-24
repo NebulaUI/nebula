@@ -26,6 +26,8 @@ Allows the rendered HTML tag to be overridden from the default `<div>`.
 #### `<Tabs.Tab />`
 * `target :String [required]`  
 Should match the `id` prop of the corresponding `<Tabs.Panel />`.
+* `activeClassName :String [optional]`
+Set the className appended to the tab when active. The default value is: `is-active`.
 * `tag :String [optional]`  
 Allows the rendered HTML tag to be overridden from the default `<div>`.
 

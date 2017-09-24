@@ -1,6 +1,5 @@
 import React from 'react'
 import { Route, Switch } from 'react-router-dom'
-import { Section, SiteWrap } from 'nebula-react'
 
 import { BASE_PATH } from 'constants/index'
 import Home from 'modules/Home'
