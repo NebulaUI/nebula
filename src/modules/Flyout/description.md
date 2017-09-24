@@ -11,7 +11,7 @@ Determines the initial open / closed state.
 Makes Flyout a [controlled component](https://facebook.github.io/react/docs/forms.html#controlled-components)
 meaning the value of this prop rather than the component's
 internal state control whether or not it's open.
-* `onFlyoutChange :Function [optional]`  
+* `onChange :Function [optional]`  
 A callback function that gets called when the Flyout component is about to open / closed. it's current state is passed.
 * `clickOutsideToClose :bool [optional]`
 Setting this prop will ensure that the flyout closes when

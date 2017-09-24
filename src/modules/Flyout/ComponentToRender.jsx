@@ -20,7 +20,7 @@ const ComponentToRender = ({
     {...removeFalsy({ clickOutsideToClose: controlled ? false : clickOutsideToClose })}
     {...removeFalsy({ defaultOpen: controlled ? false : 'open' })}
     {...removeFalsy({ disabled })}
-    {...removeFalsy({ onFlyoutChange: controlled ? handleFlyoutToggle : false })}
+    {...removeFalsy({ onChange: controlled ? handleFlyoutToggle : false })}
   >
     <Flyout.Toggle>
       <Button theme="alpha" size="sm">Toggle Flyout</Button>
