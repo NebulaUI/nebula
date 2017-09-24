@@ -5,13 +5,13 @@ import { Tabs, Button } from 'nebula-react'
 import { removeFalsyProps as removeFalsy } from 'utils'
 
 
-const ComponentToRender = ({ controlled, activeId, disabledTab }, handleTabChange) => (
+const ComponentToRender = ({ controlled, activeId, disabledTab, spreadItems }, handleTabChange) => (
   <Tabs.Wrapper
     {...removeFalsy({ activeId: controlled ? activeId : false })}
     {...removeFalsy({ defaultActiveId: controlled ? false : 'panel-2' })}
-    {...removeFalsy({ onTabChange: controlled ? handleTabChange : false })}
+    {...removeFalsy({ onChange: controlled ? handleTabChange : false })}
   >
-    <Tabs.TabList>
+    <Tabs.TabList {...removeFalsy({ spreadItems })}>
       <Tabs.Tab target="panel-1">Tab 1</Tabs.Tab>
       <Tabs.Tab target="panel-2">Tab 2</Tabs.Tab>
       <Tabs.Tab target="panel-3" {...removeFalsy({ disabled: disabledTab })}>Tab 3</Tabs.Tab>
@@ -20,15 +20,15 @@ const ComponentToRender = ({ controlled, activeId, disabledTab }, handleTabChang
       <Tabs.Tab target="panel-6">Tab 6</Tabs.Tab>
     </Tabs.TabList>
     <Tabs.Panel id="panel-1">
-      <p>Panel 1 Content</p>
+      <div>Panel 1 Content</div>
       {
         controlled &&
           <Button
             size="sm"
             theme="alpha"
-            onClick={() => handleTabChange('panel-5')}
+            onClick={() => handleTabChange('panel-6')}
           >
-            Activate panel 5
+            Activate panel 6
           </Button>
       }
     </Tabs.Panel>
@@ -43,7 +43,8 @@ const ComponentToRender = ({ controlled, activeId, disabledTab }, handleTabChang
 ComponentToRender.propTypes = {
   controlled: T.bool.isRequired,
   disabledTab: T.bool.isRequired,
-  activeId: T.string.isRequired
+  activeId: T.string.isRequired,
+  spreadItems: T.bool.isRequired
 }
 
 export default ComponentToRender

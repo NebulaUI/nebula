@@ -11,19 +11,23 @@ The default active tab - It should match the `id` prop for the corresponding `<T
 This makes the Tabs a [controlled component](https://facebook.github.io/react/docs/forms.html#controlled-components) meaning that this props controls which tab is active.
 rather than that state being heled internally allowing for integration with tools such as Redux.  
 `defaultActiveId` prop has no effect when using `activeId`.
-* `onTabChange :Function [optional]`  
+* `onChange :Function [optional]`  
 A callback function that gets called whenever the active tab changes.  It gets called with a single argument `id` corresponding to the `id` of the tab being selected.
 Can be used in conjunction with `activeId` to manage the state of the tabs externally, or to update a query string amongst other things.
 * `tag :String [optional]`  
 Allows the rendered HTML tag to be overridden from the default `<div>`.
 
 #### `<Tabs.TabList />`
+* `spreadItems :bool [optional]`  
+Spreads out the tabs so they take up an even amount of space.
 * `tag :String [optional]`  
 Allows the rendered HTML tag to be overridden from the default `<div>`.
 
 #### `<Tabs.Tab />`
 * `target :String [required]`  
 Should match the `id` prop of the corresponding `<Tabs.Panel />`.
+* `activeClassName :String [optional]`
+Set the className appended to the tab when active. The default value is: `is-active`.
 * `tag :String [optional]`  
 Allows the rendered HTML tag to be overridden from the default `<div>`.
 

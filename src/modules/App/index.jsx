@@ -1,6 +1,5 @@
 import React from 'react'
 import { BrowserRouter as Router } from 'react-router-dom'
-import { Section, SiteWrap } from 'nebula-react'
 
 import Nav from './Navigation'
 import ScrollToTop from './ScrollToTop'
@@ -11,11 +10,7 @@ const App = () => (
   <Router>
     <ScrollToTop>
       <Nav routes={routesModel} />
-      <SiteWrap padding>
-        <Section size="md">
-          <Routes />
-        </Section>
-      </SiteWrap>
+      <Routes />
     </ScrollToTop>
   </Router>
 )

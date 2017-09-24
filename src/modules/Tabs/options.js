@@ -8,8 +8,13 @@ const options = () => ([{
     },
     {
       type: 'checkbox',
+      stateKey: 'spreadItems',
+      label: 'Spread tab items evenly.'
+    },
+    {
+      type: 'checkbox',
       stateKey: 'disabledTab',
-      label: 'Disabled tab.'
+      label: 'Disabled tabs.'
     }
   ]
 }])
