@@ -2,27 +2,29 @@ import React, { Component } from 'react'
 import T from 'prop-types'
 import { NavLink } from 'react-router-dom'
 import { withRouter } from 'react-router'
-import { BareList, Section, Foldable } from 'nebula-react'
+import { BareList, Section, Foldable, LinkList } from 'nebula-react'
 
 import navigationModel from './navigationModel'
 
-const buildNavItems = item => (
-  <BareList.Item key={item.to || item.label}>
-    {
-      item.to ? (
-        <NavLink to={item.to}>
-          { item.label }
-        </NavLink>
-      ) : (
-        item.label
-      )
-    }
-    { item.descendants && (
-      <BareList.Wrapper style={{ fontWeight: 'normal' }}>
-        { item.descendants.map(buildNavItems) }
-      </BareList.Wrapper>
-    )}
-  </BareList.Item>
+const buildNavItems = (items) => (
+  <Foldable.Wrapper key={items.label} bordered>
+    <Foldable.Header padding>
+      <h4 aria-label="Click to expand">
+        { items.label }
+      </h4>
+    </Foldable.Header>
+    <Foldable.Body>
+      <LinkList.Wrapper spacing="md">
+        {
+          items.descendants.map(item => (
+            <LinkList.Link component={NavLink} to={item.to}>
+              { item.label }
+            </LinkList.Link>
+        ))
+        }
+      </LinkList.Wrapper>
+    </Foldable.Body>
+  </Foldable.Wrapper>
 )
 
 class Sidebar extends Component {
@@ -48,17 +50,15 @@ class Sidebar extends Component {
     return (
       <nav className="c-sidebar">
         <Section tag="div" size="md@sm">
-          <div style={{ padding: '0 1rem' }}>
+          <div>
             <Foldable.Wrapper open={this.state.open} onFoldableChange={this.handleChange} breakpoint="max-sm">
               <Foldable.Header padding>
-                <h2 aria-label="Click to expand">
+                <h2 aria-label="Click to expand" className="u-hidden@sm u-soft-left-md u-soft-right-md">
                   API
                 </h2>
               </Foldable.Header>
               <Foldable.Body>
-                <BareList.Wrapper className="u-flush-bottom" spacing="md" style={{ fontWeight: 'bold' }}>
-                  { navigationModel.map(buildNavItems)}
-                </BareList.Wrapper>
+                { navigationModel.map(buildNavItems)}
               </Foldable.Body>
             </Foldable.Wrapper>
           </div>
