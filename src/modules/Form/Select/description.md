@@ -1,4 +1,4 @@
-* Styled Select box.
+Styled Select box.
 
 ### React Props
 

@@ -1,4 +1,4 @@
-* Styled Text Input.
+Styled Text Input.
 
 ### React Props
 
