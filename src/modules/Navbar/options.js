@@ -93,6 +93,9 @@ const options = [{
     }, {
       value: 'text',
       label: 'Plain text'
+    }, {
+      value: 'searchForm',
+      label: 'Search Form'
     }]
   }]
 }]

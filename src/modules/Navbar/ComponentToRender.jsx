@@ -1,7 +1,7 @@
 import React from 'react'
 import T from 'prop-types'
 import { BrowserRouter as Router, NavLink } from 'react-router-dom'
-import { Navbar, Icon, Button } from 'nebula-react'
+import { Navbar, Icon, Button, Form } from 'nebula-react'
 
 import { removeFalsyProps as removeFalsy } from 'utils'
 import logoImg from 'assets/img/checkdmedia.png'
@@ -69,6 +69,10 @@ const ComponentToRender = ({
           <Button size="sm" theme="alpha">
             CTA
           </Button>
+        )
+      case 'searchForm':
+        return (
+          <Form.Search small submitPosition="right" required style={{ width: '180px' }} />
         )
       default:
         return (
