@@ -8,11 +8,14 @@ import ComponentToRender from './ComponentToRender'
 import optionsModel from './options'
 
 const componentNameOverride = {
-  Checkbox: 'Form.Checkbox'
+  Checkbox: 'Form.Checkbox',
+  CheckboxInput: 'Form.CheckboxInput',
+  CheckboxLabel: 'Form.CheckboxLabel'
 }
 
 const initialState = {
-  disabled: false
+  disabled: false,
+  decompose: false
 }
 
 class CheckboxExample extends Component {

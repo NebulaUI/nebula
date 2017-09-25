@@ -5,6 +5,11 @@ const options = [{
       type: 'checkbox',
       stateKey: 'disabled',
       label: 'Disabled'
+    },
+    {
+      type: 'checkbox',
+      stateKey: 'decompose',
+      label: 'Decompose components'
     }
   ]
 }]
