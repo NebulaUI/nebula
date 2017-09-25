@@ -25,9 +25,11 @@ const buildNavItems = (items, index, collection, pathname) => (
       <LinkList.Wrapper spacing="md">
         {
           items.descendants.map(item => (
-            <LinkList.Link key={item.label} component={NavLink} to={item.to}>
-              { item.label }
-            </LinkList.Link>
+            <LinkList.Item key={item.label}>
+              <LinkList.Link component={NavLink} to={item.to}>
+                { item.label }
+              </LinkList.Link>
+            </LinkList.Item>
         ))
         }
       </LinkList.Wrapper>

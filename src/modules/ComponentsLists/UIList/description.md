@@ -4,7 +4,7 @@
 * Anything can be nested inside of the list items, images, test, any other component.
 
 ### Note
-It is not recommended that you augment the Bare list elements with additional styling, instead we encourage you to nest
+It is not recommended that you augment the UI list elements with additional styling, instead we encourage you to nest
 other elements inside and style them.
 
 ### React Props
