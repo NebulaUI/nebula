@@ -57,6 +57,10 @@ const model = [
         label: 'Icons'
       },
       {
+        to: `${BASE_PATH}api/components/lists`,
+        label: 'Lists'
+      },
+      {
         to: `${BASE_PATH}api/components/navbar`,
         label: 'Navbar'
       },
