@@ -9,6 +9,7 @@ import optionsModel from './options'
 
 const componentNameOverride = {
   Checkbox: 'Form.Checkbox',
+  CheckboxWrapper: 'Form.CheckboxWrapper',
   CheckboxInput: 'Form.CheckboxInput',
   CheckboxLabel: 'Form.CheckboxLabel'
 }

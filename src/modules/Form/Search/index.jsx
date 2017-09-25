@@ -20,7 +20,8 @@ const initialState = {
   small: false,
   individualComponents: false,
   submitPosition: 'right',
-  label: true
+  label: true,
+  decompose: false
 }
 
 class SearchExample extends Component {

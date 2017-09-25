@@ -1,17 +1,12 @@
-Styled Text Input.
+* Styled Text Input.
+* Takes the same attributes that a HTML checkbox does and behaves in the same way.
+
 
 ### React Props
+Takes the same props as native text inputs in React.
 
 #### `<Form.TextInput />`
 * `id :String [optional]`  
+Should match the `htmlFor` prop on `<Form.Label>`.
 * `small :bool [optional]`  
 Renders small version.
-* `type :oneOf['text', 'password', 'email', 'number', 'search', 'url'] [optional]`  
-Default of `text` will be rendered.
-* `disabled :bool [optional]`
-* `onChange :func [optional]`  
-Callback that is called when the input changes as a result of user input, passing the event.
-* `defaultValue :String [optional]`  
-Default value of the input
-* `value :String [optional]`  
-[Control](https://facebook.github.io/react/docs/forms.html#controlled-components) the value of the input field.

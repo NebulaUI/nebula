@@ -8,11 +8,15 @@ import ComponentToRender from './ComponentToRender'
 import optionsModel from './options'
 
 const componentNameOverride = {
-  Radio: 'Form.Radio'
+  Radio: 'Form.Radio',
+  RadioWrapper: 'Form.RadioWrapper',
+  RadioInput: 'Form.RadioInput',
+  RadioLabel: 'Form.RadioLabel'
 }
 
 const initialState = {
-  disabled: false
+  disabled: false,
+  decompose: false
 }
 
 class RadioExample extends Component {

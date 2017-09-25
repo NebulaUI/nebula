@@ -18,8 +18,8 @@ const options = [{
     },
     {
       type: 'checkbox',
-      stateKey: 'individualComponents',
-      label: 'Use individual Components'
+      stateKey: 'decompose',
+      label: 'Decompose components'
     },
     {
       type: 'select',
