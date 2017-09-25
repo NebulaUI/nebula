@@ -11,11 +11,13 @@ const componentNameOverride = {
   LinkListWrapper: 'LinkList.Wrapper',
   LinkListItem: 'LinkList.Item',
   LinkListGroup: 'LinkList.Group',
-  LinkListLink: 'LinkList.Link'
+  LinkListLink: 'LinkList.Link',
+  LinkListContent: 'LinkList.Content'
 }
 
 const initialState = {
-  groupItems: false
+  groupItems: false,
+  spacing: 'md'
 }
 
 class LinkListExample extends Component {

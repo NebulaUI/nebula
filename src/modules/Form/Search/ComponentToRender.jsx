@@ -50,7 +50,6 @@ ComponentToRender.propTypes = {
   disabled: T.bool.isRequired,
   small: T.bool.isRequired,
   submitPosition: T.string.isRequired,
-  individualComponents: T.bool.isRequired,
   label: T.bool.isRequired,
   decompose: T.bool.isRequired
 }
