@@ -69,6 +69,10 @@ const model = [
         label: 'Navbar'
       },
       {
+        to: `${BASE_PATH}api/components/pagination`,
+        label: 'Pagination'
+      },
+      {
         to: `${BASE_PATH}api/components/pill`,
         label: 'Pill'
       },

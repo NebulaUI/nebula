@@ -36,7 +36,7 @@ const Options = ({ handleChange, model, ...rest }) => {
   )
 
   return (
-    <BareList.Wrapper spacing="md">
+    <BareList.Wrapper>
       { model.map(renderGroup) }
     </BareList.Wrapper>
   )
