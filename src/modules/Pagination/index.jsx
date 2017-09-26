@@ -11,7 +11,10 @@ const componentNameOverride = {
   BrowserRouter: 'Router'
 }
 
-const initialState = {}
+const initialState = {
+  reactRouter: false,
+  disabled: false
+}
 
 
 const buildExtraString = ({ reactRouter }) => (
