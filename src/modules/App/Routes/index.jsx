@@ -19,6 +19,7 @@ import Flyout from 'modules/Flyout'
 import Icons from 'modules/Icons'
 import Modal from 'modules/Modal'
 import ComponentsLists from 'modules/ComponentsLists'
+import Pill from 'modules/Pill'
 
 import GetStarted from 'modules/GetStarted'
 import CoreConcepts from 'modules/CoreConcepts'
@@ -45,8 +46,9 @@ const Components = (
     <Route exact path={`${BASE_PATH}api/components/buttons`} component={Buttons} />
     <Route exact path={`${BASE_PATH}api/components/flyout`} component={Flyout} />
     <Route exact path={`${BASE_PATH}api/components/icons`} component={Icons} />
-    <Route exact path={`${BASE_PATH}api/components/Modal`} component={Modal} />
-    <Route exact path={`${BASE_PATH}api/components/Lists`} component={ComponentsLists} />
+    <Route exact path={`${BASE_PATH}api/components/modal`} component={Modal} />
+    <Route exact path={`${BASE_PATH}api/components/lists`} component={ComponentsLists} />
+    <Route exact path={`${BASE_PATH}api/components/pill`} component={Pill} />
   </div>
 )
 

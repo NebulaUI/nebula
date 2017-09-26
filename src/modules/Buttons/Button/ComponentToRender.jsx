@@ -11,7 +11,7 @@ const ComponentToRender = ({ disabled, size, theme, fullWidth, type, reactRouter
       {...removeFalsy({ disabled })}
       {...removeFalsy({ fullWidth })}
       {...removeFalsy({ component: link ? Link : false })}
-      {...removeFalsy({ to: link ? '/nebula/components/navbar' : false })}
+      {...removeFalsy({ to: link ? '/nebula/api/components/buttons' : false })}
       {...removeFalsy({ type: type === 'button' ? false : type })}
       size={size}
       theme={theme}

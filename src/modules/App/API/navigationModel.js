@@ -61,12 +61,16 @@ const model = [
         label: 'Lists'
       },
       {
+        to: `${BASE_PATH}api/components/modal`,
+        label: 'Modal dialog'
+      },
+      {
         to: `${BASE_PATH}api/components/navbar`,
         label: 'Navbar'
       },
       {
-        to: `${BASE_PATH}api/components/modal`,
-        label: 'Modal dialog'
+        to: `${BASE_PATH}api/components/pill`,
+        label: 'Pill'
       },
       {
         to: `${BASE_PATH}api/components/tabs`,
