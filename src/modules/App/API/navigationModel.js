@@ -73,6 +73,10 @@ const model = [
         label: 'Pagination'
       },
       {
+        to: `${BASE_PATH}api/components/pill`,
+        label: 'Pill'
+      },
+      {
         to: `${BASE_PATH}api/components/tabs`,
         label: 'Tabs'
       }
