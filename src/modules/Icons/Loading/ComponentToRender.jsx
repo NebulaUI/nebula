@@ -5,22 +5,22 @@ import { LoadingIcon } from 'nebula-react'
 import { removeFalsyProps as removeFalsy } from 'utils'
 
 
-const ComponentToRender = ({ text, fill, size, verticalAlign }) => (
+const ComponentToRender = ({ loadingText, loadingFill, loadingSize, loadingVerticalAlign }) => (
   <LoadingIcon
-    {...removeFalsy({ iconPosition: text === 'none' ? false : text })}
-    size={size}
-    {...removeFalsy({ verticalAlign: verticalAlign === 'none' ? false : verticalAlign })}
-    {...removeFalsy({ fill: fill === 'none' ? false : fill })}
+    {...removeFalsy({ iconPosition: loadingText === 'none' ? false : loadingText })}
+    size={loadingSize}
+    {...removeFalsy({ verticalAlign: loadingVerticalAlign === 'none' ? false : loadingVerticalAlign })}
+    {...removeFalsy({ fill: loadingFill === 'none' ? false : loadingFill })}
   >
-    { text === 'none' ? null : 'Loading resource...' }
+    { loadingText === 'none' ? null : 'Loading Resources…' }
   </LoadingIcon>
 )
 
 ComponentToRender.propTypes = {
-  text: T.string.isRequired,
-  fill: T.string.isRequired,
-  size: T.number.isRequired,
-  verticalAlign: T.string.isRequired
+  loadingText: T.string.isRequired,
+  loadingFill: T.string.isRequired,
+  loadingSize: T.number.isRequired,
+  loadingVerticalAlign: T.string.isRequired
 }
 
 export default ComponentToRender

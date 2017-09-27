@@ -12,13 +12,13 @@ const componentNameOverride = {
 }
 
 const initialState = {
-  text: 'left',
-  fill: 'none',
-  size: '30px',
-  verticalAlign: 'middle'
+  loadingText: 'left',
+  loadingFill: 'none',
+  loadingSize: '30px',
+  loadingVerticalAlign: 'middle'
 }
 
-class CheckboxExample extends Component {
+class LoadingIconExample extends Component {
   constructor() {
     super()
 
@@ -53,4 +53,4 @@ class CheckboxExample extends Component {
   }
 }
 
-export default CheckboxExample
+export default LoadingIconExample

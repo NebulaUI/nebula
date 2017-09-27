@@ -1,3 +1,5 @@
+import { upperCaseFirst } from 'utils'
+
 const text = [
   'none',
   'left',
@@ -10,7 +12,6 @@ const fillColors = [
   'red',
   'green',
   'currentColor',
-  '#8bc34a',
   'none'
 ]
 
@@ -26,25 +27,25 @@ const options = [{
   title: '',
   options: [
     {
-      type: 'select',
+      type: 'radio',
       stateKey: 'text',
       label: 'Text',
       options: text.map(s => ({
         value: s,
-        label: s
+        label: upperCaseFirst(s)
       }))
     },
     {
-      type: 'select',
+      type: 'radio',
       stateKey: 'fill',
       label: 'Fill',
       options: fillColors.map(s => ({
         value: s,
-        label: s
+        label: upperCaseFirst(s)
       }))
     },
     {
-      type: 'select',
+      type: 'radio',
       stateKey: 'size',
       label: 'Size',
       options: sizes.map(s => ({
@@ -53,12 +54,12 @@ const options = [{
       }))
     },
     {
-      type: 'select',
+      type: 'radio',
       stateKey: 'verticalAlign',
       label: 'Vertical Align',
       options: verticalAlign.map(s => ({
         value: s,
-        label: s
+        label: upperCaseFirst(s)
       }))
     }
   ]
