@@ -19,7 +19,7 @@ const initialState = {
   closeButtonInContent: false,
   isOpen: false,
   alignTop: false,
-  width: 'default'
+  width: 'Default'
 }
 
 const extraString =

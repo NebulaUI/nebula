@@ -18,7 +18,7 @@ const ComponentToRender = ({
       ariaLabel="my modal"
       closeModal={close}
       {...removeFalsy({ alignTop })}
-      {...removeFalsy({ width: width === 'default' ? false : parseInt(width, 10) })}
+      {...removeFalsy({ width: width === 'Default' ? false : parseInt(width, 10) })}
       {...removeFalsy({ timeout: timeout ? 2000 : '' })}
     >
       <Modal.Overlay {...removeFalsy({ clickToClose: clickOutsideDeactivates })} />

@@ -1,5 +1,5 @@
 
-const modalWidths = ['default', 200, 400, 600, 800, 1000]
+const modalWidths = ['Default', '200', '600', '800', '1000']
 
 const options = [{
   title: '',
@@ -25,12 +25,12 @@ const options = [{
       label: 'Align modal to the top.'
     },
     {
-      type: 'select',
+      type: 'radio',
       stateKey: 'width',
       label: 'Width of modal.',
       options: modalWidths.map(value => ({
         value,
-        label: value === 'default' ? value : `${value}px`
+        label: value === 'Default' ? value : `${value}px`
       }))
     }
   ]

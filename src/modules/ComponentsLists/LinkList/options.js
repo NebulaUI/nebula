@@ -13,11 +13,11 @@ const options = [{
       options: [
         {
           value: 'sm',
-          label: 'sm'
+          label: 'Sm'
         },
         {
           value: 'md',
-          label: 'md'
+          label: 'Md'
         }
       ]
     }
