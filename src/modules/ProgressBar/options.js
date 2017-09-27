@@ -9,7 +9,7 @@ const options = [{
       label: 'Animated'
     },
     {
-      type: 'select',
+      type: 'radio',
       stateKey: 'percentage',
       label: 'Percentage',
       options: PERCENTAGES.map(p => ({
