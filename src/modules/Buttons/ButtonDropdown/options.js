@@ -16,7 +16,7 @@ const options = [{
       label: 'Click outside to close.'
     },
     {
-      type: 'select',
+      type: 'radio',
       stateKey: 'size',
       label: 'Size',
       options: BUTTON_SIZES.map(s => ({
@@ -25,7 +25,7 @@ const options = [{
       }))
     },
     {
-      type: 'select',
+      type: 'radio',
       stateKey: 'direction',
       label: 'Direction',
       options: directions.map(t => ({
@@ -39,7 +39,7 @@ const options = [{
       label: 'React Router (v4) Integration.'
     },
     {
-      type: 'select',
+      type: 'radio',
       stateKey: 'theme',
       label: 'Theme',
       options: BUTTON_THEMES.map(t => ({

@@ -5,18 +5,32 @@ import { BrowserRouter as Router, Link } from 'react-router-dom'
 
 import { removeFalsyProps as removeFalsy } from 'utils'
 
-const ComponentToRender = ({ disabled, size, theme, fullWidth, type, reactRouter }) => {
+const buildType = (type, RR) => (
+  type === 'button' || type === 'link' || RR
+    ? false
+    : type
+)
+
+const ComponentToRender = ({
+ disabled,
+ buttonSize,
+ buttonTheme,
+ fullWidth,
+ buttonType,
+ reactRouter
+}) => {
   const renderButton = link => (
     <Button
       {...removeFalsy({ disabled })}
       {...removeFalsy({ fullWidth })}
       {...removeFalsy({ component: link ? Link : false })}
-      {...removeFalsy({ to: link ? '/nebula/api/components/buttons' : false })}
-      {...removeFalsy({ type: type === 'button' ? false : type })}
-      size={size}
-      theme={theme}
+      {...removeFalsy({ to: buttonType === 'link' || link ? '/nebula/api/components/buttons' : false })}
+      {...removeFalsy({ type: buildType(buttonType, link) })}
+      {...removeFalsy({ tag: buttonType === 'link' && !link ? 'a' : false })}
+      size={buttonSize}
+      theme={buttonTheme}
     >
-      Download
+      Jupiter
     </Button>
   )
 
@@ -31,10 +45,10 @@ const ComponentToRender = ({ disabled, size, theme, fullWidth, type, reactRouter
 
 ComponentToRender.propTypes = {
   disabled: T.bool.isRequired,
-  size: T.string.isRequired,
-  theme: T.string.isRequired,
+  buttonSize: T.string.isRequired,
+  buttonTheme: T.string.isRequired,
   fullWidth: T.string.isRequired,
-  type: T.string.isRequired,
+  buttonType: T.string.isRequired,
   reactRouter: T.bool.isRequired
 }
 

@@ -13,9 +13,9 @@ const componentNameOverride = {
 
 const initialState = {
   disabled: false,
-  size: 'md',
-  theme: 'alpha',
-  type: 'button',
+  buttonSize: 'md',
+  buttonTheme: 'alpha',
+  buttonType: 'button',
   reactRouter: false,
   fullWidth: false
 }

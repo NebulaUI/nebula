@@ -6,8 +6,8 @@ const options = [{
   title: '',
   options: [
     {
-      type: 'select',
-      stateKey: 'size',
+      type: 'radio',
+      stateKey: 'buttonSize',
       label: 'Size',
       options: BUTTON_SIZES.map(s => ({
         value: s,
@@ -20,8 +20,8 @@ const options = [{
       label: 'React Router (v4) Integration.'
     },
     {
-      type: 'select',
-      stateKey: 'theme',
+      type: 'radio',
+      stateKey: 'buttonTheme',
       label: 'Theme',
       options: BUTTON_THEMES.map(t => ({
         value: t,
@@ -29,8 +29,8 @@ const options = [{
       }))
     },
     {
-      type: 'select',
-      stateKey: 'type',
+      type: 'radio',
+      stateKey: 'buttonType',
       label: 'Type',
       options: types.map(t => ({
         value: t,
