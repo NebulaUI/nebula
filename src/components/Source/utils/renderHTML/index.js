@@ -12,7 +12,9 @@ const filteredAttributes = [
   'data-react-checksum'
 ]
 
-const cleanUp = html => removeEmptyPropString(removeReactText(removeSelfClosingTags(replaceBase64(html, 'HTML'))))
+const removeEmptyLines = str => str.replace(/\s\n+/, '\n')
+
+const cleanUp = html => removeEmptyLines(removeEmptyPropString(removeReactText(removeSelfClosingTags(replaceBase64(html, 'HTML')))))
 
 const cleanComponent = component =>
   cleanUp(filteredAttributes.reduce(stripAttribute, renderToString(component)))
