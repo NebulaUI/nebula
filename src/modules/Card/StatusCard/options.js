@@ -1,15 +1,16 @@
 import { STATUSES } from 'constants/index'
+import { upperCaseFirst } from 'utils'
 
 const options = [{
   title: '',
   options: [
     {
-      type: 'select',
+      type: 'radio',
       stateKey: 'status',
       label: 'Status',
       options: STATUSES.map(s => ({
         value: s,
-        label: s
+        label: upperCaseFirst(s)
       }))
     }
   ]

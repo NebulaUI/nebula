@@ -6,12 +6,12 @@ const options = [{
   title: '',
   options: [
     {
-      type: 'select',
+      type: 'radio',
       stateKey: 'direction',
       label: 'Direction',
       options: FLYOUT_DIRECTIONS.map(s => ({
         value: s,
-        label: s
+        label: s.toUpperCase()
       }))
     },
     {

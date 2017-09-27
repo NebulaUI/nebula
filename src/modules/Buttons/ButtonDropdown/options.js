@@ -1,4 +1,5 @@
 import { BUTTON_SIZES, BUTTON_THEMES } from 'constants/index'
+import { upperCaseFirst } from 'utils'
 
 const directions = ['left', 'right']
 
@@ -21,7 +22,7 @@ const options = [{
       label: 'Size',
       options: BUTTON_SIZES.map(s => ({
         value: s,
-        label: s
+        label: s.toUpperCase()
       }))
     },
     {
@@ -30,7 +31,7 @@ const options = [{
       label: 'Direction',
       options: directions.map(t => ({
         value: t,
-        label: t
+        label: upperCaseFirst(t)
       }))
     },
     {
@@ -44,7 +45,7 @@ const options = [{
       label: 'Theme',
       options: BUTTON_THEMES.map(t => ({
         value: t,
-        label: t
+        label: upperCaseFirst(t)
       }))
     },
     {
