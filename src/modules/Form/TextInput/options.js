@@ -1,3 +1,5 @@
+import { upperCaseFirst } from 'utils'
+
 const types = ['text', 'password', 'email', 'number', 'search', 'url']
 
 const options = [{
@@ -19,7 +21,7 @@ const options = [{
       label: 'Type',
       options: types.map(type => ({
         value: type,
-        label: type
+        label: upperCaseFirst(type)
       }))
     }
   ]

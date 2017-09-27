@@ -22,7 +22,7 @@ const options = [{
       label: 'Decompose components'
     },
     {
-      type: 'select',
+      type: 'radio',
       stateKey: 'submitPosition',
       label: 'Submit position.',
       options: [
