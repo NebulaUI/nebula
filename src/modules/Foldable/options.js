@@ -1,4 +1,5 @@
 import { MAX_BREAKPOINTS } from 'constants/index'
+import { upperCaseFirst } from 'utils'
 
 const options = [{
   title: '',
@@ -34,12 +35,12 @@ const options = [{
       label: 'Wrap Card around all foldable components..'
     },
     {
-      type: 'select',
+      type: 'radio',
       stateKey: 'breakpoint',
       label: 'Breakpoint',
       options: MAX_BREAKPOINTS.map(bp => ({
         value: bp === 'all' ? '' : bp,
-        label: bp === 'all' ? 'None' : bp
+        label: bp === 'all' ? 'None' : upperCaseFirst(bp)
       }))
     }
   ]
