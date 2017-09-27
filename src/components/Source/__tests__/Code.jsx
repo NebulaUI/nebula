@@ -28,11 +28,9 @@ describe('<Code />', () => {
   })
 
   it('renders the children as HTML by default', () => {
-    const TestChild = () => <div>test</div>
-    const $ = shallow(<Code><TestChild /></Code>)
+    const $ = shallow(<Code>_</Code>)
     expect($.find('pre').prop('className')).toBe('language-html line-numbers')
     expect($.find('code').prop('className')).toBe('language-html')
-    expect($.find('code').find(TestChild)).toHaveLength(1)
   })
 
   it('renders a component when language is JSX', () => {
