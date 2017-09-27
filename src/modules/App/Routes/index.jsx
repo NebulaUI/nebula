@@ -20,6 +20,7 @@ import Icons from 'modules/Icons'
 import Modal from 'modules/Modal'
 import ComponentsLists from 'modules/ComponentsLists'
 import Pill from 'modules/Pill'
+import ProgressBar from 'modules/ProgressBar'
 
 import GetStarted from 'modules/GetStarted'
 import CoreConcepts from 'modules/CoreConcepts'
@@ -49,6 +50,7 @@ const Components = (
     <Route exact path={`${BASE_PATH}api/components/modal`} component={Modal} />
     <Route exact path={`${BASE_PATH}api/components/lists`} component={ComponentsLists} />
     <Route exact path={`${BASE_PATH}api/components/pill`} component={Pill} />
+    <Route exact path={`${BASE_PATH}api/components/progress-bar`} component={ProgressBar} />
   </div>
 )
 

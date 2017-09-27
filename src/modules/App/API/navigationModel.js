@@ -73,6 +73,10 @@ const model = [
         label: 'Pill'
       },
       {
+        to: `${BASE_PATH}api/components/progress-bar`,
+        label: 'Progress Bar'
+      },
+      {
         to: `${BASE_PATH}api/components/tabs`,
         label: 'Tabs'
       }
