@@ -83,7 +83,12 @@ class ButtonDropdownExample extends Component {
           config={{
             type: 'ButtonDropdown',
             componentNameOverride,
-            extraString: buildExtraString(state)
+            extraString: buildExtraString(state),
+            htmlExampleOverride: ComponentToRender({
+              ...state,
+              isOpen: 'open',
+              controlled: true
+            })
           }}
           ComponentToRender={ComponentToRender({
             ...state,
