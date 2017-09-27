@@ -18,7 +18,7 @@ Not required if using React Router `<Link />` or `<NavLink />`.
 * `activeClassName :string [optional]`   
 Override the default `is-active`.
 * `to :string [optional]`  
-Passed as the `to` prop to React Router `<Link />` / `<NavLink />` if passed in the `component` prop OR as the `href` attribute.
+Passed as the `to` prop to React Router `<Link />` / `<NavLink />` if `component` prop is populated OR as the `href` attribute to the rendered `<a />`
 * `onClick :func [optional]`  
 Callback to handle click events.
 * `disabled :bool [optional]`
