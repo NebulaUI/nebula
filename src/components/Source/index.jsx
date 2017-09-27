@@ -45,6 +45,7 @@ const Source = ({
   codeOverride,
   htmlExampleOverride,
   tabsId,
+  htmlExtraString,
   history
 }) => (
   <div>
@@ -61,7 +62,7 @@ const Source = ({
       { description ? <Tabs.Panel id="description">{description}</Tabs.Panel> : null }
       { options ? <Tabs.Panel id="options">{options}</Tabs.Panel> : null }
       <Tabs.Panel id="html">
-        <Code>
+        <Code htmlExtraString={htmlExtraString}>
           { renderHTML(htmlExampleOverride || codeOverride || children) }
         </Code>
       </Tabs.Panel>
@@ -90,6 +91,7 @@ Source.propTypes = {
   codeOverride: T.node,
   htmlExampleOverride: T.node,
   tabsId: T.string,
+  htmlExtraString: T.string,
   children: T.node.isRequired
 }
 

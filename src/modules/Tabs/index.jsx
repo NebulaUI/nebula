@@ -28,6 +28,16 @@ const buildExtraString = state => (state.controlled ?
 `
 : '')
 
+const buildHTMLExtraString = () =>
+`<!--
+  * Only the HTML for the active tab is actually rendered for this component.
+  * aria-labelledby attribute should be populated by the content in the corresponding tab.
+    in this component that occurs after the component has mounted.  You can see this by looking in your
+    browser dev tools.
+-->
+
+`
+
 class TabsExample extends Component {
   constructor() {
     super()
@@ -64,6 +74,7 @@ class TabsExample extends Component {
           config={{
             type: 'Tabs',
             componentNameOverride,
+            htmlExtraString: buildHTMLExtraString(),
             extraString: buildExtraString(state)
           }}
           ComponentToRender={ComponentToRender(state, this.handleTabChange)}

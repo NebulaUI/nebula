@@ -28,12 +28,13 @@ class Code extends Component {
   }
 
   render() {
-    const { children, componentName, nebulaImportOverride, extraString, language = 'html' } = this.props
+    const { children, htmlExtraString, componentName, nebulaImportOverride, extraString, language = 'html' } = this.props
     const react = `${buildStart(componentName, nebulaImportOverride, extraString)}${children}${buildEnd(componentName)}`
+    const html = `${htmlExtraString || ''}${children}`
     return (
       <pre className={`language-${language} line-numbers`} style={{ fontSize: '1rem' }}>
         <code className={`language-${language}`} ref={(code) => { this.codeEl = code }}>
-          { language === 'jsx' ? react : children }
+          { language === 'jsx' ? react : html }
         </code>
       </pre>
     )
@@ -45,6 +46,7 @@ Code.propTypes = {
   nebulaImportOverride: T.string,
   extraString: T.string,
   language: T.string,
+  htmlExtraString: T.string,
   children: T.node.isRequired
 }
 
