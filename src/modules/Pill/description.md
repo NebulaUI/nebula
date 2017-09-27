@@ -1,4 +1,4 @@
-.
+Small enclosed visual indicator to give prominence to important segments of content.
 ### React Props
 
 #### `<Pill>`
