@@ -14,7 +14,7 @@ const options = [{
     {
       type: 'checkbox',
       stateKey: 'gutter',
-      label: 'gutter'
+      label: 'Gutter'
     },
     {
       type: 'checkbox',
