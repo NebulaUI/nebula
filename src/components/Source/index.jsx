@@ -43,6 +43,7 @@ const Source = ({
   nebulaImportOverride,
   componentNameOverride,
   codeOverride,
+  htmlExampleOverride,
   tabsId,
   history
 }) => (
@@ -61,7 +62,7 @@ const Source = ({
       { options ? <Tabs.Panel id="options">{options}</Tabs.Panel> : null }
       <Tabs.Panel id="html">
         <Code>
-          { renderHTML(codeOverride || children) }
+          { renderHTML(htmlExampleOverride || codeOverride || children) }
         </Code>
       </Tabs.Panel>
       <Tabs.Panel id="react">
@@ -87,6 +88,7 @@ Source.propTypes = {
   nebulaImportOverride: T.string,
   componentNameOverride: T.shape({}),
   codeOverride: T.node,
+  htmlExampleOverride: T.node,
   tabsId: T.string,
   children: T.node.isRequired
 }

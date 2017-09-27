@@ -31,12 +31,8 @@ const buildExtraString = state => (state.controlled ?
 `
 : '')
 
-class RadioExample extends Component {
-  constructor() {
-    super()
-
-    this.state = initialState
-  }
+class FlyoutExample extends Component {
+  state = initialState
 
   handleOptionChange = (key, value) => {
     this.setState({
@@ -86,7 +82,12 @@ class RadioExample extends Component {
             type: 'Flyout',
             componentNameOverride,
             nebulaImportOverride: `Flyout, Card${state.closeButtonInContent || state.buttonForOpen ? ', Button' : ''}`,
-            extraString: buildExtraString(this.state)
+            extraString: buildExtraString(this.state),
+            htmlExampleOverride: ComponentToRender({
+              ...state,
+              isOpen: 'open',
+              controlled: true
+            })
           }}
           ComponentToRender={ComponentToRender({
             handleFlyoutToggle: this.handleFlyoutToggle,
@@ -97,4 +98,4 @@ class RadioExample extends Component {
   }
 }
 
-export default RadioExample
+export default FlyoutExample

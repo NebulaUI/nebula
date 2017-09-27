@@ -18,7 +18,6 @@ const ComponentToRender = ({
   <Flyout.Wrapper
     {...removeFalsy({ isOpen: controlled ? isOpen : false })}
     {...removeFalsy({ clickOutsideToClose: controlled ? false : clickOutsideToClose })}
-    {...removeFalsy({ defaultOpen: controlled ? false : 'open' })}
     {...removeFalsy({ disabled })}
     {...removeFalsy({ onChange: controlled ? handleFlyoutToggle : false })}
   >
