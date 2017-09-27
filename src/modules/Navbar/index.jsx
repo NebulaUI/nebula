@@ -54,6 +54,24 @@ const buildExtraString = ({ reactRouter, navItems }) => {
   return str
 }
 
+const buildHTMLExtraString = () =>
+`<!--
+  * HTML for the dropdown is conditionally rendered so does not appear in the example below this comment.
+    <li class="c-navbar__item is-open" aria-haspopup="true" aria-expanded="true">
+      <button class="c-navbar__dropdown-toggle is-active">Galaxies</button>
+      <ul class="c-navbar__dropdown is-open">
+        <li class="c-navbar__item">
+          <a href="/nebula/galaxies/milky-way" class="c-navbar__link">Milky Way</a>
+        </li>
+        <li class="c-navbar__item">
+          <a href="/nebula/galaxies/andromeda" class="c-navbar__link is-active">Andromeda</a>
+        </li>
+      </ul>
+    </li>
+-->
+
+`
+
 class NavbarExample extends Component {
   constructor() {
     super()
@@ -74,6 +92,7 @@ class NavbarExample extends Component {
       componentNameOverride,
       extraString: buildExtraString(state),
       style: buildStyle(state),
+      htmlExtraString: buildHTMLExtraString(),
       nebulaImportOverride: `Navbar${state.secondaryContent.componentType === 'button' ? ', Button' : ''}${state.secondaryContent.componentType === 'searchForm' ? ', Form' : ''}${state.navItems.icon ? ', Icon' : ''}`
     }
     const options = {
