@@ -6,6 +6,7 @@ import { FLYOUT_DIRECTIONS } from './Flyout'
 import { SECTION_SIZES } from './section'
 import { BUTTON_SIZES, BUTTON_THEMES } from './buttons'
 import { STATUSES } from './statuses'
+import { TABLE_COLLAPSE_BREAKPOINTS, TABLE_SPACING } from './table'
 
 export {
   BREAKPOINTS,
@@ -19,5 +20,7 @@ export {
   SECTION_SIZES,
   BUTTON_SIZES,
   BUTTON_THEMES,
-  STATUSES
+  STATUSES,
+  TABLE_COLLAPSE_BREAKPOINTS,
+  TABLE_SPACING
 }

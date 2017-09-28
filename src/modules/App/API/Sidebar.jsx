@@ -16,17 +16,17 @@ const buildNavItems = (items, index, collection, pathname) => (
       borderBottomWidth: index === collection.length - 1 ? 0 : '1px'
     }}
   >
-    <Foldable.Header padding>
+    <Foldable.Header padding style={{ paddingTop: '0.5rem', paddingBottom: '0.5rem' }}>
       <h4 aria-label="Click to expand" style={{ paddingLeft: '0.5rem', paddingRight: '0.5rem' }}>
         { items.label }
       </h4>
     </Foldable.Header>
     <Foldable.Body>
-      <LinkList.Wrapper spacing="md">
+      <LinkList.Wrapper spacing="sm">
         {
           items.descendants.map(item => (
             <LinkList.Item key={item.label}>
-              <LinkList.Link component={NavLink} to={item.to}>
+              <LinkList.Link component={NavLink} to={item.to} style={{ paddingLeft: '0.5rem', paddingRight: '0.5rem' }}>
                 { item.label }
               </LinkList.Link>
             </LinkList.Item>
@@ -63,7 +63,7 @@ class Sidebar extends Component {
           <div>
             <Foldable.Wrapper open={this.state.open} onChange={this.handleChange} breakpoint="max-sm">
               <Foldable.Header padding>
-                <h2 aria-label="Click to expand" style={{ paddingLeft: '0.5rem', paddingRight: '0.5rem' }}>
+                <h2 aria-label="Click to expand" className="u-hidden@sm" style={{ paddingLeft: '0.25rem', paddingRight: '0.25rem' }}>
                   API
                 </h2>
               </Foldable.Header>
