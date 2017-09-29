@@ -18,7 +18,8 @@ const initialState = {
   },
   item1: {
     sizes: {
-      all: '1/2'
+      all: '3/4',
+      md: '1/2@md'
     }
   },
   item2: {
