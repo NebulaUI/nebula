@@ -56,7 +56,7 @@ const buildExtraString = ({ reactRouter, navItems }) => {
 
 const buildHTMLExtraString = () =>
 `<!--
-  * HTML for the dropdown is conditionally rendered so does not appear in the example below this comment.
+  * HTML for the dropdown is conditionally rendered so does not appear in the generated code below.
     <li class="c-navbar__item is-open" aria-haspopup="true" aria-expanded="true">
       <button class="c-navbar__dropdown-toggle is-active">Galaxies</button>
       <ul class="c-navbar__dropdown is-open">
