@@ -56,6 +56,13 @@ hr {
   }
 }
 
+.c-sidebar__link.c-sidebar__link {
+  @include nb-respond-to('nav') {
+    padding-top: ($nb-spacing-unit-half / 2);
+    padding-bottom: ($nb-spacing-unit-half / 2);
+  }
+}
+
 .c-api-main-content {
   @include nb-respond-to('sm') {
     height: calc(100vh - #{$nb-navbar-height-collapsed});

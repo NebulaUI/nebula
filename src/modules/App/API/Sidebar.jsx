@@ -22,11 +22,15 @@ const buildNavItems = (items, index, collection, pathname) => (
       </h4>
     </Foldable.Header>
     <Foldable.Body>
-      <LinkList.Wrapper spacing="sm">
+      <LinkList.Wrapper spacing="md">
         {
           items.descendants.map(item => (
             <LinkList.Item key={item.label}>
-              <LinkList.Link component={NavLink} to={item.to} style={{ paddingLeft: '0.5rem', paddingRight: '0.5rem' }}>
+              <LinkList.Link
+                component={NavLink}
+                to={item.to}
+                className="c-sidebar__link"
+              >
                 { item.label }
               </LinkList.Link>
             </LinkList.Item>
