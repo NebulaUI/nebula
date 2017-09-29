@@ -69,12 +69,10 @@ const GetStarted = ({ history }) => (
           <NebulaReact />
         </Tabs.Panel>
       </Tabs.Wrapper>
-      <Section size="md">
-        <CoreConcepts>
-          <h2>Core Concepts</h2>
-        </CoreConcepts>
-      </Section>
     </SiteWrap>
+    <CoreConcepts>
+      <h2>Core Concepts</h2>
+    </CoreConcepts>
   </Section>
 )
 

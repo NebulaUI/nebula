@@ -24,12 +24,10 @@ const Home = () => (
           <span role="img" aria-label="star" style={{ color: 'transparent', textShadow: '0 0 0 white', marginRight: '0.5rem' }}>💫</span>Get started!
         </Link>
       </Card>
-      <Section size="md">
-        <CoreConcepts>
-          <h2>Core Concepts</h2>
-        </CoreConcepts>
-      </Section>
     </SiteWrap>
+    <CoreConcepts>
+      <h2>Core Concepts</h2>
+    </CoreConcepts>
   </Section>
 )
 

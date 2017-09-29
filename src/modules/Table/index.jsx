@@ -17,8 +17,8 @@ const initialState = {
   sortDOB: true,
   sortName: true,
   sortCity: false,
-  footer: false,
-  rowHighlight: false
+  footer: true,
+  rowHighlight: true
 }
 
 class TableExample extends Component {
