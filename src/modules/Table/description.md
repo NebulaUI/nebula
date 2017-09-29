@@ -1,4 +1,7 @@
-Table
+The Table component ships with all the decomposed parts allowing for fine grained control by the consumer.  Rather than
+taking a data model as a prop, it is upto you to map over the data and render the relevant components.
+
+The sorting mechanism will work without the need to pass in any kind of sort function.
 
 ### React Props
 

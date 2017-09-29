@@ -88,7 +88,7 @@ const ComponentToRender = ({
     {
       footer && (
         <Table.Footer style={{ textAlign: 'center' }}>
-          Footer Content
+          Table Footer
         </Table.Footer>
       )
     }

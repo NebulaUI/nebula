@@ -3,9 +3,14 @@ import T from 'prop-types'
 import { StatusCard } from 'nebula-react'
 
 const ComponentToRender = ({ status }) => (
-  <StatusCard status={status}>
-    Supernova
-  </StatusCard>
+  <StatusCard.Wrapper status={status}>
+    <StatusCard.Component>
+      T
+    </StatusCard.Component>
+    <StatusCard.Body>
+      Supernova
+    </StatusCard.Body>
+  </StatusCard.Wrapper>
 )
 
 ComponentToRender.propTypes = {
