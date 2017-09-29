@@ -7,6 +7,7 @@ import { SECTION_SIZES } from './section'
 import { BUTTON_SIZES, BUTTON_THEMES } from './buttons'
 import { STATUSES } from './statuses'
 import { TABLE_COLLAPSE_BREAKPOINTS, TABLE_SPACING } from './table'
+import { TOOLTIP_DIRECTIONS } from './tooltip'
 
 export {
   BREAKPOINTS,
@@ -22,5 +23,6 @@ export {
   BUTTON_THEMES,
   STATUSES,
   TABLE_COLLAPSE_BREAKPOINTS,
-  TABLE_SPACING
+  TABLE_SPACING,
+  TOOLTIP_DIRECTIONS
 }

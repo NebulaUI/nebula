@@ -87,6 +87,10 @@ const model = [
       {
         to: `${BASE_PATH}api/components/tabs`,
         label: 'Tabs'
+      },
+      {
+        to: `${BASE_PATH}api/components/tooltip`,
+        label: 'Tooltip'
       }
     ]
   }
