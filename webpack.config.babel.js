@@ -42,7 +42,7 @@ const common = {
         use: [{
           loader: 'url-loader',
           options: {
-            limit: 25000
+            limit: 40000
           }
         }]
       },

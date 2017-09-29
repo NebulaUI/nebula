@@ -12,6 +12,11 @@ const options = [{
         value: s,
         label: upperCaseFirst(s)
       }))
+    },
+    {
+      type: 'checkbox',
+      stateKey: 'showIcon',
+      label: 'Show icon'
     }
   ]
 }]

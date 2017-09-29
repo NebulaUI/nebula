@@ -12,7 +12,8 @@ const componentNameOverride = {
 }
 
 const initialState = {
-  status: 'success'
+  status: 'info',
+  showIcon: 'true'
 }
 
 class StatusCardExample extends Component {
@@ -42,7 +43,8 @@ class StatusCardExample extends Component {
         description={description}
         config={{
           type: 'StatusCard',
-          componentNameOverride
+          componentNameOverride,
+          nebulaImportOverride: `Navbar${state.showIcon ? ', Icon' : ''}`
         }}
         ComponentToRender={ComponentToRender(state)}
       />
