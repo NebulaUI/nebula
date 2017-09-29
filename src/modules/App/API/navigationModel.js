@@ -81,6 +81,10 @@ const model = [
         label: 'Progress Bar'
       },
       {
+        to: `${BASE_PATH}api/components/table`,
+        label: 'Table'
+      },
+      {
         to: `${BASE_PATH}api/components/tabs`,
         label: 'Tabs'
       }
