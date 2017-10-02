@@ -3,6 +3,7 @@ import { Button } from 'nebula-react'
 
 import { buildNewState } from 'utils'
 import Example from 'components/ComponentExample/Example'
+import { NAMESPACE } from 'constants/index'
 
 import description from './description.md'
 import ComponentToRender from './ComponentToRender'
@@ -17,7 +18,8 @@ const initialState = {
   clickOutsideToClose: true,
   isOpen: 'closed',
   disabled: false,
-  width: 'None'
+  width: 'None',
+  transition: true
 }
 
 const buildExtraString = state => (state.controlled ?
@@ -65,14 +67,17 @@ class FlyoutExample extends Component {
     return (
       <div>
         {
-          this.state.controlled &&
-          <Button
-            size="sm"
-            theme="alpha"
-            onClick={this.handleFlyoutToggle}
-          >
-              Toggle Flyout
-          </Button>
+          this.state.controlled && (
+            <div className={`${NAMESPACE}u-push-bottom-md`}>
+              <Button
+                size="sm"
+                theme="alpha"
+                onClick={this.handleFlyoutToggle}
+              >
+                Toggle Flyout
+              </Button>
+            </div>
+          )
         }
         <Example
           title="Flyout"

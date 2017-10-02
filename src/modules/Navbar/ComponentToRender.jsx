@@ -4,7 +4,7 @@ import { BrowserRouter as Router, NavLink } from 'react-router-dom'
 import { Navbar, Icon, Button, Form } from 'nebula-react'
 
 import { removeFalsyProps as removeFalsy } from 'utils'
-import logoImg from 'assets/img/react.png'
+import logoImg from 'assets/img/redux.png'
 import lightbulb from 'assets/icons/lightbulb.svg'
 
 const ComponentToRender = ({
@@ -96,7 +96,7 @@ const ComponentToRender = ({
         Logo Text
       </Navbar.Logo>
     ) : (
-      <Navbar.Logo to="/nebula" width="95px">
+      <Navbar.Logo to="/nebula" width="45px">
         <img src={logoImg} alt="React logo" />
       </Navbar.Logo>
     )

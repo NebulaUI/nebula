@@ -16,6 +16,11 @@ const options = [{
     },
     {
       type: 'checkbox',
+      stateKey: 'transition',
+      label: 'Transition open.'
+    },
+    {
+      type: 'checkbox',
       stateKey: 'controlled',
       label: 'Control flyout externally (for demo purposes setting this option hides and disables "click outside to close" option).'
     },

@@ -13,35 +13,39 @@ const ComponentToRender = ({
   isOpen,
   handleFlyoutToggle,
   disabled,
-  width
+  width,
+  transition
 }) => (
-  <Flyout.Wrapper
-    {...removeFalsy({ isOpen: controlled ? isOpen : false })}
-    {...removeFalsy({ clickOutsideToClose: controlled ? false : clickOutsideToClose })}
-    {...removeFalsy({ disabled })}
-    {...removeFalsy({ onChange: controlled ? handleFlyoutToggle : false })}
-  >
-    <Flyout.Toggle>
-      <Button theme="alpha" size="sm">Toggle Flyout</Button>
-    </Flyout.Toggle>
-    <Flyout.Content
-      {...removeFalsy({ width: width === 'None' ? false : width })}
-      direction={direction}
+  <div style={{ paddingTop: '80px', textAlign: 'center' }}>
+    <Flyout.Wrapper
+      {...removeFalsy({ isOpen: controlled ? isOpen : false })}
+      {...removeFalsy({ clickOutsideToClose: controlled ? false : clickOutsideToClose })}
+      {...removeFalsy({ disabled })}
+      {...removeFalsy({ onChange: controlled ? handleFlyoutToggle : false })}
     >
-      <Card>
-        <p>Lorem ipsum dolor sit amet</p>
-        {
-          closeButtonInContent && (
-            <Flyout.Toggle>
-              <Button theme="alpha" size="sm">
-                Close
-              </Button>
-            </Flyout.Toggle>
-          )
-        }
-      </Card>
-    </Flyout.Content>
-  </Flyout.Wrapper>
+      <Flyout.Toggle>
+        <Button theme="alpha" size="sm">Toggle</Button>
+      </Flyout.Toggle>
+      <Flyout.Content
+        {...removeFalsy({ width: width === 'None' ? false : width })}
+        {...removeFalsy({ transition })}
+        direction={direction}
+      >
+        <Card>
+          <p>Lorem ipsum dolor sit amet</p>
+          {
+            closeButtonInContent && (
+              <Flyout.Toggle>
+                <Button theme="alpha" size="sm">
+                  Close
+                </Button>
+              </Flyout.Toggle>
+            )
+          }
+        </Card>
+      </Flyout.Content>
+    </Flyout.Wrapper>
+  </div>
 )
 
 ComponentToRender.propTypes = {
@@ -51,8 +55,9 @@ ComponentToRender.propTypes = {
   clickOutsideToClose: T.bool.isRequired,
   isOpen: T.bool.isRequired,
   disabled: T.bool.isRequired,
+  transition: T.bool.isRequired,
   handleFlyoutToggle: T.func.isRequired,
-  width: T.string.isRequied
+  width: T.string.isRequired
 }
 
 export default ComponentToRender

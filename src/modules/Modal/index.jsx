@@ -3,6 +3,7 @@ import { Button } from 'nebula-react'
 
 import { buildNewState } from 'utils'
 import Example from 'components/ComponentExample/Example'
+import { NAMESPACE } from 'constants/index'
 
 import description from './description.md'
 import ComponentToRender from './ComponentToRender'
@@ -67,13 +68,15 @@ class ModalExample extends Component {
     }
     return (
       <div>
-        <Button
-          size="sm"
-          theme="alpha"
-          onClick={this.open}
-        >
-          Open Modal dialog
-        </Button>
+        <div className={`${NAMESPACE}u-push-bottom-md`}>
+          <Button
+            size="sm"
+            theme="alpha"
+            onClick={this.open}
+          >
+            Open Modal dialog
+          </Button>
+        </div>
         <Example
           title="Modal Dialog"
           options={options}

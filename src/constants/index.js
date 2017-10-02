@@ -1,4 +1,4 @@
-import { BASE_PATH, BREAKPOINTS, MAX_BREAKPOINTS } from './globals'
+import { BASE_PATH, BREAKPOINTS, MAX_BREAKPOINTS, NAMESPACE } from './globals'
 import { FLAG_GUTTERS } from './Flag'
 import { GRID_GUTTERS, GRID_FRACTIONS } from './Grid'
 import { LIST_SPACING } from './Lists'
@@ -13,6 +13,7 @@ export {
   BREAKPOINTS,
   MAX_BREAKPOINTS,
   BASE_PATH,
+  NAMESPACE,
   FLYOUT_DIRECTIONS,
   FLAG_GUTTERS,
   GRID_GUTTERS,

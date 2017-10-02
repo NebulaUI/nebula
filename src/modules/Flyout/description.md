@@ -29,5 +29,7 @@ Sets the direction of `<Flyout.Content />` relative to
 `<Flyout.Wrapper>`.
 * `width :oneOfType['string', 'number'] [optional]`  
 Set the width of `<Flyout.Content />`.  By default it has a max width to prevent the flyout being wider than the viewport.
+* `transition :bool [optional]`  
+Apply a transition to when opening.
 * `tag :String [optional]`  
 Allows the rendered HTML tag to be overridden from the default `<div>`.
