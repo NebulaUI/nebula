@@ -11,7 +11,7 @@ const Form = () => (
       <Foldable.Header padding>
         <h2>Card</h2>
       </Foldable.Header>
-      <Foldable.Body>
+      <Foldable.Body transition>
         <Section size="md" tag="div" className="u-hard-top">
           <Card />
         </Section>
@@ -21,7 +21,7 @@ const Form = () => (
       <Foldable.Header padding>
         <h2>Status Card</h2>
       </Foldable.Header>
-      <Foldable.Body>
+      <Foldable.Body transition>
         <Section size="md" tag="div" className="u-hard-top">
           <StatusCard />
         </Section>

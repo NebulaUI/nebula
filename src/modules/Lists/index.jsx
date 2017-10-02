@@ -13,7 +13,7 @@ const Lists = () => (
       <Foldable.Header padding>
         <h2>Bare List</h2>
       </Foldable.Header>
-      <Foldable.Body>
+      <Foldable.Body transition>
         <Section size="md" tag="div" className="u-hard-top">
           <BareList />
         </Section>
@@ -23,7 +23,7 @@ const Lists = () => (
       <Foldable.Header padding>
         <h2>Inline List</h2>
       </Foldable.Header>
-      <Foldable.Body>
+      <Foldable.Body transition>
         <Section size="md" tag="div" className="u-hard-top">
           <InlineList />
         </Section>
@@ -33,7 +33,7 @@ const Lists = () => (
       <Foldable.Header padding>
         <h2>Matrix List</h2>
       </Foldable.Header>
-      <Foldable.Body>
+      <Foldable.Body transition>
         <Section size="md" tag="div" className="u-hard-top">
           <MatrixList />
         </Section>
@@ -43,7 +43,7 @@ const Lists = () => (
       <Foldable.Header padding>
         <h2>Uniformed List</h2>
       </Foldable.Header>
-      <Foldable.Body>
+      <Foldable.Body transition>
         <Section size="md" tag="div" className="u-hard-top">
           <UniformedList />
         </Section>

@@ -11,7 +11,7 @@ const Lists = () => (
       <Foldable.Header padding>
         <h2>UI List</h2>
       </Foldable.Header>
-      <Foldable.Body>
+      <Foldable.Body transition>
         <Section size="md" tag="div" className="u-hard-top">
           <UIList />
         </Section>
@@ -21,7 +21,7 @@ const Lists = () => (
       <Foldable.Header padding>
         <h2>Link List</h2>
       </Foldable.Header>
-      <Foldable.Body>
+      <Foldable.Body transition>
         <Section size="md" tag="div" className="u-hard-top">
           <LinkList />
         </Section>

@@ -37,7 +37,7 @@ const Group = ({ title, listType, options, foldable, foldableOpenOnMount, ...res
       <Foldable.Header padding>
         { title && <h2>{ title }</h2> }
       </Foldable.Header>
-      <Foldable.Body>
+      <Foldable.Body transition>
         { buildGroupList() }
       </Foldable.Body>
     </Foldable.Wrapper>

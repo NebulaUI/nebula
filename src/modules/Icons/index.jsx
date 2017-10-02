@@ -11,7 +11,7 @@ const Icons = () => (
       <Foldable.Header padding>
         <h2>Generic</h2>
       </Foldable.Header>
-      <Foldable.Body>
+      <Foldable.Body transition>
         <Section size="md" tag="div" className="u-hard-top">
           <Generic />
         </Section>
@@ -21,7 +21,7 @@ const Icons = () => (
       <Foldable.Header padding>
         <h2>Loading</h2>
       </Foldable.Header>
-      <Foldable.Body>
+      <Foldable.Body transition>
         <Section size="md" tag="div" className="u-hard-top">
           <Loading />
         </Section>

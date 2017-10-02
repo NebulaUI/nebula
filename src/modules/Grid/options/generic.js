@@ -1,7 +1,7 @@
 const generic = {
   title: 'Generic',
   foldable: true,
-  foldableOpenOnMount: true,
+  foldableOpenOnMount: false,
   options: [
     {
       type: 'checkbox',

@@ -12,6 +12,7 @@ const ComponentToRender = ({
   breakpoint,
   open,
   disabled,
+  transition,
   controlled
 }, handleFoldableToggle) => {
   const buildBodyContent = () => (
@@ -33,7 +34,7 @@ const ComponentToRender = ({
       <Foldable.Header {...removeFalsy({ padding: headerPadding })}>
         <h3 aria-label="Click to expand">Foldable content title</h3>
       </Foldable.Header>
-      <Foldable.Body>
+      <Foldable.Body {...removeFalsy({ transition })}>
         { buildBodyContent() }
       </Foldable.Body>
     </Foldable.Wrapper>
@@ -58,7 +59,8 @@ ComponentToRender.propTypes = {
   breakpoint: T.string.isRequired,
   open: T.string.isRequired,
   controlled: T.bool.isRequired,
-  disabled: T.bool.isRequired
+  disabled: T.bool.isRequired,
+  transition: T.bool.isRequired
 }
 
 export default ComponentToRender

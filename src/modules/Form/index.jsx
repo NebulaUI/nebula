@@ -15,7 +15,7 @@ const Form = () => (
       <Foldable.Header padding>
         <h2>Text Input</h2>
       </Foldable.Header>
-      <Foldable.Body>
+      <Foldable.Body transition>
         <Section size="md" tag="div" className="u-hard-top">
           <TextInput />
         </Section>
@@ -25,7 +25,7 @@ const Form = () => (
       <Foldable.Header padding>
         <h2>Textarea</h2>
       </Foldable.Header>
-      <Foldable.Body>
+      <Foldable.Body transition>
         <Section size="md" tag="div" className="u-hard-top">
           <Textarea />
         </Section>
@@ -35,7 +35,7 @@ const Form = () => (
       <Foldable.Header padding>
         <h2>Select</h2>
       </Foldable.Header>
-      <Foldable.Body>
+      <Foldable.Body transition>
         <Section size="md" tag="div" className="u-hard-top">
           <Select />
         </Section>
@@ -45,7 +45,7 @@ const Form = () => (
       <Foldable.Header padding>
         <h2>Checkbox</h2>
       </Foldable.Header>
-      <Foldable.Body>
+      <Foldable.Body transition>
         <Section size="md" tag="div" className="u-hard-top">
           <Checkbox />
         </Section>
@@ -55,7 +55,7 @@ const Form = () => (
       <Foldable.Header padding>
         <h2>Radio</h2>
       </Foldable.Header>
-      <Foldable.Body>
+      <Foldable.Body transition>
         <Section size="md" tag="div" className="u-hard-top">
           <Radio />
         </Section>
@@ -65,7 +65,7 @@ const Form = () => (
       <Foldable.Header padding>
         <h2>Search</h2>
       </Foldable.Header>
-      <Foldable.Body>
+      <Foldable.Body transition>
         <Section size="md" tag="div" className="u-hard-top">
           <Search />
         </Section>

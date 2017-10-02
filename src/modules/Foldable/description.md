@@ -26,6 +26,9 @@ Allows the rendered HTML tag to be overridden from the default `<div>`.
 Allows the rendered HTML tag to be overridden from the default `<div>`.
 
 #### `<Foldable.Body />`
+* `transition :bool [optional]`  
+Transition the height when opening and closing (default duration 300ms).
+* `transitionDuration :number [optional]`  
+When used in conjunction with `transition` can be used to override the default duration time.
 * `tag :String [optional]`  
 Allows the rendered HTML tag to be overridden from the default `<div>`.
-

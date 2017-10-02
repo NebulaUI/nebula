@@ -21,7 +21,7 @@ const buildNavItems = (items, index, collection, pathname) => (
         { items.label }
       </h4>
     </Foldable.Header>
-    <Foldable.Body>
+    <Foldable.Body transition>
       <LinkList.Wrapper spacing="md">
         {
           items.descendants.map(item => (
@@ -71,7 +71,7 @@ class Sidebar extends Component {
                   API
                 </h2>
               </Foldable.Header>
-              <Foldable.Body>
+              <Foldable.Body transition>
                 { navigationModel.map((item, index, collection) =>
                   buildNavItems(item, index, collection, this.props.location.pathname)
                 )}

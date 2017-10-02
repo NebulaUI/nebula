@@ -6,6 +6,11 @@ const options = [{
   options: [
     {
       type: 'checkbox',
+      stateKey: 'transition',
+      label: 'Transition opening / closing.'
+    },
+    {
+      type: 'checkbox',
       stateKey: 'controlled',
       label: 'Externally controlled.'
     },

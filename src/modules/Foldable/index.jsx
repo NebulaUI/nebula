@@ -17,7 +17,8 @@ const initialState = {
   breakpoint: '',
   open: 'open',
   disabled: false,
-  controlled: false
+  controlled: false,
+  transition: true
 }
 
 const buildExtraString = state => (state.controlled ?
