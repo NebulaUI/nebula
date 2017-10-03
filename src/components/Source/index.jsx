@@ -1,7 +1,7 @@
 import React from 'react'
 import { withRouter } from 'react-router'
 import T from 'prop-types'
-import { Tabs } from 'nebula-react'
+import { Tabs, FadeIn } from 'nebula-react'
 import { stringify as stringifyQs } from 'qs'
 
 import { parseQuery } from 'utils'
@@ -59,22 +59,46 @@ const Source = ({
         <Tabs.Tab target="html">HTML code</Tabs.Tab>
         <Tabs.Tab target="react">React code (ES6)</Tabs.Tab>
       </Tabs.TabList>
-      { description ? <Tabs.Panel id="description">{description}</Tabs.Panel> : null }
-      { options ? <Tabs.Panel id="options">{options}</Tabs.Panel> : null }
+      { description
+        ? (
+          <Tabs.Panel id="description">
+            <FadeIn>
+              <div>{ description }</div>
+            </FadeIn>
+          </Tabs.Panel>
+        ) : null
+      }
+      { options
+        ? (
+          <Tabs.Panel id="options">
+            <FadeIn>
+              <div>{ options }</div>
+            </FadeIn>
+          </Tabs.Panel>
+        ) : null
+      }
       <Tabs.Panel id="html">
-        <Code htmlExtraString={htmlExtraString}>
-          { renderHTML(htmlExampleOverride || codeOverride || children) }
-        </Code>
+        <FadeIn>
+          <div>
+            <Code htmlExtraString={htmlExtraString}>
+              { renderHTML(htmlExampleOverride || codeOverride || children) }
+            </Code>
+          </div>
+        </FadeIn>
       </Tabs.Panel>
       <Tabs.Panel id="react">
-        <Code
-          componentName={type}
-          nebulaImportOverride={nebulaImportOverride}
-          extraString={extraString}
-          language="jsx"
-        >
-          { renderReact(codeOverride || children, componentNameOverride) }
-        </Code>
+        <FadeIn>
+          <div>
+            <Code
+              componentName={type}
+              nebulaImportOverride={nebulaImportOverride}
+              extraString={extraString}
+              language="jsx"
+            >
+              { renderReact(codeOverride || children, componentNameOverride) }
+            </Code>
+          </div>
+        </FadeIn>
       </Tabs.Panel>
     </Tabs.Wrapper>
   </div>

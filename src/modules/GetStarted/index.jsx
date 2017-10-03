@@ -1,6 +1,6 @@
 import React from 'react'
 import T from 'prop-types'
-import { Tabs, Section, SiteWrap } from 'nebula-react'
+import { Tabs, Section, SiteWrap, FadeIn } from 'nebula-react'
 import { Link } from 'react-router-dom'
 import { withRouter } from 'react-router'
 import { stringify as stringifyQs } from 'qs'
@@ -60,13 +60,25 @@ const GetStarted = ({ history }) => (
           </Tabs.Tab>
         </Tabs.TabList>
         <Tabs.Panel id="css">
-          <NebulaCSS />
+          <FadeIn>
+            <div>
+              <NebulaCSS />
+            </div>
+          </FadeIn>
         </Tabs.Panel>
         <Tabs.Panel id="components">
-          <NebulaComponents />
+          <FadeIn>
+            <div>
+              <NebulaComponents />
+            </div>
+          </FadeIn>
         </Tabs.Panel>
         <Tabs.Panel id="react">
-          <NebulaReact />
+          <FadeIn>
+            <div>
+              <NebulaReact />
+            </div>
+          </FadeIn>
         </Tabs.Panel>
       </Tabs.Wrapper>
     </SiteWrap>
