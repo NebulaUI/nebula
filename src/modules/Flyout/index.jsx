@@ -19,6 +19,7 @@ const initialState = {
   isOpen: 'closed',
   disabled: false,
   width: 'None',
+  maxHeight: false,
   transition: true
 }
 
@@ -86,7 +87,7 @@ class FlyoutExample extends Component {
           config={{
             type: 'Flyout',
             componentNameOverride,
-            nebulaImportOverride: `Flyout, Card${state.closeButtonInContent || state.buttonForOpen ? ', Button' : ''}`,
+            nebulaImportOverride: `Flyout, Card${state.closeButtonInContent || state.buttonForOpen ? ', Button' : ''}${state.maxHeight ? ', Scroll' : ''}`,
             extraString: buildExtraString(this.state),
             htmlExampleOverride: ComponentToRender({
               ...state,

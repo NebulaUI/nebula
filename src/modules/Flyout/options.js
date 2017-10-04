@@ -21,6 +21,11 @@ const options = [{
     },
     {
       type: 'checkbox',
+      stateKey: 'maxHeight',
+      label: 'Maximum height.'
+    },
+    {
+      type: 'checkbox',
       stateKey: 'controlled',
       label: 'Control flyout externally (for demo purposes setting this option hides and disables "click outside to close" option).'
     },

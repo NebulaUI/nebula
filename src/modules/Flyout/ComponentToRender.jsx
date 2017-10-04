@@ -1,6 +1,6 @@
 import React from 'react'
 import T from 'prop-types'
-import { Flyout, Card, Button } from 'nebula-react'
+import { Flyout, Card, Button, Scroll } from 'nebula-react'
 
 import { removeFalsyProps as removeFalsy } from 'utils'
 
@@ -14,6 +14,7 @@ const ComponentToRender = ({
   handleFlyoutToggle,
   disabled,
   width,
+  maxHeight,
   transition
 }) => (
   <div style={{ paddingTop: '80px', textAlign: 'center' }}>
@@ -31,18 +32,40 @@ const ComponentToRender = ({
         {...removeFalsy({ transition })}
         direction={direction}
       >
-        <Card>
-          <p>Lorem ipsum dolor sit amet</p>
-          {
-            closeButtonInContent && (
-              <Flyout.Toggle>
-                <Button theme="alpha" size="sm">
-                  Close
-                </Button>
-              </Flyout.Toggle>
-            )
-          }
-        </Card>
+        {
+          maxHeight ? (
+            <Card className="u-hard">
+              <Scroll className="u-soft-md" maxHeight="150px">
+                <p>Lorem ipsum dolor sit amet</p>
+                <p>Lorem ipsum dolor sit amet</p>
+                <p>Lorem ipsum dolor sit amet</p>
+                <p>Lorem ipsum dolor sit amet</p>
+                {
+                  closeButtonInContent && (
+                    <Flyout.Toggle>
+                      <Button theme="alpha" size="sm">
+                        Close
+                      </Button>
+                    </Flyout.Toggle>
+                  )
+                }
+              </Scroll>
+            </Card>
+          ) : (
+            <Card>
+              <p>Lorem ipsum dolor sit amet</p>
+              {
+                closeButtonInContent && (
+                  <Flyout.Toggle>
+                    <Button theme="alpha" size="sm">
+                      Close
+                    </Button>
+                  </Flyout.Toggle>
+                )
+              }
+            </Card>
+          )
+        }
       </Flyout.Content>
     </Flyout.Wrapper>
   </div>
@@ -57,7 +80,8 @@ ComponentToRender.propTypes = {
   disabled: T.bool.isRequired,
   transition: T.bool.isRequired,
   handleFlyoutToggle: T.func.isRequired,
-  width: T.string.isRequired
+  width: T.string.isRequired,
+  maxHeight: T.bool.isRequired
 }
 
 export default ComponentToRender
