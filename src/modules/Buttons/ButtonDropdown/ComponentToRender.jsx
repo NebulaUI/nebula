@@ -1,6 +1,6 @@
 import React from 'react'
 import T from 'prop-types'
-import { ButtonDropdown, Button, Card } from 'nebula-react'
+import { ButtonDropdown, Button, Card, Scroll } from 'nebula-react'
 import { BrowserRouter as Router, Link } from 'react-router-dom'
 
 import { removeFalsyProps as removeFalsy } from 'utils'
@@ -15,6 +15,8 @@ const ComponentToRender = ({
  clickOutsideToClose,
  controlled,
  isOpen,
+ transition,
+ maxHeight,
  handleButtonDropdownChange
 }) => {
   const renderComponent = link => (
@@ -37,22 +39,34 @@ const ComponentToRender = ({
         Click to go to link
       </Button>
       <ButtonDropdown.Toggle />
-      <ButtonDropdown.Content>
-        <Card>
-          <ul className="o-bare-list">
-            <li className="o-bare-list__item">Option 1</li>
-            <li className="o-bare-list__item">Option 2</li>
-            <li className="o-bare-list__item">Option 3</li>
-            <p>Lorem ipsum dolor sit amit</p>
-            <li className="o-bare-list__item">Option 1</li>
-            <li className="o-bare-list__item">Option 2</li>
-            <li className="o-bare-list__item">Option 3</li>
-            <p>Lorem ipsum dolor sit amit</p>
-          </ul>
-          <ButtonDropdown.Close>
-            <Button size="sm" theme="beta">close</Button>
-          </ButtonDropdown.Close>
-        </Card>
+      <ButtonDropdown.Content {...removeFalsy({ transition })}>
+        {
+          maxHeight ? (
+            <Card className="u-hard">
+              <Scroll maxHeight="150px" className="u-soft-md">
+                <p>BEMIT is an ITCSS extension of BEM that makes selectors more transparent
+                  and further aids self
+                  documentation via namespacing and suffixes.
+                  Ultimately it results in terse yet non-cryptic
+                  self describing classnames.</p>
+                <ButtonDropdown.Close>
+                  <Button size="sm" theme="beta">close</Button>
+                </ButtonDropdown.Close>
+              </Scroll>
+            </Card>
+          ) : (
+            <Card>
+              <p>BEMIT is an ITCSS extension of BEM that makes selectors more transparent
+                and further aids self
+                documentation via namespacing and suffixes.
+                Ultimately it results in terse yet non-cryptic
+                self describing classnames.</p>
+              <ButtonDropdown.Close>
+                <Button size="sm" theme="beta">close</Button>
+              </ButtonDropdown.Close>
+            </Card>
+          )
+        }
       </ButtonDropdown.Content>
     </ButtonDropdown.Wrapper>
   )
@@ -74,7 +88,9 @@ ComponentToRender.propTypes = {
   direction: T.string.isRequired,
   clickOutsideToClose: T.bool.isRequired,
   controlled: T.bool.isRequired,
+  transition: T.bool.isRequired,
   isOpen: T.string.isRequired,
+  maxHeight: T.bool.isRequired,
   handleButtonDropdownChange: T.func.isRequired
 }
 

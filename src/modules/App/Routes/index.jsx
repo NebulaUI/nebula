@@ -24,6 +24,7 @@ import Pill from 'modules/Pill'
 import ProgressBar from 'modules/ProgressBar'
 import Table from 'modules/Table'
 import Tooltip from 'modules/Tooltip'
+import Utilities from 'modules/Utilities'
 
 import GetStarted from 'modules/GetStarted'
 import CoreConcepts from 'modules/CoreConcepts'
@@ -57,6 +58,7 @@ const Components = (
     <Route exact path={`${BASE_PATH}api/components/progress-bar`} component={ProgressBar} />
     <Route exact path={`${BASE_PATH}api/components/table`} component={Table} />
     <Route exact path={`${BASE_PATH}api/components/tooltip`} component={Tooltip} />
+    <Route exact path={`${BASE_PATH}api/components/utilities`} component={Utilities} />
   </div>
 )
 

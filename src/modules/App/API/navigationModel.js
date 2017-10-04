@@ -91,6 +91,10 @@ const model = [
       {
         to: `${BASE_PATH}api/components/tooltip`,
         label: 'Tooltip'
+      },
+      {
+        to: `${BASE_PATH}api/components/utilities`,
+        label: 'Utilities'
       }
     ]
   }

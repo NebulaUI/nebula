@@ -28,6 +28,8 @@ Allows the rendered HTML tag to be overridden from the default `<div>`.
 Allows the rendered HTML tag to be overridden from the default `<button>`.
 
 #### `<ButtonDropdown.Content>`
+* `transition :bool [optional]`  
+Adds a transition to when opening.
 * `tag :String [optional]`  
 Allows the rendered HTML tag to be overridden from the default `<div>`.
 

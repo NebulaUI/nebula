@@ -9,7 +9,10 @@ import ComponentToRender from './ComponentToRender'
 import optionsModel from './options'
 
 const componentNameOverride = {
-  BrowserRouter: 'Router'
+  ButtonDropdownWrapper: 'ButtonDropdown.Wrapper',
+  ButtonDropdownContent: 'ButtonDropdown.Content',
+  ButtonDropdownToggle: 'ButtonDropdown.Toggle',
+  ButtonDropdownClose: 'ButtonDropdown.Close'
 }
 
 const initialState = {
@@ -21,7 +24,9 @@ const initialState = {
   reactRouter: false,
   controlled: false,
   fullWidth: false,
-  isOpen: 'closed'
+  isOpen: 'closed',
+  maxHeight: false,
+  transition: true
 }
 
 const buildExtraString = ({ reactRouter }) => (
@@ -84,6 +89,7 @@ class ButtonDropdownExample extends Component {
             type: 'ButtonDropdown',
             componentNameOverride,
             extraString: buildExtraString(state),
+            nebulaImportOverride: `ButtonDropdown, Button, Card${state.maxHeight ? ', Scroll' : ''}`,
             htmlExampleOverride: ComponentToRender({
               ...state,
               isOpen: 'open',

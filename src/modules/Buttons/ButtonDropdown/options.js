@@ -17,6 +17,16 @@ const options = [{
       label: 'Click outside to close.'
     },
     {
+      type: 'checkbox',
+      stateKey: 'maxHeight',
+      label: 'Add maximum height to dropdown.'
+    },
+    {
+      type: 'checkbox',
+      stateKey: 'transition',
+      label: 'Transition open'
+    },
+    {
       type: 'radio',
       stateKey: 'size',
       label: 'Size',
