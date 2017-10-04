@@ -16,7 +16,7 @@ const initialState = {
   disabled: false
 }
 
-class TextInputExample extends Component {
+class TextAreaExample extends Component {
   constructor() {
     super()
 
@@ -52,4 +52,4 @@ class TextInputExample extends Component {
   }
 }
 
-export default TextInputExample
+export default TextAreaExample

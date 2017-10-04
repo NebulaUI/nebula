@@ -13,36 +13,6 @@ const Form = () => (
     <h1>Form</h1>
     <Foldable.Wrapper bordered>
       <Foldable.Header padding>
-        <h2>Text Input</h2>
-      </Foldable.Header>
-      <Foldable.Body transition>
-        <Section size="md" tag="div" className="u-hard-top">
-          <TextInput />
-        </Section>
-      </Foldable.Body>
-    </Foldable.Wrapper>
-    <Foldable.Wrapper bordered>
-      <Foldable.Header padding>
-        <h2>Textarea</h2>
-      </Foldable.Header>
-      <Foldable.Body transition>
-        <Section size="md" tag="div" className="u-hard-top">
-          <Textarea />
-        </Section>
-      </Foldable.Body>
-    </Foldable.Wrapper>
-    <Foldable.Wrapper bordered>
-      <Foldable.Header padding>
-        <h2>Select</h2>
-      </Foldable.Header>
-      <Foldable.Body transition>
-        <Section size="md" tag="div" className="u-hard-top">
-          <Select />
-        </Section>
-      </Foldable.Body>
-    </Foldable.Wrapper>
-    <Foldable.Wrapper bordered>
-      <Foldable.Header padding>
         <h2>Checkbox</h2>
       </Foldable.Header>
       <Foldable.Body transition>
@@ -68,6 +38,36 @@ const Form = () => (
       <Foldable.Body transition>
         <Section size="md" tag="div" className="u-hard-top">
           <Search />
+        </Section>
+      </Foldable.Body>
+    </Foldable.Wrapper>
+    <Foldable.Wrapper bordered>
+      <Foldable.Header padding>
+        <h2>Select</h2>
+      </Foldable.Header>
+      <Foldable.Body transition>
+        <Section size="md" tag="div" className="u-hard-top">
+          <Select />
+        </Section>
+      </Foldable.Body>
+    </Foldable.Wrapper>
+    <Foldable.Wrapper bordered>
+      <Foldable.Header padding>
+        <h2>Text Input</h2>
+      </Foldable.Header>
+      <Foldable.Body transition>
+        <Section size="md" tag="div" className="u-hard-top">
+          <TextInput />
+        </Section>
+      </Foldable.Body>
+    </Foldable.Wrapper>
+    <Foldable.Wrapper bordered>
+      <Foldable.Header padding>
+        <h2>Textarea</h2>
+      </Foldable.Header>
+      <Foldable.Body transition>
+        <Section size="md" tag="div" className="u-hard-top">
+          <Textarea />
         </Section>
       </Foldable.Body>
     </Foldable.Wrapper>

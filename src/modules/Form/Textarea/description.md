@@ -2,7 +2,7 @@ Styled Textarea.
 
 ### React Props
 
-#### `<Form.TextInput />`
+#### `<Form.TextArea />`
 * `id :String [optional]`  
 * `small :bool [optional]`  
 Renders small version.
