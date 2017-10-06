@@ -8,6 +8,7 @@ import { BUTTON_SIZES, BUTTON_THEMES } from './buttons'
 import { STATUSES } from './statuses'
 import { TABLE_COLLAPSE_BREAKPOINTS, TABLE_SPACING } from './table'
 import { TOOLTIP_DIRECTIONS } from './tooltip'
+import { TOAST_POSITIONS } from './toast'
 
 export {
   BREAKPOINTS,
@@ -25,5 +26,6 @@ export {
   STATUSES,
   TABLE_COLLAPSE_BREAKPOINTS,
   TABLE_SPACING,
-  TOOLTIP_DIRECTIONS
+  TOOLTIP_DIRECTIONS,
+  TOAST_POSITIONS
 }
