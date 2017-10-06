@@ -1,5 +1,4 @@
 import { TOAST_POSITIONS } from 'constants/index'
-import { upperCaseFirst } from 'utils'
 
 const options = [{
   title: '',
