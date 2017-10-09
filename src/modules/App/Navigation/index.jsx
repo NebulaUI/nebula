@@ -43,7 +43,7 @@ class Navigation extends Component {
             <Navbar.Content right tag="div">
               <Navbar.Item tag="div" resetLineHeight>
                 <a
-                  href="https://github.com/rbrtsmith/nebula"
+                  href="https://github.com/NebulaUI"
                   className="c-btn c-btn--sm c-btn--beta"
                 >
                   <Icon icon={githubIcon} verticalAlign="sub" width="22px" height="22px" />
