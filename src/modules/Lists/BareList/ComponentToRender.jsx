@@ -40,9 +40,9 @@ const ComponentToRender = ({ spacing, wrapInCard, qtyItems }) => {
     </BareList.Wrapper>
   )
   return wrapInCard ? (
-    <Card>
-      {buildList()}
-    </Card>
+    <Card.Wrapper>
+      <Card.Body>{ buildList() }</Card.Body>
+    </Card.Wrapper>
   ) : buildList()
 }
 

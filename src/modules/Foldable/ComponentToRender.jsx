@@ -17,7 +17,9 @@ const ComponentToRender = ({
 }, handleFoldableToggle) => {
   const buildBodyContent = () => (
     cardInBody ? (
-      <Card>Lorem ipsum dolor sit amit</Card>
+      <Card.Wrapper>
+        <Card.Body>Lorem ipsum dolor sit amit.</Card.Body>
+      </Card.Wrapper>
     ) : 'Lorem ipsum dolor sit amit'
   )
   const buildFoldable = () => (
@@ -42,7 +44,11 @@ const ComponentToRender = ({
 
   const buildFoldableWrapper = () => {
     if (cardWrapping) {
-      return <Card>{ buildFoldable() }</Card>
+      return (
+        <Card.Wrapper>
+          <Card.Body>{ buildFoldable() }</Card.Body>
+        </Card.Wrapper>
+      )
     }
 
     return buildFoldable()

@@ -42,8 +42,23 @@ const ComponentToRender = ({
       <ButtonDropdown.Content {...removeFalsy({ transition })}>
         {
           maxHeight ? (
-            <Card className="u-hard">
-              <Scroll maxHeight="150px" className="u-soft-md">
+            <Card.Wrapper>
+              <Scroll maxHeight="150px">
+                <Card.Body>
+                  <p>BEMIT is an ITCSS extension of BEM that makes selectors more transparent
+                    and further aids self
+                    documentation via namespacing and suffixes.
+                    Ultimately it results in terse yet non-cryptic
+                    self describing classnames.</p>
+                  <ButtonDropdown.Close>
+                    <Button size="sm" theme="beta">close</Button>
+                  </ButtonDropdown.Close>
+                </Card.Body>
+              </Scroll>
+            </Card.Wrapper>
+          ) : (
+            <Card.Wrapper>
+              <Card.Body>
                 <p>BEMIT is an ITCSS extension of BEM that makes selectors more transparent
                   and further aids self
                   documentation via namespacing and suffixes.
@@ -52,19 +67,8 @@ const ComponentToRender = ({
                 <ButtonDropdown.Close>
                   <Button size="sm" theme="beta">close</Button>
                 </ButtonDropdown.Close>
-              </Scroll>
-            </Card>
-          ) : (
-            <Card>
-              <p>BEMIT is an ITCSS extension of BEM that makes selectors more transparent
-                and further aids self
-                documentation via namespacing and suffixes.
-                Ultimately it results in terse yet non-cryptic
-                self describing classnames.</p>
-              <ButtonDropdown.Close>
-                <Button size="sm" theme="beta">close</Button>
-              </ButtonDropdown.Close>
-            </Card>
+              </Card.Body>
+            </Card.Wrapper>
           )
         }
       </ButtonDropdown.Content>

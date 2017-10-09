@@ -6,12 +6,18 @@ const ComponentToRender = ({ render }) => (
   render
     ? (
       <FadeIn>
-        <Card>
-          Hello Nebula.
-        </Card>
+        <Card.Wrapper>
+          <Card.Body>
+            Hello Nebula.
+          </Card.Body>
+        </Card.Wrapper>
       </FadeIn>
     )
-    : <Card>Hello Nebula.</Card>
+    : (
+      <Card.Wrapper>
+        <Card.Body>Hello Nebula.</Card.Body>
+      </Card.Wrapper>
+    )
 )
 
 ComponentToRender.propTypes = {

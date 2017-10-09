@@ -14,16 +14,18 @@ const Home = () => (
   <Section size="md">
     <SiteWrap padding>
       <h1><span role="img" aria-label="star" style={{ color: 'transparent', textShadow: '0 0 0 #242424' }}>💫</span> Welcome to Nebula!</h1>
-      <Card>
-        <MarkdownContainer source={aboveLayers} />
-        <p>
-          <img src={layers} alt="Nebula Layers" style={{ width: '500px' }} />
-        </p>
-        <MarkdownContainer source={belowLayers} />
-        <Link to={`${BASE_PATH}get-started`} className="c-btn c-btn--md c-btn--alpha">
-          <span role="img" aria-label="star" style={{ color: 'transparent', textShadow: '0 0 0 white', marginRight: '0.5rem' }}>💫</span>Get started!
-        </Link>
-      </Card>
+      <Card.Wrapper>
+        <Card.Body>
+          <MarkdownContainer source={aboveLayers} />
+          <p>
+            <img src={layers} alt="Nebula Layers" style={{ width: '500px' }} />
+          </p>
+          <MarkdownContainer source={belowLayers} />
+          <Link to={`${BASE_PATH}get-started`} className="c-btn c-btn--md c-btn--alpha">
+            <span role="img" aria-label="star" style={{ color: 'transparent', textShadow: '0 0 0 white', marginRight: '0.5rem' }}>💫</span>Get started!
+          </Link>
+        </Card.Body>
+      </Card.Wrapper>
     </SiteWrap>
     <CoreConcepts>
       <h2>Core Concepts</h2>

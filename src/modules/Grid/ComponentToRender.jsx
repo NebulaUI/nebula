@@ -32,7 +32,9 @@ const ComponentToRender = (props) => {
         key={item}
         {...removeFalsy({ width: transformProp(props[`item${item}`].sizes) })}
       >
-        <Card>{ content }</Card>
+        <Card.Wrapper>
+          <Card.Body>{ content }</Card.Body>
+        </Card.Wrapper>
       </Grid.Item>
     ) : (
       <Grid.Item

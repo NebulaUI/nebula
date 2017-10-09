@@ -9,9 +9,11 @@ const ComponentToRender = ({ padding, nestCard }) => (
     <SiteWrap
       {...removeFalsy({ padding })}
     >
-      <Card>
-        Hello Nebula.
-      </Card>
+      <Card.Wrapper>
+        <Card.Body>
+          Hello Nebula.
+        </Card.Body>
+      </Card.Wrapper>
     </SiteWrap>
   ) : (
     <SiteWrap

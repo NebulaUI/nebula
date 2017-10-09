@@ -2,9 +2,11 @@ import React from 'react'
 import { Card } from 'nebula-react'
 
 const ComponentToRender = () => (
-  <Card>
-    Hello Nebula.
-  </Card>
+  <Card.Wrapper>
+    <Card.Body>
+      Hello Nebula.
+    </Card.Body>
+  </Card.Wrapper>
 )
 
 export default ComponentToRender

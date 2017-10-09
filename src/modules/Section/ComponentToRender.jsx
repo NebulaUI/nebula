@@ -29,9 +29,11 @@ const ComponentToRender = ({ padding, nestCard, sizes }) => {
     </Section>
   )
   return nestCard ? (
-    <Card>
-      {buildSection()}
-    </Card>
+    <Card.Wrapper>
+      <Card.Body>
+        { buildSection() }
+      </Card.Body>
+    </Card.Wrapper>
   ) : (
     buildSection()
   )

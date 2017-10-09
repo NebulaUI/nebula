@@ -52,18 +52,20 @@ const ComponentToRender = ({
               </Scroll>
             </Card>
           ) : (
-            <Card>
-              <p>Lorem ipsum dolor sit amet</p>
-              {
-                closeButtonInContent && (
-                  <Flyout.Toggle>
-                    <Button theme="alpha" size="sm">
-                      Close
-                    </Button>
-                  </Flyout.Toggle>
-                )
-              }
-            </Card>
+            <Card.Wrapper>
+              <Card.Body>
+                <p>Lorem ipsum dolor sit amet</p>
+                {
+                  closeButtonInContent && (
+                    <Flyout.Toggle>
+                      <Button theme="alpha" size="sm">
+                        Close
+                      </Button>
+                    </Flyout.Toggle>
+                  )
+                }
+              </Card.Body>
+            </Card.Wrapper>
           )
         }
       </Flyout.Content>

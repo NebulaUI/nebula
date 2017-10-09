@@ -13,9 +13,11 @@ const CoreConcepts = ({ children }) => (
         {
           children || <h1>Core Concepts</h1>
         }
-        <Card>
-          <MarkdownContainer source={source} />
-        </Card>
+        <Card.Wrapper>
+          <Card.Body>
+            <MarkdownContainer source={source} />
+          </Card.Body>
+        </Card.Wrapper>
       </article>
     </SiteWrap>
   </Section>

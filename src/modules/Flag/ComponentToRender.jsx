@@ -82,9 +82,11 @@ const ComponentToRender = ({
 
   return wrapInCard
     ? (
-      <Card>
-        {buildFlag()}
-      </Card>
+      <Card.Wrapper>
+        <Card.Body>
+          {buildFlag()}
+        </Card.Body>
+      </Card.Wrapper>
     ) : buildFlag()
 }
 

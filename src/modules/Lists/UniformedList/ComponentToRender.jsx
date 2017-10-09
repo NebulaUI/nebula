@@ -24,13 +24,13 @@ const ComponentToRender = ({ breakpoint, wrapInCard, qtyItems }) => {
     <UniformedList.Wrapper
       {...removeFalsy({ breakpoint: breakpoint === 'all' ? false : breakpoint })}
     >
-      {buildItems()}
+      { buildItems() }
     </UniformedList.Wrapper>
   )
   return wrapInCard ? (
-    <Card>
-      {buildList()}
-    </Card>
+    <Card.Wrapper>
+      <Card.Body>{ buildList() }</Card.Body>
+    </Card.Wrapper>
   ) : buildList()
 }
 
