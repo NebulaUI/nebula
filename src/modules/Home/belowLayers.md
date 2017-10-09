@@ -14,6 +14,8 @@ ReactJS components for the Objects that ship with Nebula CSS and Components that
 illustration above depicts Nebula React requires either Nebula CSS or both Nebula CSS and Nebula Components to function
 properly.
 
+Compatible with React 15.x and 16.x
+
 ### Accessibility
 
 https://facebook.github.io/react/docs/accessibility.html
