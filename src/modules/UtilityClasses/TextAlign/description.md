@@ -1,0 +1,1 @@
+Align text left right or center

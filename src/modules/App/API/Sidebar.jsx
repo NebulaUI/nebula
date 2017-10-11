@@ -6,7 +6,7 @@ import { Section, Foldable, LinkList } from 'nebula-react'
 
 import navigationModel from './navigationModel'
 
-const buildNavItems = (item, index, collection, pathname) =>
+const buildNavItems = (item, index, collection, pathname) => (
   item.descendants ? (
     <Foldable.Wrapper
       key={item.label}
@@ -47,11 +47,12 @@ const buildNavItems = (item, index, collection, pathname) =>
       className="c-sidebar__link-title"
       activeClassName="c-sidebar__link-title--is-active"
     >
-      <h4 aria-label="Click to expand" style={{ padding: '0.5rem' }}>
+      <h4 aria-label="Click to expand" className="u-flush-bottom" style={{ padding: '0.5rem' }}>
         {item.label}
       </h4>
     </NavLink>
   )
+)
 
 class Sidebar extends Component {
   state = {

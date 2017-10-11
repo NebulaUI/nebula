@@ -1,12 +1,10 @@
 import React, { Component } from 'react'
 import T from 'prop-types'
-import { NavLink } from 'react-router-dom'
 import { withRouter } from 'react-router'
 import { Navbar, Icon } from 'nebula-react'
 
 import githubIcon from 'assets/icons/github.svg'
 
-import { BASE_PATH } from 'constants/index'
 import renderRoutes from './renderRoutes'
 import SecondaryContent from './SecondaryContent'
 

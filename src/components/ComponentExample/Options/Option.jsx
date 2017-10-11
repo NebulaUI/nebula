@@ -1,6 +1,6 @@
 import React from 'react'
 import T from 'prop-types'
-import { MatrixList } from 'nebula-react'
+import { MatrixList, Form } from 'nebula-react'
 
 import CheckboxWrapper from './CheckboxWrapper'
 import SelectboxWrapper from './SelectboxWrapper'
@@ -36,9 +36,9 @@ const Option = ({
   if (type === 'select') {
     return (
       <div>
-        <div>
+        <Form.Label htmlFor={optionProps.key}>
           <strong>{ optionProps.label }</strong>
-        </div>
+        </Form.Label>
         <SelectboxWrapper
           handleChange={handleSelectboxChange}
           {...optionProps}

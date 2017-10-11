@@ -38,7 +38,8 @@ class PushExample extends Component {
         options={options}
         description={description}
         config={{
-          type: 'Card'
+          type: 'Push',
+          nebulaImportOverride: 'Card'
         }}
         ComponentToRender={ComponentToRender(state)}
       />

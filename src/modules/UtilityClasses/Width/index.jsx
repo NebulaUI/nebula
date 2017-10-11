@@ -7,17 +7,14 @@ import description from './description.md'
 import ComponentToRender from './ComponentToRender'
 import optionsModel from './options'
 
-const componentNameOverride = {
-  Select: 'Form.Select',
-  Label: 'Form.Label'
-}
-
 const initialState = {
-  disabled: false,
-  small: false
+  widths: {
+    all: '3/4',
+    md: '1/2@md'
+  }
 }
 
-class TextInputExample extends Component {
+class WidthExample extends Component {
   constructor() {
     super()
 
@@ -43,9 +40,8 @@ class TextInputExample extends Component {
         options={options}
         description={description}
         config={{
-          type: 'Form',
-          componentNameOverride,
-          tabsId: 'select'
+          type: 'Width',
+          nebulaImportOverride: 'Card'
         }}
         ComponentToRender={ComponentToRender(state)}
       />
@@ -53,4 +49,4 @@ class TextInputExample extends Component {
   }
 }
 
-export default TextInputExample
+export default WidthExample

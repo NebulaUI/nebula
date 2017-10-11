@@ -6,6 +6,7 @@ import { getDeepObjectValue } from 'utils'
 
 const SelectboxWrapper = ({ stateKey, state, handleChange, children }) => (
   <Form.Select
+    id={stateKey}
     name={stateKey}
     onChange={handleChange}
     value={getDeepObjectValue(state, stateKey)}
