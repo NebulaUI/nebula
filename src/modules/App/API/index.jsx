@@ -1,7 +1,7 @@
 import React from 'react'
 import { Grid, Section } from 'nebula-react'
 
-import { Objects, Components } from '../Routes'
+import { Objects, Components, UtilityClassesRoute } from '../Routes'
 import Sidebar from './Sidebar'
 
 const API = () => (
@@ -15,6 +15,7 @@ const API = () => (
           <div className="c-api-main-content__inner">
             { Objects }
             { Components }
+            { UtilityClassesRoute }
           </div>
         </Section>
       </div>

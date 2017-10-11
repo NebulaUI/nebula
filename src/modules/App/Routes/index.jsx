@@ -26,6 +26,7 @@ import Table from 'modules/Table'
 import Toast from 'modules/Toast'
 import Tooltip from 'modules/Tooltip'
 import Utilities from 'modules/Utilities'
+import UtilityClasses from 'modules/UtilityClasses'
 
 import GetStarted from 'modules/GetStarted'
 import CoreConcepts from 'modules/CoreConcepts'
@@ -64,6 +65,12 @@ const Components = (
   </div>
 )
 
+const UtilityClassesRoute = (
+  <div>
+    <Route exact path={`${BASE_PATH}api/utility-classes`} component={UtilityClasses} />
+  </div>
+)
+
 const Routes = () => (
   <Switch>
     <Route exact path={`${BASE_PATH}`} component={Home} />
@@ -74,6 +81,6 @@ const Routes = () => (
   </Switch>
 )
 
-export { Objects, Components }
+export { Objects, Components, UtilityClassesRoute }
 
 export default Routes

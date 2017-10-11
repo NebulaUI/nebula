@@ -63,6 +63,20 @@ hr {
   }
 }
 
+.c-sidebar__link-title {
+  color: inherit;
+  text-decoration: none;
+}
+
+.c-sidebar__link-title--is-active {
+  color: $nb-color-alpha;
+
+  &:hover,
+  &:focus {
+    color: $nb-color-alpha;
+  }
+}
+
 .c-api-main-content {
   @include nb-respond-to('sm') {
     height: calc(100vh - #{$nb-navbar-height-collapsed});

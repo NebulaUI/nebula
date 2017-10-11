@@ -6,40 +6,52 @@ import { Section, Foldable, LinkList } from 'nebula-react'
 
 import navigationModel from './navigationModel'
 
-const buildNavItems = (items, index, collection, pathname) => (
-  <Foldable.Wrapper
-    key={items.label}
-    defaultOpen={pathname.includes(items.label.toLowerCase()) ? 'open' : 'closed'}
-    bordered
-    style={{
-      borderTopWidth: index === 0 ? 0 : '1px',
-      borderBottomWidth: index === collection.length - 1 ? 0 : '1px'
-    }}
-  >
-    <Foldable.Header padding style={{ paddingTop: '0.5rem', paddingBottom: '0.5rem' }}>
-      <h4 aria-label="Click to expand" style={{ paddingLeft: '0.5rem', paddingRight: '0.5rem' }}>
-        { items.label }
+const buildNavItems = (item, index, collection, pathname) =>
+  item.descendants ? (
+    <Foldable.Wrapper
+      key={item.label}
+      defaultOpen={pathname.includes(item.label.toLowerCase()) ? 'open' : 'closed'}
+      bordered
+      style={{
+        borderTopWidth: index === 0 ? 0 : '1px',
+        borderBottomWidth: index === collection.length - 1 ? 0 : '1px'
+      }}
+    >
+      <Foldable.Header padding style={{ paddingTop: '0.5rem', paddingBottom: '0.5rem' }}>
+        <h4 aria-label="Click to expand" style={{ paddingLeft: '0.5rem', paddingRight: '0.5rem' }}>
+          { item.label }
+        </h4>
+      </Foldable.Header>
+      <Foldable.Body transition>
+        <LinkList.Wrapper spacing="md">
+          {
+            item.descendants.map(descendant => (
+              <LinkList.Item key={descendant.label}>
+                <LinkList.Link
+                  component={NavLink}
+                  to={descendant.to}
+                  className="c-sidebar__link"
+                >
+                  { descendant.label }
+                </LinkList.Link>
+              </LinkList.Item>
+          ))
+          }
+        </LinkList.Wrapper>
+      </Foldable.Body>
+    </Foldable.Wrapper>
+  ) : (
+    <NavLink
+      to={item.to}
+      key={item.label}
+      className="c-sidebar__link-title"
+      activeClassName="c-sidebar__link-title--is-active"
+    >
+      <h4 aria-label="Click to expand" style={{ padding: '0.5rem' }}>
+        {item.label}
       </h4>
-    </Foldable.Header>
-    <Foldable.Body transition>
-      <LinkList.Wrapper spacing="md">
-        {
-          items.descendants.map(item => (
-            <LinkList.Item key={item.label}>
-              <LinkList.Link
-                component={NavLink}
-                to={item.to}
-                className="c-sidebar__link"
-              >
-                { item.label }
-              </LinkList.Link>
-            </LinkList.Item>
-        ))
-        }
-      </LinkList.Wrapper>
-    </Foldable.Body>
-  </Foldable.Wrapper>
-)
+    </NavLink>
+  )
 
 class Sidebar extends Component {
   state = {

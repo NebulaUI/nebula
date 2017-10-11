@@ -4,9 +4,10 @@ import lightbulb from 'assets/icons/lightbulb.svg'
 
 const model = [
   {
-    to: `${BASE_PATH}core-concepts`,
-    label: 'Core concepts',
-    icon: lightbulb
+    to: `${BASE_PATH}`,
+    label: 'Read me',
+    icon: lightbulb,
+    exact: true
   },
   {
     to: `${BASE_PATH}api`,

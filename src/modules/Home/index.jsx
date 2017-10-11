@@ -13,7 +13,7 @@ import belowLayers from './belowLayers.md'
 const Home = () => (
   <Section size="md">
     <SiteWrap padding>
-      <h1><span role="img" aria-label="star" style={{ color: 'transparent', textShadow: '0 0 0 #242424' }}>💫</span> Welcome to Nebula!</h1>
+      <h1><span role="img" aria-label="star" style={{ color: 'transparent', textShadow: '0 0 0 #242424' }}>💫</span> Nebula</h1>
       <Card.Wrapper>
         <Card.Body>
           <MarkdownContainer source={aboveLayers} />

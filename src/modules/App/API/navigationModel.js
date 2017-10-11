@@ -101,6 +101,11 @@ const model = [
         label: 'Utilities'
       }
     ]
+  },
+  {
+    to: `${BASE_PATH}api/utility-classes`,
+    label: 'Utility Classes',
+    descendants: null
   }
 ]
 

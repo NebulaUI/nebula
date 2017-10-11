@@ -30,9 +30,6 @@ class Navigation extends Component {
           <Navbar.Toggle.Wrapper>
             <Navbar.Toggle.Bars />
           </Navbar.Toggle.Wrapper>
-          <NavLink className="c-navbar__logo" to={BASE_PATH}>
-            Nebula
-          </NavLink>
           <Navbar.ContentWrapper>
             <Navbar.Content>
               {renderRoutes(routes, pathname)}

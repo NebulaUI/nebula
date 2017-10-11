@@ -3,9 +3,10 @@ import T from 'prop-types'
 import { NavLink } from 'react-router-dom'
 import { Navbar, Icon } from 'nebula-react'
 
-const Item = ({ to, label, icon }) => (
+const Item = ({ to, exact, label, icon }) => (
   <Navbar.Item key={to}>
     <Navbar.Link
+      exact={exact}
       component={NavLink}
       activeClassName="is-active"
       to={to}
@@ -26,6 +27,7 @@ const Item = ({ to, label, icon }) => (
 Item.propTypes = {
   to: T.string.isRequired,
   label: T.string.isRequired,
+  exact: T.bool,
   icon: T.node
 }
 
