@@ -27,6 +27,7 @@ import Toast from 'modules/Toast'
 import Tooltip from 'modules/Tooltip'
 import Utilities from 'modules/Utilities'
 import UtilityClasses from 'modules/UtilityClasses'
+import SassVariables from 'modules/SassVariables'
 
 import GetStarted from 'modules/GetStarted'
 import CoreConcepts from 'modules/CoreConcepts'
@@ -71,6 +72,12 @@ const UtilityClassesRoute = (
   </div>
 )
 
+const SassVariablesRoute = (
+  <div>
+    <Route exact path={`${BASE_PATH}api/sass-variables`} component={SassVariables} />
+  </div>
+)
+
 const Routes = () => (
   <Switch>
     <Route exact path={`${BASE_PATH}`} component={Home} />
@@ -81,6 +88,6 @@ const Routes = () => (
   </Switch>
 )
 
-export { Objects, Components, UtilityClassesRoute }
+export { Objects, Components, UtilityClassesRoute, SassVariablesRoute }
 
 export default Routes

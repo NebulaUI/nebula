@@ -106,6 +106,11 @@ const model = [
     to: `${BASE_PATH}api/utility-classes`,
     label: 'Utility Classes',
     descendants: null
+  },
+  {
+    to: `${BASE_PATH}api/sass-variables`,
+    label: 'Global Sass Variables',
+    descendants: null
   }
 ]
 

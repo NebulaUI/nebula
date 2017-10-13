@@ -47,7 +47,14 @@ const buildNavItems = (item, index, collection, pathname) => (
       className="c-sidebar__link-title"
       activeClassName="c-sidebar__link-title--is-active"
     >
-      <h4 aria-label="Click to expand" className="u-flush-bottom" style={{ padding: '0.5rem' }}>
+      <h4
+        aria-label="Click to expand"
+        className="u-flush-bottom"
+        style={{
+          padding: '0.5rem',
+          borderBottom: index === collection.length - 1 ? '' : '1px solid #d7d7d7'
+        }}
+      >
         {item.label}
       </h4>
     </NavLink>

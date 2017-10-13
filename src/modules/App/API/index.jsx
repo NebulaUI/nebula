@@ -1,7 +1,7 @@
 import React from 'react'
 import { Grid, Section } from 'nebula-react'
 
-import { Objects, Components, UtilityClassesRoute } from '../Routes'
+import { Objects, Components, UtilityClassesRoute, SassVariablesRoute } from '../Routes'
 import Sidebar from './Sidebar'
 
 const API = () => (
@@ -16,6 +16,7 @@ const API = () => (
             { Objects }
             { Components }
             { UtilityClassesRoute }
+            { SassVariablesRoute }
           </div>
         </Section>
       </div>
