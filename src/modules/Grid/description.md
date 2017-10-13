@@ -10,25 +10,25 @@ other elements inside and style them.  As you can see in this example we have ne
 
 ### React Props
 #### `<Grid.Wrapper />`
-* `gutter :oneOf | :arrayOf['range of :String values'] [optional]`  
+* **`gutter :oneOf | :arrayOf['range of :String values'] [optional]`**  
 Sets the gutter size, across all breakpoints or by specific breakpoint(s) (mobile first).
-* `matrix :bool [optional]`  
+* **`matrix :bool [optional]`**  
 Applies vertical guttering that matches horizonal gutters.
-* `equalHeight :bool [optional]`  
+* **`equalHeight :bool [optional]`**  
 Makes all the `<Grid.Item>`s on a given row equal in height.
-* `reverse :bool [optional]`  
+* **`reverse :bool [optional]`**  
 Reverses grid items horizontally.
-* `align :oneOf['center', 'bottom'] [optional]`  
+* **`align :oneOf['center', 'bottom'] [optional]`**  
 Vertical alignment of `<Grid.Item>`s.  Defaults to top.
-* `tag :String [optional]`  
+* **`tag :String [optional]`**  
 Allows the rendered HTML tag to be overridden from the default `<div>`.
 
 #### `<Grid.Item />`
-* `width :oneOf | :arrayOf['range of :String values'] [optional]`  
+* **`width :oneOf | :arrayOf['range of :String values'] [optional]`**  
 Set the width of the `<Grid.Item />` (%) across all breakpoints or by specific breakpoint(s) (mobile first).
-* `push :oneOf | :arrayOf['range of :String values'] [optional]`  
+* **`push :oneOf | :arrayOf['range of :String values'] [optional]`**  
 Set the position of the `<Grid.Item />` (%) across all breakpoints or by specific breakpoint(s) (mobile first).
-* `pull :oneOf | :arrayOf['range of :String values'] [optional]`  
+* **`pull :oneOf | :arrayOf['range of :String values'] [optional]`**  
 Set the position of the `<Grid.Item />` (%) across all breakpoints or by specific breakpoint(s) (mobile first).
-* `tag :String [optional]`  
+* **`tag :String [optional]`**  
 Allows the rendered HTML tag to be overridden from the default `<div>`.

@@ -7,20 +7,20 @@
 Takes the same props as native checkboxes in React.
 
 #### `<Form.Checkbox />`
-* `id :String [optional]`  
+* **`id :String [optional]`**  
 If not passed is auto generated
-* `tag :String [optional]`  
+* **`tag :String [optional]`**  
 The tag type for the component that wraps the checkbox. the default is `<div />`
-* `children :Any [optional]`  
+* **`children :Any [optional]`**  
 Children will populate the internally rendered `<Form.CheckboxLabel />`
 
 **Decomposed Components**
 #### `<Form.CheckboxWrapper />`
-* `tag :String [optional]`  
+* **`tag :String [optional]`**  
 The tag type for the component that wraps the checkbox. the default is `<div />`
 #### `<Form.CheckboxInput />`
-* `id :String [required]`  
+* **`id :String [required]`**  
 Should match the `htmlFor` prop on `<Form.CheckboxLabel>`
 #### `<Form.CheckboxLabel />`
-* `htmlFor :String [required]`  
+* **`htmlFor :String [required]`**  
 Should match the `id` prop on `<Form.CheckboxInput>`

@@ -6,7 +6,7 @@
 Takes the same props as native text inputs in React.
 
 #### `<Form.TextInput />`
-* `id :String [optional]`  
+* **`id :String [optional]`**  
 Should match the `htmlFor` prop on `<Form.Label>`.
-* `small :bool [optional]`  
+* **`small :bool [optional]`**  
 Renders small version.

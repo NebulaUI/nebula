@@ -8,11 +8,11 @@ other elements inside and style them.
 
 ### React Props
 #### `<UniformedList.Wrapper />`
-* `breakpoint :oneOf['xs', 'sm', 'md', 'lg'] [optional]`  
+* **`breakpoint :oneOf['xs', 'sm', 'md', 'lg'] [optional]`**  
 Sets the spacing, across all breakpoints or by specific breakpoint(s) (mobile first).
-* `tag :String [optional]`  
+* **`tag :String [optional]`**  
 Allows the rendered HTML tag to be overridden from the default `<ul>`.
 
 #### `<UniformedList.Item />`
-* `tag :String [optional]`  
+* **`tag :String [optional]`**  
 Allows the rendered HTML tag to be overridden from the default `<li>`.

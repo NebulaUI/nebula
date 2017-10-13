@@ -8,11 +8,11 @@ other elements inside and style them.
 
 ### React Props
 #### `<InlineList.Wrapper />`
-* `spacing :oneOf | :arrayOf['range of :String values'] [optional]`  
+* **`spacing :oneOf | :arrayOf['range of :String values'] [optional]`**  
 Sets the spacing, across all breakpoints or by specific breakpoint(s) (mobile first).
-* `tag :String [optional]`  
+* **`tag :String [optional]`**  
 Allows the rendered HTML tag to be overridden from the default `<ul>`.
 
 #### `<InlineList.Item />`
-* `tag :String [optional]`  
+* **`tag :String [optional]`**  
 Allows the rendered HTML tag to be overridden from the default `<li>`.

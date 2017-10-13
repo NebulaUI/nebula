@@ -8,7 +8,7 @@ other elements inside and style them.
 
 ### React Props
 #### `<Section />`
-* `size :oneOf | :arrayOf['range of :String values'] [optional]`  
+* **`size :oneOf | :arrayOf['range of :String values'] [optional]`**  
 Sets the spacing, across all breakpoints or by specific breakpoint(s) (mobile first).
-* `tag :String [optional]`  
+* **`tag :String [optional]`**  
 Allows the rendered HTML tag to be overridden from the default `<section>`.

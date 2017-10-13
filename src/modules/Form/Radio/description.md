@@ -7,25 +7,25 @@
 Takes the same props as native checkboxes in React.
 
 #### `<Form.Radio />`
-* `name : String [required]`  
+* **`name : String [required]`**  
 Groups radios together.  
-* `id :String [optional]`  
+* **`id :String [optional]`**  
 If not passed is auto generated.
-* `tag :String [optional]`  
+* **`tag :String [optional]`**  
 The tag type for the component that wraps the checkbox. the default is `<div />`.
-* `children :Any [optional]`  
+* **`children :Any [optional]`**  
 Children will populate the internally rendered `<Form.CheckboxLabel />`.
 
 **Decomposed Components**
 #### `<Form.RadioWrapper />`
-* `tag :String [optional]`  
+* **`tag :String [optional]`**  
 The tag type for the component that wraps the radio. the default is `<div />`.
 #### `<Form.RadioInput />`
-* `name : String [required]`  
+* **`name : String [required]`**  
 Groups radios together.
-* `id :String [required]`  
+* **`id :String [required]`**  
 Should match the `htmlFor` prop on `<Form.RadioLabel>`.
 #### `<Form.RadioLabel />`
-* `htmlFor :String [required]`  
+* **`htmlFor :String [required]`**  
 Should match the `id` prop on `<Form.RadioInput>`.
 

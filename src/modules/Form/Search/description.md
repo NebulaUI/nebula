@@ -7,29 +7,29 @@
 Takes the same props as native text inputs in React.
 
 #### `<Form.Search />`
-* `id :String [optional]`  
+* **`id :String [optional]`**  
 If not passed is auto generated.
-* `children :Any [optional]`  
+* **`children :Any [optional]`**  
 Children will populate the internally rendered `<Form.Label />`.
 
 **Decomposed Components**
 #### `<Form.SearchWapper />`
 * Renders a `<form />` so takes all the regular form attributes usuch as `onSubmit`, `action`, `method` etc.
-* `submitPosition :oneOf['left', 'right']`  
+* **`submitPosition :oneOf['left', 'right']`**  
 The position of the submit button.
-* `tag :String [optional]`  
+* **`tag :String [optional]`**  
 The tag type for the component that wraps the Search input. the default is `<form />`.
 
 #### `<Form.SearchInput />`
-* `id :String [optional]`  
+* **`id :String [optional]`**  
 Should match the `htmlFor` prop on `<Form.Label>`.
-* `small :bool [optional]`  
+* **`small :bool [optional]`**  
 Renders small version.
 
 #### `<Form.SearchSubmit />`
 Takes the same props as native buttons in React.
 
 #### `<Form.RadioLabel />`
-* `htmlFor :String [required]`  
+* **`htmlFor :String [required]`**  
 Should match the `id` prop on `<Form.RadioInput>`.
 

@@ -9,7 +9,7 @@ other elements inside and style them.
 
 ### React Props
 #### `<SiteWrap />`
-* `padding :bool [optional]`  
+* **`padding :bool [optional]`**  
 Adds padding to the left and right.
-* `tag :String [optional]`  
+* **`tag :String [optional]`**  
 Allows the rendered HTML tag to be overridden from the default `<div>`.
