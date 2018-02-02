@@ -11,7 +11,8 @@ const SecondayContent = (
       to={`${BASE_PATH}get-started`}
       className="c-btn c-btn--sm c-btn--alpha"
     >
-      <span role="img" aria-label="star" style={{ color: 'transparent', textShadow: '0 0 0 white', marginRight: '0.5rem' }}>💫</span>Get started!
+      <img src={`/src/assets/icons/nebula-icon.svg`} style={{ marginRight: '0.7rem', width: '20px', height: 'auto', verticalAlign: 'middle' }} />
+      <span style={{ verticalAlign: 'middle' }}>Get started!</span>
     </NavLink>
   </Navbar.Item>
 )
