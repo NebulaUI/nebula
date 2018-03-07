@@ -1,0 +1,10 @@
+import SpriteSymbol from "svg-baker-runtime/browser-symbol";
+import sprite from "svg-sprite-loader/runtime/browser-sprite.build";
+var symbol = new SpriteSymbol({
+  "id": "alert",
+  "use": "alert-usage",
+  "viewBox": "0 0 24 24",
+  "content": "<symbol viewBox=\"0 0 24 24\" id=\"alert\"><path d=\"M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 19.66c-.938 0-1.58-.723-1.58-1.66 0-.964.67-1.66 1.58-1.66.963 0 1.58.696 1.58 1.66 0 .938-.617 1.66-1.58 1.66zm.622-6.34c-.24.816-.992.83-1.243 0-.29-.955-1.317-4.584-1.317-6.94 0-3.11 3.89-3.126 3.89 0 0 2.37-1.082 6.093-1.33 6.94z\" /></symbol>"
+});
+var result = sprite.add(symbol);
+export default symbol

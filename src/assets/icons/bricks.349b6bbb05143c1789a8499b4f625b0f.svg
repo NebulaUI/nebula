@@ -1,0 +1,10 @@
+import SpriteSymbol from "svg-baker-runtime/browser-symbol";
+import sprite from "svg-sprite-loader/runtime/browser-sprite.build";
+var symbol = new SpriteSymbol({
+  "id": "bricks",
+  "use": "bricks-usage",
+  "viewBox": "0 0 35 35",
+  "content": "<symbol viewBox=\"0 0 35 35\" id=\"bricks\"><path d=\"M0 0h16.365v7.106H0zM0 9.298h10.32v7.106H0zM12.515 9.298H22.65v7.106H12.515zM24.863 9.298H35v7.106H24.863zM18.635 0H35v7.106H18.635zM0 18.596h16.365v7.106H0zM0 27.893h10.32V35H0zM12.515 27.893h10.137V35H12.515zM24.863 27.893H35V35H24.863zM18.635 18.596H35v7.106H18.635z\" /></symbol>"
+});
+var result = sprite.add(symbol);
+export default symbol
