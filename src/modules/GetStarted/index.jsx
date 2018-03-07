@@ -40,9 +40,8 @@ const getDefaultActiveTabId = ({ location: { search } }) => {
 const GetStarted = ({ history }) => (
   <Section size="md">
     <SiteWrap padding>
-      <h1>Get started</h1>
-      <p>It is recommended that you read the <Link to={`${BASE_PATH}core-concepts`}>Core Concepts</Link>
-        to get the most out of this framework.</p>
+      <h1><span style={{ verticalAlign: 'middle' }}>Get started with</span> <img src={'/src/assets/img/nebula-logo.svg'} alt={'Nebula'} style={{ maxWidth: '150px', height: 'auto', verticalAlign: 'middle' }} /></h1>
+      <p>It is recommended that you read the <Link to={`${BASE_PATH}core-concepts`}>Core Concepts</Link> to get the most out of this framework.</p>
       <p>Please choose which version of Nebula you wish to consume in your project.</p>
       <Tabs.Wrapper
         activeId={getDefaultActiveTabId(history)}
@@ -59,21 +58,21 @@ const GetStarted = ({ history }) => (
             Nebula React
           </Tabs.Tab>
         </Tabs.TabList>
-        <Tabs.Panel id="css">
+        <Tabs.Panel id="css" className="u-nebula-bg">
           <FadeIn>
             <div>
               <NebulaCSS />
             </div>
           </FadeIn>
         </Tabs.Panel>
-        <Tabs.Panel id="components">
+        <Tabs.Panel id="components" className="u-nebula-bg">
           <FadeIn>
             <div>
               <NebulaComponents />
             </div>
           </FadeIn>
         </Tabs.Panel>
-        <Tabs.Panel id="react">
+        <Tabs.Panel id="react" className="u-nebula-bg">
           <FadeIn>
             <div>
               <NebulaReact />
